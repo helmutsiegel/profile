@@ -10,6 +10,9 @@
     <modules>
         <module>web-client</module>
         <module>profile-war</module>
+        <module>repository</module>
+        <module>business</module>
+        <module>service</module>
     </modules>
 
     <properties>

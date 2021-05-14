@@ -8,8 +8,11 @@
         <outputRelativeToContentRoot value="true" />
         <module name="javaee-learning" />
         <module name="profile-war" />
-        <module name="homeAutomation" />
+        <module name="business" />
         <module name="web-client" />
+        <module name="service" />
+        <module name="homeAutomation" />
+        <module name="repository" />
       </profile>
     </annotationProcessing>
   </component>
