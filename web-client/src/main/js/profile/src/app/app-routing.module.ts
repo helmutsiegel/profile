@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import {WelcomeComponent} from "./home/welcome/welcome.component";
 import {CvComponent} from "./cv/cv/cv.component";
 import {ResumeComponent} from "./resume/resume/resume.component";
-import {ProjectsComponent} from "./projects/projects/projects.component";
+import {ProjectsListComponent} from "./projects-list/projects-list.component";
 
 const routes: Routes = [
   {
@@ -20,7 +20,7 @@ const routes: Routes = [
   },
   {
     path: 'projects',
-    component: ProjectsComponent
+    component: ProjectsListComponent
   },
   {
     path: '**',

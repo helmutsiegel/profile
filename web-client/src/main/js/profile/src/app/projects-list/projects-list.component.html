@@ -1,0 +1,8 @@
+<div>
+  <h1>Projects</h1>
+  <hr/>
+  <app-project-thumbnail #thumbnail
+                         [project]="project"
+                         (eventClick)="handleEventClick($event)"></app-project-thumbnail>
+  <button class="btn btn-primary" (click)="thumbnail.logFoo()">Invite logFoo from thumbnail</button>
+</div>

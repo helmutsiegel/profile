@@ -1,0 +1,18 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li [ngClass]="getClassForNav('/')">
+        <a class="nav-link" routerLink="/">Home</a>
+      </li>
+      <li [ngClass]="getClassForNav('/cv')">
+        <a class="nav-link" routerLink="/cv">CV</a>
+      </li>
+      <li [ngClass]="getClassForNav('/resume')">
+        <a class="nav-link" routerLink="/resume">Resume</a>
+      </li>
+      <li [ngClass]="getClassForNav('/projects')">
+        <a class="nav-link" routerLink="/projects">Projects</a>
+      </li>
+    </ul>
+  </div>
+</nav>
