@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ResumeComponent } from './resume/resume.component';
+
+import { ResumeRoutingModule } from './resume-routing.module';
+import {ResumeComponent} from "./components/resume/resume.component";
 
 
 
@@ -9,7 +11,8 @@ import { ResumeComponent } from './resume/resume.component';
     ResumeComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    ResumeRoutingModule
   ]
 })
 export class ResumeModule { }

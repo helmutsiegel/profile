@@ -1,9 +1,7 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import {WelcomeComponent} from "./home/welcome/welcome.component";
-import {CvComponent} from "./cv/cv/cv.component";
-import {ResumeComponent} from "./resume/resume/resume.component";
-import {ProjectsListComponent} from "./projects-list/projects-list.component";
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
+import {WelcomeComponent} from "./components/welcome/welcome.component";
+
 
 const routes: Routes = [
   {
@@ -12,20 +10,19 @@ const routes: Routes = [
   },
   {
     path: 'cv',
-    component: CvComponent
+    loadChildren: () => import('./cv/cv.module').then(m => m.CvModule)
   },
   {
     path: 'resume',
-    component: ResumeComponent
+    loadChildren: () => import('./resume/resume.module').then(m => m.ResumeModule)
   },
   {
     path: 'projects',
-    component: ProjectsListComponent
+    loadChildren: () => import('./projects/projects.module').then(m => m.ProjectsModule)
   },
   {
     path: '**',
-    redirectTo: '',
-    pathMatch: 'full'
+    redirectTo: ''
   }
 ];
 
@@ -33,4 +30,5 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}

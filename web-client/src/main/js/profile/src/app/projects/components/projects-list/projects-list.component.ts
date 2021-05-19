@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {ProjectTO} from "../model/project-to";
+import {ProjectTO} from "../../model/project-to";
+
 
 @Component({
-  selector: 'app-projects-list',
+  selector: 'projects-list',
   templateUrl: './projects-list.component.html',
   styleUrls: ['./projects-list.component.css']
 })

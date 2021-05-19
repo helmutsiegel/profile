@@ -1,7 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
-  selector: 'app-project-thumbnail',
+  selector: 'project-thumbnail',
   templateUrl: './project-thumbnail.component.html',
   styleUrls: ['./project-thumbnail.component.css']
 })
