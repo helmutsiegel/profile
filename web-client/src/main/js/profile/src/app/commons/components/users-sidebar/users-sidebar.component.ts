@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
 
 @Component({
-  selector: 'app-users-sidebar',
+  selector: 'users-sidebar',
   templateUrl: './users-sidebar.component.html',
   styleUrls: ['./users-sidebar.component.css']
 })
@@ -14,12 +14,8 @@ export class UsersSidebarComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  navigate(link: string): void {
-    this.router.navigate([link], {});
-  }
-
-  getClassForSidebar(link: string) {
-    return this.router.url==link ? 'btn btn-primary' : 'btn btn-secondary';
+  public getClassForSidebar(link: string) {
+    return this.router.url==link ? 'btn btn-dark' : 'btn btn-light btn-outline-secondary';
   }
 
 }

@@ -1,6 +1,7 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {UsersSidebarComponent} from "./components/users-sidebar/users-sidebar.component";
+import {RouterModule} from "@angular/router";
 
 
 @NgModule({
@@ -8,7 +9,8 @@ import {UsersSidebarComponent} from "./components/users-sidebar/users-sidebar.co
     UsersSidebarComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   exports: [
     UsersSidebarComponent
