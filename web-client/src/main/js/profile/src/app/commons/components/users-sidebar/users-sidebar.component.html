@@ -1,0 +1,7 @@
+<div class="col">
+  <div class="btn-group-vertical" role="group">
+    <button type="button" [ngClass]="getClassForSidebar('/cv')" (click)="navigate('cv')">CV</button>
+    <button type="button" [ngClass]="getClassForSidebar('/resume')" (click)="navigate('resume')">Resume</button>
+    <button type="button" [ngClass]="getClassForSidebar('/projects')" (click)="navigate('projects')">Projects</button>
+  </div>
+</div>

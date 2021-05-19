@@ -1,24 +1,24 @@
-/* You can add global styles to this file, and also import other style files */
-.hoverwell:hover {
-  background-color: #485563;
-  cursor: pointer;
-}
+/*!* You can add global styles to this file, and also import other style files *!*/
+/*.hoverwell:hover {*/
+/*  background-color: #485563;*/
+/*  cursor: pointer;*/
+/*}*/
 
-.container {
-  padding-top: 10px;
-}
+/*.container {*/
+/*  padding-top: 10px;*/
+/*}*/
 
-.pointable {
-  cursor: pointer;
-}
+/*.pointable {*/
+/*  cursor: pointer;*/
+/*}*/
 
-button {
-  color: #555;
-}
+/*button {*/
+/*  color: #555;*/
+/*}*/
 
-[hidden] {
-  display: none !important;
-}
+/*[hidden] {*/
+/*  display: none !important;*/
+/*}*/
 
 .toast-success {
   background-color: #51a351;

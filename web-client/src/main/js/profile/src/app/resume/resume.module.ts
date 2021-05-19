@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { ResumeRoutingModule } from './resume-routing.module';
 import {ResumeComponent} from "./components/resume/resume.component";
+import {CommonsModule} from "../commons/commons.module";
 
 
 
@@ -10,9 +11,10 @@ import {ResumeComponent} from "./components/resume/resume.component";
   declarations: [
     ResumeComponent
   ],
-  imports: [
-    CommonModule,
-    ResumeRoutingModule
-  ]
+    imports: [
+        CommonModule,
+        ResumeRoutingModule,
+        CommonsModule
+    ]
 })
 export class ResumeModule { }
