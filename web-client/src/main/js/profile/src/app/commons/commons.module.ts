@@ -1,19 +1,19 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {UsersSidebarComponent} from "./components/users-sidebar/users-sidebar.component";
+import {UsersNavbarComponent} from "./components/users-sidebar/users-navbar.component";
 import {RouterModule} from "@angular/router";
 
 
 @NgModule({
   declarations: [
-    UsersSidebarComponent
+    UsersNavbarComponent
   ],
   imports: [
     CommonModule,
     RouterModule
   ],
   exports: [
-    UsersSidebarComponent
+    UsersNavbarComponent
   ]
 })
 export class CommonsModule {
