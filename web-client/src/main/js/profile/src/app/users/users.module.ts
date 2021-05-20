@@ -1,9 +1,9 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 
-import { UsersRoutingModule } from './users-routing.module';
-import { UsersComponent } from './users/users.component';
-import { UserCardComponent } from './users/user-card/user-card.component';
+import {UsersRoutingModule} from './users-routing.module';
+import {UsersComponent} from './components/users/users.component';
+import {UserCardComponent} from './components/user-card/user-card.component';
 
 
 @NgModule({
@@ -16,4 +16,5 @@ import { UserCardComponent } from './users/user-card/user-card.component';
     UsersRoutingModule
   ]
 })
-export class UsersModule { }
+export class UsersModule {
+}

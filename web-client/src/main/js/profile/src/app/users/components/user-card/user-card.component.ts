@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {UserVo} from "../../model/user-vo";
 
 @Component({
   selector: 'user-card',
@@ -7,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserCardComponent implements OnInit {
 
-  constructor() { }
+  @Input() user?: UserVo;
+
+  constructor() {
+  }
 
   ngOnInit(): void {
   }

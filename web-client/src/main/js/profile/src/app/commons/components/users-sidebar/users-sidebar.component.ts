@@ -15,7 +15,7 @@ export class UsersSidebarComponent implements OnInit {
   }
 
   public getClassForSidebar(link: string) {
-    return this.router.url==link ? 'btn btn-dark' : 'btn btn-light btn-outline-secondary';
+    return this.router.url==link ? 'btn-dark' : 'btn-light btn-outline-secondary';
   }
 
 }

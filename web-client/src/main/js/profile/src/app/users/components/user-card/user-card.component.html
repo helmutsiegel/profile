@@ -1,0 +1,15 @@
+<div class="card">
+  <span>Name: {{user?.name}}</span>
+  <span [ngClass]="{'red': user?.age === 25, 'bold': user?.age === 35}">
+    Age: {{user?.age}}
+  </span>
+  <span>Job title: {{user?.jobTitle}}</span>
+  <div [ngSwitch]="user?.yearsOfExperience"
+       [class.red]="user?.yearsOfExperience !== 1 && user?.yearsOfExperience !== 2">
+    Seniority:
+    <span *ngSwitchCase="1">Junior</span>
+    <span *ngSwitchCase="2">Mid</span>
+    <span *ngSwitchDefault>Senior</span>
+  </div>
+  <a class="btn btn-dark" href="cv">Go to Max's page</a>
+</div>
