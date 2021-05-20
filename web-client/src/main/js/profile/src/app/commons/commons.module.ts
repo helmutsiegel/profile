@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {UsersNavbarComponent} from "./components/users-sidebar/users-navbar.component";
+import {UsersNavbarComponent} from "./components/users-navbar/users-navbar.component";
 import {RouterModule} from "@angular/router";
 
 

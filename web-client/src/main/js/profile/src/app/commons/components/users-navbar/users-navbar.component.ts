@@ -14,8 +14,7 @@ export class UsersNavbarComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  public getClassForSidebar(link: string) {
+  public getCSSClassForSidebar(link: string) {
     return this.router.url==link ? 'btn-dark' : 'btn-light btn-outline-secondary';
   }
-
 }
