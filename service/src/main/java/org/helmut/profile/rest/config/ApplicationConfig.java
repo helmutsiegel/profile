@@ -1,6 +1,6 @@
 package org.helmut.profile.rest.config;
 
-import org.helmut.profile.rest.service.TestService;
+import org.helmut.profile.rest.service.UserService;
 
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
@@ -17,6 +17,6 @@ public class ApplicationConfig extends Application {
     }
 
     private void addRestResourceClasses(Set<Class<?>> resources) {
-        resources.add(TestService.class);
+        resources.add(UserService.class);
     }
 }
