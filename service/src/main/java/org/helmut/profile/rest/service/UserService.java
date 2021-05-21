@@ -16,11 +16,11 @@ import java.util.List;
 public class UserService {
 
     @Inject
-    private UserBA userBean;
+    private UserBA userBA;
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public List<UserTO> getAll() {
-        return userBean.getAll();
+        return userBA.getAll();
     }
 }

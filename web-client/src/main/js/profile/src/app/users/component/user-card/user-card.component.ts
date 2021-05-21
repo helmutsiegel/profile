@@ -8,7 +8,7 @@ import {UserVo} from "../../model/user-vo";
 })
 export class UserCardComponent implements OnInit {
 
-  @Input() user?: UserVo;
+  @Input() user!: UserVo;
 
   constructor() {
   }

@@ -1,6 +1,6 @@
 export interface UserVo {
-  yearsOfExperience: number;
-  name: string,
-  age: number,
-  jobTitle: string
+  firstName: string;
+  lastName: string,
+  userName: string,
+  title: string
 }
