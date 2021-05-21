@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {UserVo} from "../../model/user-vo";
+import {UsersService} from "../../service/users.service";
+import {ToastrService} from "../../../commons/service/toastr.service";
 
 @Component({
   selector: 'users',
@@ -8,27 +10,15 @@ import {UserVo} from "../../model/user-vo";
 })
 export class UsersComponent implements OnInit {
 
-  users: UserVo[] = [{
-    name: 'Max Mustermann',
-    age: 25,
-    jobTitle: 'Java developer',
-    yearsOfExperience: 1
-  }, {
-    name: 'Peter Pan',
-    age: 35,
-    jobTitle: '.Net developer',
-    yearsOfExperience: 4,
-  }, {
-    name: 'John Doe',
-    age: 27,
-    jobTitle: 'c++ developer',
-    yearsOfExperience: 2,
-  }]
+  public users!: UserVo[];
 
-  constructor() {
+  constructor(private usersService: UsersService,
+              private toastr: ToastrService) {
+
   }
 
   ngOnInit(): void {
+    this.users = this.usersService.getUsers();
+    this.toastr.success("Users loaded", "Users");
   }
-
 }

@@ -14,7 +14,6 @@ export class NavbarComponent implements OnInit {
   }
 
   getClassForNav(link: string): string {
-    console.log(this.router.url)
     return this.router.url==link ? 'nav-item active' : 'nav-item';
   }
 }
