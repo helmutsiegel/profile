@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {CvComponent} from "./components/cv/cv.component";
+import {CvComponent} from "./component/cv/cv.component";
 
 const routes: Routes = [
   {

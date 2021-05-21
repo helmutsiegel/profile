@@ -2,7 +2,7 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 
 import {CvRoutingModule} from './cv-routing.module';
-import {CvComponent} from './components/cv/cv.component';
+import {CvComponent} from './component/cv/cv.component';
 import {CommonsModule} from "../commons/commons.module";
 
 

@@ -14,11 +14,10 @@ export class UsersComponent implements OnInit {
 
   constructor(private usersService: UsersService,
               private toastr: ToastrService) {
-
   }
 
   ngOnInit(): void {
     this.users = this.usersService.getUsers();
-    this.toastr.success("Users loaded", "Users");
+    this.toastr.success('Users loaded', 'Users');
   }
 }
