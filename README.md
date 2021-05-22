@@ -14,3 +14,17 @@
 
 #To add library to payara:
 ####./asadmin add-library postgresql-42.2.20.jar 
+
+## Add proxy config to angular:
+
+Create the following file "src/proxy.conf.json", then add the following configuration: {
+
+```
+"/{yourPathPattern}/*": {
+  "target": "{yourHost}",
+  "secure": false } 
+}
+```
+Then add ```--proxy-config proxy.conf.json``` to start in scripts in package.json \
+for example:  ```"start":"ng serve --proxy-config proxy.conf.json"```
+
