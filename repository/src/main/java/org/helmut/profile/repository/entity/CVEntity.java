@@ -12,4 +12,31 @@ public class CVEntity extends BaseEntity {
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     private List<ExperienceEntity> experiences;
+
+    @OneToOne
+    private UserEntity userEntity;
+
+    public String getAbout() {
+        return about;
+    }
+
+    public void setAbout(String about) {
+        this.about = about;
+    }
+
+    public List<ExperienceEntity> getExperiences() {
+        return experiences;
+    }
+
+    public void setExperiences(List<ExperienceEntity> experiences) {
+        this.experiences = experiences;
+    }
+
+    public UserEntity getUserEntity() {
+        return userEntity;
+    }
+
+    public void setUserEntity(UserEntity userEntity) {
+        this.userEntity = userEntity;
+    }
 }

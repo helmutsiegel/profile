@@ -1,4 +1,4 @@
-export interface UserVo {
+export interface UserTo {
   firstName: string;
   lastName: string,
   userName: string,

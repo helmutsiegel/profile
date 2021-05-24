@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {UserVo} from "../../model/user-vo";
+import {UserTo} from "../../model/user-to";
 import {UsersService} from "../../service/users.service";
 import {ToastrService} from "../../../commons/service/toastr.service";
 
@@ -10,7 +10,7 @@ import {ToastrService} from "../../../commons/service/toastr.service";
 })
 export class UsersComponent implements OnInit {
 
-  public users!: UserVo[];
+  public users!: UserTo[];
 
   constructor(private usersService: UsersService,
               private toastr: ToastrService) {
@@ -19,7 +19,6 @@ export class UsersComponent implements OnInit {
   ngOnInit(): void {
     this.usersService.getUsers().subscribe(e => {
       this.users = e;
-      console.log(this.users);
       this.toastr.success('Users loaded', 'Users');
     });
   }

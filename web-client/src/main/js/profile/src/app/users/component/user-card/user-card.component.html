@@ -1,17 +1,8 @@
-<div class="card">
-  <span>Name: {{user.firstName +' '+ user.lastName}}</span>
-  <span>Name: {{user.userName}}</span>
-<!--  <span [ngClass]="{'red': user?.age === 25, 'bold': user?.age === 35}">-->
-<!--    Age: {{user?.age}}-->
-<!--  </span>-->
-  <span>Title: {{user.title}}</span>
-
-<!--  <div [ngSwitch]="user?.yearsOfExperience"-->
-<!--       [class.red]="user?.yearsOfExperience !== 1 && user?.yearsOfExperience !== 2">-->
-<!--    Seniority:-->
-<!--    <span *ngSwitchCase="1">Junior</span>-->
-<!--    <span *ngSwitchCase="2">Mid</span>-->
-<!--    <span *ngSwitchDefault>Senior</span>-->
-<!--  </div>-->
-  <a class="btn btn-dark" routerLink="/cv">Go to my page</a>
+<div class="card bg-light clickable" (click)="openUsersPage()">
+  <img class="card-img-top" src="/assets/profile.PNG" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">{{userTo.firstName + ' ' + userTo.lastName}}</h5>
+    <p class="card-subtitle">@{{userTo.userName}}</p>
+    <span>{{userTo.title}}</span>
+  </div>
 </div>

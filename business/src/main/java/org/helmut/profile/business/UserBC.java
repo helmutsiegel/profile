@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RequestScoped
-public class UserBA {
+public class UserBC {
 
     @Inject
     private UserRepository userRepository;

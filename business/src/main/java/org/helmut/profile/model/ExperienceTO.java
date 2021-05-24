@@ -1,21 +1,11 @@
-package org.helmut.profile.repository.entity;
+package org.helmut.profile.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
 import java.time.LocalDate;
 
-@Entity
-@Table(name = "T_EXPERIENCE")
-public class ExperienceEntity extends BaseEntity {
+public class ExperienceTO {
 
-    @Column(name = "company")
     private String company;
-
-    @Column(name = "start_date")
     private LocalDate startDate;
-
-    @Column(name = "end_date")
     private LocalDate endDate;
 
     public String getCompany() {

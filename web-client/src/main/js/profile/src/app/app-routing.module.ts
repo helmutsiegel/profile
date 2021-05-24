@@ -9,15 +9,15 @@ const routes: Routes = [
     component: WelcomeComponent
   },
   {
-    path: 'cv',
+    path: ':username/cv',
     loadChildren: () => import('./cv/cv.module').then(m => m.CvModule)
   },
   {
-    path: 'resume',
+    path: ':username/resume',
     loadChildren: () => import('./resume/resume.module').then(m => m.ResumeModule)
   },
   {
-    path: 'projects',
+    path: ':username/projects',
     loadChildren: () => import('./projects/projects.module').then(m => m.ProjectsModule)
   },
   {

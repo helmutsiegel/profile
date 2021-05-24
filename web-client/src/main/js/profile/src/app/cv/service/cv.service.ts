@@ -1,17 +1,17 @@
 import {Injectable} from '@angular/core';
-import {UserTo} from "../model/user-to";
+import {CvTo} from "../model/cv-to";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
-export class UsersService {
+export class CvService {
 
   constructor(private http: HttpClient) {
   }
 
-  public getUsers(): Observable<UserTo[]> {
-    return this.http.get<UserTo[]>("/rs/user");
+  public getCvByUsername(username: string): Observable<CvTo> {
+    return this.http.get<CvTo>('/rs/cv/' + username);
   }
 }
