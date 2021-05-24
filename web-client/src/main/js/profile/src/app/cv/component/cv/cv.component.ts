@@ -1,7 +1,8 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {CvService} from "../../service/cv.service";
-import {CvTo} from "../../model/cv-to";
 import {AppStateService} from "../../../commons/service/app-state.service";
+import {CvVo} from "../../model/cv-vo";
+import {CvMapperService} from "../../../users/mapping/cv-mapper.service";
 
 @Component({
   selector: 'cv',
@@ -10,14 +11,17 @@ import {AppStateService} from "../../../commons/service/app-state.service";
 })
 export class CvComponent implements OnInit {
 
-  @Input()
-  public cvTo!: CvTo;
+  public cvVo: CvVo | undefined;
 
   constructor(private appStateService: AppStateService,
-              private cvService: CvService) {
+              private cvService: CvService,
+              private cvMapper: CvMapperService) {
   }
 
   ngOnInit(): void {
-    this.cvService.getCvByUsername(this.appStateService.getSelectedUsername());
+    this.cvService.getCvByUsername(this.appStateService.getSelectedUsername())
+      .subscribe(cvTO => {
+        this.cvVo = this.cvMapper.mapToVO(cvTO)
+      })
   }
 }

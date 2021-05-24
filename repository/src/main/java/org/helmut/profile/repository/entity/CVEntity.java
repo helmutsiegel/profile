@@ -11,6 +11,7 @@ public class CVEntity extends BaseEntity {
     private String about;
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "cv_id")
     private List<ExperienceEntity> experiences;
 
     @OneToOne
