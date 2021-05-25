@@ -1,6 +1,8 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {WelcomeComponent} from "./component/welcome/welcome.component";
+import {Error404Component} from "./commons/component/error404/error404.component";
+import {UsersPageRouteActivatorService} from "./commons/service/users-page-route-activator.service";
 
 
 const routes: Routes = [
@@ -10,7 +12,8 @@ const routes: Routes = [
   },
   {
     path: ':username/cv',
-    loadChildren: () => import('./cv/cv.module').then(m => m.CvModule)
+    loadChildren: () => import('./cv/cv.module').then(m => m.CvModule),
+    canActivate: [UsersPageRouteActivatorService]
   },
   {
     path: ':username/resume',
@@ -23,6 +26,10 @@ const routes: Routes = [
   {
     path: 'users',
     loadChildren: () => import('./users/users.module').then(m => m.UsersModule)
+  },
+  {
+    path: '404',
+    component: Error404Component
   },
   {
     path: '**',
