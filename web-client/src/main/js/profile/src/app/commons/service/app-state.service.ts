@@ -12,7 +12,7 @@ export class AppStateService {
   }
 
   public getSelectedUsername(): string {
-    return this.appState.userTO?.userName;
+    return this.appState?.userTO?.userName;
   }
 
   public setSelectedUser(userTo: UserTo) {

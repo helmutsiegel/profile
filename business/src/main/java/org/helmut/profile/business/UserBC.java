@@ -3,6 +3,7 @@ package org.helmut.profile.business;
 import org.helmut.profile.mapping.UserMapper;
 import org.helmut.profile.model.UserTO;
 import org.helmut.profile.repository.UserRepository;
+import org.helmut.profile.repository.entity.UserEntity;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
@@ -22,5 +23,10 @@ public class UserBC {
         return userRepository.findAll().stream()
                 .map(userMapper::mapUserTO)
                 .collect(Collectors.toList());
+    }
+
+    public UserTO getByUsername(String username) {
+        List<UserEntity> users = userRepository.findByProperty("userName", username);
+        return users.size() == 1 ? userMapper.mapUserTO(users.get(0)) : null;
     }
 }

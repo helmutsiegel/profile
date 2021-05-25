@@ -31,9 +31,9 @@ public abstract class BaseRepository<T> {
         em.persist(t);
     }
 
-    public T findByProperty(String property, Object value) {
+    public List<T> findByProperty(String property, Object value) {
         return em.createQuery("select t from " + type.getSimpleName() + " t where t." + property + " like :param", type)
                 .setParameter("param", value)
-                .getSingleResult();
+                .getResultList();
     }
 }
