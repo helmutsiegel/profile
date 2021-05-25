@@ -31,7 +31,7 @@ public class UserService {
     @Path("{username}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response userExists(@PathParam("username") String username) {
-        UserTO userTO = userBC.getByUsername(username);
-        return Objects.nonNull(userTO) ? Response.ok(userTO).build() : Response.status(Response.Status.NOT_FOUND).build();
+        return Objects.nonNull(userBC.getByUsername(username)) ?
+                Response.ok().build() : Response.status(Response.Status.NOT_FOUND).build();
     }
 }

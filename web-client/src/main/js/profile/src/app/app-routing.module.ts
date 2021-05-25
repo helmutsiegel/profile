@@ -17,11 +17,17 @@ const routes: Routes = [
   },
   {
     path: ':username/resume',
-    loadChildren: () => import('./resume/resume.module').then(m => m.ResumeModule)
+    loadChildren: () => import('./resume/resume.module').then(m => m.ResumeModule),
+    canActivate: [UsersPageRouteActivatorService]
   },
   {
     path: ':username/projects',
-    loadChildren: () => import('./projects/projects.module').then(m => m.ProjectsModule)
+    loadChildren: () => import('./projects/projects.module').then(m => m.ProjectsModule),
+    canActivate: [UsersPageRouteActivatorService]
+  },
+  {
+    path: ':username/:',
+    redirectTo: ':username/cv'
   },
   {
     path: 'users',

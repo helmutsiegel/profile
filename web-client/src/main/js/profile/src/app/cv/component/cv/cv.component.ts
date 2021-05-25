@@ -1,10 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {CvService} from "../../service/cv.service";
-import {AppStateService} from "../../../commons/service/app-state.service";
 import {CvVo} from "../../model/cv-vo";
-import {CvMapperService} from "../../../users/mapping/cv-mapper.service";
-import {ActivatedRoute, Router} from "@angular/router";
-import {UsersService} from "../../../users/service/users.service";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'cv',
@@ -15,13 +11,13 @@ export class CvComponent implements OnInit {
 
   public cvVo: CvVo | undefined;
 
-  constructor(private appStateService: AppStateService,
-              private route: ActivatedRoute) {
+  constructor(private route: ActivatedRoute) {
 
   }
 
   ngOnInit(): void {
     this.cvVo = this.route.snapshot.data['cvVO']
+    console.log(this.cvVo)
   };
 
 }

@@ -12,6 +12,6 @@ export class CvService {
   }
 
   public getCvByUsername(username: string): Observable<CvTo> {
-    return this.http.get<CvTo>('/rs/cv/' + username);
+    return this.http.get<CvTo>('rs/cv/' + username);
   }
 }

@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Router} from "@angular/router";
-import {AppStateService} from "../../service/app-state.service";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'users-navbar',
@@ -10,17 +9,17 @@ import {AppStateService} from "../../service/app-state.service";
 export class UsersNavbarComponent implements OnInit {
 
   constructor(private router: Router,
-              private appStateService: AppStateService) {
+              private route: ActivatedRoute) {
   }
 
   ngOnInit(): void {
   }
 
   public getCSSClassForSidebar(link: string) {
-    return this.router.url == this.getRouterLink(link) ? 'btn-dark' : 'btn-light btn-outline-secondary';
+    return this.router.url == '/' + this.route.snapshot.params['username'] + '/' + link ? 'btn-dark' : 'btn-light btn-outline-secondary';
   }
 
-  getRouterLink(link: string) {
-    return '/' + this.appStateService.getSelectedUsername() + link;
+  navigate(link: string) {
+    this.router.navigate([this.route.snapshot.params['username'], link]);
   }
 }

@@ -1,5 +1,10 @@
+import {ExperienceVO} from "./experience-v-o";
+
 export class CvVo {
   constructor(public username: string,
-              public fullName: string) {
+              public fullName: string,
+              public birthDate: string,
+              public title: string,
+              public experiences: ExperienceVO[]) {
   }
 }

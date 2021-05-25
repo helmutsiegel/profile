@@ -4,11 +4,13 @@ import {CommonModule} from '@angular/common';
 import {CvRoutingModule} from './cv-routing.module';
 import {CvComponent} from './component/cv/cv.component';
 import {CommonsModule} from "../commons/commons.module";
+import { ExperienceComponent } from './component/experience/experience.component';
 
 
 @NgModule({
   declarations: [
-    CvComponent
+    CvComponent,
+    ExperienceComponent
   ],
   imports: [
     CommonModule,

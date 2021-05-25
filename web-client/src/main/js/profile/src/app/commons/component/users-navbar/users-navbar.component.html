@@ -1,6 +1,6 @@
 <div class="btn-group btn-block" role="group">
-  <a class="btn" [ngClass]="getCSSClassForSidebar('/cv')" [routerLink]="getRouterLink('/cv')">CV</a>
-  <a class="btn" [ngClass]="getCSSClassForSidebar('/resume')" [routerLink]="getRouterLink('/resume')">Resume</a>
-  <a class="btn" [ngClass]="getCSSClassForSidebar('/projects')" [routerLink]="getRouterLink('/projects')">Projects</a>
+  <a class="btn" [ngClass]="getCSSClassForSidebar('cv')" (click)="navigate('cv')">CV</a>
+  <a class="btn" [ngClass]="getCSSClassForSidebar('resume')" (click)="navigate('resume')">Resume</a>
+  <a class="btn" [ngClass]="getCSSClassForSidebar('projects')" (click)="navigate('projects')">Projects</a>
 </div>
 
