@@ -9,7 +9,7 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class CvComponent implements OnInit {
 
-  public cvVo: CvVo | undefined;
+  public cvVo!: CvVo;
 
   constructor(private route: ActivatedRoute) {
 

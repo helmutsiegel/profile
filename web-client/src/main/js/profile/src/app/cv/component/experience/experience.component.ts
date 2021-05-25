@@ -2,7 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {ExperienceVO} from "../../model/experience-v-o";
 
 @Component({
-  selector: 'app-experience',
+  selector: 'experience',
   templateUrl: './experience.component.html',
   styleUrls: ['./experience.component.css']
 })

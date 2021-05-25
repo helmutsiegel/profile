@@ -10,5 +10,9 @@
     <h5>Username: @{{cvVo?.username}}</h5>
     <h5>Birth date:{{cvVo?.birthDate}}</h5>
     <h5>Title: {{cvVo?.title}}</h5>
+
+    <div *ngFor="let experienceVO of cvVo.experiences" class="pt-1">
+      <experience  [experienceVO]="experienceVO"></experience>
+    </div>
   </div>
 </div>
