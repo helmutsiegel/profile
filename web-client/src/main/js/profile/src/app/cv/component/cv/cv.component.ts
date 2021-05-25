@@ -13,37 +13,15 @@ import {UsersService} from "../../../users/service/users.service";
 })
 export class CvComponent implements OnInit {
 
-  public dataLoaded: boolean = false;
   public cvVo: CvVo | undefined;
 
   constructor(private appStateService: AppStateService,
-              private route: ActivatedRoute,
-              private router: Router,
-              private cvService: CvService,
-              private cvMapper: CvMapperService,
-              private userService: UsersService) {
+              private route: ActivatedRoute) {
 
-    let usernameFromUrl = route.snapshot.params['username'];
-    if (usernameFromUrl !== this.appStateService.getSelectedUsername()) {
-      userService.userExists(usernameFromUrl).subscribe(
-        user => {
-          this.appStateService.setSelectedUser(user);
-          this.getUsersCv();
-          this.dataLoaded = true;
-        },
-        _ => router.navigate(['/users']));
-    }else {
-      this.getUsersCv();
-      this.dataLoaded = true;
-    }
   }
 
-  ngOnInit = (): void => {};
+  ngOnInit(): void {
+    this.cvVo = this.route.snapshot.data['cvVO']
+  };
 
-  private getUsersCv() {
-    this.cvService.getCvByUsername(this.appStateService.getSelectedUsername())
-      .subscribe(cvTO => {
-        this.cvVo = this.cvMapper.mapToVO(cvTO)
-      })
-  }
 }
