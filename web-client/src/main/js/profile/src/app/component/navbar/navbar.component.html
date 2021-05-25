@@ -1,10 +1,12 @@
 <nav class="navbar navbar-expand navbar-light bg-light">
   <div class="collapse navbar-collapse">
     <ul class="navbar-nav mr-auto">
-      <li [ngClass]="getClassForNav('/')">
+      <li routerLinkActive="nav-item active nav-button-active"
+          [routerLinkActiveOptions]="{exact: true}">
         <a class="nav-link" routerLink="/">Home</a>
       </li>
-      <li [ngClass]="getClassForNav('/users')">
+      <li routerLinkActive="nav-item active nav-button-active"
+          [routerLinkActiveOptions]="{exact: true}">
         <a class="nav-link" routerLink="/users">Users</a>
       </li>
     </ul>
