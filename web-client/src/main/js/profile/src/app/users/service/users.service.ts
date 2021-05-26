@@ -15,7 +15,11 @@ export class UsersService {
     return this.http.get<UserTo[]>('rs/user');
   }
 
-  public userExists(username: string): Observable<UserTo> {
-    return this.http.get<UserTo>('rs/user/' + username);
+  public userExists(username: string): Observable<any> {
+    return this.http.get('rs/user/exists/' + username);
+  }
+
+  public getUserByUsername(username: string): Observable<any> {
+    return this.http.get('rs/user/' + username);
   }
 }

@@ -29,4 +29,8 @@ public class UserBC {
         List<UserEntity> users = userRepository.findByProperty("userName", username);
         return users.size() == 1 ? userMapper.mapUserTO(users.get(0)) : null;
     }
+
+    public boolean existsUser(String username) {
+        return userRepository.countByProperty("userName", username) == 1;
+    }
 }

@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {CvVo} from "../../model/cv-vo";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'cv',
@@ -11,13 +11,13 @@ export class CvComponent implements OnInit {
 
   public cvVo!: CvVo;
 
-  constructor(private route: ActivatedRoute) {
+  constructor(private route: ActivatedRoute,
+              private router: Router) {
 
   }
 
   ngOnInit(): void {
     this.cvVo = this.route.snapshot.data['cvVO']
-    console.log(this.cvVo)
   };
 
 }

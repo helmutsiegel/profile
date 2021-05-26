@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
+import {AuthService} from "../../service/auth.service";
 
 @Component({
   selector: 'navbar',
@@ -8,12 +9,10 @@ import {Router} from "@angular/router";
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(private router: Router) { }
-
-  ngOnInit(): void {
+  constructor(public authService: AuthService,
+              private router: Router) {
   }
 
-  getClassForNav(link: string): string {
-    return this.router.url==link ? 'nav-item active' : 'nav-item';
+  ngOnInit(): void {
   }
 }

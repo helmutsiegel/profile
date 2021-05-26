@@ -3,12 +3,17 @@ import {RouterModule, Routes} from '@angular/router';
 import {WelcomeComponent} from "./component/welcome/welcome.component";
 import {Error404Component} from "./commons/component/error404/error404.component";
 import {UsersPageRouteActivatorService} from "./commons/service/users-page-route-activator.service";
+import {LoginComponent} from "./component/login/login.component";
 
 
 const routes: Routes = [
   {
     path: '',
     component: WelcomeComponent
+  },
+  {
+    path: 'users/login',
+    component: LoginComponent
   },
   {
     path: ':username/cv',

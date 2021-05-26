@@ -36,4 +36,11 @@ public abstract class BaseRepository<T> {
                 .setParameter("param", value)
                 .getResultList();
     }
+
+    public int countByProperty(String property, Object value) {
+        return ((Number)(em.createQuery("select count(t) from " + type.getSimpleName() + " t where t." + property + " like :param", type)
+                .setParameter("param", value)
+                .getSingleResult())).intValue();
+    }
+
 }

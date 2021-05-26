@@ -3,11 +3,18 @@
     <ul class="navbar-nav mr-auto">
       <li routerLinkActive="nav-item active nav-button-active"
           [routerLinkActiveOptions]="{exact: true}">
-        <a class="nav-link" routerLink="/">Home</a>
+        <a class="nav-link" [routerLink]="['']">Home</a>
       </li>
       <li routerLinkActive="nav-item active nav-button-active"
           [routerLinkActiveOptions]="{exact: true}">
-        <a class="nav-link" routerLink="/users">Users</a>
+        <a class="nav-link" [routerLink]="['users']">Users</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav mr-1">
+      <li routerLinkActive="nav-item">
+        <a *ngIf="!authService.isAuthenticated()" class="nav-link" [routerLink]="['users/login']">Login</a>
+        <a *ngIf="authService.isAuthenticated()" class="nav-link"
+           [routerLink]="[this.authService.getCurrentUsersUsername(), 'cv']">Welcome {{authService.getCurrentUsersName()}}</a>
       </li>
     </ul>
   </div>

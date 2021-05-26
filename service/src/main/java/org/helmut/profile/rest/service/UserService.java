@@ -12,7 +12,6 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.List;
-import java.util.Objects;
 
 @Path("user")
 @RequestScoped
@@ -30,8 +29,14 @@ public class UserService {
     @GET
     @Path("{username}")
     @Produces(MediaType.APPLICATION_JSON)
+    public UserTO getByUsername(@PathParam("username") String username) {
+        return userBC.getByUsername(username);
+    }
+
+    @GET
+    @Path("exists/{username}")
+    @Produces(MediaType.APPLICATION_JSON)
     public Response userExists(@PathParam("username") String username) {
-        return Objects.nonNull(userBC.getByUsername(username)) ?
-                Response.ok().build() : Response.status(Response.Status.NOT_FOUND).build();
+        return userBC.existsUser(username) ? Response.ok().build() : Response.status(Response.Status.NOT_FOUND).build();
     }
 }

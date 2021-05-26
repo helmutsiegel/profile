@@ -1,3 +1,7 @@
 .nav-button-active {
   background-color: lightgrey;
 }
+
+li:hover {
+  background-color: #e8e8e8;
+}

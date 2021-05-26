@@ -7,17 +7,21 @@ import {NavbarComponent} from './component/navbar/navbar.component';
 import {WelcomeComponent} from './component/welcome/welcome.component';
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {RestCallsInterceptor} from "./interceptor/rest-calls.interceptor";
+import { LoginComponent } from './component/login/login.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: RestCallsInterceptor, multi: true }],
   bootstrap: [AppComponent]
