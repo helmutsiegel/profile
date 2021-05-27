@@ -11,8 +11,7 @@ export class CvComponent implements OnInit {
 
   public cvVo!: CvVo;
 
-  constructor(private route: ActivatedRoute,
-              private router: Router) {
+  constructor(private route: ActivatedRoute) {
 
   }
 

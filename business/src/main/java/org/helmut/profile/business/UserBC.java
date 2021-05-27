@@ -26,11 +26,11 @@ public class UserBC {
     }
 
     public UserTO getByUsername(String username) {
-        List<UserEntity> users = userRepository.findByProperty("userName", username);
+        List<UserEntity> users = userRepository.findByProperty("username", username);
         return users.size() == 1 ? userMapper.mapUserTO(users.get(0)) : null;
     }
 
     public boolean existsUser(String username) {
-        return userRepository.countByProperty("userName", username) == 1;
+        return userRepository.countByProperty("username", username) == 1;
     }
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ProjectTO} from "../../model/project-to";
+import {ProjectTO} from "../../../commons/model/to/project-t-o";
 
 
 @Component({
@@ -10,9 +10,7 @@ import {ProjectTO} from "../../model/project-to";
 export class ProjectsListComponent implements OnInit {
 
   project: ProjectTO = {
-    id:1,
-    name: 'Profile',
-    imageUrl: '/assets/images/profile.PNG'
+    name: 'Profile'
   }
 
   constructor() { }

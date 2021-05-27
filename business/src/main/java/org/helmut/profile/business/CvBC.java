@@ -17,6 +17,6 @@ public class CvBC {
     private CvMapper cvMapper;
 
     public CvTO getByUsername(String username) {
-        return cvMapper.mapCvTO(cvRepository.findByProperty("userEntity.userName", username).get(0));
+        return cvMapper.mapCvTO(cvRepository.findByProperty("userEntity.username", username).get(0));
     }
 }

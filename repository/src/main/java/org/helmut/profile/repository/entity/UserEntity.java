@@ -1,6 +1,8 @@
 package org.helmut.profile.repository.entity;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.time.LocalDate;
 
 @Entity
@@ -8,7 +10,7 @@ import java.time.LocalDate;
 public class UserEntity extends BaseEntity {
 
     @Column(name = "user_name")
-    private String userName;
+    private String username;
 
     @Column(name = "first_name")
     private String firstName;
@@ -21,14 +23,6 @@ public class UserEntity extends BaseEntity {
 
     @Column(name = "birth_date")
     private LocalDate birthDate;
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
 
     public String getFirstName() {
         return firstName;
@@ -60,5 +54,13 @@ public class UserEntity extends BaseEntity {
 
     public void setBirthDate(LocalDate birthDate) {
         this.birthDate = birthDate;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 }
