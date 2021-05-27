@@ -5,6 +5,7 @@ export class CvVo {
               public fullName: string,
               public birthDate: string,
               public title: string,
+              public about: string,
               public experiences: ExperienceVO[]) {
   }
 }

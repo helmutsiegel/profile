@@ -9,6 +9,12 @@
     <personal-info [cvVO]="cvVo"></personal-info>
   </div>
   <div class="col-9">
-    <experiences [experiences]="cvVo.experiences"></experiences>
+    <div class="card">
+      <div class="card-header">About</div>
+      <div class="card-body">{{cvVo.about}}</div>
+    </div>
+    <div class="mt-2">
+      <experiences [experiences]="cvVo.experiences"></experiences>
+    </div>
   </div>
 </div>

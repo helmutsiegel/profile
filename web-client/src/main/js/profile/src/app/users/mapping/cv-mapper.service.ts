@@ -18,6 +18,7 @@ export class CvMapperService {
       userTO.firstName + ' ' + userTO.lastName,
       userTO.birthDate,
       userTO.title,
+      cvTo.about,
       this.mapExperiences(cvTo));
   }
 

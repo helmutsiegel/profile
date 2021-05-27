@@ -10,3 +10,11 @@
 .toast-warning {
   background-color: #f89406;
 }
+
+.clickable-card {
+  cursor: pointer;
+}
+
+.clickable-card:hover {
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
+}
