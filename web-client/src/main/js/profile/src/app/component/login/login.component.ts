@@ -15,7 +15,6 @@ export class LoginComponent implements OnInit, OnDestroy {
   mouseoverLogin: boolean = false;
   private subscription!: Subscription;
 
-
   constructor(private authService: AuthService,
               private toastr: ToastrService,
               private router: Router) {
@@ -23,11 +22,13 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.subscription = this.authService.getCurrentUser().subscribe(userTO => {
-      if (!!userTO) {
-        this.toastr.success('Welcome ' + userTO.firstName, 'Login successful!');
-        this.router.navigate([userTO.userName, 'cv']);
-      } else {
-        this.toastr.error('Username or password incorrect!');
+      if (!!this.username && !!this.password) {
+        if (!!userTO) {
+          this.toastr.success('Welcome ' + userTO.firstName, 'Login successful!');
+          this.router.navigate([userTO.userName, 'cv']);
+        } else {
+          this.toastr.error('Username or password incorrect!');
+        }
       }
     });
   }

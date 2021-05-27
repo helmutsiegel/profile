@@ -1,7 +1,7 @@
 import {Injectable, OnDestroy} from '@angular/core';
 import {UserTo} from "../users/model/user-to";
 import {UsersService} from "../users/service/users.service";
-import {Observable, Subject, Subscription} from "rxjs";
+import {Observable, ReplaySubject, Subject, Subscription} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +12,8 @@ export class AuthService implements OnDestroy {
   private subscription!: Subscription;
 
   constructor(private usersService: UsersService) {
-    this.currentUserSubject = new Subject<UserTo>();
+    this.currentUserSubject = new ReplaySubject<UserTo>(1);
+    this.currentUserSubject.next(undefined);
   }
 
   public loginUser(username: string, password: string): void {
