@@ -1,18 +1,14 @@
 <div class="row">
-  <div class="col-4">
+  <div class="col">
     <users-navbar>
     </users-navbar>
   </div>
 </div>
-<div class="row pt-2">
-  <div class="col">
-    <h5>Name: {{cvVo?.fullName}}</h5>
-    <h5>Username: @{{cvVo?.username}}</h5>
-    <h5>Birth date:{{cvVo?.birthDate}}</h5>
-    <h5>Title: {{cvVo?.title}}</h5>
-
-    <div *ngFor="let experienceVO of cvVo.experiences" class="pt-1">
-      <experience  [experienceVO]="experienceVO"></experience>
-    </div>
+<div class="row pt-3">
+  <div class="col-3">
+    <personal-info [cvVO]="cvVo"></personal-info>
+  </div>
+  <div class="col-9">
+    <experiences [experiences]="cvVo.experiences"></experiences>
   </div>
 </div>

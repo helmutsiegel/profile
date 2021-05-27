@@ -9,9 +9,11 @@ export class RestCallsInterceptor implements HttpInterceptor {
   }
 
   /**
-   * currently just for learning purpose
+   * Interceptor to add rs prefix to http calls
    */
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
-    return next.handle(request);
+    return next.handle(request.clone({
+      url: 'rs/' + request.url
+    }));
   }
 }

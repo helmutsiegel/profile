@@ -12,14 +12,14 @@ export class UsersService {
   }
 
   public getUsers(): Observable<UserTo[]> {
-    return this.http.get<UserTo[]>('rs/user');
+    return this.http.get<UserTo[]>('user');
   }
 
   public userExists(username: string): Observable<any> {
-    return this.http.get('rs/user/exists/' + username);
+    return this.http.get('user/exists/' + username);
   }
 
   public getUserByUsername(username: string): Observable<any> {
-    return this.http.get('rs/user/' + username);
+    return this.http.get('user/' + username);
   }
 }
