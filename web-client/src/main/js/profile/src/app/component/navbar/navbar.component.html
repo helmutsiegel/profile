@@ -12,9 +12,12 @@
     </ul>
     <ul class="navbar-nav mr-1">
       <li routerLinkActive="nav-item">
-        <a *ngIf="!authService.isAuthenticated()" class="nav-link" [routerLink]="['users/login']">Login</a>
-        <a *ngIf="authService.isAuthenticated()" class="nav-link"
-           [routerLink]="[this.authService.getCurrentUsersUsername(), 'cv']">Welcome {{authService.getCurrentUsersName()}}</a>
+        <a *ngIf="!isAuthenticated()" class="nav-link" [routerLink]="['users/login']">Login</a>
+        <a *ngIf="isAuthenticated()" class="nav-link"
+           [routerLink]="[currentUserTO?.userName, 'cv']">Welcome {{currentUserTO?.firstName}}</a>
+      </li>
+      <li routerLinkActive="nav-item">
+        <a *ngIf="isAuthenticated()" class="nav-link" (click)="authService.logOut()" [routerLink]="['users/login']">Logout</a>
       </li>
     </ul>
   </div>

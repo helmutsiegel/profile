@@ -1,31 +1,36 @@
-import {Injectable} from '@angular/core';
+import {Injectable, OnDestroy} from '@angular/core';
 import {UserTo} from "../users/model/user-to";
 import {UsersService} from "../users/service/users.service";
-import {Observable} from "rxjs";
+import {Observable, Subject, Subscription} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
-export class AuthService {
-  private currentUser!: UserTo;
+export class AuthService implements OnDestroy {
+  private currentUserSubject!: Subject<UserTo>;
+  private currentUser$!: Observable<UserTo>;
+  private subscription!: Subscription;
 
   constructor(private usersService: UsersService) {
+    this.currentUserSubject = new Subject<UserTo>();
   }
 
   public loginUser(username: string, password: string): void {
-    this.usersService.getUserByUsername(username).subscribe(
-      userTO => this.currentUser = userTO);
+    this.currentUser$ = this.usersService.getUserByUsername(username);
+    this.subscription = this.currentUser$.subscribe(data => {
+      this.currentUserSubject.next(data)
+    });
   }
 
-  public isAuthenticated(): boolean {
-    return !!this.currentUser;
+  public getCurrentUser(): Observable<UserTo> {
+    return this.currentUserSubject.asObservable();
   }
 
-  public getCurrentUsersName(): string {
-    return this.currentUser?.firstName + ' ' + this.currentUser.lastName
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 
-  public getCurrentUsersUsername(): string {
-    return this.currentUser?.userName
+  logOut() {
+    this.currentUserSubject.next(undefined);
   }
 }
