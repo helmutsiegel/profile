@@ -13,9 +13,13 @@ const routes: Routes = [
     component: WelcomeComponent
   },
   {
-    path: 'users/login',
+    path: 'user/login',
     component: LoginComponent,
     canActivate: [LoginPageRouteActivatorService]
+  },
+  {
+    path: 'user/profile',
+    loadChildren: () => import('./user-profile/user-profile.module').then(m => m.UserProfileModule)
   },
   {
     path: ':username/cv',
