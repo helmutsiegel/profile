@@ -1,5 +1,6 @@
 package org.helmut.profile.mapping;
 
+import org.helmut.profile.model.SignUpUserTO;
 import org.helmut.profile.model.UserTO;
 import org.helmut.profile.repository.entity.UserEntity;
 
@@ -16,5 +17,15 @@ public class UserMapper {
         userTO.setBirthDate(userEntity.getBirthDate());
         userTO.setTitle(userEntity.getTitle());
         return userTO;
+    }
+
+    public UserEntity mapToEntity(SignUpUserTO signUpUserTO) {
+        UserEntity userEntity = new UserEntity();
+        userEntity.setFirstName(signUpUserTO.getFirstName());
+        userEntity.setLastName(signUpUserTO.getLastName());
+        userEntity.setUsername(signUpUserTO.getUsername());
+        userEntity.setTitle(signUpUserTO.getTitle());
+        userEntity.setBirthDate(signUpUserTO.getBirthDate());
+        return userEntity;
     }
 }

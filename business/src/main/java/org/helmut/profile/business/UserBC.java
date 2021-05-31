@@ -1,8 +1,11 @@
 package org.helmut.profile.business;
 
 import org.helmut.profile.mapping.UserMapper;
+import org.helmut.profile.model.SignUpUserTO;
 import org.helmut.profile.model.UserTO;
+import org.helmut.profile.repository.CvRepository;
 import org.helmut.profile.repository.UserRepository;
+import org.helmut.profile.repository.entity.CVEntity;
 import org.helmut.profile.repository.entity.UserEntity;
 
 import javax.enterprise.context.RequestScoped;
@@ -15,6 +18,9 @@ public class UserBC {
 
     @Inject
     private UserRepository userRepository;
+
+    @Inject
+    private CvRepository cvRepository;
 
     @Inject
     private UserMapper userMapper;
@@ -32,5 +38,13 @@ public class UserBC {
 
     public boolean existsUser(String username) {
         return userRepository.countByProperty("username", username) == 1;
+    }
+
+    public void signUp(SignUpUserTO signUpUserTO) {
+        UserEntity userEntity = userMapper.mapToEntity(signUpUserTO);
+        userRepository.persist(userEntity);
+        CVEntity cvEntity = new CVEntity();
+        cvEntity.setUserEntity(userEntity);
+        cvRepository.persist(cvEntity);
     }
 }

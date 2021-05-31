@@ -2,10 +2,12 @@ package org.helmut.profile.repository;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.transaction.Transactional;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.util.List;
 
+@Transactional
 public abstract class BaseRepository<T> {
 
     private final Class<T> type;
@@ -14,7 +16,7 @@ public abstract class BaseRepository<T> {
     protected EntityManager em;
 
     public BaseRepository() {
-        Type t = getClass().getGenericSuperclass();
+        Type t = ((Class)getClass().getGenericSuperclass()).getGenericSuperclass();
         ParameterizedType pt = (ParameterizedType) t;
         type = (Class<T>) pt.getActualTypeArguments()[0];
     }
