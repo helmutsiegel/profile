@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {FormControl, FormGroup} from "@angular/forms";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {AuthService} from "../../../service/auth.service";
-import {ActivatedRoute, Router} from "@angular/router";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-profile-page',
@@ -10,19 +10,20 @@ import {ActivatedRoute, Router} from "@angular/router";
 })
 export class ProfilePageComponent implements OnInit {
   profileForm!: FormGroup;
+  private firstName!: FormControl;
+  private lastName!: FormControl;
 
   constructor(private authService: AuthService,
-              private router: Router,
-              private route: ActivatedRoute) {
+              private router: Router) {
   }
 
   ngOnInit(): void {
     this.authService.getCurrentUser().subscribe(userTO => {
-      let firstName = new FormControl(userTO?.firstName);
-      let lastName = new FormControl(userTO?.lastName);
+      this.firstName = new FormControl(userTO?.firstName, Validators.required);
+      this.lastName = new FormControl(userTO?.lastName, Validators.required);
       this.profileForm = new FormGroup({
-        lastName: lastName,
-        firstName: firstName,
+        lastName: this.lastName,
+        firstName: this.firstName,
       })
     });
   }
@@ -32,10 +33,19 @@ export class ProfilePageComponent implements OnInit {
   }
 
   public saveProfile(value: any) {
-    this.authService.updateCurrentUser(value.firstName, value.lastName);
-    this.authService.getCurrentUser().subscribe(userTO=>{
-      this.router.navigate([userTO.userName, 'cv']);
-    });
+    if (this.profileForm.valid) {
+      this.authService.updateCurrentUser(value.firstName, value.lastName);
+      this.authService.getCurrentUser().subscribe(userTO => {
+        this.router.navigate([userTO.username, 'cv']);
+      });
+    }
+  }
 
+  public firstNameInValid(): boolean {
+    return this.firstName.invalid && this.profileForm.controls.firstName.touched
+  }
+
+  public lastNameInValid(): boolean {
+    return this.lastName.invalid && this.profileForm.controls.lastName.touched
   }
 }

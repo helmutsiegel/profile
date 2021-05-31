@@ -14,7 +14,7 @@ export class CvMapperService {
 
   public mapToVO(cvTo: CvTo): CvVo {
     const userTO = cvTo.userTO;
-    return new CvVo(userTO.userName,
+    return new CvVo(userTO.username,
       userTO.firstName + ' ' + userTO.lastName,
       userTO.birthDate,
       userTO.title,

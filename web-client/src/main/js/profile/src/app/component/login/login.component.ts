@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   constructor(private authService: AuthService,
               private toastr: ToastrService,
-              private router: Router) {
+              public router: Router) {
   }
 
   ngOnInit(): void {
@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit, OnDestroy {
       if (!!this.username && !!this.password) {
         if (!!userTO) {
           this.toastr.success('Welcome ' + userTO.firstName, 'Login successful!');
-          this.router.navigate([userTO.userName, 'cv']);
+          this.router.navigate([userTO.username, 'cv']);
         } else {
           this.toastr.error('Username or password incorrect!');
         }

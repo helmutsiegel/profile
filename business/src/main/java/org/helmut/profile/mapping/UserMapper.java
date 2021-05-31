@@ -10,7 +10,7 @@ public class UserMapper {
 
     public UserTO mapUserTO(UserEntity userEntity) {
         UserTO userTO = new UserTO();
-        userTO.setUserName(userEntity.getUsername());
+        userTO.setUsername(userEntity.getUsername());
         userTO.setFirstName(userEntity.getFirstName());
         userTO.setLastName(userEntity.getLastName());
         userTO.setBirthDate(userEntity.getBirthDate());

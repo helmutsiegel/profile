@@ -1,5 +1,5 @@
-import {UserTo} from "../../users/model/user-to";
+import {UserTO} from "./to/user-t-o";
 
 export class AppState {
-  userTO!: UserTo;
+  userTO!: UserTO;
 }

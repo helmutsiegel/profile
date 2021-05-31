@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {UserTo} from "../../model/user-to";
+import {UserTO} from "../../../commons/model/to/user-t-o";
 import {Router} from "@angular/router";
 
 @Component({
@@ -9,7 +9,7 @@ import {Router} from "@angular/router";
 })
 export class UserCardComponent implements OnInit {
 
-  @Input() userTo!: UserTo;
+  @Input() userTO!: UserTO;
 
   constructor(private router: Router) {
   }
@@ -18,6 +18,6 @@ export class UserCardComponent implements OnInit {
   }
 
   public openUsersPage(): void {
-    this.router.navigate([this.userTo.userName, 'cv']);
+    this.router.navigate([this.userTO.username, 'cv']);
   }
 }

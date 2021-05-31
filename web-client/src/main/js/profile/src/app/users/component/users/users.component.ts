@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {UserTo} from "../../model/user-to";
+import {UserTO} from "../../../commons/model/to/user-t-o";
 import {UsersService} from "../../service/users.service";
 import {ToastrService} from "../../../commons/service/toastr.service";
 
@@ -10,7 +10,7 @@ import {ToastrService} from "../../../commons/service/toastr.service";
 })
 export class UsersComponent implements OnInit {
 
-  public users!: UserTo[];
+  public users!: UserTO[];
 
   constructor(private usersService: UsersService) {
   }

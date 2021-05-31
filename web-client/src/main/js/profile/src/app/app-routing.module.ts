@@ -5,6 +5,7 @@ import {Error404Component} from "./commons/component/error404/error404.component
 import {UsersPageRouteActivatorService} from "./commons/service/users-page-route-activator.service";
 import {LoginComponent} from "./component/login/login.component";
 import {LoginPageRouteActivatorService} from "./commons/service/login-page-route-activator.service";
+import {SignUpComponent} from "./component/sign-up/sign-up.component";
 
 
 const routes: Routes = [
@@ -16,6 +17,10 @@ const routes: Routes = [
     path: 'user/login',
     component: LoginComponent,
     canActivate: [LoginPageRouteActivatorService]
+  },
+  {
+    path: 'user/signup',
+    component: SignUpComponent,
   },
   {
     path: 'user/profile',

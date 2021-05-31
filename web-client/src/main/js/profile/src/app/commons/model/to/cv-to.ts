@@ -1,8 +1,8 @@
-import {UserTo} from "../../../users/model/user-to";
+import {UserTO} from "./user-t-o";
 import {ExperienceTO} from "../../../users/model/experience-t-o";
 
 export interface CvTo {
   about: string;
-  userTO: UserTo;
+  userTO: UserTO;
   experiences: ExperienceTO[]
 }

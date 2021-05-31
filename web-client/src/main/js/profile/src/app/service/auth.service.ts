@@ -1,5 +1,5 @@
 import {Injectable, OnDestroy} from '@angular/core';
-import {UserTo} from "../users/model/user-to";
+import {UserTO} from "../commons/model/to/user-t-o";
 import {UsersService} from "../users/service/users.service";
 import {Observable, ReplaySubject, Subject, Subscription} from "rxjs";
 import {ToastrService} from "../commons/service/toastr.service";
@@ -8,13 +8,13 @@ import {ToastrService} from "../commons/service/toastr.service";
   providedIn: 'root'
 })
 export class AuthService implements OnDestroy {
-  private currentUserSubject!: Subject<UserTo>;
-  private currentUser$!: Observable<UserTo>;
+  private currentUserSubject!: Subject<UserTO>;
+  private currentUser$!: Observable<UserTO>;
   private subscription!: Subscription;
 
   constructor(private usersService: UsersService,
               private toastr: ToastrService) {
-    this.currentUserSubject = new ReplaySubject<UserTo>(1);
+    this.currentUserSubject = new ReplaySubject<UserTO>(1);
     this.currentUserSubject.next(undefined);
   }
 
@@ -25,7 +25,7 @@ export class AuthService implements OnDestroy {
     });
   }
 
-  public getCurrentUser(): Observable<UserTo> {
+  public getCurrentUser(): Observable<UserTO> {
     return this.currentUserSubject.asObservable();
   }
 

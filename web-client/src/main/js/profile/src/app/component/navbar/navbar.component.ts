@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {AuthService} from "../../service/auth.service";
-import {UserTo} from "../../users/model/user-to";
+import {UserTO} from "../../commons/model/to/user-t-o";
 
 @Component({
   selector: 'navbar',
@@ -8,7 +8,7 @@ import {UserTo} from "../../users/model/user-to";
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-  currentUserTO!: UserTo;
+  currentUserTO!: UserTO;
 
   constructor(public authService: AuthService) {
   }

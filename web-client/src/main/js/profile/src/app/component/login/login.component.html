@@ -19,6 +19,8 @@
       <button [disabled]="loginForm.invalid" class="btn btn-dark" type="submit">Login</button>
     </span>
     <button (click)="cancel()" class="btn btn-info ml-1" type="button">Cancel</button>
+    <button (click)="this.router.navigate(['user/signup'])"
+            class="btn btn-info float-right" type="button">Sign Up</button>
   </form>
 </div>
 
