@@ -7,6 +7,7 @@ public class ExperienceTO {
     private String company;
     private LocalDate startDate;
     private LocalDate endDate;
+    private String position;
 
     public String getCompany() {
         return company;
@@ -30,5 +31,13 @@ public class ExperienceTO {
 
     public void setEndDate(LocalDate endDate) {
         this.endDate = endDate;
+    }
+
+    public String getPosition() {
+        return position;
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
     }
 }

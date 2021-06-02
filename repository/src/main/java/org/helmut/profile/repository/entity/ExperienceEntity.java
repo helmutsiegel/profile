@@ -17,6 +17,9 @@ public class ExperienceEntity extends BaseEntity {
 
     @Column(name = "end_date")
     private LocalDate endDate;
+    
+    @Column
+    private String position;
 
     public String getCompany() {
         return company;
@@ -40,5 +43,13 @@ public class ExperienceEntity extends BaseEntity {
 
     public void setEndDate(LocalDate endDate) {
         this.endDate = endDate;
+    }
+
+    public String getPosition() {
+        return position;
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
     }
 }

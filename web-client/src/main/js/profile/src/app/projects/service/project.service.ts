@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Observable} from "rxjs";
-import {CvTo} from "../../commons/model/to/cv-to";
+import {CvTO} from "../../commons/model/to/cv-t-o";
 import {HttpClient} from "@angular/common/http";
 import {ProjectTO} from "../../commons/model/to/project-t-o";
 

@@ -16,6 +16,12 @@ public class CvMapper {
     @Inject
     private ExperienceMapper experienceMapper;
 
+    @Inject
+    LanguageMapper languageMapper;
+
+    @Inject
+    CertificationMapper certificationMapper;
+
     public CvTO mapCvTO(CVEntity entity) {
         CvTO cvTO = new CvTO();
         cvTO.setUserTO(userMapper.mapUserTO(entity.getUserEntity()));
@@ -24,6 +30,15 @@ public class CvMapper {
                 .stream()
                 .map(experienceMapper::mapExperienceTO)
                 .collect(Collectors.toList()));
+        cvTO.setCertifications(entity.getCertifications()
+                .stream()
+                .map(certificationMapper::mapToTO)
+                .collect(Collectors.toList()));
+        cvTO.setLanguages(entity.getLanguages()
+                .stream()
+                .map(languageMapper::mapToTO)
+                .collect(Collectors.toList()));
+
         return cvTO;
     }
 }

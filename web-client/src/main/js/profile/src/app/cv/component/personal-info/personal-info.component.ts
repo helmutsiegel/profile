@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {CvVo} from "../../model/cv-vo";
+import {CvVO} from "../../model/cv-v-o";
 
 @Component({
   selector: 'personal-info',
@@ -9,7 +9,7 @@ import {CvVo} from "../../model/cv-vo";
 export class PersonalInfoComponent implements OnInit {
 
   @Input()
-  cvVO!: CvVo;
+  cvVO!: CvVO;
 
   constructor() {
   }

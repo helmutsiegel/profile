@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {CvVo} from "../../model/cv-vo";
+import {CvVO} from "../../model/cv-v-o";
 import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
@@ -9,7 +9,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 })
 export class CvComponent implements OnInit {
 
-  public cvVo!: CvVo;
+  public cvVo!: CvVO;
 
   constructor(private route: ActivatedRoute) {
 

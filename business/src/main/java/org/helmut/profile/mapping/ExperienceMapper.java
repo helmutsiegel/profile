@@ -13,6 +13,7 @@ public class ExperienceMapper {
         experienceTO.setCompany(entity.getCompany());
         experienceTO.setStartDate(entity.getStartDate());
         experienceTO.setEndDate(entity.getEndDate());
+        experienceTO.setPosition(entity.getPosition());
         return experienceTO;
     }
 }

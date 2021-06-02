@@ -1,21 +1,21 @@
 import {Injectable} from '@angular/core';
 import {ActivatedRouteSnapshot, Resolve, RouterStateSnapshot} from "@angular/router";
-import {CvVo} from "../model/cv-vo";
+import {CvVO} from "../model/cv-v-o";
 import {Observable} from "rxjs";
 import {CvService} from "./cv.service";
 import {map} from "rxjs/operators";
-import {CvMapperService} from "../../users/mapping/cv-mapper.service";
+import {CvMapperService} from "../mapping/cv-mapper.service";
 
 @Injectable({
   providedIn: 'root'
 })
-export class CvResolverService implements Resolve<CvVo> {
+export class CvResolverService implements Resolve<CvVO> {
 
   constructor(private cvService: CvService,
               private cvMapper: CvMapperService) {
   }
 
-  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<CvVo> | Promise<CvVo> | CvVo {
+  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<CvVO> | Promise<CvVO> | CvVO {
     return this.cvService.getCvByUsername(route.params['username']).pipe(map(cvTO => this.cvMapper.mapToVO(cvTO)));
   }
 }

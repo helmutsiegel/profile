@@ -6,6 +6,8 @@ public class CvTO {
     private String about;
     private UserTO userTO;
     private List<ExperienceTO> experiences;
+    private List<LanguageTO> languages;
+    private List<CertificationTO> certifications;
 
     public UserTO getUserTO() {
         return userTO;
@@ -29,5 +31,21 @@ public class CvTO {
 
     public void setAbout(String about) {
         this.about = about;
+    }
+
+    public List<LanguageTO> getLanguages() {
+        return languages;
+    }
+
+    public void setLanguages(List<LanguageTO> languages) {
+        this.languages = languages;
+    }
+
+    public List<CertificationTO> getCertifications() {
+        return certifications;
+    }
+
+    public void setCertifications(List<CertificationTO> certifications) {
+        this.certifications = certifications;
     }
 }

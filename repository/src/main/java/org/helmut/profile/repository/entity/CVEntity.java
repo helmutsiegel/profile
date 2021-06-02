@@ -14,6 +14,14 @@ public class CVEntity extends BaseEntity {
     @JoinColumn(name = "cv_id")
     private List<ExperienceEntity> experiences;
 
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "cv_id")
+    private List<LanguageEntity> languages;
+
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "cv_id")
+    private List<CertificationEntity> certifications;
+
     @OneToOne
     private UserEntity userEntity;
 
@@ -39,5 +47,21 @@ public class CVEntity extends BaseEntity {
 
     public void setUserEntity(UserEntity userEntity) {
         this.userEntity = userEntity;
+    }
+
+    public List<LanguageEntity> getLanguages() {
+        return languages;
+    }
+
+    public void setLanguages(List<LanguageEntity> languages) {
+        this.languages = languages;
+    }
+
+    public List<CertificationEntity> getCertifications() {
+        return certifications;
+    }
+
+    public void setCertifications(List<CertificationEntity> certifications) {
+        this.certifications = certifications;
     }
 }
