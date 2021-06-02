@@ -5,7 +5,7 @@
     <i *ngIf="collapsed" class="bi bi-caret-down-fill float-right" (click)="switchCollapse()"></i>
   </div>
 
-  <div>
-    <ng-content *ngIf="!collapsed"></ng-content>
+  <div *ngIf="!collapsed" class="card-body">
+    <ng-content></ng-content>
   </div>
 </div>

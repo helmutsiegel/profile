@@ -1,13 +1,9 @@
-<collapsible-card [title]="'Experience'" [collapsed]="true">
-    <div class="card-body">
-      <div *ngFor="let experienceVO of experiences" class="pt-1">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">{{experienceVO?.company}} - Technical lead</h5>
-            <p class="card-text">Start date: {{experienceVO?.startDate}}</p>
-            <p class="card-text">End date: {{experienceVO?.endDate}}</p>
-          </div>
-        </div>
-      </div>
-    </div>
+<collapsible-card [title]="'Experience'" [collapsed]="false">
+  <div *ngFor="let experienceVO of experiences" class="pt-1">
+    <collapsible-card [collapsed]="true" [title]="experienceVO?.company+ ' - Technical lead'">
+      <p class="card-text">Start date: {{experienceVO?.startDate}}</p>
+      <p class="card-text">End date: {{experienceVO?.endDate}}</p>
+      <p>Here comes the description</p>
+    </collapsible-card>
+  </div>
 </collapsible-card>
