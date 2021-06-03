@@ -12,6 +12,7 @@ export class UsersComponent implements OnInit {
   public users!: UserTO[];
   public filterBy: string = 'ALL';
   public sortBy: string = 'name';
+  public sortType: string = 'asc';
 
   constructor(private usersService: UsersService) {
   }

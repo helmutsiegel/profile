@@ -25,6 +25,16 @@
               [class.active]="sortBy === 'seniority'" (click)="sortBy='seniority'">Seniority
       </button>
     </div>
+
+    Sort type:
+    <div class="btn-group" role="group">
+      <button class="btn btn-light btn-outline-secondary shadow-none"
+              [class.active]="sortType === 'asc'" (click)="sortType='asc'">Asc
+      </button>
+      <button class="btn btn-light btn-outline-secondary shadow-none"
+              [class.active]="sortType === 'desc'" (click)="sortType='desc'">Desc
+      </button>
+    </div>
   </div>
 </div>
-<users-list [users]="users" [filterBy]="filterBy" [sortBy]="sortBy"></users-list>
+<users-list [users]="users" [filterBy]="filterBy" [sortBy]="sortBy" [sortType]="sortType"></users-list>
