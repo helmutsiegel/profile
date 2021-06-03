@@ -1,5 +1,30 @@
 <div class="row">
-  <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-xs-12" *ngFor="let user of users">
-    <user-card [userTO]="user"></user-card>
+  <div class="col">
+    Filter:
+    <div class="btn-group" role="group">
+      <button class="btn btn-light btn-outline-secondary shadow-none"
+              [class.active]="filterBy === 'ALL'" (click)="filterBy='ALL'">All
+      </button>
+      <button class="btn btn-light btn-outline-secondary shadow-none"
+              [class.active]="filterBy === 'SENIOR'" (click)="filterBy='SENIOR'">Seniors
+      </button>
+      <button class="btn btn-light btn-outline-secondary shadow-none"
+              [class.active]="filterBy === 'MID'" (click)="filterBy='MID'">Mids
+      </button>
+      <button class="btn btn-light btn-outline-secondary shadow-none"
+              [class.active]="filterBy === 'JUNIOR'" (click)="filterBy='JUNIOR'">Juniors
+      </button>
+    </div>
+
+    Sort by:
+    <div class="btn-group" role="group">
+      <button class="btn btn-light btn-outline-secondary shadow-none"
+              [class.active]="sortBy === 'name'" (click)="sortBy='name'">Name
+      </button>
+      <button class="btn btn-light btn-outline-secondary shadow-none"
+              [class.active]="sortBy === 'seniority'" (click)="sortBy='seniority'">Seniority
+      </button>
+    </div>
   </div>
 </div>
+<users-list [users]="users" [filterBy]="filterBy" [sortBy]="sortBy"></users-list>

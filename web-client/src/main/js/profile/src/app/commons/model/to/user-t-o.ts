@@ -1,7 +1,8 @@
 export interface UserTO {
-  firstName: string | null;
+  firstName: string;
   lastName: string,
   username: string,
   title: string,
-  birthDate: string
+  birthDate: string,
+  seniority: string
 }

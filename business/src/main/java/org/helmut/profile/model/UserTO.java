@@ -1,5 +1,7 @@
 package org.helmut.profile.model;
 
+import org.helmut.profile.repository.enums.Seniority;
+
 import java.time.LocalDate;
 
 public class UserTO {
@@ -8,6 +10,7 @@ public class UserTO {
     private String lastName;
     private String title;
     private LocalDate birthDate;
+    private Seniority seniority;
 
     public String getUsername() {
         return username;
@@ -47,5 +50,13 @@ public class UserTO {
 
     public void setBirthDate(LocalDate birthDate) {
         this.birthDate = birthDate;
+    }
+
+    public Seniority getSeniority() {
+        return seniority;
+    }
+
+    public void setSeniority(Seniority seniority) {
+        this.seniority = seniority;
     }
 }

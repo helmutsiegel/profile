@@ -1,7 +1,7 @@
 <collapsible-card [title]="'Certifications'" [collapsed]="false">
   <div *ngFor="let certificationVO of certifications" class="pt-1">
     <collapsible-card [collapsed]="false" [title]="certificationVO?.name + ' - ' + certificationVO?.issuedBy">
-      <p class="card-text">Issue date: {{certificationVO.date}}</p>
+      <p class="card-text">Issue date: {{certificationVO.date | date}}</p>
       <p class="card-text">
         Expiration: {{!!certificationVO.expirationDate ? certificationVO.expirationDate : 'No expiration'}}</p>
     </collapsible-card>

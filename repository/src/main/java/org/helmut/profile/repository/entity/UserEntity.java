@@ -1,5 +1,7 @@
 package org.helmut.profile.repository.entity;
 
+import org.helmut.profile.repository.enums.Seniority;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
@@ -23,6 +25,9 @@ public class UserEntity extends BaseEntity {
 
     @Column(name = "birth_date")
     private LocalDate birthDate;
+
+    @Column
+    private Seniority seniority;
 
     public String getFirstName() {
         return firstName;
@@ -62,5 +67,13 @@ public class UserEntity extends BaseEntity {
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public Seniority getSeniority() {
+        return seniority;
+    }
+
+    public void setSeniority(Seniority seniority) {
+        this.seniority = seniority;
     }
 }

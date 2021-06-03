@@ -16,6 +16,7 @@ public class UserMapper {
         userTO.setLastName(userEntity.getLastName());
         userTO.setBirthDate(userEntity.getBirthDate());
         userTO.setTitle(userEntity.getTitle());
+        userTO.setSeniority(userEntity.getSeniority());
         return userTO;
     }
 
