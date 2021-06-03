@@ -10,7 +10,7 @@ INSERT INTO t_cv(id, about, userentity_id) VALUES (10002, 'I am John, and this i
 INSERT INTO t_cv(id, about, userentity_id) VALUES (10003, 'I am Peter Pan, and this is my about', 10003);
 INSERT INTO t_cv(id, about, userentity_id) VALUES (10004, 'My name is Bond, James Bond and this is my about', 10004);
 INSERT INTO t_cv(id, about, userentity_id) VALUES (10005, 'Hey guys, this is Rambo and this is my about', 10005);
-INSERT INTO t_cv(id, about, userentity_id) VALUES (10006, 'Hey guys, this is Barney and my about is legen, wait for it .... dary', 10005);
+INSERT INTO t_cv(id, about, userentity_id) VALUES (10006, 'Hey guys, this is Barney and my about is legen, wait for it .... dary', 10006);
 
 INSERT INTO t_experience(id, company, start_date, end_date, position, cv_id) VALUES (10001, 'IBM', '11/11/2010', '11/11/2020', 'Java Developper', 10001);
 INSERT INTO t_experience(id, company, start_date, end_date, position, cv_id) VALUES (10002, 'Facebook', '11/11/2007', '10/11/2010', 'Frontend Technical Lead', 10001);
