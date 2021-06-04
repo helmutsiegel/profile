@@ -9,14 +9,14 @@ import {ActivatedRoute, Router} from "@angular/router";
 })
 export class CvComponent implements OnInit {
 
-  public cvVo!: CvVO;
+  public cvVO!: CvVO;
 
   constructor(private route: ActivatedRoute) {
 
   }
 
   ngOnInit(): void {
-    this.cvVo = this.route.snapshot.data['cvVO']
+    this.cvVO = this.route.snapshot.data['cvVO']
   };
 
 }

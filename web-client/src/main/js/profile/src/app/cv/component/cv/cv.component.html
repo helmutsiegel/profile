@@ -6,21 +6,21 @@
 </div>
 <div class="row pt-3">
   <div class="col-3">
-    <personal-info [cvVO]="cvVo"></personal-info>
+    <personal-info [personalInfoVO]="cvVO.personalInfoVO"></personal-info>
   </div>
   <div class="col-9">
     <div class="card">
       <div class="card-header">About</div>
-      <div class="card-body">{{cvVo.about | smiling}}</div>
+      <div class="card-body">{{cvVO.about | smiling}}</div>
     </div>
     <div class="mt-2">
-      <experiences [experiences]="cvVo.experiences"></experiences>
+      <experiences [experiences]="cvVO.experiences"></experiences>
     </div>
     <div class="mt-2">
-      <languages [languages]="cvVo.languages"></languages>
+      <languages [languages]="cvVO.languages"></languages>
     </div>
     <div class="mt-2">
-      <certifications [certifications]="cvVo.certifications"></certifications>
+      <certifications [certifications]="cvVO.certifications"></certifications>
     </div>
   </div>
 </div>

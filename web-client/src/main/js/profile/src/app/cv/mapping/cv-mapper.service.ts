@@ -7,6 +7,8 @@ import {LanguageVO} from "../model/language-v-o";
 import {LanguageTO} from "../../commons/model/to/language-t-o";
 import {CertificationTO} from "../../commons/model/to/certification-t-o";
 import {CertificationVO} from "../model/certification-v-o";
+import {UserTO} from "../../commons/model/to/user-t-o";
+import {PersonalInfoVO} from "../../resume/model/personal-info-v-o";
 
 @Injectable({
   providedIn: 'root'
@@ -18,11 +20,8 @@ export class CvMapperService {
 
   public mapToVO(cvTO: CvTO): CvVO {
     const userTO = cvTO.userTO;
-    return new CvVO(userTO.username,
-      userTO.firstName + ' ' + userTO.lastName,
-      userTO.birthDate,
-      userTO.title,
-      cvTO.about,
+    return new CvVO(cvTO.about,
+      this.mapPersonalInfo(cvTO.userTO),
       this.mapExperiences(cvTO.experiences),
       this.mapLanguages(cvTO.languages),
       this.mapCertifications(cvTO.certifications));
@@ -50,5 +49,9 @@ export class CvMapperService {
 
   private mapCertification(certificationTO: CertificationTO): CertificationVO {
     return new CertificationVO(certificationTO.name, certificationTO.issuedBy, certificationTO.date, certificationTO.expirationDate);
+  }
+
+  private mapPersonalInfo(userTO: UserTO): PersonalInfoVO {
+    return new PersonalInfoVO(userTO.username, userTO.firstName + ' ' + userTO.lastName, userTO.birthDate, userTO.title);
   }
 }

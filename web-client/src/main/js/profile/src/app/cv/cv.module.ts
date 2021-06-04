@@ -5,7 +5,7 @@ import {CvRoutingModule} from './cv-routing.module';
 import {CvComponent} from './component/cv/cv.component';
 import {CommonsModule} from "../commons/commons.module";
 import { ExperiencesComponent } from './component/experiences/experiences.component';
-import { PersonalInfoComponent } from './component/personal-info/personal-info.component';
+import { PersonalInfoComponent } from '../commons/component/personal-info/personal-info.component';
 import { LanguagesComponent } from './component/languages/languages.component';
 import { CertificationsComponent } from './component/certifications/certifications.component';
 
@@ -17,6 +17,9 @@ import { CertificationsComponent } from './component/certifications/certificatio
     PersonalInfoComponent,
     LanguagesComponent,
     CertificationsComponent
+  ],
+  exports: [
+    PersonalInfoComponent
   ],
   imports: [
     CommonModule,

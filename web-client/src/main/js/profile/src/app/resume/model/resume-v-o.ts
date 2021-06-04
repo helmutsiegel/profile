@@ -1,8 +1,7 @@
+import {PersonalInfoVO} from "./personal-info-v-o";
+
 export class ResumeVO {
-  constructor(public username: string,
-              public fullName: string,
-              public birthDate: string | null,
-              public title: string,
-              public about: string) {
+  constructor(public about: string,
+              public personalInfoVO: PersonalInfoVO) {
   }
 }

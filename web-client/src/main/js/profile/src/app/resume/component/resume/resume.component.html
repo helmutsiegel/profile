@@ -4,9 +4,14 @@
     </users-navbar>
   </div>
 </div>
-<div class="row pt-3" *ngIf="resumeVO">
-  <div class="card">
-    <div class="card-header">About</div>
-    <div class="card-body">{{resumeVO.about | smiling}}</div>
+<div class="row pt-3">
+  <div class="col-3">
+    <personal-info [personalInfoVO]="resumeVO.personalInfoVO"></personal-info>
+  </div>
+  <div class="col-9">
+    <div class="card">
+      <div class="card-header">About</div>
+      <div class="card-body">{{resumeVO.about | smiling}}</div>
+    </div>
   </div>
 </div>

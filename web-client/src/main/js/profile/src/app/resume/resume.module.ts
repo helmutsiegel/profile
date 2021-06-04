@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { ResumeRoutingModule } from './resume-routing.module';
 import {ResumeComponent} from "./component/resume/resume.component";
 import {CommonsModule} from "../commons/commons.module";
+import {CvModule} from "../cv/cv.module";
 
 
 
@@ -14,7 +15,8 @@ import {CommonsModule} from "../commons/commons.module";
     imports: [
         CommonModule,
         ResumeRoutingModule,
-        CommonsModule
+        CommonsModule,
+        CvModule
     ]
 })
 export class ResumeModule { }
