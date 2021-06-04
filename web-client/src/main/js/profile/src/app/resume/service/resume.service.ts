@@ -13,6 +13,6 @@ export class ResumeService {
   }
 
   public getResumeByUsername(username: string): Observable<ResumeTO> {
-    return this.http.get<CvTO>('resume/' + username);
+    return this.http.get<ResumeTO>('resume/' + username);
   }
 }

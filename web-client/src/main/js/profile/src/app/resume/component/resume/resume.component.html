@@ -4,7 +4,7 @@
     </users-navbar>
   </div>
 </div>
-<div class="row pt-3">
+<div class="row pt-3" *ngIf="resumeVO">
   <div class="col-3">
     <personal-info [personalInfoVO]="resumeVO.personalInfoVO"></personal-info>
   </div>
@@ -12,6 +12,15 @@
     <div class="card">
       <div class="card-header">About</div>
       <div class="card-body">{{resumeVO.about | smiling}}</div>
+    </div>
+    <div class="mt-2">
+      <experiences [experiences]="resumeVO.experiences"></experiences>
+    </div>
+    <div class="mt-2">
+      <languages [languages]="resumeVO.languages"></languages>
+    </div>
+    <div class="mt-2">
+      <certifications [certifications]="resumeVO.certifications"></certifications>
     </div>
   </div>
 </div>

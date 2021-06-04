@@ -1,5 +1,4 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {LanguageTO} from "../../../commons/model/to/language-t-o";
 import {LanguageVO} from "../../model/language-v-o";
 
 @Component({
@@ -12,7 +11,8 @@ export class LanguagesComponent implements OnInit {
   @Input()
   languages!: LanguageVO[];
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }

@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {PersonalInfoVO} from "../../../resume/model/personal-info-v-o";
+import {PersonalInfoVO} from "../../model/vo/personal-info-v-o";
 
 @Component({
   selector: 'personal-info',
