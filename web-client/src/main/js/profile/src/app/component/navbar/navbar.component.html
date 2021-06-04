@@ -9,6 +9,19 @@
         <a class="nav-link" [routerLink]="['users']">Users</a>
       </li>
     </ul>
+    <ul class="navbar-nav mr-auto">
+      <li class="mr-1">
+        <form id="searchForm" (ngSubmit)="searchUsers(searchTerm)">
+          <div class="input-group">
+            <input [(ngModel)]="searchTerm" type="text" id="searchInput"
+                   name="searchInput" placeholder="Search users" class="form-control">
+            <div class="input-group-append">
+              <button type="submit" class="btn btn-dark">Search</button>
+            </div>
+          </div>
+        </form>
+      </li>
+    </ul>
     <ul class="navbar-nav mr-1">
       <li routerLinkActive="nav-item active nav-button-active">
         <a *ngIf="!isAuthenticated()" class="nav-link" [routerLink]="['user/login']">Login</a>

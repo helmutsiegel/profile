@@ -15,11 +15,15 @@ export class UsersService {
     return this.http.get<UserTO[]>('user');
   }
 
+  public searchUsers(searchTerm: string): Observable<UserTO[]> {
+    return this.http.get<UserTO[]>('user/search/'+searchTerm);
+  }
+
   public userExists(username: string): Observable<any> {
     return this.http.get('user/exists/' + username);
   }
 
   public getUserByUsername(username: string): Observable<any> {
-    return this.http.get('user/' + username);
+    return this.http.get<UserTO>('user/' + username);
   }
 }

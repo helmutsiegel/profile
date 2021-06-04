@@ -27,13 +27,13 @@ public class UserBC {
 
     public List<UserTO> getAll() {
         return userRepository.findAll().stream()
-                .map(userMapper::mapUserTO)
+                .map(userMapper::mapToTO)
                 .collect(Collectors.toList());
     }
 
     public UserTO getByUsername(String username) {
         List<UserEntity> users = userRepository.findByProperty("username", username);
-        return users.size() == 1 ? userMapper.mapUserTO(users.get(0)) : null;
+        return users.size() == 1 ? userMapper.mapToTO(users.get(0)) : null;
     }
 
     public boolean existsUser(String username) {
@@ -46,5 +46,12 @@ public class UserBC {
         CVEntity cvEntity = new CVEntity();
         cvEntity.setUserEntity(userEntity);
         cvRepository.persist(cvEntity);
+    }
+
+    public List<UserTO> searchUsers(String searchTerm) {
+        return userRepository.searchUser(searchTerm)
+                .stream()
+                .map(userMapper::mapToTO)
+                .collect(Collectors.toList());
     }
 }

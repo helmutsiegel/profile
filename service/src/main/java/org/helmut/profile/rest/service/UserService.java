@@ -38,6 +38,13 @@ public class UserService {
         return userBC.existsUser(username) ? Response.ok().build() : Response.status(Response.Status.NOT_FOUND).build();
     }
 
+    @GET
+    @Path("search/{searchTerm}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<UserTO> searchUsers(@PathParam("searchTerm") String searchTerm) {
+        return userBC.searchUsers(searchTerm);
+    }
+
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)

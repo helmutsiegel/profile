@@ -24,7 +24,7 @@ public class CvMapper {
 
     public CvTO mapCvTO(CVEntity entity) {
         CvTO cvTO = new CvTO();
-        cvTO.setUserTO(userMapper.mapUserTO(entity.getUserEntity()));
+        cvTO.setUserTO(userMapper.mapToTO(entity.getUserEntity()));
         cvTO.setAbout(entity.getAbout());
         cvTO.setExperiences(entity.getExperiences()
                 .stream()

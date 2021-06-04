@@ -9,7 +9,7 @@ import javax.enterprise.context.RequestScoped;
 @RequestScoped
 public class UserMapper {
 
-    public UserTO mapUserTO(UserEntity userEntity) {
+    public UserTO mapToTO(UserEntity userEntity) {
         UserTO userTO = new UserTO();
         userTO.setUsername(userEntity.getUsername());
         userTO.setFirstName(userEntity.getFirstName());
