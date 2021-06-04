@@ -13,14 +13,41 @@
       <div class="card-header">About</div>
       <div class="card-body">{{cvVO.about | smiling}}</div>
     </div>
-<!--    <div class="mt-2">-->
-<!--      <experiences [experiences]="cvVO.experiences"></experiences>-->
-<!--    </div>-->
-<!--    <div class="mt-2">-->
-<!--      <languages [languages]="cvVO.languages"></languages>-->
-<!--    </div>-->
-<!--    <div class="mt-2">-->
-<!--      <certifications [certifications]="cvVO.certifications"></certifications>-->
-<!--    </div>-->
+    <div class="mt-2">
+      <div class="card mt-2">
+        <div class="card-header">
+          Experiences
+        </div>
+        <div class="card-body">
+          <div *ngFor="let experienceVO of cvVO.experiences">
+            <p class="card-text">{{experienceVO?.company}} - {{experienceVO?.position}}
+                                                           ({{experienceVO.startDate}} - {{experienceVO.endDate}})</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card mt-2">
+        <div class="card-header">
+          Languages
+        </div>
+        <div class="card-body">
+          <div *ngFor="let languageVO of cvVO.languages">
+            <p class="card-text">{{languageVO?.language}} - {{languageVO?.level}}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="card mt-2">
+        <div class="card-header">
+          Certifications
+        </div>
+        <div class="card-body">
+          <div *ngFor="let certificationVO of cvVO.certifications">
+            <p class="card-text">{{certificationVO?.name}} - {{certificationVO?.issuedBy}}</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
   </div>
 </div>
