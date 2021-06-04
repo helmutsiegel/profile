@@ -7,8 +7,11 @@ import java.util.List;
 @Table(name = "T_CV")
 public class CVEntity extends BaseEntity {
 
-    @Column
-    private String about;
+    @Column(name = "short_about")
+    private String shortAbout;
+
+    @Column(name = "long_about", length = 2000)
+    private String longAbout;
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "cv_id")
@@ -29,12 +32,28 @@ public class CVEntity extends BaseEntity {
     @OneToOne
     private UserEntity userEntity;
 
-    public String getAbout() {
-        return about;
+    public String getShortAbout() {
+        return shortAbout;
     }
 
-    public void setAbout(String about) {
-        this.about = about;
+    public void setShortAbout(String shortAbout) {
+        this.shortAbout = shortAbout;
+    }
+
+    public String getLongAbout() {
+        return longAbout;
+    }
+
+    public void setLongAbout(String longAbout) {
+        this.longAbout = longAbout;
+    }
+
+    public List<SkillEntity> getSkills() {
+        return skills;
+    }
+
+    public void setSkills(List<SkillEntity> skills) {
+        this.skills = skills;
     }
 
     public List<ExperienceEntity> getExperiences() {

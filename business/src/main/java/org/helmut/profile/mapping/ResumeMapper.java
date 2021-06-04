@@ -25,10 +25,10 @@ public class ResumeMapper {
     public ResumeTO mapToTO(CVEntity entity){
         ResumeTO resumeTO = new ResumeTO();
         resumeTO.setUserTO(userMapper.mapToTO(entity.getUserEntity()));
-        resumeTO.setAbout(entity.getAbout());
+        resumeTO.setAbout(entity.getLongAbout());
         resumeTO.setExperiences(entity.getExperiences()
                 .stream()
-                .map(experienceMapper::mapExperienceTO)
+                .map(experienceMapper::mapToTO)
                 .collect(Collectors.toList()));
         resumeTO.setCertifications(entity.getCertifications()
                 .stream()

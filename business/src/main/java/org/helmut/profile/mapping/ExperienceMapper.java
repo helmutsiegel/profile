@@ -8,7 +8,7 @@ import javax.enterprise.context.RequestScoped;
 @RequestScoped
 public class ExperienceMapper {
 
-    public ExperienceTO mapExperienceTO(ExperienceEntity entity) {
+    public ExperienceTO mapToTO(ExperienceEntity entity) {
         ExperienceTO experienceTO = new ExperienceTO();
         experienceTO.setCompany(entity.getCompany());
         experienceTO.setStartDate(entity.getStartDate());

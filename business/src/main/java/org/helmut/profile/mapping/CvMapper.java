@@ -25,14 +25,14 @@ public class CvMapper {
     public CvTO mapCvTO(CVEntity entity) {
         CvTO cvTO = new CvTO();
         cvTO.setUserTO(userMapper.mapToTO(entity.getUserEntity()));
-        cvTO.setAbout(entity.getAbout());
+        cvTO.setAbout(entity.getShortAbout());
         cvTO.setExperiences(entity.getExperiences()
                 .stream()
-                .map(experienceMapper::mapExperienceTO)
+                .map(experienceMapper::mapToTO)
                 .collect(Collectors.toList()));
         cvTO.setCertifications(entity.getCertifications()
                 .stream()
-                .map(certificationMapper::mapToTO)
+                .map(certificationMapper::mapToSimpleTO)
                 .collect(Collectors.toList()));
         cvTO.setLanguages(entity.getLanguages()
                 .stream()
