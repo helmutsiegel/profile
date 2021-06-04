@@ -4,9 +4,9 @@
     </users-navbar>
   </div>
 </div>
-<div class="row pt-3">
-  <div class="col">
-    <p>Page under development.</p>
-    <p>Here you will see the resume of the selected user</p>
+<div class="row pt-3" *ngIf="resumeVO">
+  <div class="card">
+    <div class="card-header">About</div>
+    <div class="card-body">{{resumeVO.about | smiling}}</div>
   </div>
 </div>

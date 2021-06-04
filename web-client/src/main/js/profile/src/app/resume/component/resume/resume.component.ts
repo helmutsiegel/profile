@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {ResumeService} from "../../service/resume.service";
+import {ResumeVO} from "../../model/resume-v-o";
+import {ActivatedRoute} from "@angular/router";
+import {ResumeMapperService} from "../../mapping/resume-mapper.service";
 
 @Component({
   selector: 'resume',
@@ -7,9 +11,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ResumeComponent implements OnInit {
 
-  constructor() { }
+  resumeVO!: ResumeVO;
 
-  ngOnInit(): void {
+  constructor(private resumeService: ResumeService,
+              private activatedRoute: ActivatedRoute,
+              private resumeMapperService: ResumeMapperService) {
   }
 
+  ngOnInit(): void {
+    this.resumeService.getResumeByUsername(this.activatedRoute.snapshot.params['username'])
+      .subscribe(resumeTO => this.resumeVO = this.resumeMapperService.mapToVO(resumeTO));
+  }
 }

@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {AuthService} from "../../service/auth.service";
 import {UserTO} from "../../commons/model/to/user-t-o";
 import {UsersService} from "../../users/service/users.service";
+import {ToastrService} from "../../commons/service/toastr.service";
 
 @Component({
   selector: 'navbar',
@@ -14,7 +15,8 @@ export class NavbarComponent implements OnInit {
   foundUsers: UserTO[] = []
 
   constructor(public authService: AuthService,
-              private userService: UsersService) {
+              private userService: UsersService,
+              private toastr: ToastrService) {
   }
 
   ngOnInit(): void {
@@ -29,6 +31,7 @@ export class NavbarComponent implements OnInit {
     this.userService.searchUsers(searchTerm).subscribe(
       users => {
         this.foundUsers = users;
+        this.toastr.info(users.map(userTO => userTO.firstName + ' ' + userTO.lastName).toString(), 'Found users');
       }
     )
   }

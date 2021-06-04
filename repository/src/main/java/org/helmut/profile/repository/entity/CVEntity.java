@@ -22,6 +22,10 @@ public class CVEntity extends BaseEntity {
     @JoinColumn(name = "cv_id")
     private List<CertificationEntity> certifications;
 
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "cv_id")
+    private List<SkillEntity> skills;
+
     @OneToOne
     private UserEntity userEntity;
 
