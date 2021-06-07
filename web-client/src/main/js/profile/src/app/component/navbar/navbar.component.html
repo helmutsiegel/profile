@@ -16,7 +16,7 @@
             <input [(ngModel)]="searchTerm" type="text" id="searchInput"
                    name="searchInput" placeholder="Search users" class="form-control">
             <div class="input-group-append">
-              <button type="submit" class="btn btn-dark" data-toggle="modal" data-target="#foundUsersModal">Search
+              <button [disabled]="!searchTerm" type="submit" class="btn btn-dark" data-toggle="modal" data-target="#foundUsersModal">Search
               </button>
             </div>
           </div>
@@ -36,7 +36,7 @@
   </div>
 </nav>
 
-<simple-modal [title]="'Matching users'" [modalId]="'foundUsersModal'">
+<simple-modal [title]="'Found users'" [modalId]="'foundUsersModal'">
   <div class="list-group">
     <div class="list-group-item cursor-pointer" *ngFor="let user of foundUsers" [routerLink]="[user.username, 'cv']"
          data-dismiss="modal">
