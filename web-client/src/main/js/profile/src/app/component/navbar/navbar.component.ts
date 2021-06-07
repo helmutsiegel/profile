@@ -31,7 +31,6 @@ export class NavbarComponent implements OnInit {
     this.userService.searchUsers(searchTerm).subscribe(
       users => {
         this.foundUsers = users;
-        this.toastr.info(users.map(userTO => userTO.firstName + ' ' + userTO.lastName).toString(), 'Found users');
       }
     )
   }

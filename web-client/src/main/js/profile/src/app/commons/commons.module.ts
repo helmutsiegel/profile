@@ -6,6 +6,7 @@ import { Error404Component } from './component/error404/error404.component';
 import { CollapsibleCardComponent } from './component/collapsible-card/collapsible-card.component';
 import { SmilingPipe } from './pipe/smiling.pipe';
 import {PersonalInfoComponent} from "./component/personal-info/personal-info.component";
+import { SimpleModalComponent } from './component/simple-modal/simple-modal.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import {PersonalInfoComponent} from "./component/personal-info/personal-info.com
         Error404Component,
         CollapsibleCardComponent,
         SmilingPipe,
-        PersonalInfoComponent
+        PersonalInfoComponent,
+        SimpleModalComponent
     ],
   imports: [
     CommonModule,
@@ -24,7 +26,8 @@ import {PersonalInfoComponent} from "./component/personal-info/personal-info.com
         UsersNavbarComponent,
         CollapsibleCardComponent,
         SmilingPipe,
-        PersonalInfoComponent
+        PersonalInfoComponent,
+        SimpleModalComponent
     ]
 })
 export class CommonsModule {

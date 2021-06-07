@@ -10,6 +10,7 @@ import {RestCallsInterceptor} from "./interceptor/rest-calls.interceptor";
 import { LoginComponent } from './component/login/login.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { SignUpComponent } from './component/sign-up/sign-up.component';
+import {CommonsModule} from "./commons/commons.module";
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { SignUpComponent } from './component/sign-up/sign-up.component';
         AppRoutingModule,
         HttpClientModule,
         FormsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        CommonsModule
     ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: RestCallsInterceptor, multi: true }],
   bootstrap: [AppComponent]

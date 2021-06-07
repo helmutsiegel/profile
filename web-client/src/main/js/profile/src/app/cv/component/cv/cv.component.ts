@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {CvVO} from "../../model/cv-v-o";
-import {ActivatedRoute, Router} from "@angular/router";
+import {ActivatedRoute, NavigationEnd, Router} from "@angular/router";
 
 @Component({
   selector: 'cv',
@@ -11,12 +11,17 @@ export class CvComponent implements OnInit {
 
   public cvVO!: CvVO;
 
-  constructor(private route: ActivatedRoute) {
+  constructor(private route: ActivatedRoute,
+              private router: Router) {
 
   }
 
   ngOnInit(): void {
-    this.cvVO = this.route.snapshot.data['cvVO']
+    this.router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {
+        this.cvVO = this.route.snapshot.data['cvVO'];
+      }
+    })
+    this.cvVO = this.route.snapshot.data['cvVO'];
   };
-
 }
