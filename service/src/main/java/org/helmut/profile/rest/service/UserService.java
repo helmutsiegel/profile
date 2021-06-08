@@ -49,7 +49,13 @@ public class UserService {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Response signUp(SignUpUserTO signUpUserTO) {
-        userBC.signUp(signUpUserTO);
-        return Response.ok(signUpUserTO).build();
+        try {
+            userBC.signUp(signUpUserTO);
+            return Response.ok(signUpUserTO).build();
+        } catch (Exception e) {
+            return Response.status(Response.Status.BAD_REQUEST)
+                    .entity(e)
+                    .build();
+        }
     }
 }

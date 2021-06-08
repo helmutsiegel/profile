@@ -2,6 +2,9 @@ import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {SignUpService} from "../../service/sign-up.service";
 import {SignUpUserTO} from "../../commons/model/to/sign-up-user-t-o";
+import {ToastrService} from "../../commons/service/toastr.service";
+import {Router} from "@angular/router";
+import {AuthService} from "../../service/auth.service";
 
 @Component({
   selector: 'app-sign-up',
@@ -17,7 +20,10 @@ export class SignUpComponent implements OnInit {
   private password2!: FormControl;
   private username!: FormControl;
 
-  constructor(private signUpService: SignUpService) {
+  constructor(private signUpService: SignUpService,
+              private toastr: ToastrService,
+              private authService: AuthService,
+              private router: Router) {
   }
 
   ngOnInit(): void {
@@ -48,7 +54,20 @@ export class SignUpComponent implements OnInit {
       password1: this.password1.value,
       password2: this.password2.value,
       username: this.username.value
-    } as SignUpUserTO);
+    } as SignUpUserTO).subscribe(
+      userTO => {
+        this.toastr.success('Successful registration');
+        this.authService.loginUser(userTO.username, userTO.password1);
+        this.authService.getCurrentUser().subscribe(userTOFromAuth => {
+          if (userTOFromAuth) {
+            this.router.navigate([userTOFromAuth.username, 'cv']);
+          }
+        })
+      },
+      error => {
+        this.toastr.error('Registration failed.');
+      }
+    );
   }
 
   public cancel(): void {

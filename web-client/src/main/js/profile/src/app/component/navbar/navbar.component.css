@@ -9,3 +9,7 @@ li:hover {
 img {
   cursor: pointer;
 }
+
+.mouse-over-item:hover {
+  background-color: #999999;
+}

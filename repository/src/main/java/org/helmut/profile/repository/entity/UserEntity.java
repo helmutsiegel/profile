@@ -5,13 +5,14 @@ import org.helmut.profile.repository.enums.Seniority;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 import java.time.LocalDate;
 
 @Entity
 @Table(name = "T_USER")
 public class UserEntity extends BaseEntity {
 
-    @Column(name = "user_name")
+    @Column(name = "user_name", unique = true)
     private String username;
 
     @Column(name = "first_name")
