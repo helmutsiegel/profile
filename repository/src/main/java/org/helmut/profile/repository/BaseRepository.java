@@ -7,7 +7,7 @@ import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.util.List;
 
-@Transactional
+@Transactional()
 public abstract class BaseRepository<T> {
 
     private final Class<T> type;
@@ -16,7 +16,7 @@ public abstract class BaseRepository<T> {
     protected EntityManager em;
 
     public BaseRepository() {
-        Type t = ((Class)getClass().getGenericSuperclass()).getGenericSuperclass();
+        Type t = ((Class) getClass().getGenericSuperclass()).getGenericSuperclass();
         ParameterizedType pt = (ParameterizedType) t;
         type = (Class<T>) pt.getActualTypeArguments()[0];
     }
@@ -33,6 +33,10 @@ public abstract class BaseRepository<T> {
         em.persist(t);
     }
 
+    public void update(T t) {
+        em.merge(t);
+    }
+
     public List<T> findByProperty(String property, Object value) {
         return em.createQuery("select t from " + type.getSimpleName() + " t where t." + property + " like :param", type)
                 .setParameter("param", value)
@@ -40,7 +44,7 @@ public abstract class BaseRepository<T> {
     }
 
     public int countByProperty(String property, Object value) {
-        return ((Number)(em.createQuery("select count(t) from " + type.getSimpleName() + " t where t." + property + " like :param", type)
+        return ((Number) (em.createQuery("select count(t) from " + type.getSimpleName() + " t where t." + property + " like :param", type)
                 .setParameter("param", value)
                 .getSingleResult())).intValue();
     }

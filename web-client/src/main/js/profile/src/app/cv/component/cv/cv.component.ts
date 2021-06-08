@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {CvVO} from "../../model/cv-v-o";
 import {ActivatedRoute} from "@angular/router";
+import {CvService} from "../../service/cv.service";
 
 @Component({
   selector: 'cv',
@@ -11,7 +12,8 @@ export class CvComponent implements OnInit {
 
   public cvVO!: CvVO;
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute,
+              private cvService: CvService) {}
 
   ngOnInit(): void {
     this.route.params.forEach(_ => {
@@ -20,6 +22,10 @@ export class CvComponent implements OnInit {
   };
 
   public saveAbout(event: string) {
-    
+    this.cvService.getCvByUsername(this.cvVO.personalInfoVO.username)
+      .subscribe(cvTO => {
+        cvTO.about = event;
+        this.cvService.updateCV(cvTO);
+      })
   }
 }

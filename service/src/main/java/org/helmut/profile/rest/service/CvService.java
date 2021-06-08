@@ -2,14 +2,13 @@ package org.helmut.profile.rest.service;
 
 import org.helmut.profile.business.CvBC;
 import org.helmut.profile.model.CvTO;
+import org.helmut.profile.model.SignUpUserTO;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 
 @Path("cv")
 @RequestScoped
@@ -23,5 +22,13 @@ public class CvService {
     @Produces(MediaType.APPLICATION_JSON)
     public CvTO getByUsername(@PathParam("username") String username) {
         return cvBC.getByUsername(username);
+    }
+
+    @PUT
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response updateCV(CvTO cvTO) {
+       cvBC.update(cvTO);
+       return Response.ok().build();
     }
 }

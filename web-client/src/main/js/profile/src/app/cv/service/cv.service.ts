@@ -14,4 +14,8 @@ export class CvService {
   public getCvByUsername(username: string): Observable<CvTO> {
     return this.http.get<CvTO>('cv/' + username);
   }
+
+  public updateCV(cvTO: CvTO): void {
+    this.http.put('cv', cvTO).subscribe();
+  }
 }
