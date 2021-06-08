@@ -9,10 +9,7 @@
     <personal-info [personalInfoVO]="cvVO.personalInfoVO"></personal-info>
   </div>
   <div class="col-9">
-    <div class="card">
-      <div class="card-header">About</div>
-      <div class="card-body">{{cvVO.about | smiling}}</div>
-    </div>
+    <editable-card title="About" [text]="cvVO.about" (onSave)="saveAbout($event)"></editable-card>
     <div class="mt-2">
       <div class="card mt-2">
         <div class="card-header">

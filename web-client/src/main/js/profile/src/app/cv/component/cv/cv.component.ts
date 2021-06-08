@@ -18,4 +18,8 @@ export class CvComponent implements OnInit {
       this.cvVO = this.route.snapshot.data['cvVO'];
     });
   };
+
+  public saveAbout(event: string) {
+    
+  }
 }

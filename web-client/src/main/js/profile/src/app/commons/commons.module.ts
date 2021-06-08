@@ -7,6 +7,8 @@ import { CollapsibleCardComponent } from './component/collapsible-card/collapsib
 import { SmilingPipe } from './pipe/smiling.pipe';
 import {PersonalInfoComponent} from "./component/personal-info/personal-info.component";
 import { SimpleModalComponent } from './component/simple-modal/simple-modal.component';
+import { EditableCardComponent } from './component/editable-card/editable-card.component';
+import {FormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -16,18 +18,21 @@ import { SimpleModalComponent } from './component/simple-modal/simple-modal.comp
         CollapsibleCardComponent,
         SmilingPipe,
         PersonalInfoComponent,
-        SimpleModalComponent
+        SimpleModalComponent,
+        EditableCardComponent
     ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    FormsModule
   ],
     exports: [
         UsersNavbarComponent,
         CollapsibleCardComponent,
         SmilingPipe,
         PersonalInfoComponent,
-        SimpleModalComponent
+        SimpleModalComponent,
+        EditableCardComponent
     ]
 })
 export class CommonsModule {
