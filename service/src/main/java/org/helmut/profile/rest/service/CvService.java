@@ -3,6 +3,7 @@ package org.helmut.profile.rest.service;
 import org.helmut.profile.business.CvBC;
 import org.helmut.profile.model.CvTO;
 import org.helmut.profile.model.SignUpUserTO;
+import org.helmut.profile.rest.auth.filter.JWTTokenNeeded;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
@@ -11,7 +12,6 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 @Path("cv")
-@RequestScoped
 public class CvService {
 
     @Inject
@@ -25,6 +25,7 @@ public class CvService {
     }
 
     @PUT
+    @JWTTokenNeeded
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Response updateCV(CvTO cvTO) {

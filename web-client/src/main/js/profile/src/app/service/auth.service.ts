@@ -3,6 +3,7 @@ import {UserTO} from "../commons/model/to/user-t-o";
 import {UsersService} from "../users/service/users.service";
 import {Observable, ReplaySubject, Subject, Subscription} from "rxjs";
 import {ToastrService} from "../commons/service/toastr.service";
+import {HttpResponse} from "@angular/common/http";
 
 @Injectable({
   providedIn: 'root'
@@ -19,10 +20,13 @@ export class AuthService implements OnDestroy {
   }
 
   public loginUser(username: string, password: string): void {
-    this.currentUser$ = this.usersService.getUserByUsername(username);
-    this.subscription = this.currentUser$.subscribe(data => {
-      this.currentUserSubject.next(data)
-    });
+    // this.currentUser$ = this.usersService.getUserByUsername(username);
+    // this.subscription = this.currentUser$.subscribe(data => {
+    //   this.currentUserSubject.next(data)
+    // });
+    this.usersService.login(username, password)
+      .subscribe((e: HttpResponse<any>) =>
+        console.log(e.headers.get('authorization')));
   }
 
   public getCurrentUser(): Observable<UserTO> {

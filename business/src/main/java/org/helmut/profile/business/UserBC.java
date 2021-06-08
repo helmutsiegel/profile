@@ -36,6 +36,11 @@ public class UserBC {
         return users.size() == 1 ? userMapper.mapToTO(users.get(0)) : null;
     }
 
+    public UserTO logIn(String username, String password) {
+        UserEntity userEntity = userRepository.findByUniqueProperty("username", username);
+        return userMapper.mapToTO(userEntity);
+    }
+
     public boolean existsUser(String username) {
         return userRepository.countByProperty("username", username) == 1;
     }

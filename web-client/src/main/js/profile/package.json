@@ -8,7 +8,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build-maven": "npm run build"
+    "build-maven": "npm run build",
+    "build-for-prod": "ng build --base-href /"
   },
   "private": true,
   "dependencies": {

@@ -13,7 +13,6 @@ import javax.ws.rs.core.MediaType;
 import java.util.List;
 
 @Path("project")
-@RequestScoped
 public class ProjectService {
 
     @Inject

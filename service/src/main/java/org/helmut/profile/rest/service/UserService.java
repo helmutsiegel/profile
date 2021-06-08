@@ -1,22 +1,38 @@
 package org.helmut.profile.rest.service;
 
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
 import org.helmut.profile.business.UserBC;
+import org.helmut.profile.model.LoginUserTO;
 import org.helmut.profile.model.SignUpUserTO;
 import org.helmut.profile.model.UserTO;
+import org.helmut.profile.rest.auth.util.KeyGenerator;
 
-import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.ws.rs.*;
-import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
+import javax.ws.rs.core.*;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.util.Date;
 import java.util.List;
 
+import static javax.ws.rs.core.HttpHeaders.AUTHORIZATION;
+import static javax.ws.rs.core.Response.Status.UNAUTHORIZED;
+
 @Path("user")
-@RequestScoped
 public class UserService {
 
     @Inject
     private UserBC userBC;
+
+    @Inject
+    private KeyGenerator keyGenerator;
+
+    @Context
+    private UriInfo uriInfo;
+
+    @Context
+    private HttpHeaders httpHeaders;
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
@@ -57,5 +73,27 @@ public class UserService {
                     .entity(e)
                     .build();
         }
+    }
+
+    @POST
+    @Path("login")
+    public Response authenticateUser(LoginUserTO userTO) {
+        try {
+            userBC.logIn(userTO.getUsername(), userTO.getUsername());
+            String token = issueToken(userTO.getUsername());
+            return Response.ok().header(AUTHORIZATION, "Bearer " + token).build();
+        } catch (Exception e) {
+            return Response.status(UNAUTHORIZED).build();
+        }
+    }
+
+    private String issueToken(String login) {
+        return Jwts.builder()
+                .setSubject(login)
+                .setIssuer(uriInfo.getAbsolutePath().toString())
+                .setIssuedAt(new Date())
+                .setExpiration(Date.from(LocalDateTime.now().plusMinutes(15L).atZone(ZoneId.systemDefault()).toInstant()))
+                .signWith(SignatureAlgorithm.HS512, keyGenerator.generateKey())
+                .compact();
     }
 }

@@ -12,7 +12,6 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 @Path("resume")
-@RequestScoped
 public class ResumeService {
 
     @Inject
