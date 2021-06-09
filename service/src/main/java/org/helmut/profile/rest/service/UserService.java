@@ -6,6 +6,7 @@ import org.helmut.profile.business.UserBC;
 import org.helmut.profile.model.LoginUserTO;
 import org.helmut.profile.model.SignUpUserTO;
 import org.helmut.profile.model.UserTO;
+import org.helmut.profile.rest.auth.filter.JWTTokenNeeded;
 import org.helmut.profile.rest.auth.util.KeyGenerator;
 
 import javax.inject.Inject;
@@ -18,6 +19,7 @@ import java.util.List;
 
 import static javax.ws.rs.core.HttpHeaders.AUTHORIZATION;
 import static javax.ws.rs.core.Response.Status.UNAUTHORIZED;
+import static org.helmut.profile.rest.service.Constants.CURRENT_USER;
 
 @Path("user")
 public class UserService {
@@ -38,6 +40,14 @@ public class UserService {
     @Produces(MediaType.APPLICATION_JSON)
     public List<UserTO> getAll() {
         return userBC.getAll();
+    }
+
+    @GET
+    @JWTTokenNeeded
+    @Path("currentUser")
+    @Produces(MediaType.APPLICATION_JSON)
+    public UserTO getByCurrentUser() {
+        return userBC.getByUsername(httpHeaders.getHeaderString(CURRENT_USER));
     }
 
     @GET
@@ -77,11 +87,11 @@ public class UserService {
 
     @POST
     @Path("login")
-    public Response authenticateUser(LoginUserTO userTO) {
+    public Response authenticateUser(LoginUserTO loginUserTO) {
         try {
-            userBC.logIn(userTO.getUsername(), userTO.getUsername());
-            String token = issueToken(userTO.getUsername());
-            return Response.ok().header(AUTHORIZATION, "Bearer " + token).build();
+            UserTO userTO = userBC.logIn(loginUserTO.getUsername(), loginUserTO.getUsername());
+            String token = issueToken(loginUserTO.getUsername());
+            return Response.ok(userTO).header(AUTHORIZATION, "Bearer " + token).build();
         } catch (Exception e) {
             return Response.status(UNAUTHORIZED).build();
         }

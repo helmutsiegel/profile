@@ -14,6 +14,9 @@ export class EditableCardComponent implements OnInit {
   text!: string;
   editMode: boolean = false;
 
+  @Input()
+  editable: boolean = false;
+
   @Output()
   public onSave: EventEmitter<string> = new EventEmitter<string>();
 

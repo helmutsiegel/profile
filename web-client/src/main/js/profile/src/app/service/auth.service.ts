@@ -10,23 +10,30 @@ import {HttpResponse} from "@angular/common/http";
 })
 export class AuthService implements OnDestroy {
   private currentUserSubject!: Subject<UserTO>;
-  private currentUser$!: Observable<UserTO>;
   private subscription!: Subscription;
 
   constructor(private usersService: UsersService,
               private toastr: ToastrService) {
     this.currentUserSubject = new ReplaySubject<UserTO>(1);
-    this.currentUserSubject.next(undefined);
+    if (localStorage.getItem('Authorization')) {
+      usersService.getUserCurrentUser().subscribe(userTO => {
+          this.currentUserSubject.next(userTO);
+        },
+        _ => this.currentUserSubject.next(undefined));
+    } else {
+      this.currentUserSubject.next(undefined);
+    }
   }
 
   public loginUser(username: string, password: string): void {
-    // this.currentUser$ = this.usersService.getUserByUsername(username);
-    // this.subscription = this.currentUser$.subscribe(data => {
-    //   this.currentUserSubject.next(data)
-    // });
     this.usersService.login(username, password)
-      .subscribe((e: HttpResponse<any>) =>
-        console.log(e.headers.get('authorization')));
+      .subscribe((httpResp: HttpResponse<any>) => {
+        const authorization = httpResp.headers.get('Authorization');
+        if (authorization) {
+          localStorage.setItem('Authorization', authorization);
+          this.currentUserSubject.next(httpResp.body);
+        }
+      });
   }
 
   public getCurrentUser(): Observable<UserTO> {
@@ -38,6 +45,7 @@ export class AuthService implements OnDestroy {
   }
 
   public logOut() {
+    localStorage.clear();
     this.currentUserSubject.next(undefined);
   }
 

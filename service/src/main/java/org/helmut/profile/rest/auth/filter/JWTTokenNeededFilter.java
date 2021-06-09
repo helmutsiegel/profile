@@ -1,5 +1,7 @@
 package org.helmut.profile.rest.auth.filter;
 
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.Jws;
 import io.jsonwebtoken.Jwts;
 import org.helmut.profile.rest.auth.util.KeyGenerator;
 
@@ -14,6 +16,8 @@ import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.ext.Provider;
 import java.security.Key;
+
+import static org.helmut.profile.rest.service.Constants.CURRENT_USER;
 
 @Provider
 @JWTTokenNeeded
@@ -33,7 +37,9 @@ public class JWTTokenNeededFilter implements ContainerRequestFilter {
 
         try {
             Key key = keyGenerator.generateKey();
-            Jwts.parser().setSigningKey(key).parseClaimsJws(token);
+            Jws<Claims> claimsJws = Jwts.parser().setSigningKey(key).parseClaimsJws(token);
+            String usernameFromToken = claimsJws.getBody().getSubject();
+            requestContext.getHeaders().add(CURRENT_USER, usernameFromToken);
         } catch (Exception e) {
             requestContext.abortWith(Response.status(Response.Status.UNAUTHORIZED).build());
         }

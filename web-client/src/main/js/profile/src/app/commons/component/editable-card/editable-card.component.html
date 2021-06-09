@@ -1,7 +1,7 @@
 <div class="card">
   <div class="card-header">
     {{title}}
-    <i class="bi bi-pencil float-right" (click)="edit()"></i>
+    <i *ngIf="editable" class="bi bi-pencil float-right" (click)="edit()"></i>
   </div>
   <div class="card-body">
     <div *ngIf="!editMode">

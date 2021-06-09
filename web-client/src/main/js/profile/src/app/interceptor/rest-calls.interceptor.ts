@@ -9,11 +9,21 @@ export class RestCallsInterceptor implements HttpInterceptor {
   }
 
   /**
-   * Interceptor to add rs prefix to http calls
+   * Interceptor to add rs prefix and authorization token to http calls
    */
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
-    return next.handle(request.clone({
-      url: 'rs/' + request.url
-    }));
+    const authorization = localStorage.getItem('Authorization');
+    if (authorization) {
+      return next.handle(request.clone({
+        url: 'rs/' + request.url,
+        setHeaders: {
+          'Authorization': authorization
+        }
+      }));
+    } else {
+      return next.handle(request.clone({
+        url: 'rs/' + request.url,
+      }));
+    }
   }
 }

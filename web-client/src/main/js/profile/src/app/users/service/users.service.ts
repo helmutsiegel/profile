@@ -23,8 +23,8 @@ export class UsersService {
     return this.http.get('user/exists/' + username);
   }
 
-  public getUserByUsername(username: string): Observable<any> {
-    return this.http.get<UserTO>('user/' + username);
+  public getUserCurrentUser(): Observable<any> {
+    return this.http.get<UserTO>('user/currentUser');
   }
 
   public login(username: string, password: string): Observable<any> {
