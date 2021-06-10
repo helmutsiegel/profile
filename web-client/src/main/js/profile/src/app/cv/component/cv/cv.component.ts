@@ -26,8 +26,8 @@ export class CvComponent implements OnInit, OnDestroy {
     this.subscription = this.authService.getCurrentUser().subscribe(userTO => {
       this.currentUser = userTO;
     });
-    this.activatedRoute.params.forEach(_ => {
-      this.cvVO = this.activatedRoute.snapshot.data['cvVO'];
+    this.activatedRoute.data.forEach(data => {
+      this.cvVO = data['cvVO'];
     });
   };
 
