@@ -7,7 +7,7 @@ import { CollapsibleCardComponent } from './component/collapsible-card/collapsib
 import { SmilingPipe } from './pipe/smiling.pipe';
 import {PersonalInfoComponent} from "./component/personal-info/personal-info.component";
 import { SimpleModalComponent } from './component/simple-modal/simple-modal.component';
-import { EditableCardComponent } from './component/editable-card/editable-card.component';
+import { SimpleTextCardComponent } from './component/simple-text-card/simple-text-card.component';
 import {FormsModule} from "@angular/forms";
 
 
@@ -19,7 +19,7 @@ import {FormsModule} from "@angular/forms";
         SmilingPipe,
         PersonalInfoComponent,
         SimpleModalComponent,
-        EditableCardComponent
+        SimpleTextCardComponent
     ],
   imports: [
     CommonModule,
@@ -32,7 +32,7 @@ import {FormsModule} from "@angular/forms";
         SmilingPipe,
         PersonalInfoComponent,
         SimpleModalComponent,
-        EditableCardComponent
+        SimpleTextCardComponent
     ]
 })
 export class CommonsModule {

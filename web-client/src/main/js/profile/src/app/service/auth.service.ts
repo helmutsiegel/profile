@@ -4,6 +4,7 @@ import {UsersService} from "../users/service/users.service";
 import {Observable, ReplaySubject, Subject, Subscription} from "rxjs";
 import {ToastrService} from "../commons/service/toastr.service";
 import {HttpResponse} from "@angular/common/http";
+import {tap} from "rxjs/operators";
 
 @Injectable({
   providedIn: 'root'
@@ -16,10 +17,12 @@ export class AuthService implements OnDestroy {
               private toastr: ToastrService) {
     this.currentUserSubject = new ReplaySubject<UserTO>(1);
     if (localStorage.getItem('Authorization')) {
-      usersService.getUserCurrentUser().subscribe(userTO => {
-          this.currentUserSubject.next(userTO);
-        },
-        _ => this.currentUserSubject.next(undefined));
+      usersService.getUserCurrentUser()
+        .pipe(tap(data => console.log('Test tap()' + data)))
+        .subscribe(userTO => {
+            this.currentUserSubject.next(userTO);
+          },
+          _ => this.currentUserSubject.next(undefined));
     } else {
       this.currentUserSubject.next(undefined);
     }

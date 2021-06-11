@@ -1,0 +1,32 @@
+<div class="card">
+  <div class="card-header">
+    {{title}}
+    <i *ngIf="editable" class="bi bi-pencil float-right" (click)="edit()"></i>
+  </div>
+  <div class="card-body">
+    <div *ngIf="!editMode">
+      {{text}}
+    </div>
+    <div *ngIf="editMode">
+      <form (ngSubmit)="save()">
+        <div class="form-group">
+          <textarea class="form-control" id="text" name="text" rows="3" [(ngModel)]="textToEdit">
+          </textarea>
+        </div>
+        <div class="row">
+          <div class="col" *ngIf="length !== -1">
+            Characters left: <b>{{length - textToEdit.length}}</b>
+          </div>
+          <div class="col">
+            <div class="form-group">
+              <div class="float-right">
+                <button class="btn btn-dark" type="submit">Save</button>
+                <button class="btn btn-outline-dark ml-1" type="button" (click)="cancelEdit()">Cancel</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
