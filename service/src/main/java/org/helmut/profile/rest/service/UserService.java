@@ -1,20 +1,15 @@
 package org.helmut.profile.rest.service;
 
-import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.SignatureAlgorithm;
 import org.helmut.profile.business.UserBC;
 import org.helmut.profile.model.LoginUserTO;
 import org.helmut.profile.model.SignUpUserTO;
 import org.helmut.profile.model.UserTO;
 import org.helmut.profile.rest.auth.filter.JWTTokenNeeded;
-import org.helmut.profile.rest.auth.util.KeyGenerator;
+import org.helmut.profile.rest.auth.util.TokenIssuer;
 
 import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.*;
-import java.time.LocalDateTime;
-import java.time.ZoneId;
-import java.util.Date;
 import java.util.List;
 
 import static javax.ws.rs.core.HttpHeaders.AUTHORIZATION;
@@ -28,10 +23,7 @@ public class UserService {
     private UserBC userBC;
 
     @Inject
-    private KeyGenerator keyGenerator;
-
-    @Context
-    private UriInfo uriInfo;
+    private TokenIssuer tokenIssuer;
 
     @Context
     private HttpHeaders httpHeaders;
@@ -90,20 +82,10 @@ public class UserService {
     public Response authenticateUser(LoginUserTO loginUserTO) {
         try {
             UserTO userTO = userBC.logIn(loginUserTO.getUsername(), loginUserTO.getUsername());
-            String token = issueToken(loginUserTO.getUsername());
+            String token = tokenIssuer.issueToken(loginUserTO.getUsername());
             return Response.ok(userTO).header(AUTHORIZATION, "Bearer " + token).build();
         } catch (Exception e) {
             return Response.status(UNAUTHORIZED).build();
         }
-    }
-
-    private String issueToken(String login) {
-        return Jwts.builder()
-                .setSubject(login)
-                .setIssuer(uriInfo.getAbsolutePath().toString())
-                .setIssuedAt(new Date())
-                .setExpiration(Date.from(LocalDateTime.now().plusMinutes(15L).atZone(ZoneId.systemDefault()).toInstant()))
-                .signWith(SignatureAlgorithm.HS512, keyGenerator.generateKey())
-                .compact();
     }
 }

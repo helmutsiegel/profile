@@ -17,7 +17,7 @@ export class AuthService implements OnDestroy {
               private toastr: ToastrService) {
     this.currentUserSubject = new ReplaySubject<UserTO>(1);
     if (localStorage.getItem('Authorization')) {
-      usersService.getUserCurrentUser()
+      usersService.getCurrentUser()
         .pipe(tap(data => console.log('Test tap()' + data)))
         .subscribe(userTO => {
             this.currentUserSubject.next(userTO);
