@@ -13,3 +13,7 @@ img {
 .mouse-over-item:hover {
   background-color: #999999;
 }
+
+nav {
+  border-bottom: 1px solid #e8e8e8;
+}
