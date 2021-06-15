@@ -1,18 +1,20 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {AuthService} from "../../service/auth.service";
 import {UserTO} from "../../commons/model/to/user-t-o";
 import {UsersService} from "../../users/service/users.service";
 import {ToastrService} from "../../commons/service/toastr.service";
+import {Subscription} from "rxjs";
 
 @Component({
   selector: 'navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent implements OnInit, OnDestroy {
   currentUserTO!: UserTO;
   searchTerm: string = '';
   foundUsers: UserTO[] = []
+  private subscription!: Subscription;
 
   constructor(public authService: AuthService,
               private userService: UsersService,
@@ -20,7 +22,9 @@ export class NavbarComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.authService.getCurrentUser().subscribe(userTO => this.currentUserTO = userTO);
+    this.subscription = this.authService.getCurrentUser().subscribe(userTO => {
+      this.currentUserTO = userTO
+    });
   }
 
   public isAuthenticated(): boolean {
@@ -33,5 +37,9 @@ export class NavbarComponent implements OnInit {
         this.foundUsers = users;
       }
     )
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 }

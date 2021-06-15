@@ -9,7 +9,8 @@
     <personal-info [personalInfoVO]="cvVO.personalInfoVO"></personal-info>
   </div>
   <div class="col-9">
-    <simple-test-card [editable]="cvIsFromCurrentUser()" title="About" [length]="255" [text]="cvVO.about" (onSave)="saveAbout($event)"></simple-test-card>
+    <simple-text-card [editable]="cvIsFromCurrentUser()" title="About" [length]="255" [text]="cvVO.about"
+                      (onSave)="saveAbout($event)"></simple-text-card>
 
     <div class="mt-2">
       <div class="card mt-2">

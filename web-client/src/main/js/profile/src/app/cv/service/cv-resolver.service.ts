@@ -16,6 +16,6 @@ export class CvResolverService implements Resolve<CvVO> {
   }
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<CvVO> | Promise<CvVO> | CvVO {
-    return this.cvService.getCvByUsername(route.params['username']).pipe(map(cvTO => this.cvMapper.mapToVO(cvTO)));
+    return this.cvService.getByUsername(route.params['username']).pipe(map(cvTO => this.cvMapper.mapToVO(cvTO)));
   }
 }

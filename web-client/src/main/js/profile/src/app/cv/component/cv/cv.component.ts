@@ -32,10 +32,10 @@ export class CvComponent implements OnInit, OnDestroy {
   };
 
   public saveAbout(event: string) {
-    this.cvService.getCvByUsername(this.cvVO.personalInfoVO.username)
+    this.cvService.getByUsername(this.cvVO.personalInfoVO.username)
       .subscribe(cvTO => {
         cvTO.about = event;
-        this.cvService.updateCV(cvTO);
+        this.cvService.update(cvTO);
       })
   }
 

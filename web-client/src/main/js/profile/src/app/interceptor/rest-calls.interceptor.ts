@@ -1,14 +1,10 @@
-import {Injectable} from '@angular/core';
+import {Injectable, Injector} from '@angular/core';
 import {HttpEvent, HttpHandler, HttpInterceptor, HttpRequest, HttpResponse} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {tap} from "rxjs/operators";
 
 @Injectable()
 export class RestCallsInterceptor implements HttpInterceptor {
-
-  constructor() {
-
-  }
 
   /**
    * Adds some extensions to the request, and updates the token if needed
@@ -20,8 +16,12 @@ export class RestCallsInterceptor implements HttpInterceptor {
   private updateToken(e: HttpEvent<any>): void {
     if (e instanceof HttpResponse) {
       const authorizationToken = e.headers.get('Authorization');
-      if (authorizationToken && authorizationToken !== localStorage.getItem('Authorization')) {
-        localStorage.setItem('Authorization', authorizationToken);
+      if (authorizationToken) {
+        if (authorizationToken !== localStorage.getItem('Authorization')) {
+          localStorage.setItem('Authorization', authorizationToken)
+        }
+      } else {
+        localStorage.clear();
       }
     }
   }

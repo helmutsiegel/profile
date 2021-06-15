@@ -3,46 +3,43 @@ import {AuthService} from "../../service/auth.service";
 import {ToastrService} from "../../commons/service/toastr.service";
 import {Subscription} from "rxjs";
 import {Router} from "@angular/router";
+import {UsersService} from "../../users/service/users.service";
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit, OnDestroy {
+export class LoginComponent implements OnInit {
   username!: string;
   password!: string;
   mouseoverLogin: boolean = false;
-  private subscription!: Subscription;
 
   constructor(private authService: AuthService,
+              private userService: UsersService,
               private toastr: ToastrService,
               public router: Router) {
   }
 
   ngOnInit(): void {
-    this.subscription = this.authService.getCurrentUser().subscribe(userTO => {
-      if (!!this.username && !!this.password) {
-        if (!!userTO) {
+
+  }
+
+  public login(formValues: any) {
+    this.userService.login(formValues.username, formValues.password)
+      .subscribe(userTO => {
+        if (userTO) {
+          this.authService.setCurrentUser(userTO);
           this.toastr.success('Welcome ' + userTO.firstName, 'Login successful!');
           this.router.navigate([userTO.username, 'cv']);
         } else {
           this.toastr.error('Username or password incorrect!');
         }
-      }
-    });
-  }
-
-  public login(formValues: any) {
-    this.authService.loginUser(formValues.username, formValues.password);
+      });
   }
 
 
   public cancel(): void {
     window.history.back();
-  }
-
-  ngOnDestroy(): void {
-    this.subscription.unsubscribe();
   }
 }

@@ -1,21 +1,21 @@
 import {Injectable} from '@angular/core';
 import {CvTO} from "../../commons/model/to/cv-t-o";
-import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
+import {BackendService} from "../../commons/service/backend.service";
 
 @Injectable({
   providedIn: 'root'
 })
 export class CvService {
 
-  constructor(private http: HttpClient) {
+  constructor(private backend: BackendService) {
   }
 
-  public getCvByUsername(username: string): Observable<CvTO> {
-    return this.http.get<CvTO>('cv/' + username);
+  public getByUsername(username: string): Observable<CvTO> {
+    return this.backend.get<CvTO>('cv/' + username);
   }
 
-  public updateCV(cvTO: CvTO): void {
-    this.http.put('cv', cvTO).subscribe();
+  public update(cvTO: CvTO): void {
+    this.backend.put('cv', cvTO).subscribe();
   }
 }

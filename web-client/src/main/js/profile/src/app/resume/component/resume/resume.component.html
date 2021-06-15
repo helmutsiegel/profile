@@ -9,10 +9,8 @@
     <personal-info [personalInfoVO]="resumeVO.personalInfoVO"></personal-info>
   </div>
   <div class="col-9">
-    <div class="card">
-      <div class="card-header">About</div>
-      <div class="card-body">{{resumeVO.about | smiling}}</div>
-    </div>
+    <simple-text-card [editable]="cvIsFromCurrentUser()" title="About" [length]="2000" [text]="resumeVO.about"
+                      (onSave)="saveAbout($event)"></simple-text-card>
     <div class="mt-2">
       <experiences [experiences]="resumeVO.experiences"></experiences>
     </div>

@@ -1,18 +1,21 @@
 import {Injectable} from '@angular/core';
 import {Observable} from "rxjs";
-import {CvTO} from "../../commons/model/to/cv-t-o";
-import {HttpClient} from "@angular/common/http";
 import {ResumeTO} from "../../commons/model/to/resume-t-o";
+import {BackendService} from "../../commons/service/backend.service";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ResumeService {
 
-  constructor(private http: HttpClient) {
+  constructor(private backend: BackendService) {
   }
 
   public getResumeByUsername(username: string): Observable<ResumeTO> {
-    return this.http.get<ResumeTO>('resume/' + username);
+    return this.backend.get<ResumeTO>('resume/' + username);
+  }
+
+  public update(resumeTO: ResumeTO): Observable<any> {
+    return this.backend.put('resume', resumeTO, true);
   }
 }

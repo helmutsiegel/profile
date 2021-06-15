@@ -5,6 +5,7 @@ import {SignUpUserTO} from "../../commons/model/to/sign-up-user-t-o";
 import {ToastrService} from "../../commons/service/toastr.service";
 import {Router} from "@angular/router";
 import {AuthService} from "../../service/auth.service";
+import {UsersService} from "../../users/service/users.service";
 
 @Component({
   selector: 'app-sign-up',
@@ -22,6 +23,7 @@ export class SignUpComponent implements OnInit {
 
   constructor(private signUpService: SignUpService,
               private toastr: ToastrService,
+              private userService: UsersService,
               private authService: AuthService,
               private router: Router) {
   }
@@ -57,7 +59,7 @@ export class SignUpComponent implements OnInit {
     } as SignUpUserTO).subscribe(
       userTO => {
         this.toastr.success('Successful registration');
-        this.authService.loginUser(userTO.username, userTO.password1);
+        this.userService.login(userTO.username, userTO.password1);
         this.authService.getCurrentUser().subscribe(userTOFromAuth => {
           if (userTOFromAuth) {
             this.router.navigate([userTOFromAuth.username, 'cv']);
