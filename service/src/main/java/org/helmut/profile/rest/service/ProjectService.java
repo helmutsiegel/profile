@@ -18,7 +18,14 @@ public class ProjectService {
     private ProjectBC projectBC;
 
     @GET
-    @Path("{username}")
+    @Path("{name}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public ProjectTO getByName(@PathParam("name") String name) {
+        return projectBC.getByName(name);
+    }
+
+    @GET
+    @Path("byUsername/{username}")
     @Produces(MediaType.APPLICATION_JSON)
     public List<ProjectTO> getByUsername(@PathParam("username") String username) {
         return projectBC.getByUsername(username);

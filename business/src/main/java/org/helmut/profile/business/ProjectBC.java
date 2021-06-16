@@ -22,4 +22,8 @@ public class ProjectBC {
         return projectRepository.findByProperty("userEntity.username", username)
                 .stream().map(projectMapper::mapToProjectTO).collect(Collectors.toList());
     }
+
+    public ProjectTO getByName(String name) {
+        return projectMapper.mapToProjectTO(projectRepository.findByUniqueProperty("name", name));
+    }
 }

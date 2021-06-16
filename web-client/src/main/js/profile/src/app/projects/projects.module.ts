@@ -1,20 +1,17 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 
-import { ProjectsRoutingModule } from './projects-routing.module';
-import { ProjectsComponent } from './component/projects/projects.component';
+import {ProjectsRoutingModule} from './projects-routing.module';
+import {ProjectsComponent} from './component/projects/projects.component';
 import {CommonsModule} from "../commons/commons.module";
-import {ProjectsListComponent} from "./component/projects-list/projects-list.component";
-import {ProjectThumbnailComponent} from "./component/project-thumbnail/project-thumbnail.component";
-import { ProjectCardComponent } from './component/project-card/project-card.component';
-
+import {ProjectCardComponent} from "./component/project-card/project-card.component";
+import { ProjectPageComponent } from './component/project-page/project-page.component';
 
 @NgModule({
   declarations: [
     ProjectsComponent,
-    ProjectsListComponent,
-    ProjectThumbnailComponent,
-    ProjectCardComponent
+    ProjectCardComponent,
+    ProjectPageComponent
   ],
   imports: [
     CommonModule,
@@ -22,4 +19,5 @@ import { ProjectCardComponent } from './component/project-card/project-card.comp
     CommonsModule
   ]
 })
-export class ProjectsModule { }
+export class ProjectsModule {
+}

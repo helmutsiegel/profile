@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {ProjectVO} from "../../model/project-v-o";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'project-card',
@@ -11,13 +12,13 @@ export class ProjectCardComponent implements OnInit {
   @Input()
   projectVO!: ProjectVO;
 
-  constructor() {
+  constructor(private router: Router) {
   }
 
   ngOnInit(): void {
   }
 
   public openProject(): void {
-
+    this.router.navigate([this.router.url, this.projectVO.name]);
   }
 }
