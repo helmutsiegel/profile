@@ -9,7 +9,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "build-maven": "npm run build",
-    "build-for-prod": "ng build --base-href /"
+    "build-for-prod": "ng build --configuration production --base-href /"
   },
   "private": true,
   "dependencies": {

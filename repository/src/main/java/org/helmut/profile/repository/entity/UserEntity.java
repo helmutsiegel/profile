@@ -21,6 +21,9 @@ public class UserEntity extends BaseEntity {
     @Column(name = "last_name")
     private String lastName;
 
+    @Column
+    private String password;
+
     @Column(name = "title")
     private String title;
 
@@ -76,5 +79,13 @@ public class UserEntity extends BaseEntity {
 
     public void setSeniority(Seniority seniority) {
         this.seniority = seniority;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }

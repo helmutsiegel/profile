@@ -1,4 +1,4 @@
-package org.helmut.profile.model;
+package org.helmut.profile.business.model;
 
 public class ProjectTO {
     private String name;

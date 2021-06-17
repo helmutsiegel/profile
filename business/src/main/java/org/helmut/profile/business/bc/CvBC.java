@@ -1,7 +1,7 @@
-package org.helmut.profile.business;
+package org.helmut.profile.business.bc;
 
-import org.helmut.profile.mapping.CvMapper;
-import org.helmut.profile.model.CvTO;
+import org.helmut.profile.business.mapping.CvMapper;
+import org.helmut.profile.business.model.CvTO;
 import org.helmut.profile.repository.CvRepository;
 import org.helmut.profile.repository.entity.CVEntity;
 

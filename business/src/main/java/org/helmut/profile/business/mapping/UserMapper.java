@@ -1,13 +1,18 @@
-package org.helmut.profile.mapping;
+package org.helmut.profile.business.mapping;
 
-import org.helmut.profile.model.SignUpUserTO;
-import org.helmut.profile.model.UserTO;
+import org.helmut.profile.business.model.SignUpUserTO;
+import org.helmut.profile.business.model.UserTO;
+import org.helmut.profile.business.util.PasswordUtils;
 import org.helmut.profile.repository.entity.UserEntity;
 
 import javax.enterprise.context.RequestScoped;
+import javax.inject.Inject;
 
 @RequestScoped
 public class UserMapper {
+
+    @Inject
+    private PasswordUtils passwordUtils;
 
     public UserTO mapToTO(UserEntity userEntity) {
         UserTO userTO = new UserTO();
@@ -25,8 +30,7 @@ public class UserMapper {
         userEntity.setFirstName(signUpUserTO.getFirstName());
         userEntity.setLastName(signUpUserTO.getLastName());
         userEntity.setUsername(signUpUserTO.getUsername());
-        userEntity.setTitle(signUpUserTO.getTitle());
-        userEntity.setBirthDate(signUpUserTO.getBirthDate());
+        userEntity.setPassword(passwordUtils.digestPassword(signUpUserTO.getPassword1()));
         return userEntity;
     }
 }

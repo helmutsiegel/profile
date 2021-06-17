@@ -1,11 +1,9 @@
 package org.helmut.profile.rest.service;
 
-import org.helmut.profile.business.ResumeBC;
-import org.helmut.profile.model.CvTO;
-import org.helmut.profile.model.ResumeTO;
+import org.helmut.profile.business.bc.ResumeBC;
+import org.helmut.profile.business.model.ResumeTO;
 import org.helmut.profile.rest.auth.filter.JWTTokenNeeded;
 
-import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;

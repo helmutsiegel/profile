@@ -1,9 +1,9 @@
 package org.helmut.profile.rest.service;
 
-import org.helmut.profile.business.UserBC;
-import org.helmut.profile.model.LoginUserTO;
-import org.helmut.profile.model.SignUpUserTO;
-import org.helmut.profile.model.UserTO;
+import org.helmut.profile.business.bc.UserBC;
+import org.helmut.profile.business.model.LoginUserTO;
+import org.helmut.profile.business.model.SignUpUserTO;
+import org.helmut.profile.business.model.UserTO;
 import org.helmut.profile.rest.auth.filter.JWTTokenNeeded;
 import org.helmut.profile.rest.auth.util.TokenIssuer;
 
@@ -79,9 +79,9 @@ public class UserService {
 
     @POST
     @Path("login")
-    public Response authenticateUser(LoginUserTO loginUserTO) {
+    public Response login(LoginUserTO loginUserTO) {
         try {
-            UserTO userTO = userBC.logIn(loginUserTO.getUsername(), loginUserTO.getUsername());
+            UserTO userTO = userBC.logIn(loginUserTO.getUsername(), loginUserTO.getPassword());
             String token = tokenIssuer.issueToken(loginUserTO.getUsername());
             return Response.ok(userTO).header(AUTHORIZATION, "Bearer " + token).build();
         } catch (Exception e) {

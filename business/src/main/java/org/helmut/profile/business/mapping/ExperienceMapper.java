@@ -1,6 +1,6 @@
-package org.helmut.profile.mapping;
+package org.helmut.profile.business.mapping;
 
-import org.helmut.profile.model.ExperienceTO;
+import org.helmut.profile.business.model.ExperienceTO;
 import org.helmut.profile.repository.entity.ExperienceEntity;
 
 import javax.enterprise.context.RequestScoped;

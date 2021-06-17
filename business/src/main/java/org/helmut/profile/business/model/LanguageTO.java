@@ -1,4 +1,4 @@
-package org.helmut.profile.model;
+package org.helmut.profile.business.model;
 
 import org.helmut.profile.repository.enums.LanguageLevel;
 

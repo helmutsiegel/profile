@@ -1,6 +1,6 @@
-package org.helmut.profile.mapping;
+package org.helmut.profile.business.mapping;
 
-import org.helmut.profile.model.CertificationTO;
+import org.helmut.profile.business.model.CertificationTO;
 import org.helmut.profile.repository.entity.CertificationEntity;
 
 import javax.enterprise.context.RequestScoped;

@@ -1,10 +1,12 @@
-package org.helmut.profile.rest.auth.util;
+package org.helmut.profile.business.util;
 
+import javax.enterprise.context.RequestScoped;
 import java.security.MessageDigest;
 import java.util.Base64;
 
+@RequestScoped
 public class PasswordUtils {
-    public static String digestPassword(String plainTextPassword) {
+    public String digestPassword(String plainTextPassword) {
         try {
             MessageDigest md = MessageDigest.getInstance("SHA-256");
             md.update(plainTextPassword.getBytes("UTF-8"));

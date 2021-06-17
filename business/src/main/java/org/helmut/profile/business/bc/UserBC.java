@@ -1,8 +1,9 @@
-package org.helmut.profile.business;
+package org.helmut.profile.business.bc;
 
-import org.helmut.profile.mapping.UserMapper;
-import org.helmut.profile.model.SignUpUserTO;
-import org.helmut.profile.model.UserTO;
+import org.helmut.profile.business.mapping.UserMapper;
+import org.helmut.profile.business.model.SignUpUserTO;
+import org.helmut.profile.business.model.UserTO;
+import org.helmut.profile.business.util.PasswordUtils;
 import org.helmut.profile.repository.CvRepository;
 import org.helmut.profile.repository.UserRepository;
 import org.helmut.profile.repository.entity.CVEntity;
@@ -25,6 +26,9 @@ public class UserBC {
     @Inject
     private UserMapper userMapper;
 
+    @Inject
+    private PasswordUtils passwordUtils;
+
     public List<UserTO> getAll() {
         return userRepository.findAll().stream()
                 .map(userMapper::mapToTO)
@@ -37,7 +41,7 @@ public class UserBC {
     }
 
     public UserTO logIn(String username, String password) {
-        UserEntity userEntity = userRepository.findByUniqueProperty("username", username);
+        UserEntity userEntity = userRepository.getByUsernameAndPassword(username, passwordUtils.digestPassword(password));
         return userMapper.mapToTO(userEntity);
     }
 

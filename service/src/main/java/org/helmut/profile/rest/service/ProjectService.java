@@ -1,7 +1,7 @@
 package org.helmut.profile.rest.service;
 
-import org.helmut.profile.business.ProjectBC;
-import org.helmut.profile.model.ProjectTO;
+import org.helmut.profile.business.bc.ProjectBC;
+import org.helmut.profile.business.model.ProjectTO;
 
 import javax.inject.Inject;
 import javax.ws.rs.GET;

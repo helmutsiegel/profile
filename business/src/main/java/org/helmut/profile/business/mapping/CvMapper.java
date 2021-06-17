@@ -1,6 +1,6 @@
-package org.helmut.profile.mapping;
+package org.helmut.profile.business.mapping;
 
-import org.helmut.profile.model.ResumeTO;
+import org.helmut.profile.business.model.CvTO;
 import org.helmut.profile.repository.entity.CVEntity;
 
 import javax.enterprise.context.RequestScoped;
@@ -8,7 +8,7 @@ import javax.inject.Inject;
 import java.util.stream.Collectors;
 
 @RequestScoped
-public class ResumeMapper {
+public class CvMapper {
 
     @Inject
     private UserMapper userMapper;
@@ -22,22 +22,23 @@ public class ResumeMapper {
     @Inject
     CertificationMapper certificationMapper;
 
-    public ResumeTO mapToTO(CVEntity entity){
-        ResumeTO resumeTO = new ResumeTO();
-        resumeTO.setUserTO(userMapper.mapToTO(entity.getUserEntity()));
-        resumeTO.setAbout(entity.getLongAbout());
-        resumeTO.setExperiences(entity.getExperiences()
+    public CvTO mapCvTO(CVEntity entity) {
+        CvTO cvTO = new CvTO();
+        cvTO.setUserTO(userMapper.mapToTO(entity.getUserEntity()));
+        cvTO.setAbout(entity.getShortAbout());
+        cvTO.setExperiences(entity.getExperiences()
                 .stream()
                 .map(experienceMapper::mapToTO)
                 .collect(Collectors.toList()));
-        resumeTO.setCertifications(entity.getCertifications()
+        cvTO.setCertifications(entity.getCertifications()
                 .stream()
-                .map(certificationMapper::mapToTO)
+                .map(certificationMapper::mapToSimpleTO)
                 .collect(Collectors.toList()));
-        resumeTO.setLanguages(entity.getLanguages()
+        cvTO.setLanguages(entity.getLanguages()
                 .stream()
                 .map(languageMapper::mapToTO)
                 .collect(Collectors.toList()));
-        return resumeTO;
+
+        return cvTO;
     }
 }

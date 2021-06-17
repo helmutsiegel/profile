@@ -1,7 +1,7 @@
-package org.helmut.profile.business;
+package org.helmut.profile.business.bc;
 
-import org.helmut.profile.mapping.ProjectMapper;
-import org.helmut.profile.model.ProjectTO;
+import org.helmut.profile.business.mapping.ProjectMapper;
+import org.helmut.profile.business.model.ProjectTO;
 import org.helmut.profile.repository.ProjectRepository;
 
 import javax.enterprise.context.RequestScoped;
