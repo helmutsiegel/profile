@@ -32,7 +32,7 @@ export class CvComponent implements OnInit, OnDestroy {
   };
 
   public saveAbout(event: string) {
-    this.cvService.getByUsername(this.cvVO.personalInfoVO.username)
+    this.cvService.getByEmail(this.cvVO.personalInfoVO.email)
       .subscribe(cvTO => {
         cvTO.about = event;
         this.cvService.update(cvTO);
@@ -40,7 +40,7 @@ export class CvComponent implements OnInit, OnDestroy {
   }
 
   public cvIsFromCurrentUser(): boolean {
-    return this.currentUser && (this.currentUser.username === this.activatedRoute.snapshot.params['username']);
+    return this.currentUser && (this.currentUser.email === this.activatedRoute.snapshot.params['email']);
   }
 
   ngOnDestroy(): void {

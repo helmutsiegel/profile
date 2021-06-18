@@ -27,23 +27,23 @@ const routes: Routes = [
     loadChildren: () => import('./user-profile/user-profile.module').then(m => m.UserProfileModule)
   },
   {
-    path: ':username/cv',
+    path: ':email/cv',
     loadChildren: () => import('./cv/cv.module').then(m => m.CvModule),
     canActivate: [UsersPageRouteActivatorService]
   },
   {
-    path: ':username/resume',
+    path: ':email/resume',
     loadChildren: () => import('./resume/resume.module').then(m => m.ResumeModule),
     canActivate: [UsersPageRouteActivatorService]
   },
   {
-    path: ':username/projects',
+    path: ':email/projects',
     loadChildren: () => import('./projects/projects.module').then(m => m.ProjectsModule),
     canActivate: [UsersPageRouteActivatorService]
   },
   {
-    path: ':username/:',
-    redirectTo: ':username/cv'
+    path: ':email/:',
+    redirectTo: ':email/cv'
   },
   {
     path: 'users',

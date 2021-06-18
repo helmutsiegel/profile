@@ -38,7 +38,7 @@
 
 <simple-modal [title]="'Found users'" [modalId]="'foundUsersModal'">
   <div class="list-group">
-    <div class="list-group-item cursor-pointer mouse-over-item" *ngFor="let user of foundUsers" [routerLink]="[user.username, 'cv']"
+    <div class="list-group-item cursor-pointer mouse-over-item" *ngFor="let user of foundUsers" [routerLink]="[user.email, 'cv']"
          data-dismiss="modal">
       {{user.firstName}} {{user.lastName}}
     </div>

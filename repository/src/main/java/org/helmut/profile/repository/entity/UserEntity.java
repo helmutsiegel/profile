@@ -12,8 +12,8 @@ import java.time.LocalDate;
 @Table(name = "T_USER")
 public class UserEntity extends BaseEntity {
 
-    @Column(name = "user_name", unique = true)
-    private String username;
+    @Column(name = "email", unique = true)
+    private String email;
 
     @Column(name = "first_name")
     private String firstName;
@@ -65,14 +65,6 @@ public class UserEntity extends BaseEntity {
         this.birthDate = birthDate;
     }
 
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
     public Seniority getSeniority() {
         return seniority;
     }
@@ -87,5 +79,13 @@ public class UserEntity extends BaseEntity {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }

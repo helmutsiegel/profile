@@ -14,8 +14,8 @@ export class UsersPageRouteActivatorService implements CanActivate {
   }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    const usernameFromUrl = route.params['username'];
-    return this.userService.userExists(usernameFromUrl).pipe(
+    const emailFromUrl = route.params['email'];
+    return this.userService.userExists(emailFromUrl).pipe(
       map(_ => {
         return true;
       }),

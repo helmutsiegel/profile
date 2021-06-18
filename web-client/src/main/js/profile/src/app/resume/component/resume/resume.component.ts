@@ -31,12 +31,12 @@ export class ResumeComponent implements OnInit {
     this.subscription = this.authService.getCurrentUser().subscribe(userTO => {
       this.currentUser = userTO;
     });
-    this.resumeService.getResumeByUsername(this.activatedRoute.snapshot.params['username'])
+    this.resumeService.getResumeByEmail(this.activatedRoute.snapshot.params['email'])
       .subscribe(resumeTO => this.resumeVO = this.resumeMapperService.mapToVO(resumeTO));
   }
 
   public saveAbout(event: string) {
-    this.resumeService.getResumeByUsername(this.resumeVO.personalInfoVO.username)
+    this.resumeService.getResumeByEmail(this.resumeVO.personalInfoVO.email)
       .subscribe(resumeTO => {
         resumeTO.about = event;
         this.resumeService.update(resumeTO)
@@ -47,6 +47,6 @@ export class ResumeComponent implements OnInit {
   }
 
   public cvIsFromCurrentUser(): boolean {
-    return this.currentUser && (this.currentUser.username === this.activatedRoute.snapshot.params['username']);
+    return this.currentUser && (this.currentUser.email === this.activatedRoute.snapshot.params['email']);
   }
 }

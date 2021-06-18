@@ -11,8 +11,8 @@ export class ProjectService {
   constructor(private backend: BackendService) {
   }
 
-  public getProjectByUsername(username: string): Observable<ProjectTO[]> {
-    return this.backend.get<ProjectTO[]>('project/byUsername/' + username);
+  public getProjectByEmail(email: string): Observable<ProjectTO[]> {
+    return this.backend.get<ProjectTO[]>('project/byEmail/' + email);
   }
 
   public getByName(name: string): Observable<ProjectTO> {

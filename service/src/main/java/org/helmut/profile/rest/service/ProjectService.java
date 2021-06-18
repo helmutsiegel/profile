@@ -25,9 +25,9 @@ public class ProjectService {
     }
 
     @GET
-    @Path("byUsername/{username}")
+    @Path("byEmail/{email}")
     @Produces(MediaType.APPLICATION_JSON)
-    public List<ProjectTO> getByUsername(@PathParam("username") String username) {
-        return projectBC.getByUsername(username);
+    public List<ProjectTO> getByEmail(@PathParam("email") String email) {
+        return projectBC.getByEmail(email);
     }
 }

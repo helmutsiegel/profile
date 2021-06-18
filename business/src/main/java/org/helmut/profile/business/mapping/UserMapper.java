@@ -16,7 +16,7 @@ public class UserMapper {
 
     public UserTO mapToTO(UserEntity userEntity) {
         UserTO userTO = new UserTO();
-        userTO.setUsername(userEntity.getUsername());
+        userTO.setEmail(userEntity.getEmail());
         userTO.setFirstName(userEntity.getFirstName());
         userTO.setLastName(userEntity.getLastName());
         userTO.setBirthDate(userEntity.getBirthDate());
@@ -29,7 +29,7 @@ public class UserMapper {
         UserEntity userEntity = new UserEntity();
         userEntity.setFirstName(signUpUserTO.getFirstName());
         userEntity.setLastName(signUpUserTO.getLastName());
-        userEntity.setUsername(signUpUserTO.getUsername());
+        userEntity.setEmail(signUpUserTO.getEmail());
         userEntity.setPassword(passwordUtils.digestPassword(signUpUserTO.getPassword1()));
         return userEntity;
     }

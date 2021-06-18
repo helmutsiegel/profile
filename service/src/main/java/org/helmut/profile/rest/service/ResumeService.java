@@ -16,10 +16,10 @@ public class ResumeService {
     private ResumeBC resumeBC;
 
     @GET
-    @Path("{username}")
+    @Path("{email}")
     @Produces(MediaType.APPLICATION_JSON)
-    public ResumeTO getByUsername(@PathParam("username") String username) {
-        return resumeBC.getByUsername(username);
+    public ResumeTO getByEmail(@PathParam("email") String email) {
+        return resumeBC.getByEmail(email);
     }
 
     @PUT

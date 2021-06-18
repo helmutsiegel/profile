@@ -36,7 +36,7 @@ export class ProfilePageComponent implements OnInit {
     if (this.profileForm.valid) {
       this.authService.updateCurrentUser(value.firstName, value.lastName);
       this.authService.getCurrentUser().subscribe(userTO => {
-        this.router.navigate([userTO.username, 'cv']);
+        this.router.navigate([userTO.email, 'cv']);
       });
     }
   }

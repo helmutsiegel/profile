@@ -35,18 +35,18 @@ public class UserBC {
                 .collect(Collectors.toList());
     }
 
-    public UserTO getByUsername(String username) {
-        List<UserEntity> users = userRepository.findByProperty("username", username);
+    public UserTO getByEmail(String email) {
+        List<UserEntity> users = userRepository.findByProperty("email", email);
         return users.size() == 1 ? userMapper.mapToTO(users.get(0)) : null;
     }
 
-    public UserTO logIn(String username, String password) {
-        UserEntity userEntity = userRepository.getByUsernameAndPassword(username, passwordUtils.digestPassword(password));
+    public UserTO logIn(String email, String password) {
+        UserEntity userEntity = userRepository.getByEmailAndPassword(email, passwordUtils.digestPassword(password));
         return userMapper.mapToTO(userEntity);
     }
 
-    public boolean existsUser(String username) {
-        return userRepository.countByProperty("username", username) == 1;
+    public boolean existsUser(String email) {
+        return userRepository.countByProperty("email", email) == 1;
     }
 
     public void signUp(SignUpUserTO signUpUserTO) {

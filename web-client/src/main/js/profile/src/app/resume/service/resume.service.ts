@@ -11,8 +11,8 @@ export class ResumeService {
   constructor(private backend: BackendService) {
   }
 
-  public getResumeByUsername(username: string): Observable<ResumeTO> {
-    return this.backend.get<ResumeTO>('resume/' + username);
+  public getResumeByEmail(email: string): Observable<ResumeTO> {
+    return this.backend.get<ResumeTO>('resume/' + email);
   }
 
   public update(resumeTO: ResumeTO): Observable<any> {

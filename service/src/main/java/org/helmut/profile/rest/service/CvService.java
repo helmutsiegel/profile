@@ -16,10 +16,10 @@ public class CvService {
     private CvBC cvBC;
 
     @GET
-    @Path("{username}")
+    @Path("{email}")
     @Produces(MediaType.APPLICATION_JSON)
-    public CvTO getByUsername(@PathParam("username") String username) {
-        return cvBC.getByUsername(username);
+    public CvTO getByEmail(@PathParam("email") String email) {
+        return cvBC.getByEmail(email);
     }
 
     @PUT

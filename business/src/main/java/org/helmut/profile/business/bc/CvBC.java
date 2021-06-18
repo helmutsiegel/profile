@@ -17,12 +17,12 @@ public class CvBC {
     @Inject
     private CvMapper cvMapper;
 
-    public CvTO getByUsername(String username) {
-        return cvMapper.mapCvTO(cvRepository.findByProperty("userEntity.username", username).get(0));
+    public CvTO getByEmail(String email) {
+        return cvMapper.mapCvTO(cvRepository.findByProperty("userEntity.email", email).get(0));
     }
 
     public void update(CvTO cvTO) {
-        CVEntity cvEntity = cvRepository.findByProperty("userEntity.username", cvTO.getUserTO().getUsername()).get(0);
+        CVEntity cvEntity = cvRepository.findByProperty("userEntity.email", cvTO.getUserTO().getEmail()).get(0);
         cvEntity.setShortAbout(cvTO.getAbout());
         cvRepository.update(cvEntity);
     }

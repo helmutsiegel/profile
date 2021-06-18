@@ -17,8 +17,8 @@ export class ProjectsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    const usernameFromUrl = this.route.snapshot.params['username'];
-    this.projectService.getProjectByUsername(usernameFromUrl).subscribe(projects => {
+    const emailFromUrl = this.route.snapshot.params['email'];
+    this.projectService.getProjectByEmail(emailFromUrl).subscribe(projects => {
       this.projectVOs = projects;
     });
   }

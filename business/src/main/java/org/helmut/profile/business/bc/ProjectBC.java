@@ -18,8 +18,8 @@ public class ProjectBC {
     @Inject
     private ProjectMapper projectMapper;
 
-    public List<ProjectTO> getByUsername(String username) {
-        return projectRepository.findByProperty("userEntity.username", username)
+    public List<ProjectTO> getByEmail(String email) {
+        return projectRepository.findByProperty("userEntity.email", email)
                 .stream().map(projectMapper::mapToProjectTO).collect(Collectors.toList());
     }
 

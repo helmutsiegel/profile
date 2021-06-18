@@ -27,7 +27,7 @@ export class ResumeMapperService {
   }
 
   private mapPersonalInfo(userTO: UserTO): PersonalInfoVO {
-    return new PersonalInfoVO(userTO.username, userTO.firstName + ' ' + userTO.lastName, userTO.birthDate, userTO.title);
+    return new PersonalInfoVO(userTO.email, userTO.firstName + ' ' + userTO.lastName, userTO.birthDate, userTO.title);
   }
 
   private mapExperiences(experiences: ExperienceTO[]): ExperienceVO[] {

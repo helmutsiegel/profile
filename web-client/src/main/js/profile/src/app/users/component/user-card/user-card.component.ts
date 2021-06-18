@@ -18,6 +18,6 @@ export class UserCardComponent implements OnInit {
   }
 
   public openUsersPage(): void {
-    this.router.navigate([this.userTO.username, 'cv']);
+    this.router.navigate([this.userTO.email, 'cv']);
   }
 }

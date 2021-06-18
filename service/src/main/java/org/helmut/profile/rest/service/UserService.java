@@ -39,21 +39,21 @@ public class UserService {
     @Path("currentUser")
     @Produces(MediaType.APPLICATION_JSON)
     public UserTO getByCurrentUser() {
-        return userBC.getByUsername(httpHeaders.getHeaderString(CURRENT_USER));
+        return userBC.getByEmail(httpHeaders.getHeaderString(CURRENT_USER));
     }
 
     @GET
-    @Path("{username}")
+    @Path("{email}")
     @Produces(MediaType.APPLICATION_JSON)
-    public UserTO getByUsername(@PathParam("username") String username) {
-        return userBC.getByUsername(username);
+    public UserTO getByEmail(@PathParam("email") String email) {
+        return userBC.getByEmail(email);
     }
 
     @GET
-    @Path("exists/{username}")
+    @Path("exists/{email}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response userExists(@PathParam("username") String username) {
-        return userBC.existsUser(username) ? Response.ok().build() : Response.status(Response.Status.NOT_FOUND).build();
+    public Response userExists(@PathParam("email") String email) {
+        return userBC.existsUser(email) ? Response.ok().build() : Response.status(Response.Status.NOT_FOUND).build();
     }
 
     @GET
@@ -81,8 +81,8 @@ public class UserService {
     @Path("login")
     public Response login(LoginUserTO loginUserTO) {
         try {
-            UserTO userTO = userBC.logIn(loginUserTO.getUsername(), loginUserTO.getPassword());
-            String token = tokenIssuer.issueToken(loginUserTO.getUsername());
+            UserTO userTO = userBC.logIn(loginUserTO.getEmail(), loginUserTO.getPassword());
+            String token = tokenIssuer.issueToken(loginUserTO.getEmail());
             return Response.ok(userTO).header(AUTHORIZATION, "Bearer " + token).build();
         } catch (Exception e) {
             return Response.status(UNAUTHORIZED).build();

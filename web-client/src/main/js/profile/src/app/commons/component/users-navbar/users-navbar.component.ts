@@ -16,10 +16,10 @@ export class UsersNavbarComponent implements OnInit {
   }
 
   public getCSSClassForSidebar(link: string) {
-    return this.router.url == '/' + this.route.snapshot.params['username'] + '/' + link ? 'btn-dark' : 'btn-light btn-outline-secondary';
+    return this.router.url == '/' + this.route.snapshot.params['email'] + '/' + link ? 'btn-dark' : 'btn-light btn-outline-secondary';
   }
 
   navigate(link: string) {
-    this.router.navigate([this.route.snapshot.params['username'], link]);
+    this.router.navigate([this.route.snapshot.params['email'], link]);
   }
 }

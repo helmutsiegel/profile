@@ -10,7 +10,7 @@ import {UsersService} from "../../users/service/users.service";
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  username!: string;
+  email!: string;
   password!: string;
   mouseoverLogin: boolean = false;
 
@@ -25,14 +25,13 @@ export class LoginComponent implements OnInit {
   }
 
   public login(formValues: any) {
-    this.userService.login(formValues.username, formValues.password)
+    this.userService.login(formValues.email, formValues.password)
       .subscribe(userTO => {
-          this.authService.setCurrentUser(userTO);
           this.toastr.success('Welcome ' + userTO.firstName, 'Login successful!');
-          this.router.navigate([userTO.username, 'cv']);
+          this.router.navigate([userTO.email, 'cv']);
         },
         _ => {
-          this.toastr.error('Username or password incorrect!');
+          this.toastr.error('Email or password incorrect!');
         });
   }
 

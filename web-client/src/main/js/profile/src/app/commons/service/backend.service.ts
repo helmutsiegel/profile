@@ -39,7 +39,8 @@ export class BackendService {
   private handleToken(response: HttpResponse<any>, url: string) {
     const authorization = response.headers.get('Authorization');
     if (authorization) {
-      if (url === 'user/currentUser') {
+      console.log(url)
+      if (url === 'user/currentUser' || url === 'user/login') {
         this.authService.setCurrentUser(response.body);
       }
       if (authorization !== localStorage.getItem('Authorization')) {

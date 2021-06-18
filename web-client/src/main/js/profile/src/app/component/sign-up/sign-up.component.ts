@@ -19,7 +19,7 @@ export class SignUpComponent implements OnInit {
   private lastName!: FormControl;
   private password1!: FormControl;
   private password2!: FormControl;
-  private username!: FormControl;
+  private email!: FormControl;
 
   constructor(private signUpService: SignUpService,
               private toastr: ToastrService,
@@ -33,8 +33,8 @@ export class SignUpComponent implements OnInit {
     this.firstName.setValidators(Validators.required)
     this.lastName = new FormControl();
     this.lastName.setValidators(Validators.required)
-    this.username = new FormControl();
-    this.username.setValidators(Validators.required)
+    this.email = new FormControl();
+    this.email.setValidators(Validators.required)
     this.password1 = new FormControl();
     this.password1.setValidators(Validators.required)
     this.password2 = new FormControl();
@@ -44,7 +44,7 @@ export class SignUpComponent implements OnInit {
       firstName: this.firstName,
       password1: this.password1,
       password2: this.password2,
-      username: this.username
+      email: this.email
     })
   }
 
@@ -55,16 +55,13 @@ export class SignUpComponent implements OnInit {
       title: '',
       password1: this.password1.value,
       password2: this.password2.value,
-      username: this.username.value
+      email: this.email.value
     } as SignUpUserTO).subscribe(
       userTO => {
         this.toastr.success('Successful registration');
-        this.userService.login(userTO.username, userTO.password1);
-        this.authService.getCurrentUser().subscribe(userTOFromAuth => {
-          if (userTOFromAuth) {
-            this.router.navigate([userTOFromAuth.username, 'cv']);
-          }
-        })
+        this.userService.login(userTO.email, userTO.password1).subscribe(userTO =>{
+          this.router.navigate([userTO.email, 'cv']);
+        });
       },
       error => {
         this.toastr.error('Registration failed.');

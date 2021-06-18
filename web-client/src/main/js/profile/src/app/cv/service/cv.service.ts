@@ -11,8 +11,8 @@ export class CvService {
   constructor(private backend: BackendService) {
   }
 
-  public getByUsername(username: string): Observable<CvTO> {
-    return this.backend.get<CvTO>('cv/' + username);
+  public getByEmail(email: string): Observable<CvTO> {
+    return this.backend.get<CvTO>('cv/' + email);
   }
 
   public update(cvTO: CvTO): void {

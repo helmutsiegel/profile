@@ -17,12 +17,12 @@ public class ResumeBC {
     @Inject
     private CvRepository cvRepository;
 
-    public ResumeTO getByUsername(String username) {
-        return mapper.mapToTO(cvRepository.findByProperty("userEntity.username", username).get(0));
+    public ResumeTO getByEmail(String email) {
+        return mapper.mapToTO(cvRepository.findByProperty("userEntity.email", email).get(0));
     }
 
     public void update(ResumeTO resumeTO) {
-        CVEntity cvEntity = cvRepository.findByProperty("userEntity.username", resumeTO.getUserTO().getUsername()).get(0);
+        CVEntity cvEntity = cvRepository.findByProperty("userEntity.email", resumeTO.getUserTO().getEmail()).get(0);
         cvEntity.setLongAbout(resumeTO.getAbout());
         cvRepository.update(cvEntity);
     }
