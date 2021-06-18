@@ -37,5 +37,6 @@ public class UserMapper {
     public void updateUser(UserEntity userEntity, UserTO userTO) {
         userEntity.setFirstName(userTO.getFirstName());
         userEntity.setLastName(userTO.getLastName());
+        userEntity.setTitle(userTO.getTitle());
     }
 }

@@ -15,6 +15,7 @@ export class ProfilePageComponent implements OnInit {
   profileForm!: FormGroup;
   private firstName!: FormControl;
   private lastName!: FormControl;
+  private title!: FormControl;
   private currentUser!: UserTO;
 
   constructor(private authService: AuthService,
@@ -27,9 +28,11 @@ export class ProfilePageComponent implements OnInit {
       this.currentUser = {...userTO};
       this.firstName = new FormControl(userTO?.firstName, Validators.required);
       this.lastName = new FormControl(userTO?.lastName, Validators.required);
+      this.title = new FormControl(userTO?.title, Validators.required);
       this.profileForm = new FormGroup({
         lastName: this.lastName,
         firstName: this.firstName,
+        title: this.title
       })
     });
   }
@@ -40,8 +43,9 @@ export class ProfilePageComponent implements OnInit {
 
   public saveProfile(formValues: any, closeAfterSave?: boolean) {
     if (this.profileForm.valid) {
-      this.currentUser.firstName = formValues.firstName
-      this.currentUser.lastName = formValues.lastName
+      this.currentUser.firstName = formValues.firstName;
+      this.currentUser.lastName = formValues.lastName;
+      this.currentUser.title = formValues.title;
       this.userService.updateCurrentUser(this.currentUser).subscribe(userTO => {
         if (closeAfterSave) {
           this.cancel();
@@ -57,6 +61,10 @@ export class ProfilePageComponent implements OnInit {
   }
 
   public lastNameInValid(): boolean {
+    return this.lastName.invalid && this.profileForm.controls.lastName.touched
+  }
+
+  public titleInValid(): boolean {
     return this.lastName.invalid && this.profileForm.controls.lastName.touched
   }
 }
