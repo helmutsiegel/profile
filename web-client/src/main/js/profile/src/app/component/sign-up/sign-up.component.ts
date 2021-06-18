@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {SignUpService} from "../../service/sign-up.service";
-import {SignUpUserTO} from "../../commons/model/to/sign-up-user-t-o";
-import {ToastrService} from "../../commons/service/toastr.service";
+import {SignUpUserTO} from "../../shared/model/to/sign-up-user-t-o";
+import {ToastrService} from "../../shared/service/toastr.service";
 import {Router} from "@angular/router";
 import {AuthService} from "../../service/auth.service";
 import {UsersService} from "../../users/service/users.service";

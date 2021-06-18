@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {AuthService} from "../../service/auth.service";
-import {ToastrService} from "../../commons/service/toastr.service";
+import {ToastrService} from "../../shared/service/toastr.service";
 import {Router} from "@angular/router";
 import {UsersService} from "../../users/service/users.service";
 

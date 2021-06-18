@@ -1,4 +1,4 @@
-import {PersonalInfoVO} from "../../commons/model/vo/personal-info-v-o";
+import {PersonalInfoVO} from "../../shared/model/vo/personal-info-v-o";
 import {ExperienceVO} from "./experience-v-o";
 import {LanguageVO} from "./language-v-o";
 import {CertificationVO} from "./certification-v-o";

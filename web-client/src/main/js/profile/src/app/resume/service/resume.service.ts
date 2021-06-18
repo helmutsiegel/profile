@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Observable} from "rxjs";
-import {ResumeTO} from "../../commons/model/to/resume-t-o";
-import {BackendService} from "../../commons/service/backend.service";
+import {ResumeTO} from "../../shared/model/to/resume-t-o";
+import {BackendService} from "../../shared/service/backend.service";
 
 @Injectable({
   providedIn: 'root'

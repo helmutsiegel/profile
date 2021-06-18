@@ -1,8 +1,8 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {AuthService} from "../../service/auth.service";
-import {UserTO} from "../../commons/model/to/user-t-o";
+import {UserTO} from "../../shared/model/to/user-t-o";
 import {UsersService} from "../../users/service/users.service";
-import {ToastrService} from "../../commons/service/toastr.service";
+import {ToastrService} from "../../shared/service/toastr.service";
 import {Subscription} from "rxjs";
 
 @Component({

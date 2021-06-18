@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
-import {UserTO} from "../../commons/model/to/user-t-o";
+import {UserTO} from "../../shared/model/to/user-t-o";
 import {Observable} from "rxjs";
-import {BackendService} from "../../commons/service/backend.service";
+import {BackendService} from "../../shared/service/backend.service";
 import {AuthService} from "../../service/auth.service";
 
 @Injectable({

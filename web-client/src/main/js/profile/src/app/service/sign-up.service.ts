@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
-import {SignUpUserTO} from "../commons/model/to/sign-up-user-t-o";
+import {SignUpUserTO} from "../shared/model/to/sign-up-user-t-o";
 import {Observable} from "rxjs";
-import {BackendService} from "../commons/service/backend.service";
+import {BackendService} from "../shared/service/backend.service";
 
 @Injectable({
   providedIn: 'root'

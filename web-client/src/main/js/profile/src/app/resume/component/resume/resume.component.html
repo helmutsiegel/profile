@@ -6,10 +6,10 @@
 </div>
 <div class="row pt-3" *ngIf="resumeVO">
   <div class="col-3">
-    <personal-info [personalInfoVO]="resumeVO.personalInfoVO"></personal-info>
+    <personal-info [personalInfoVO]="resumeVO.personalInfoVO" [editable]="loggedInUserIsOnTheyPage()"></personal-info>
   </div>
   <div class="col-9">
-    <simple-text-card [editable]="cvIsFromCurrentUser()" title="About" [length]="2000" [text]="resumeVO.about"
+    <simple-text-card [editable]="loggedInUserIsOnTheyPage()" title="About" [length]="2000" [text]="resumeVO.about"
                       (onSave)="saveAbout($event)"></simple-text-card>
     <div class="mt-2">
       <experiences [experiences]="resumeVO.experiences"></experiences>

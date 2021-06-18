@@ -1,10 +1,10 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {WelcomeComponent} from "./component/welcome/welcome.component";
-import {Error404Component} from "./commons/component/error404/error404.component";
-import {UsersPageRouteActivatorService} from "./commons/service/users-page-route-activator.service";
+import {Error404Component} from "./shared/component/error404/error404.component";
+import {UsersPageRouteActivatorService} from "./shared/service/users-page-route-activator.service";
 import {LoginComponent} from "./component/login/login.component";
-import {LoginPageRouteActivatorService} from "./commons/service/login-page-route-activator.service";
+import {LoginPageRouteActivatorService} from "./shared/service/login-page-route-activator.service";
 import {SignUpComponent} from "./component/sign-up/sign-up.component";
 
 

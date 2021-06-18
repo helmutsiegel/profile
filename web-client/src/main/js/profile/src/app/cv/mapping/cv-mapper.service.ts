@@ -1,14 +1,14 @@
 import {Injectable} from '@angular/core';
-import {CvTO} from "../../commons/model/to/cv-t-o";
+import {CvTO} from "../../shared/model/to/cv-t-o";
 import {CvVO} from "../model/cv-v-o";
-import {UserTO} from "../../commons/model/to/user-t-o";
-import {PersonalInfoVO} from "../../commons/model/vo/personal-info-v-o";
+import {UserTO} from "../../shared/model/to/user-t-o";
+import {PersonalInfoVO} from "../../shared/model/vo/personal-info-v-o";
 import {ExperienceVO} from "../model/experience-v-o";
 import {LanguageVO} from "../model/language-v-o";
 import {CertificationVO} from "../model/certification-v-o";
-import {ExperienceTO} from "../../commons/model/to/experience-t-o";
-import {LanguageTO} from "../../commons/model/to/language-t-o";
-import {CertificationTO} from "../../commons/model/to/certification-t-o";
+import {ExperienceTO} from "../../shared/model/to/experience-t-o";
+import {LanguageTO} from "../../shared/model/to/language-t-o";
+import {CertificationTO} from "../../shared/model/to/certification-t-o";
 
 @Injectable({
   providedIn: 'root'

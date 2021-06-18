@@ -3,7 +3,7 @@ import {CvVO} from "../../model/cv-v-o";
 import {ActivatedRoute, Router} from "@angular/router";
 import {CvService} from "../../service/cv.service";
 import {AuthService} from "../../../service/auth.service";
-import {UserTO} from "../../../commons/model/to/user-t-o";
+import {UserTO} from "../../../shared/model/to/user-t-o";
 import {Subscription} from "rxjs";
 
 @Component({
@@ -18,6 +18,7 @@ export class CvComponent implements OnInit, OnDestroy {
   private subscription!: Subscription;
 
   constructor(private activatedRoute: ActivatedRoute,
+              private router: Router,
               private cvService: CvService,
               private authService: AuthService) {
   }
@@ -39,11 +40,15 @@ export class CvComponent implements OnInit, OnDestroy {
       })
   }
 
-  public cvIsFromCurrentUser(): boolean {
+  public loggedInUserIsOnTheyPage(): boolean {
     return this.currentUser && (this.currentUser.email === this.activatedRoute.snapshot.params['email']);
   }
 
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
+  }
+
+  public editPersonalInfo(): void {
+    this.router.navigate(['user/profile']);
   }
 }

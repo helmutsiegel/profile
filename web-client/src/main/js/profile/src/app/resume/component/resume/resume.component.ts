@@ -3,10 +3,10 @@ import {ResumeService} from "../../service/resume.service";
 import {ResumeVO} from "../../model/resume-v-o";
 import {ActivatedRoute} from "@angular/router";
 import {ResumeMapperService} from "../../mapping/resume-mapper.service";
-import {UserTO} from "../../../commons/model/to/user-t-o";
+import {UserTO} from "../../../shared/model/to/user-t-o";
 import {Subscription} from "rxjs";
 import {AuthService} from "../../../service/auth.service";
-import {ToastrService} from "../../../commons/service/toastr.service";
+import {ToastrService} from "../../../shared/service/toastr.service";
 import {catchError} from "rxjs/operators";
 
 @Component({
@@ -46,7 +46,7 @@ export class ResumeComponent implements OnInit {
       })
   }
 
-  public cvIsFromCurrentUser(): boolean {
+  public loggedInUserIsOnTheyPage(): boolean {
     return this.currentUser && (this.currentUser.email === this.activatedRoute.snapshot.params['email']);
   }
 }

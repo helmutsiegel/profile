@@ -1,13 +1,13 @@
 import {Injectable} from '@angular/core';
-import {ResumeTO} from "../../commons/model/to/resume-t-o";
+import {ResumeTO} from "../../shared/model/to/resume-t-o";
 import {ResumeVO} from "../model/resume-v-o";
-import {PersonalInfoVO} from "../../commons/model/vo/personal-info-v-o";
-import {UserTO} from "../../commons/model/to/user-t-o";
-import {ExperienceTO} from "../../commons/model/to/experience-t-o";
+import {PersonalInfoVO} from "../../shared/model/vo/personal-info-v-o";
+import {UserTO} from "../../shared/model/to/user-t-o";
+import {ExperienceTO} from "../../shared/model/to/experience-t-o";
 import {ExperienceVO} from "../model/experience-v-o";
-import {LanguageTO} from "../../commons/model/to/language-t-o";
+import {LanguageTO} from "../../shared/model/to/language-t-o";
 import {LanguageVO} from "../model/language-v-o";
-import {CertificationTO} from "../../commons/model/to/certification-t-o";
+import {CertificationTO} from "../../shared/model/to/certification-t-o";
 import {CertificationVO} from "../model/certification-v-o";
 
 @Injectable({

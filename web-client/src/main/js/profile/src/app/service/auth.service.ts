@@ -1,7 +1,7 @@
 import {Injectable, OnDestroy} from '@angular/core';
-import {UserTO} from "../commons/model/to/user-t-o";
+import {UserTO} from "../shared/model/to/user-t-o";
 import {Observable, ReplaySubject, Subject, Subscription} from "rxjs";
-import {ToastrService} from "../commons/service/toastr.service";
+import {ToastrService} from "../shared/service/toastr.service";
 
 @Injectable({
   providedIn: 'root'

@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {UserTO} from "../../../commons/model/to/user-t-o";
+import {UserTO} from "../../../shared/model/to/user-t-o";
 import {UsersService} from "../../service/users.service";
 
 @Component({

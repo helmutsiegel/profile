@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
-import {CvTO} from "../../commons/model/to/cv-t-o";
+import {CvTO} from "../../shared/model/to/cv-t-o";
 import {Observable} from "rxjs";
-import {BackendService} from "../../commons/service/backend.service";
+import {BackendService} from "../../shared/service/backend.service";
 
 @Injectable({
   providedIn: 'root'

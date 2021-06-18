@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {ProjectTO} from "../../commons/model/to/project-t-o";
+import {ProjectTO} from "../../shared/model/to/project-t-o";
 import {ProjectVO} from "../model/project-v-o";
 
 @Injectable({

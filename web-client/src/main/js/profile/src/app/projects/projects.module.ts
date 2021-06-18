@@ -3,7 +3,7 @@ import {CommonModule} from '@angular/common';
 
 import {ProjectsRoutingModule} from './projects-routing.module';
 import {ProjectsComponent} from './component/projects/projects.component';
-import {CommonsModule} from "../commons/commons.module";
+import {CommonsModule} from "../shared/commons.module";
 import {ProjectCardComponent} from "./component/project-card/project-card.component";
 import { ProjectPageComponent } from './component/project-page/project-page.component';
 
