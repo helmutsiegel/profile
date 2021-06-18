@@ -4,7 +4,6 @@ import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jws;
 import io.jsonwebtoken.Jwts;
 import org.helmut.profile.rest.auth.util.KeyGenerator;
-import org.helmut.profile.rest.auth.util.TokenIssuer;
 
 import javax.annotation.Priority;
 import javax.inject.Inject;
@@ -17,7 +16,7 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.ext.Provider;
 import java.security.Key;
 
-import static org.helmut.profile.rest.service.Constants.CURRENT_USER;
+import static org.helmut.profile.rest.service.Constants.CURRENT_USER_EMAIL;
 
 @Provider
 @JWTTokenNeeded
@@ -39,7 +38,7 @@ public class JWTTokenNeededFilter implements ContainerRequestFilter {
             Key key = keyGenerator.generateKey();
             Jws<Claims> claimsJws = Jwts.parser().setSigningKey(key).parseClaimsJws(token);
             String subject = claimsJws.getBody().getSubject();
-            requestContext.getHeaders().add(CURRENT_USER, subject);
+            requestContext.getHeaders().add(CURRENT_USER_EMAIL, subject);
         } catch (Exception e) {
             requestContext.abortWith(Response.status(Response.Status.UNAUTHORIZED).build());
         }

@@ -18,28 +18,27 @@ export class BackendService {
 
   public get<T>(url: string, notificationOnError?: boolean): Observable<T> {
     return this.http.get<T>(url, {observe: 'response'}).pipe(
-      tap(response => this.handleToken(response, url), e => this.handleError(e, url, notificationOnError)),
+      tap(response => this.handleTokenAndAppState(response, url), e => this.handleError(e, url, notificationOnError)),
       map(response => response.body as T));
   }
 
   public post<T>(url: string, body: any, notificationOnError?: boolean): Observable<T> {
     return this.http.post<T>(url, body, {observe: 'response'})
       .pipe(
-        tap(response => this.handleToken(response, url), e => this.handleError(e, url, notificationOnError)),
+        tap(response => this.handleTokenAndAppState(response, url), e => this.handleError(e, url, notificationOnError)),
         map(response => response.body as T));
   }
 
   public put<T>(url: string, body: any, notificationOnError?: boolean): Observable<T> {
     return this.http.put<T>(url, body, {observe: 'response'})
       .pipe(
-        tap(response => this.handleToken(response, url), e => this.handleError(e, url, notificationOnError)),
+        tap(response => this.handleTokenAndAppState(response, url), e => this.handleError(e, url, notificationOnError)),
         map(response => response.body as T));
   }
 
-  private handleToken(response: HttpResponse<any>, url: string) {
+  private handleTokenAndAppState(response: HttpResponse<any>, url: string) {
     const authorization = response.headers.get('Authorization');
     if (authorization) {
-      console.log(url)
       if (url === 'user/currentUser' || url === 'user/login') {
         this.authService.setCurrentUser(response.body);
       }

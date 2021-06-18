@@ -47,7 +47,7 @@ const routes: Routes = [
   },
   {
     path: 'users',
-    loadChildren: () => import('./users/users.module').then(m => m.UsersModule)
+    loadChildren: () => import('./user/users.module').then(m => m.UsersModule)
   },
   {
     path: '404',

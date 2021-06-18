@@ -36,8 +36,7 @@ public class UserBC {
     }
 
     public UserTO getByEmail(String email) {
-        List<UserEntity> users = userRepository.findByProperty("email", email);
-        return users.size() == 1 ? userMapper.mapToTO(users.get(0)) : null;
+        return userMapper.mapToTO(userRepository.findByUniqueProperty("email", email));
     }
 
     public UserTO logIn(String email, String password) {
@@ -62,5 +61,12 @@ public class UserBC {
                 .stream()
                 .map(userMapper::mapToTO)
                 .collect(Collectors.toList());
+    }
+
+    public UserTO updateUser(UserTO userTO) {
+        UserEntity userEntity = userRepository.findByUniqueProperty("email", userTO.getEmail());
+        userMapper.updateUser(userEntity, userTO);
+        userRepository.update(userEntity);
+        return getByEmail(userTO.getEmail());
     }
 }

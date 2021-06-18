@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {AuthService} from "../../service/auth.service";
 import {ToastrService} from "../../shared/service/toastr.service";
 import {Router} from "@angular/router";
-import {UsersService} from "../../users/service/users.service";
+import {UserService} from "../../user/service/user.service";
 
 @Component({
   selector: 'app-login',
@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
   mouseoverLogin: boolean = false;
 
   constructor(private authService: AuthService,
-              private userService: UsersService,
+              private userService: UserService,
               private toastr: ToastrService,
               public router: Router) {
   }

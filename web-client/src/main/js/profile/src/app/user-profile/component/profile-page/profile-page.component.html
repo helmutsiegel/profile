@@ -2,7 +2,8 @@
   <h1>Edit your profile</h1>
   <hr>
   <div class="col-md-4">
-    <form [formGroup]="profileForm" (ngSubmit)="saveProfile(profileForm.value)" autocomplete="off" novalidate>
+    <form *ngIf="profileForm" [formGroup]="profileForm" (ngSubmit)="saveProfile(profileForm.value)" autocomplete="off"
+          novalidate>
       <div class="form-group"
            [ngClass]="{'error': firstNameInValid()}">
         <label for="firstName">First Name:</label>
@@ -21,7 +22,10 @@
       </div>
 
       <button class="btn btn-dark" type="submit">Save</button>
-      <button (click)="cancel()" class="btn btn-info ml-1" type="button">Cancel</button>
+      <button class="btn btn-dark ml-1" type="button"
+              (click)="saveProfile(profileForm.value, true)">Save and Close
+      </button>
+      <button (click)="cancel()" class="btn btn-info ml-1 float-right" type="button">Cancel</button>
     </form>
   </div>
 </div>

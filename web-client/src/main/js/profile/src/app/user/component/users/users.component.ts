@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {UserTO} from "../../../shared/model/to/user-t-o";
-import {UsersService} from "../../service/users.service";
+import {UserService} from "../../service/user.service";
 
 @Component({
   selector: 'users',
@@ -14,7 +14,7 @@ export class UsersComponent implements OnInit {
   public sortBy: string = 'name';
   public sortType: string = 'asc';
 
-  constructor(private usersService: UsersService) {
+  constructor(private usersService: UserService) {
   }
 
   ngOnInit(): void {

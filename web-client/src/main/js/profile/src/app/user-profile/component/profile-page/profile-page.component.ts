@@ -2,6 +2,9 @@ import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {AuthService} from "../../../service/auth.service";
 import {Router} from "@angular/router";
+import {UserService} from "../../../user/service/user.service";
+import {UserTO} from "../../../shared/model/to/user-t-o";
+import {ToastrService} from "../../../shared/service/toastr.service";
 
 @Component({
   selector: 'app-profile-page',
@@ -12,13 +15,16 @@ export class ProfilePageComponent implements OnInit {
   profileForm!: FormGroup;
   private firstName!: FormControl;
   private lastName!: FormControl;
+  private currentUser!: UserTO;
 
   constructor(private authService: AuthService,
-              private router: Router) {
+              private userService: UserService,
+              private toastr: ToastrService) {
   }
 
   ngOnInit(): void {
     this.authService.getCurrentUser().subscribe(userTO => {
+      this.currentUser = {...userTO};
       this.firstName = new FormControl(userTO?.firstName, Validators.required);
       this.lastName = new FormControl(userTO?.lastName, Validators.required);
       this.profileForm = new FormGroup({
@@ -32,11 +38,16 @@ export class ProfilePageComponent implements OnInit {
     window.history.back();
   }
 
-  public saveProfile(value: any) {
+  public saveProfile(formValues: any, closeAfterSave?: boolean) {
     if (this.profileForm.valid) {
-      this.authService.updateCurrentUser(value.firstName, value.lastName);
-      this.authService.getCurrentUser().subscribe(userTO => {
-        this.router.navigate([userTO.email, 'cv']);
+      this.currentUser.firstName = formValues.firstName
+      this.currentUser.lastName = formValues.lastName
+      this.userService.updateCurrentUser(this.currentUser).subscribe(userTO => {
+        if (closeAfterSave) {
+          this.cancel();
+        }
+        this.toastr.success('Save successful!')
+        this.authService.setCurrentUser(userTO);
       });
     }
   }

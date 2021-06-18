@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree} from "@angular/router";
 import {Observable, of} from "rxjs";
-import {UsersService} from "../../users/service/users.service";
+import {UserService} from "../../user/service/user.service";
 import {catchError, map} from "rxjs/operators";
 
 @Injectable({
@@ -9,7 +9,7 @@ import {catchError, map} from "rxjs/operators";
 })
 export class UsersPageRouteActivatorService implements CanActivate {
 
-  constructor(private userService: UsersService,
+  constructor(private userService: UserService,
               private router: Router) {
   }
 

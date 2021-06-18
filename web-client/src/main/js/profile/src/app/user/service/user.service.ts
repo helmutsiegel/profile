@@ -7,10 +7,9 @@ import {AuthService} from "../../service/auth.service";
 @Injectable({
   providedIn: 'root'
 })
-export class UsersService {
+export class UserService {
 
-  constructor(private backend: BackendService,
-              private authService: AuthService) {
+  constructor(private backend: BackendService) {
   }
 
   public getUsers(): Observable<UserTO[]> {
@@ -30,6 +29,10 @@ export class UsersService {
   }
 
   public login(email: string, password: string): Observable<UserTO> {
-    return this.backend.post<UserTO>('user/login', {email: email, password: password})
+    return this.backend.post<UserTO>('user/login', {email: email, password: password});
+  }
+
+  public updateCurrentUser(userTO: UserTO): Observable<UserTO> {
+    return this.backend.put<UserTO>('user', userTO);
   }
 }

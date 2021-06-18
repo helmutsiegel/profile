@@ -33,4 +33,9 @@ public class UserMapper {
         userEntity.setPassword(passwordUtils.digestPassword(signUpUserTO.getPassword1()));
         return userEntity;
     }
+
+    public void updateUser(UserEntity userEntity, UserTO userTO) {
+        userEntity.setFirstName(userTO.getFirstName());
+        userEntity.setLastName(userTO.getLastName());
+    }
 }

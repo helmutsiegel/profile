@@ -1,7 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {AuthService} from "../../service/auth.service";
 import {UserTO} from "../../shared/model/to/user-t-o";
-import {UsersService} from "../../users/service/users.service";
+import {UserService} from "../../user/service/user.service";
 import {ToastrService} from "../../shared/service/toastr.service";
 import {Subscription} from "rxjs";
 
@@ -17,7 +17,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
   private subscription!: Subscription;
 
   constructor(public authService: AuthService,
-              private userService: UsersService,
+              private userService: UserService,
               private toastr: ToastrService) {
   }
 

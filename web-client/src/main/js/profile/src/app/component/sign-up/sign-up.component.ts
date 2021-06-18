@@ -5,7 +5,7 @@ import {SignUpUserTO} from "../../shared/model/to/sign-up-user-t-o";
 import {ToastrService} from "../../shared/service/toastr.service";
 import {Router} from "@angular/router";
 import {AuthService} from "../../service/auth.service";
-import {UsersService} from "../../users/service/users.service";
+import {UserService} from "../../user/service/user.service";
 
 @Component({
   selector: 'app-sign-up',
@@ -23,7 +23,7 @@ export class SignUpComponent implements OnInit {
 
   constructor(private signUpService: SignUpService,
               private toastr: ToastrService,
-              private userService: UsersService,
+              private userService: UserService,
               private authService: AuthService,
               private router: Router) {
   }

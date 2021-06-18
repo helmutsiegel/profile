@@ -12,15 +12,6 @@ export class AuthService implements OnDestroy {
 
   constructor(private toastr: ToastrService) {
     this.currentUserSubject = new ReplaySubject<UserTO>(1);
-    // if (localStorage.getItem('Authorization')) {
-    //   usersService.getCurrentUser()
-    //     .subscribe(userTO => {
-    //         this.currentUserSubject.next(userTO);
-    //       },
-    //       _ => this.currentUserSubject.next(undefined));
-    // } else {
-    //   this.currentUserSubject.next(undefined);
-    // }
   }
 
   public getCurrentUser(): Observable<UserTO> {
@@ -34,10 +25,6 @@ export class AuthService implements OnDestroy {
   public logOut() {
     localStorage.clear();
     this.currentUserSubject.next(undefined);
-  }
-
-  public updateCurrentUser(firstName: string, lastName: string) {
-    this.toastr.warning('Dont forget to implement update on BE side');
   }
 
   public setCurrentUser(userTO: UserTO): void {

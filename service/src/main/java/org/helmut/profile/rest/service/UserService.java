@@ -9,12 +9,15 @@ import org.helmut.profile.rest.auth.util.TokenIssuer;
 
 import javax.inject.Inject;
 import javax.ws.rs.*;
-import javax.ws.rs.core.*;
+import javax.ws.rs.core.Context;
+import javax.ws.rs.core.HttpHeaders;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 import java.util.List;
 
 import static javax.ws.rs.core.HttpHeaders.AUTHORIZATION;
 import static javax.ws.rs.core.Response.Status.UNAUTHORIZED;
-import static org.helmut.profile.rest.service.Constants.CURRENT_USER;
+import static org.helmut.profile.rest.service.Constants.CURRENT_USER_EMAIL;
 
 @Path("user")
 public class UserService {
@@ -39,7 +42,7 @@ public class UserService {
     @Path("currentUser")
     @Produces(MediaType.APPLICATION_JSON)
     public UserTO getByCurrentUser() {
-        return userBC.getByEmail(httpHeaders.getHeaderString(CURRENT_USER));
+        return userBC.getByEmail(httpHeaders.getHeaderString(CURRENT_USER_EMAIL));
     }
 
     @GET
@@ -87,5 +90,15 @@ public class UserService {
         } catch (Exception e) {
             return Response.status(UNAUTHORIZED).build();
         }
+    }
+
+    @PUT
+    @JWTTokenNeeded
+    public Response updateUser(UserTO userTO) {
+        String currentUserEmail = httpHeaders.getHeaderString(CURRENT_USER_EMAIL);
+        if (!userTO.getEmail().equals(currentUserEmail)) {
+            Response.status(UNAUTHORIZED).build();
+        }
+        return Response.ok(userBC.updateUser(userTO)).build();
     }
 }
