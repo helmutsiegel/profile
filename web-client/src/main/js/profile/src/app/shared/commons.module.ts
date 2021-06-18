@@ -9,6 +9,7 @@ import {PersonalInfoComponent} from "./component/personal-info/personal-info.com
 import { SimpleModalComponent } from './component/simple-modal/simple-modal.component';
 import { SimpleTextCardComponent } from './component/simple-text-card/simple-text-card.component';
 import {FormsModule} from "@angular/forms";
+import { EditPencilComponent } from './component/edit-pencil/edit-pencil.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import {FormsModule} from "@angular/forms";
         SmilingPipe,
         PersonalInfoComponent,
         SimpleModalComponent,
-        SimpleTextCardComponent
+        SimpleTextCardComponent,
+        EditPencilComponent
     ],
   imports: [
     CommonModule,

@@ -1,7 +1,7 @@
 <div class="card">
   <div class="card-header">
     Personal info
-    <i *ngIf="editable" [ngClass]="getClassForPencil()" (mouseover)="mouseoverPencil()" (mouseleave)="mouseleavePencil()" (click)="edit()"></i>
+    <edit-pencil *ngIf="editable" (onClick)="edit()" class="float-right"></edit-pencil>
   </div>
   <div class="card-body">
     <h5 class="card-title">{{personalInfoVO?.fullName}}</h5>

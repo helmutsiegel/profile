@@ -47,8 +47,4 @@ export class CvComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }
-
-  public editPersonalInfo(): void {
-    this.router.navigate(['user/profile']);
-  }
 }
