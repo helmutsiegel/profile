@@ -4,8 +4,9 @@ import {WelcomeComponent} from "./component/welcome/welcome.component";
 import {Error404Component} from "./shared/component/error404/error404.component";
 import {UsersPageRouteActivatorService} from "./shared/service/users-page-route-activator.service";
 import {LoginComponent} from "./component/login/login.component";
-import {LoginPageRouteActivatorService} from "./shared/service/login-page-route-activator.service";
 import {SignUpComponent} from "./component/sign-up/sign-up.component";
+import {UserLoggedInGuard} from "./shared/guard/user-logged-in.guard";
+import {UserNotLoggedInGuard} from "./shared/guard/user-not-logged-in.guard";
 
 
 const routes: Routes = [
@@ -16,14 +17,16 @@ const routes: Routes = [
   {
     path: 'user/login',
     component: LoginComponent,
-    canActivate: [LoginPageRouteActivatorService]
+    canActivate: [UserNotLoggedInGuard]
   },
   {
     path: 'user/signup',
     component: SignUpComponent,
+    canActivate: [UserNotLoggedInGuard]
   },
   {
     path: 'user/profile',
+    canActivate: [UserLoggedInGuard],
     loadChildren: () => import('./user-profile/user-profile.module').then(m => m.UserProfileModule)
   },
   {
