@@ -7,13 +7,15 @@ import {CommonsModule} from "../shared/commons.module";
 import {ProjectCardComponent} from "./component/project-card/project-card.component";
 import { ProjectPageComponent } from './component/project-page/project-page.component';
 import { ProjectNavigatorComponent } from './component/project-navigator/project-navigator.component';
+import { NavigationElementComponent } from './component/navigation-element/navigation-element.component';
 
 @NgModule({
   declarations: [
     ProjectsComponent,
     ProjectCardComponent,
     ProjectPageComponent,
-    ProjectNavigatorComponent
+    ProjectNavigatorComponent,
+    NavigationElementComponent
   ],
   imports: [
     CommonModule,

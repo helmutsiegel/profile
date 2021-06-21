@@ -25,15 +25,15 @@ INSERT INTO t_language(id, language, level, cv_id) VALUES (10002, 'German', '0',
 INSERT INTO t_certification(id, date, expiration_date, issued_by, name, cv_id) VALUES (10001, '11/11/2010', null , 'Oracle', 'OCA', 10001);
 INSERT INTO t_certification(id, date, expiration_date, issued_by, name, cv_id) VALUES (10002, '01/01/2015', '01/01/2025' , 'AWS', 'Associate AWS Developper', 10001);
 
-INSERT INTO public.t_chapter(id, title, project_id) VALUES (10001, 'Chapter One', 10001);
-INSERT INTO public.t_chapter(id, title, project_id) VALUES (10002, 'Chapter Two', 10001);
-INSERT INTO public.t_chapter(id, title, project_id) VALUES (10003, 'Chapter Tree', 10001);
+INSERT INTO public.t_chapter(id, title, project_id) VALUES (10001, 'Project Overview', 10001);
+INSERT INTO public.t_chapter(id, title, project_id) VALUES (10002, 'Architecture', 10001);
+INSERT INTO public.t_chapter(id, title, project_id) VALUES (10003, 'Conclusion', 10001);
 
-INSERT INTO public.t_section(id, description, title, chapter_id) VALUES (10001, 'Long long description', 'Section1 title', 10001);
-INSERT INTO public.t_section(id, description, title, chapter_id) VALUES (10002, 'Long long description', 'Section2 title', 10001);
-INSERT INTO public.t_section(id, description, title, chapter_id) VALUES (10003, 'Long long description', 'Section3 title', 10001);
+INSERT INTO public.t_section(id, description, title, chapter_id) VALUES (10001, 'Here will be the description of the purpose of the project', 'Purpose', 10001);
 
-INSERT INTO public.t_section(id, description, title, chapter_id) VALUES (10004, 'Long long description', 'Section1 title', 10002);
-INSERT INTO public.t_section(id, description, title, chapter_id) VALUES (10005, 'Long long description', 'Section2 title', 10002);
+INSERT INTO public.t_section(id, description, title, chapter_id) VALUES (10002, 'Here will be the description of the architecture of the project', 'Overall architecture', 10002);
+INSERT INTO public.t_section(id, description, title, chapter_id) VALUES (10003, 'Here will be the description of the database ', 'Database', 10002);
+INSERT INTO public.t_section(id, description, title, chapter_id) VALUES (10004, 'Long long description of business', 'Business layer', 10002);
+INSERT INTO public.t_section(id, description, title, chapter_id) VALUES (10005, 'Long long description of the UI', 'Presentation layer', 10002);
 
-INSERT INTO public.t_section(id, description, title, chapter_id) VALUES (10006, 'Long long description', 'Section1 title', 10003);
+INSERT INTO public.t_section(id, description, title, chapter_id) VALUES (10006, 'Long long long long conclusion ', 'Conclusion', 10003);

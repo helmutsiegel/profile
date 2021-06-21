@@ -1,9 +1,16 @@
 <h2>{{projectVO.name}}</h2>
 <div class="row" *ngIf="projectVO">
   <div class="col-4">
-    <project-navigator [chapters]="projectVO.chapters"></project-navigator>
+    <project-navigator [chapters]="projectVO.chapters" (onClick)="currentSection = $event"></project-navigator>
   </div>
   <div class="col">
-
+    <div class="card">
+      <div class="card-header">
+        {{currentSection.title}}
+      </div>
+      <div class="card-body">
+        {{currentSection.description}}
+      </div>
+    </div>
   </div>
 </div>

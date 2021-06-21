@@ -1,5 +1,6 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {ChapterVO} from "../../model/chapter-v-o";
+import {SectionVO} from "../../model/section-v-o";
 
 @Component({
   selector: 'project-navigator',
@@ -9,6 +10,7 @@ import {ChapterVO} from "../../model/chapter-v-o";
 export class ProjectNavigatorComponent implements OnInit {
 
   @Input() chapters!: ChapterVO[];
+  @Output() onClick: EventEmitter<SectionVO> = new EventEmitter<SectionVO>()
 
   constructor() { }
 
