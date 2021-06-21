@@ -9,7 +9,7 @@ import {ProjectVO} from "../../model/project-v-o";
 })
 export class ProjectPageComponent implements OnInit {
 
-  @Input() projectVO!: ProjectVO;
+  projectVO!: ProjectVO;
 
   constructor(private activatedRoute: ActivatedRoute) { }
 

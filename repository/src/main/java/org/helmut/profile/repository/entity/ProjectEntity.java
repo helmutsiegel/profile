@@ -1,9 +1,7 @@
 package org.helmut.profile.repository.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "T_PROJECT")
@@ -14,6 +12,10 @@ public class ProjectEntity extends BaseEntity {
 
     @ManyToOne
     private UserEntity userEntity;
+
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "project_id")
+    private List<ChapterEntity> chapters;
 
     public String getName() {
         return name;
@@ -29,5 +31,13 @@ public class ProjectEntity extends BaseEntity {
 
     public void setUserEntity(UserEntity userEntity) {
         this.userEntity = userEntity;
+    }
+
+    public List<ChapterEntity> getChapters() {
+        return chapters;
+    }
+
+    public void setChapters(List<ChapterEntity> chapters) {
+        this.chapters = chapters;
     }
 }

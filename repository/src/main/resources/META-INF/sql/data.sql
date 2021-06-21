@@ -24,3 +24,16 @@ INSERT INTO t_language(id, language, level, cv_id) VALUES (10002, 'German', '0',
 
 INSERT INTO t_certification(id, date, expiration_date, issued_by, name, cv_id) VALUES (10001, '11/11/2010', null , 'Oracle', 'OCA', 10001);
 INSERT INTO t_certification(id, date, expiration_date, issued_by, name, cv_id) VALUES (10002, '01/01/2015', '01/01/2025' , 'AWS', 'Associate AWS Developper', 10001);
+
+INSERT INTO public.t_chapter(id, title, project_id) VALUES (10001, 'Chapter One', 10001);
+INSERT INTO public.t_chapter(id, title, project_id) VALUES (10002, 'Chapter Two', 10001);
+INSERT INTO public.t_chapter(id, title, project_id) VALUES (10003, 'Chapter Tree', 10001);
+
+INSERT INTO public.t_section(id, description, title, chapter_id) VALUES (10001, 'Long long description', 'Section1 title', 10001);
+INSERT INTO public.t_section(id, description, title, chapter_id) VALUES (10002, 'Long long description', 'Section2 title', 10001);
+INSERT INTO public.t_section(id, description, title, chapter_id) VALUES (10003, 'Long long description', 'Section3 title', 10001);
+
+INSERT INTO public.t_section(id, description, title, chapter_id) VALUES (10004, 'Long long description', 'Section1 title', 10002);
+INSERT INTO public.t_section(id, description, title, chapter_id) VALUES (10005, 'Long long description', 'Section2 title', 10002);
+
+INSERT INTO public.t_section(id, description, title, chapter_id) VALUES (10006, 'Long long description', 'Section1 title', 10003);

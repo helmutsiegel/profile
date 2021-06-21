@@ -1,1 +1,9 @@
 <h2>{{projectVO.name}}</h2>
+<div class="row" *ngIf="projectVO">
+  <div class="col-4">
+    <project-navigator [chapters]="projectVO.chapters"></project-navigator>
+  </div>
+  <div class="col">
+
+  </div>
+</div>

@@ -1,0 +1,8 @@
+<div class="card">
+  <div class="card-header">Navigator</div>
+  <div class="card-body">
+    <collapsible-card *ngFor="let chapter of chapters" [collapsed]="false" [title]="chapter.title">
+      <li *ngFor="let section of chapter.sections">{{section.title}}</li>
+    </collapsible-card>
+  </div>
+</div>

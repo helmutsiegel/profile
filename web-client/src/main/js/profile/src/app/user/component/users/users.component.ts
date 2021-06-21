@@ -27,7 +27,6 @@ export class UsersComponent implements OnInit {
     if (this.filterBy == 'ALL') {
       return true;
     }
-    console.log(user.seniority)
     return user.seniority === this.filterBy;
   }
 }

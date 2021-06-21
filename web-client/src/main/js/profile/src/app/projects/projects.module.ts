@@ -6,12 +6,14 @@ import {ProjectsComponent} from './component/projects/projects.component';
 import {CommonsModule} from "../shared/commons.module";
 import {ProjectCardComponent} from "./component/project-card/project-card.component";
 import { ProjectPageComponent } from './component/project-page/project-page.component';
+import { ProjectNavigatorComponent } from './component/project-navigator/project-navigator.component';
 
 @NgModule({
   declarations: [
     ProjectsComponent,
     ProjectCardComponent,
-    ProjectPageComponent
+    ProjectPageComponent,
+    ProjectNavigatorComponent
   ],
   imports: [
     CommonModule,

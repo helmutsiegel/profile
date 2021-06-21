@@ -16,7 +16,10 @@ export class ProjectResolver implements Resolve<ProjectVO> {
   }
 
 
-  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<ProjectVO> {
-    return this.projectService.getByName(route.params['projectName']).pipe(map(projectTO => this.projectMapper.mapToVO(projectTO)));
+  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<ProjectVO> | Promise<ProjectVO> | ProjectVO {
+    return this.projectService.getByName(route.params['projectName'])
+      .pipe(map(projectTO => {
+        return this.projectMapper.mapToVO(projectTO)
+      }));
   }
 }
