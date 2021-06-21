@@ -15,7 +15,7 @@ export class ProjectMapperService {
   }
 
   public mapToVO(projectTO: ProjectTO): ProjectVO {
-    return new ProjectVO(projectTO.name, this.mapChaptersToVO(projectTO.chapters));
+    return new ProjectVO(projectTO.name, projectTO.description, this.mapChaptersToVO(projectTO.chapters));
   }
 
   private mapChaptersToVO(chapterTOs: ChapterTO[]): ChapterVO[] {

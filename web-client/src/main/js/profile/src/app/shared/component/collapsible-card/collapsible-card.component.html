@@ -1,8 +1,8 @@
 <div class="card">
   <div class="card-header">
     {{title}}
-    <i *ngIf="!collapsed" class="bi bi-caret-up-fill float-right" (click)="switchCollapse()"></i>
-    <i *ngIf="collapsed" class="bi bi-caret-down-fill float-right" (click)="switchCollapse()"></i>
+    <i *ngIf="!collapsed" class="bi bi-caret-up-fill float-right cursor-pointer" (click)="switchCollapse()"></i>
+    <i *ngIf="collapsed" class="bi bi-caret-down-fill float-right cursor-pointer" (click)="switchCollapse()"></i>
   </div>
 
   <div *ngIf="!collapsed" class="card-body">
