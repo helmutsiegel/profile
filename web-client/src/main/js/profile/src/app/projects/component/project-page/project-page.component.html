@@ -1,16 +1,22 @@
-<h2>{{projectVO.name}}</h2>
-<div class="row" *ngIf="projectVO">
-  <div class="col-4">
-    <project-navigator [chapters]="projectVO.chapters" (onClick)="currentSection = $event"></project-navigator>
+<div class="row">
+  <div class="col">
+    <h2>{{projectVO.name}} - {{projectVO.fullName}}</h2>
   </div>
   <div class="col">
-    <div class="card">
-      <div class="card-header">
-        {{currentSection.title}}
-      </div>
-      <div class="card-body">
-        {{currentSection.description}}
-      </div>
-    </div>
+    <button (click)="clickDescription()" class="btn btn-dark float-right">{{descriptionButtonLabel}}</button>
+  </div>
+</div>
+<simple-text-card *ngIf="descriptionButtonLabel === closeDescription"
+                  [editable]="loggedInUserIsOnTheyPage()" title="Description" [text]="projectVO.description">
+</simple-text-card>
+<div class="row mt-1" *ngIf="projectVO">
+  <div class="col-3">
+    <project-navigator [chapters]="projectVO.chapters" (onClick)="navigateToSection($event)"></project-navigator>
+  </div>
+  <div class="col">
+    <simple-text-card #textCard [title]="currentSection.title"
+                      [text]="currentSection.description"
+                      [editable]="loggedInUserIsOnTheyPage()">
+    </simple-text-card>
   </div>
 </div>
