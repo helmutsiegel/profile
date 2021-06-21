@@ -17,7 +17,8 @@ export class SimpleTextCardComponent implements OnInit {
   editMode: boolean = false;
   textToEdit!: string;
 
-  constructor() {}
+  constructor() {
+  }
 
   ngOnInit(): void {
     this.textToEdit = this.text;
@@ -36,5 +37,9 @@ export class SimpleTextCardComponent implements OnInit {
   public cancelEdit(): void {
     this.textToEdit = this.text;
     this.editMode = !this.editMode;
+  }
+
+  public isEdited(): boolean {
+    return this.textToEdit !== this.text;
   }
 }

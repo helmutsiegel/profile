@@ -51,7 +51,12 @@ export class ProjectPageComponent implements OnInit, OnDestroy {
   }
 
   public navigateToSection(sectionVO: SectionVO): void {
-    this.currentSection = sectionVO;
+    if(this.simpleTextCard.isEdited()){
+      if(window.confirm('save?')){
+
+      }
+    }
     this.simpleTextCard.editMode = false;
+    this.currentSection = sectionVO;
   }
 }
