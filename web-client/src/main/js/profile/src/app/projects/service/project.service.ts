@@ -18,4 +18,8 @@ export class ProjectService {
   public getByName(name: string): Observable<ProjectTO> {
     return this.backend.get<ProjectTO>('project/' + name);
   }
+
+  public createProject(projectTO: ProjectTO): Observable<any> {
+    return this.backend.post('project', projectTO);
+  }
 }

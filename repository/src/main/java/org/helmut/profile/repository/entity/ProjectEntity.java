@@ -7,7 +7,7 @@ import java.util.List;
 @Table(name = "T_PROJECT")
 public class ProjectEntity extends BaseEntity {
 
-    @Column
+    @Column(unique = true)
     private String name;
 
     @Column

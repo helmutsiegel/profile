@@ -16,8 +16,8 @@
   </div>
 </div>
 
-<simple-modal title="New project" modalId="newProjectModal" [size]="size.LARGE">
-  <form [formGroup]="newProjectForm" (ngSubmit)="newProject(newProjectForm.value)" autocomplete="off"
+<simple-modal #newProjectModal title="New project" modalId="newProjectModal" [size]="size.LARGE">
+  <form [formGroup]="newProjectForm" autocomplete="off"
         novalidate>
     <div class="form-group" [ngClass]="{'error': true}">
       <div class="row">
@@ -36,7 +36,8 @@
       <div class="row mt-1">
         <div class="col-3"></div>
         <div class="col-7">
-          <button class="btn btn-primary float-right" type="submit" data-dismiss="modal">Create project</button>
+          <button class="btn btn-primary float-right" type="button"
+                  (click)="newProject(newProjectForm.value)">Create project</button>
         </div>
         <div class="col"></div>
       </div>

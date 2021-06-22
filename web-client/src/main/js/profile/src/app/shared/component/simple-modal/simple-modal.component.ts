@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, ViewChild} from '@angular/core';
 import {Size} from "../../model/enum/size";
 
 @Component({
@@ -15,10 +15,16 @@ export class SimpleModalComponent implements OnInit {
 
   @Input() size: Size = Size.MEDIUM;
 
+  @ViewChild('close') closeButton: any;
+
   constructor() {
   }
 
   ngOnInit(): void {
+  }
+
+  public close(): void {
+    this.closeButton.nativeElement.click();
   }
 
   public getModalDialogClass(): string {

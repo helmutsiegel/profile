@@ -1,10 +1,13 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {ProjectService} from "../../service/project.service";
 import {ActivatedRoute} from "@angular/router";
 import {ProjectVO} from "../../model/project-v-o";
 import {ProjectMapperService} from "../../mapping/project-mapper.service";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {Size} from "../../../shared/model/enum/size";
+import {ProjectTO} from "../../../shared/model/to/project-t-o";
+import {ToastrService} from "../../../shared/service/toastr.service";
+import {SimpleModalComponent} from "../../../shared/component/simple-modal/simple-modal.component";
 
 @Component({
   selector: 'projects',
@@ -12,6 +15,8 @@ import {Size} from "../../../shared/model/enum/size";
   styleUrls: ['./projects.component.css']
 })
 export class ProjectsComponent implements OnInit {
+
+  @ViewChild('newProjectModal') newProjectModal!: SimpleModalComponent;
 
   newProjectForm!: FormGroup;
   private projectName!: FormControl;
@@ -21,7 +26,8 @@ export class ProjectsComponent implements OnInit {
 
   constructor(private projectService: ProjectService,
               private route: ActivatedRoute,
-              private projectMapper: ProjectMapperService) {
+              private projectMapper: ProjectMapperService,
+              private toastr: ToastrService) {
   }
 
   ngOnInit(): void {
@@ -37,7 +43,14 @@ export class ProjectsComponent implements OnInit {
   }
 
   public newProject(formValues: any): void {
-    console.log(formValues);
+    this.projectService.createProject({name: formValues.projectName} as ProjectTO)
+      .subscribe(_ => {
+          this.toastr.success('Project successfully created!');
+          this.newProjectModal.close();
+        },
+        _ => {
+          this.toastr.error('Project could not create', 'Error');
+        });
   }
 
   public get size(): typeof Size {
