@@ -5,7 +5,41 @@
   </div>
 </div>
 <div class="row pt-3">
+  <div class="col">
+    <button class="btn btn-primary float-right" data-toggle="modal" data-target="#newProjectModal">New project +
+    </button>
+  </div>
+</div>
+<div class="row pt-3">
   <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-xs-12" *ngFor="let projectVO of projectVOs">
     <project-card [projectVO]="projectVO"></project-card>
   </div>
 </div>
+
+<simple-modal title="New project" modalId="newProjectModal" [size]="size.LARGE">
+  <form [formGroup]="newProjectForm" (ngSubmit)="newProject(newProjectForm.value)" autocomplete="off"
+        novalidate>
+    <div class="form-group" [ngClass]="{'error': true}">
+      <div class="row">
+        <div class="col-3">
+          <label for="projectName">Project name:</label>
+        </div>
+        <div class="col-7">
+          <input formControlName="projectName"
+                 class="form-control" id="projectName" name="projectName"
+                 placeholder="Project name..." type="text"/>
+        </div>
+        <div class="col">
+          <em *ngIf="true">Required</em>
+        </div>
+      </div>
+      <div class="row mt-1">
+        <div class="col-3"></div>
+        <div class="col-7">
+          <button class="btn btn-primary float-right" type="submit" data-dismiss="modal">Create project</button>
+        </div>
+        <div class="col"></div>
+      </div>
+    </div>
+  </form>
+</simple-modal>

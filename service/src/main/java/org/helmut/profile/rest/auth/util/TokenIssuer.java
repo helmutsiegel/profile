@@ -12,7 +12,7 @@ import java.util.Date;
 
 public class TokenIssuer {
 
-    public static long VALIDITY_LENGTH = 15L;
+    public static long VALIDITY_LENGTH = 60L;
 
     @Context
     private UriInfo uriInfo;
