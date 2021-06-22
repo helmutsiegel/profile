@@ -20,6 +20,7 @@ public class ProjectMapper {
     public ProjectTO mapToProjectTO(ProjectEntity entity) {
         ProjectTO projectTO = new ProjectTO();
         projectTO.setName(entity.getName());
+        projectTO.setDescription(entity.getDescription());
         projectTO.setChapters(entity.getChapters().stream().map(this::mapChapterToTO).collect(Collectors.toList()));
         projectTO.setUserTO(userMapper.mapToTO(entity.getUserEntity()));
         return projectTO;

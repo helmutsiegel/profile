@@ -7,8 +7,8 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 })
 export class SimpleTextCardComponent implements OnInit {
 
+  _text!: string;
   @Input() title!: string;
-  @Input() text!: string;
   @Input() editable: boolean = false;
   @Input() length: number = -1;
 
@@ -16,6 +16,15 @@ export class SimpleTextCardComponent implements OnInit {
 
   editMode: boolean = false;
   textToEdit!: string;
+
+  @Input()
+  get text(): string {
+    return this._text;
+  }
+  set text(text: string) {
+    this._text = text;
+    this.textToEdit = text;
+  }
 
   constructor() {
   }
@@ -40,6 +49,6 @@ export class SimpleTextCardComponent implements OnInit {
   }
 
   public isEdited(): boolean {
-    return this.textToEdit !== this.text;
+    return this.textToEdit !== this._text;
   }
 }

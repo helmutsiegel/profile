@@ -10,6 +10,9 @@ public class ProjectEntity extends BaseEntity {
     @Column
     private String name;
 
+    @Column
+    private String description;
+
     @ManyToOne
     private UserEntity userEntity;
 
@@ -39,5 +42,13 @@ public class ProjectEntity extends BaseEntity {
 
     public void setChapters(List<ChapterEntity> chapters) {
         this.chapters = chapters;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

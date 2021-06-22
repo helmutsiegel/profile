@@ -5,7 +5,7 @@
   </div>
   <div class="card-body">
     <div *ngIf="!editMode">
-      {{text}}
+      {{_text}}
     </div>
     <div *ngIf="editMode">
       <form (ngSubmit)="save()">

@@ -4,6 +4,7 @@ import java.util.List;
 
 public class ProjectTO {
     private String name;
+    private String description;
     private UserTO userTO;
     private List<ChapterTO> chapters;
 
@@ -29,5 +30,13 @@ public class ProjectTO {
 
     public void setUserTO(UserTO userTO) {
         this.userTO = userTO;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

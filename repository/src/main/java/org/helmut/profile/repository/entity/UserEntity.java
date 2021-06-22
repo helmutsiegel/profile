@@ -2,10 +2,7 @@ package org.helmut.profile.repository.entity;
 
 import org.helmut.profile.repository.enums.Seniority;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
-import javax.persistence.UniqueConstraint;
+import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
@@ -31,7 +28,12 @@ public class UserEntity extends BaseEntity {
     private LocalDate birthDate;
 
     @Column
+    @Enumerated(EnumType.ORDINAL) // This stores seniority as number
+//  @Enumerated(EnumType.STRING)  // This stores as string
     private Seniority seniority;
+
+    @Transient //Will not be mapped
+    private Integer age;
 
     public String getFirstName() {
         return firstName;

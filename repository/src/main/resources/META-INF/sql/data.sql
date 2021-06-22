@@ -15,9 +15,9 @@ INSERT INTO t_cv(id, short_about, long_about, userentity_id) VALUES (10006, 'Hey
 INSERT INTO t_experience(id, company, start_date, end_date, position, cv_id) VALUES (10001, 'IBM', '11/11/2010', '11/11/2020', 'Java Developper', 10001);
 INSERT INTO t_experience(id, company, start_date, end_date, position, cv_id) VALUES (10002, 'Facebook', '11/11/2007', '10/11/2010', 'Frontend Technical Lead', 10001);
 
-INSERT INTO t_project(id, name, userentity_id) VALUES (10001, 'Sample', 10001);
-INSERT INTO t_project(id, name, userentity_id) VALUES (10002, 'Sample2', 10001);
-INSERT INTO t_project(id, name, userentity_id) VALUES (10003, 'SampleSample', 10001);
+INSERT INTO t_project(id, name, userentity_id, description) VALUES (10001, 'Sample', 10001, 'Short description of the project Sample');
+INSERT INTO t_project(id, name, userentity_id, description) VALUES (10002, 'Sample2', 10001, 'Short description of the project Sample2');
+INSERT INTO t_project(id, name, userentity_id, description) VALUES (10003, 'SampleSample', 10001, 'Short description of the project SampleSample');
 
 INSERT INTO t_language(id, language, level, cv_id) VALUES (10001, 'English', '5', 10001);
 INSERT INTO t_language(id, language, level, cv_id) VALUES (10002, 'German', '0', 10001);
