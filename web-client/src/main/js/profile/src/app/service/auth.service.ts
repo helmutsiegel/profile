@@ -10,7 +10,7 @@ export class AuthService implements OnDestroy {
   private currentUserSubject!: Subject<UserTO>;
   private subscription!: Subscription;
 
-  constructor(private toastr: ToastrService) {
+  constructor() {
     this.currentUserSubject = new ReplaySubject<UserTO>(1);
   }
 
