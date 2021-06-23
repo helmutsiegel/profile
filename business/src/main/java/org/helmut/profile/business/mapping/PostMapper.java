@@ -4,6 +4,7 @@ import org.helmut.profile.business.model.PostTO;
 import org.helmut.profile.repository.entity.PostEntity;
 
 import javax.enterprise.context.RequestScoped;
+import java.time.ZonedDateTime;
 
 @RequestScoped
 public class PostMapper {
@@ -12,6 +13,7 @@ public class PostMapper {
         PostTO postTO = new PostTO();
         postTO.setTitle(entity.getTitle());
         postTO.setContent(entity.getContent());
+        postTO.setDateCreated(entity.getDateCreated());
         return postTO;
     }
 
@@ -19,6 +21,7 @@ public class PostMapper {
         PostEntity postEntity = new PostEntity();
         postEntity.setTitle(postTO.getTitle());
         postEntity.setContent(postTO.getContent());
+        postEntity.setDateCreated(ZonedDateTime.now());
         return postEntity;
     }
 }

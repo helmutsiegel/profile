@@ -1,0 +1,17 @@
+<div class="card">
+  <div class="card-header">
+    <div class="row">
+      <div class="col">
+        <h5>{{title}}</h5>
+      </div>
+      <div class="col">
+        <div class="float-right">
+          {{created.slice(0,29) | date : 'medium'}}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card-body">
+    {{content}}
+  </div>
+</div>

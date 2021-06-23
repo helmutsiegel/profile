@@ -45,6 +45,11 @@ const routes: Routes = [
     canActivate: [UsersPageRouteActivatorService]
   },
   {
+    path: ':email/posts',
+    loadChildren: () => import('./posts/posts.module').then(m => m.PostsModule),
+    canActivate: [UsersPageRouteActivatorService]
+  },
+  {
     path: ':email/:',
     redirectTo: ':email/cv'
   },
