@@ -24,7 +24,6 @@ public class ProjectService {
     @Context
     private HttpHeaders httpHeaders;
 
-
     @GET
     @Path("{name}")
     @Produces(MediaType.APPLICATION_JSON)

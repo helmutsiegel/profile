@@ -25,4 +25,8 @@ public class UserRepository extends BaseRepository<UserEntity> {
                 .setParameter("password", password)
                 .getSingleResult();
     }
+
+    public UserEntity getByEmail(String email) {
+        return findByUniqueProperty("email", email);
+    }
 }
