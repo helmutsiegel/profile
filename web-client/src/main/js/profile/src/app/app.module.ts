@@ -11,6 +11,7 @@ import {LoginComponent} from './component/login/login.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {SignUpComponent} from './component/sign-up/sign-up.component';
 import {CommonsModule} from "./shared/commons.module";
+import { AboutComponent } from './component/about/about.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import {CommonsModule} from "./shared/commons.module";
     NavbarComponent,
     WelcomeComponent,
     LoginComponent,
-    SignUpComponent
+    SignUpComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

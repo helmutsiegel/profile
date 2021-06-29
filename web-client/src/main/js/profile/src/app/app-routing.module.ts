@@ -7,12 +7,17 @@ import {LoginComponent} from "./component/login/login.component";
 import {SignUpComponent} from "./component/sign-up/sign-up.component";
 import {UserLoggedInGuard} from "./shared/guard/user-logged-in.guard";
 import {UserNotLoggedInGuard} from "./shared/guard/user-not-logged-in.guard";
+import {AboutComponent} from "./component/about/about.component";
 
 
 const routes: Routes = [
   {
     path: '',
     component: WelcomeComponent
+  },
+  {
+    path: 'about',
+    component: AboutComponent
   },
   {
     path: 'user/login',
