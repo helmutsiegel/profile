@@ -25,15 +25,32 @@ INSERT INTO t_language(id, language, level, cv_id) VALUES (10002, 'German', '0',
 INSERT INTO t_certification(id, date, expiration_date, issued_by, name, cv_id) VALUES (10001, '11/11/2010', null , 'Oracle', 'OCA', 10001);
 INSERT INTO t_certification(id, date, expiration_date, issued_by, name, cv_id) VALUES (10002, '01/01/2015', '01/01/2025' , 'AWS', 'Associate AWS Developper', 10001);
 
-INSERT INTO public.t_chapter(id, title, project_id) VALUES (10001, 'Project Overview', 10001);
-INSERT INTO public.t_chapter(id, title, project_id) VALUES (10002, 'Architecture', 10001);
-INSERT INTO public.t_chapter(id, title, project_id) VALUES (10003, 'Conclusion', 10001);
+INSERT INTO t_chapter(id, title, project_id) VALUES (10001, 'Project Overview', 10001);
+INSERT INTO t_chapter(id, title, project_id) VALUES (10002, 'Architecture', 10001);
+INSERT INTO t_chapter(id, title, project_id) VALUES (10003, 'Conclusion', 10001);
 
-INSERT INTO public.t_section(id, description, title, chapter_id) VALUES (10001, 'Here will be the description of the purpose of the project', 'Purpose', 10001);
+INSERT INTO t_section(id, description, title, chapter_id) VALUES (10001, 'Here will be the description of the purpose of the project', 'Purpose', 10001);
 
-INSERT INTO public.t_section(id, description, title, chapter_id) VALUES (10002, 'Here will be the description of the architecture of the project', 'Overall architecture', 10002);
-INSERT INTO public.t_section(id, description, title, chapter_id) VALUES (10003, 'Here will be the description of the database ', 'Database', 10002);
-INSERT INTO public.t_section(id, description, title, chapter_id) VALUES (10004, 'Long long description of business', 'Business layer', 10002);
-INSERT INTO public.t_section(id, description, title, chapter_id) VALUES (10005, 'Long long description of the UI', 'Presentation layer', 10002);
+INSERT INTO t_section(id, description, title, chapter_id) VALUES (10002, 'Here will be the description of the architecture of the project', 'Overall architecture', 10002);
+INSERT INTO t_section(id, description, title, chapter_id) VALUES (10003, 'Here will be the description of the database ', 'Database', 10002);
+INSERT INTO t_section(id, description, title, chapter_id) VALUES (10004, 'Long long description of business', 'Business layer', 10002);
+INSERT INTO t_section(id, description, title, chapter_id) VALUES (10005, 'Long long description of the UI', 'Presentation layer', 10002);
 
-INSERT INTO public.t_section(id, description, title, chapter_id) VALUES (10006, 'Long long long long conclusion ', 'Conclusion', 10003);
+INSERT INTO t_section(id, description, title, chapter_id) VALUES (10006, 'Long long long long conclusion ', 'Conclusion', 10003);
+
+
+-- Inserts for Helmut Siegel ----
+INSERT INTO t_user(id, first_name, last_name, title, email, birth_date, seniority, password) VALUES (20001, 'Helmut', 'Siegel', 'Full-Stack Developer', 'helmutsiegel17@gmail.com', '07/30/1995',2, 'd8lT6FWVtqT9wWCXj9rCfKQbsGEm3UI24Ca9xqBMosE=');
+INSERT INTO t_cv(id, short_about, long_about, userentity_id) VALUES (20001, 'My short about', 'My long about', 20001);
+INSERT INTO t_experience(id, company, start_date, end_date, position, cv_id) VALUES (20001, 'msg systems Romania', '07/04/2016', '08/12/2016', 'Intern', 20001);
+INSERT INTO t_experience(id, company, start_date, end_date, position, cv_id) VALUES (20002, 'msg systems Romania', '09/19/2016', '11/14/2020', 'Full-stack developer', 20001);
+INSERT INTO t_experience(id, company, start_date, position, cv_id) VALUES (20003, 'Accesa', '11/16/2016', 'Full-stack developer', 20001);
+INSERT INTO t_project(id, name, userentity_id, description) VALUES (20001, 'PROFile', 20001, 'Short description of the project Profile');
+INSERT INTO t_certification(id, date, expiration_date, issued_by, name, cv_id) VALUES (20001, '11/01/2019', null , 'Oracle', 'OCA', 20001);
+INSERT INTO t_language(id, language, level, cv_id) VALUES (20001, 'English', '3', 20001);
+INSERT INTO t_language(id, language, level, cv_id) VALUES (20002, 'German', '3', 20001);
+INSERT INTO t_language(id, language, level, cv_id) VALUES (20003, 'Romanian', '4', 20001);
+INSERT INTO t_language(id, language, level, cv_id) VALUES (20004, 'Hungarian', '5', 20001);
+INSERT INTO t_chapter(id, title, project_id) VALUES (20001, 'Project Overview', 20001);
+INSERT INTO t_section(id, description, title, chapter_id) VALUES (20001, 'Coming soon..', 'Purpose', 20001);
+-- End of Inserts for Helmut Siegel ----
