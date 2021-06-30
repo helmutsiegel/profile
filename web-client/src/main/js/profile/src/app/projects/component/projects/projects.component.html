@@ -4,7 +4,7 @@
     </users-navbar>
   </div>
 </div>
-<div class="row pt-3">
+<div *ngIf="authService.loggedInUserIsOnTheyPage(activatedRoute)" class="row pt-3">
   <div class="col">
     <button class="btn btn-primary float-right" data-toggle="modal" data-target="#newProjectModal">New project +
     </button>

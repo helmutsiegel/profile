@@ -7,10 +7,11 @@
 <div class="row pt-3">
   <div class="col-3">
     <personal-info [personalInfoVO]="cvVO.personalInfoVO"
-                   [editable]="loggedInUserIsOnTheyPage()"></personal-info>
+                   [editable]="authService.loggedInUserIsOnTheyPage(activatedRoute)"></personal-info>
   </div>
   <div class="col-9">
-    <simple-text-card [editable]="loggedInUserIsOnTheyPage()" title="About" [length]="255" [text]="cvVO.about"
+    <simple-text-card [editable]="authService.loggedInUserIsOnTheyPage(activatedRoute)" title="About" [length]="255"
+                      [text]="cvVO.about"
                       (onSave)="saveAbout($event)"></simple-text-card>
 
     <div class="mt-2">
@@ -47,7 +48,6 @@
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </div>

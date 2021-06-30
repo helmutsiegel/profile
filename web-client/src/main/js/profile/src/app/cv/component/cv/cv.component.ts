@@ -1,32 +1,26 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {CvVO} from "../../model/cv-v-o";
 import {ActivatedRoute, Router} from "@angular/router";
 import {CvService} from "../../service/cv.service";
 import {AuthService} from "../../../service/auth.service";
-import {UserTO} from "../../../shared/model/to/user-t-o";
-import {Subscription} from "rxjs";
 
 @Component({
   selector: 'cv',
   templateUrl: './cv.component.html',
   styleUrls: ['./cv.component.css']
 })
-export class CvComponent implements OnInit, OnDestroy {
+export class CvComponent implements OnInit {
 
   public cvVO!: CvVO;
-  private currentUser!: UserTO;
-  private subscription!: Subscription;
 
-  constructor(private activatedRoute: ActivatedRoute,
+  constructor(public activatedRoute: ActivatedRoute,
               private router: Router,
               private cvService: CvService,
-              private authService: AuthService) {
+              public authService: AuthService) {
   }
 
   ngOnInit(): void {
-    this.subscription = this.authService.getCurrentUser().subscribe(userTO => {
-      this.currentUser = userTO;
-    });
+
     this.activatedRoute.data.forEach(data => {
       this.cvVO = data['cvVO'];
     });
@@ -38,13 +32,5 @@ export class CvComponent implements OnInit, OnDestroy {
         cvTO.about = event;
         this.cvService.update(cvTO);
       })
-  }
-
-  public loggedInUserIsOnTheyPage(): boolean {
-    return this.currentUser && (this.currentUser.email === this.activatedRoute.snapshot.params['email']);
-  }
-
-  ngOnDestroy(): void {
-    this.subscription.unsubscribe();
   }
 }

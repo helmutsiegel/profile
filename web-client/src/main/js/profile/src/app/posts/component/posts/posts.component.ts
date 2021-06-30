@@ -21,23 +21,19 @@ export class PostsComponent implements OnInit {
   newPostForm!: FormGroup;
   private postTitleFC!: FormControl;
   private postContentFC!: FormControl;
-  private currentUser!: UserTO;
 
   private newPostTitle!: string;
   private newPostContent!: string;
-  private subscription!: Subscription;
+
   posts!: PostTO[];
 
   constructor(private postService: PostService,
-              private activatedRoute: ActivatedRoute,
-              private authService: AuthService) {
+              public activatedRoute: ActivatedRoute,
+              public authService: AuthService) {
   }
 
   ngOnInit(): void {
     this.loadPosts();
-    this.subscription = this.authService.getCurrentUser().subscribe(userTO => {
-      this.currentUser = userTO;
-    });
     this.postTitleFC = new FormControl(this.newPostTitle, Validators.required);
     this.postContentFC = new FormControl(this.newPostContent, Validators.required);
     this.newPostForm = new FormGroup({
@@ -65,10 +61,6 @@ export class PostsComponent implements OnInit {
 
   public get size(): typeof Size {
     return Size;
-  }
-
-  public loggedInUserIsOnTheyPage(): boolean {
-    return this.currentUser && (this.currentUser.email === this.activatedRoute.snapshot.params['email']);
   }
 
 }

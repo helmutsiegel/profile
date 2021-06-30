@@ -7,7 +7,7 @@
   </div>
 </div>
 <simple-text-card *ngIf="descriptionButtonLabel === closeDescription"
-                  [editable]="loggedInUserIsOnTheyPage()" title="Description" [text]="projectVO.description">
+                  [editable]="authService.loggedInUserIsOnTheyPage(activatedRoute)" title="Description" [text]="projectVO.description">
 </simple-text-card>
 <div class="row mt-1" *ngIf="projectVO">
   <div class="col-3">
@@ -16,7 +16,7 @@
   <div class="col">
     <simple-text-card #textCard [title]="currentSection.title"
                       [text]="currentSection.description"
-                      [editable]="loggedInUserIsOnTheyPage()">
+                      [editable]="authService.loggedInUserIsOnTheyPage(activatedRoute)">
     </simple-text-card>
   </div>
 </div>

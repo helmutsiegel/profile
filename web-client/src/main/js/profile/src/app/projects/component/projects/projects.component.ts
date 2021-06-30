@@ -8,6 +8,7 @@ import {Size} from "../../../shared/model/enum/size";
 import {ProjectTO} from "../../../shared/model/to/project-t-o";
 import {ToastrService} from "../../../shared/service/toastr.service";
 import {SimpleModalComponent} from "../../../shared/component/simple-modal/simple-modal.component";
+import {AuthService} from "../../../service/auth.service";
 
 @Component({
   selector: 'projects',
@@ -25,13 +26,14 @@ export class ProjectsComponent implements OnInit {
   private newProjectName!: string;
 
   constructor(private projectService: ProjectService,
-              private route: ActivatedRoute,
+              public activatedRoute: ActivatedRoute,
               private projectMapper: ProjectMapperService,
-              private toastr: ToastrService) {
+              private toastr: ToastrService,
+              public authService: AuthService) {
   }
 
   ngOnInit(): void {
-    const emailFromUrl = this.route.snapshot.params['email'];
+    const emailFromUrl = this.activatedRoute.snapshot.params['email'];
     this.projectService.getProjectByEmail(emailFromUrl).subscribe(projects => {
       this.projectVOs = projects.map(projectTO => this.projectMapper.mapToVO(projectTO));
     });
