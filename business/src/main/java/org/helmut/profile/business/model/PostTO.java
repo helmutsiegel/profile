@@ -1,11 +1,11 @@
 package org.helmut.profile.business.model;
 
-import java.time.ZonedDateTime;
+import java.time.LocalDateTime;
 
 public class PostTO {
     private String title;
     private String content;
-    private ZonedDateTime dateCreated;
+    private LocalDateTime dateCreated;
 
     public String getTitle() {
         return title;
@@ -23,11 +23,11 @@ public class PostTO {
         this.content = content;
     }
 
-    public ZonedDateTime getDateCreated() {
+    public LocalDateTime getDateCreated() {
         return dateCreated;
     }
 
-    public void setDateCreated(ZonedDateTime dateCreated) {
+    public void setDateCreated(LocalDateTime dateCreated) {
         this.dateCreated = dateCreated;
     }
 }

@@ -6,6 +6,7 @@ import java.util.List;
 
 public class UserRepository extends BaseRepository<UserEntity> {
 
+
     /**
      * Searches user matching by first name, last name or email
      */
@@ -20,7 +21,7 @@ public class UserRepository extends BaseRepository<UserEntity> {
      * Get user by email and password
      */
     public UserEntity getByEmailAndPassword(String email, String password) {
-        return em.createQuery("select u from UserEntity u where u.email like :email and u.password like :password", UserEntity.class)
+        return em.createNamedQuery(UserEntity.BY_EMAIL_AND_PASSWORD, UserEntity.class)
                 .setParameter("email", email)
                 .setParameter("password", password)
                 .getSingleResult();

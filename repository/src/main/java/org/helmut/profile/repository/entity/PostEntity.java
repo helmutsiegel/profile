@@ -1,7 +1,7 @@
 package org.helmut.profile.repository.entity;
 
 import javax.persistence.*;
-import java.time.ZonedDateTime;
+import java.sql.Timestamp;
 
 @Entity
 @Table(name = "T_POST")
@@ -10,11 +10,11 @@ public class PostEntity extends BaseEntity {
     @Column
     private String title;
 
-    @Column
+    @Column(length = 2000)
     private String content;
 
     @Column(name = "date_created")
-    private ZonedDateTime dateCreated;
+    private Timestamp dateCreated;
 
     @ManyToOne
     @JoinColumn
@@ -44,11 +44,11 @@ public class PostEntity extends BaseEntity {
         this.userEntity = userEntity;
     }
 
-    public ZonedDateTime getDateCreated() {
+    public Timestamp getDateCreated() {
         return dateCreated;
     }
 
-    public void setDateCreated(ZonedDateTime dateCreated) {
+    public void setDateCreated(Timestamp dateCreated) {
         this.dateCreated = dateCreated;
     }
 }

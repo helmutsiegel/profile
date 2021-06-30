@@ -7,7 +7,9 @@ import java.time.LocalDate;
 
 @Entity
 @Table(name = "T_USER")
+@NamedQuery(name = UserEntity.BY_EMAIL_AND_PASSWORD, query = "select u from UserEntity u where u.email like :email and u.password like :password")
 public class UserEntity extends BaseEntity {
+    public static final String BY_EMAIL_AND_PASSWORD = "User.byEmailAndPassword";
 
     @Column(name = "email", unique = true)
     private String email;

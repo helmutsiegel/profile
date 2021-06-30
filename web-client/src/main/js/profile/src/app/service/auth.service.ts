@@ -1,14 +1,13 @@
-import {Injectable, OnDestroy} from '@angular/core';
+import {Injectable} from '@angular/core';
 import {UserTO} from "../shared/model/to/user-t-o";
-import {Observable, ReplaySubject, Subject, Subscription} from "rxjs";
-import {ToastrService} from "../shared/service/toastr.service";
+import {Observable, ReplaySubject, Subject} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
-export class AuthService implements OnDestroy {
+export class AuthService {
   private currentUserSubject!: Subject<UserTO>;
-  private subscription!: Subscription;
+
 
   constructor() {
     this.currentUserSubject = new ReplaySubject<UserTO>(1);
@@ -16,10 +15,6 @@ export class AuthService implements OnDestroy {
 
   public getCurrentUser(): Observable<UserTO> {
     return this.currentUserSubject.asObservable();
-  }
-
-  public ngOnDestroy() {
-    this.subscription.unsubscribe();
   }
 
   public logOut() {
