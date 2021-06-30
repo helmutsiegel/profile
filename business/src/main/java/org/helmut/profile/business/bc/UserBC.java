@@ -1,6 +1,7 @@
 package org.helmut.profile.business.bc;
 
 import org.helmut.profile.business.mapping.UserMapper;
+import org.helmut.profile.business.model.ChangePasswordTO;
 import org.helmut.profile.business.model.SignUpUserTO;
 import org.helmut.profile.business.model.UserTO;
 import org.helmut.profile.business.util.PasswordUtils;
@@ -42,6 +43,14 @@ public class UserBC {
     public UserTO logIn(String email, String password) {
         UserEntity userEntity = userRepository.getByEmailAndPassword(email, passwordUtils.digestPassword(password));
         return userMapper.mapToTO(userEntity);
+    }
+
+    public void changePassword(ChangePasswordTO changePasswordTO) {
+        UserEntity userEntity = userRepository.getByEmailAndPassword(changePasswordTO.getEmail(),
+                passwordUtils.digestPassword(changePasswordTO.getCurrentPassword()));
+
+        userEntity.setPassword(passwordUtils.digestPassword(changePasswordTO.getNewPassword1()));
+        userRepository.update(userEntity);
     }
 
     public boolean existsUser(String email) {

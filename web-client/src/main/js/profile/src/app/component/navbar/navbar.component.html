@@ -28,7 +28,7 @@
       <li routerLinkActive="nav-item active nav-button-active">
         <a *ngIf="!isAuthenticated()" class="nav-link" [routerLink]="['user/login']">Login</a>
         <a *ngIf="isAuthenticated()" class="nav-link"
-           [routerLink]="['user/profile']">Welcome {{currentUserTO?.firstName}}</a>
+           [routerLink]="[currentUserTO.email,'cv']">Welcome {{currentUserTO?.firstName}}</a>
       </li>
       <li routerLinkActive="nav-item">
         <a *ngIf="isAuthenticated()" class="nav-link" (click)="authService.logOut()" [routerLink]="['user/login']">Logout</a>

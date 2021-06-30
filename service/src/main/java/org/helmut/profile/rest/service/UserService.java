@@ -1,6 +1,7 @@
 package org.helmut.profile.rest.service;
 
 import org.helmut.profile.business.bc.UserBC;
+import org.helmut.profile.business.model.ChangePasswordTO;
 import org.helmut.profile.business.model.LoginUserTO;
 import org.helmut.profile.business.model.SignUpUserTO;
 import org.helmut.profile.business.model.UserTO;
@@ -16,6 +17,7 @@ import javax.ws.rs.core.Response;
 import java.util.List;
 
 import static javax.ws.rs.core.HttpHeaders.AUTHORIZATION;
+import static javax.ws.rs.core.Response.Status.BAD_REQUEST;
 import static javax.ws.rs.core.Response.Status.UNAUTHORIZED;
 import static org.helmut.profile.rest.service.Constants.CURRENT_USER_EMAIL;
 
@@ -89,6 +91,23 @@ public class UserService {
             return Response.ok(userTO).header(AUTHORIZATION, "Bearer " + token).build();
         } catch (Exception e) {
             return Response.status(UNAUTHORIZED).build();
+        }
+    }
+
+    @POST
+    @JWTTokenNeeded
+    @Path("changePassword")
+    public Response changePassword(ChangePasswordTO changePasswordTO) {
+        if (!changePasswordTO.getNewPassword1().equals(changePasswordTO.getNewPassword2())) {
+            return Response.status(BAD_REQUEST).entity("The new passwords does not match!").build();
+        }
+        try {
+            String currentUserEmail = httpHeaders.getHeaderString(CURRENT_USER_EMAIL);
+            changePasswordTO.setEmail(currentUserEmail);
+            userBC.changePassword(changePasswordTO);
+            return Response.ok().build();
+        } catch (Exception e) {
+            return Response.status(BAD_REQUEST).entity("Current password is incorrect!").build();
         }
     }
 

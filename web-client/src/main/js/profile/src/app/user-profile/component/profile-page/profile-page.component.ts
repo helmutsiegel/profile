@@ -1,10 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {AuthService} from "../../../service/auth.service";
-import {Router} from "@angular/router";
 import {UserService} from "../../../user/service/user.service";
 import {UserTO} from "../../../shared/model/to/user-t-o";
 import {ToastrService} from "../../../shared/service/toastr.service";
+import {ChangePasswordTO} from "../../../shared/model/to/change-password-t-o";
 
 @Component({
   selector: 'app-profile-page',
@@ -66,5 +66,17 @@ export class ProfilePageComponent implements OnInit {
 
   public titleInValid(): boolean {
     return this.lastName.invalid && this.profileForm.controls.lastName.touched
+  }
+
+  public changePassword(changePasswordTO: ChangePasswordTO): void {
+    this.userService.changePassword(changePasswordTO).subscribe(
+      _ => {
+        this.toastr.success('Password changed successfully')
+      },
+      err => {
+        this.toastr.error(err.error);
+      }
+    )
+    ;
   }
 }

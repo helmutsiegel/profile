@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {UserTO} from "../../shared/model/to/user-t-o";
 import {Observable} from "rxjs";
 import {BackendService} from "../../shared/service/backend.service";
-import {AuthService} from "../../service/auth.service";
+import {ChangePasswordTO} from "../../shared/model/to/change-password-t-o";
 
 @Injectable({
   providedIn: 'root'
@@ -34,5 +34,9 @@ export class UserService {
 
   public updateCurrentUser(userTO: UserTO): Observable<UserTO> {
     return this.backend.put<UserTO>('user', userTO);
+  }
+
+  public changePassword(changePasswordTO: ChangePasswordTO): Observable<any> {
+    return this.backend.post('user/changePassword', changePasswordTO);
   }
 }
