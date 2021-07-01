@@ -5,6 +5,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "T_CV")
+@ExcludeDefaultListeners
 public class CVEntity extends BaseEntity {
 
     @Column(name = "short_about")
