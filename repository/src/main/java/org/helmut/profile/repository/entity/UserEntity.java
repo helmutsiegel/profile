@@ -4,6 +4,8 @@ import org.helmut.profile.repository.enums.Seniority;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.time.Period;
+import java.util.Objects;
 
 @Entity
 @Table(name = "T_USER")
@@ -91,5 +93,31 @@ public class UserEntity extends BaseEntity {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    @PostLoad
+    @PostPersist
+    @PostUpdate
+    public void calculateAge() {
+        if (Objects.isNull(birthDate)) {
+            age = null;
+            return;
+        }
+        age = Period.between(birthDate, LocalDate.now()).getYears();
+    }
+
+    @PrePersist
+    @PreUpdate
+    private void validate() {
+        if (Objects.isNull(firstName) || "".equals(firstName)) {
+            throw new IllegalArgumentException("Invalid first name!");
+        }
+        if (Objects.isNull(lastName) || "".equals(lastName)) {
+            throw new IllegalArgumentException("Invalid last name!");
+        }
     }
 }

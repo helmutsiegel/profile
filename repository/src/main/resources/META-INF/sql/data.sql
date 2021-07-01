@@ -63,4 +63,8 @@ INSERT INTO t_language(id, language, level, cv_id) VALUES (20003, 'Romanian', '4
 INSERT INTO t_language(id, language, level, cv_id) VALUES (20004, 'Hungarian', '5', 20001);
 INSERT INTO t_chapter(id, title, project_id) VALUES (20001, 'Project Overview', 20001);
 INSERT INTO t_section(id, description, title, chapter_id) VALUES (20001, 'Coming soon..', 'Purpose', 20001);
+
+INSERT INTO t_post(id, date_created, title, userentity_id, content) VALUES (20001,  current_timestamp, 'JPA Callback Annotations', 20001, '@PrePersist, @PostPersist, @PreUpdate, @PostUpdate, @PreRemove, @PostRemove, @PostLoad. This annotations can be added to public, protected, private or package private methods, but cannot be added to static or final methods. This methods can throw just checked exceptions.');
+
+
 -- End of Inserts for Helmut Siegel ----
