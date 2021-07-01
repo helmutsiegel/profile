@@ -4,18 +4,13 @@
              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
              http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
              version="2.1">
-
     <persistence-unit name="profile-unit" transaction-type="JTA">
         <jta-data-source>jdbc/postgrespool</jta-data-source>
+        <mapping-file>META-INF/listeners.xml</mapping-file>
         <properties>
             <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
             <property name="javax.persistence.sql-load-script-source" value="META-INF/sql/data.sql" />
-<!--            <property name="javax.persistence.schema-generation.create-source" value="script"/>-->
-<!--            <property name="javax.persistence.schema-generation.drop-source" value="script"/>-->
-<!--            <property name="javax.persistence.schema-generation.drop-script-source" value="META-INF/drop-script.sql"/>-->
-<!--            <property name="javax.persistence.schema-generation.create-script-source" value="META-INF/create-script.sql"/>-->
             <property name="eclipselink.logging.level" value="FINE"/>
         </properties>
     </persistence-unit>
-
 </persistence>

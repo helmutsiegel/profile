@@ -1,6 +1,7 @@
 package org.helmut.profile.repository.entity;
 
 import org.helmut.profile.repository.enums.Seniority;
+import org.helmut.profile.repository.listener.UserValidationListener;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -10,6 +11,9 @@ import java.util.Objects;
 @Entity
 @Table(name = "T_USER")
 @NamedQuery(name = UserEntity.BY_EMAIL_AND_PASSWORD, query = "select u from UserEntity u where u.email like :email and u.password like :password")
+@EntityListeners({
+        UserValidationListener.class
+})
 public class UserEntity extends BaseEntity {
     public static final String BY_EMAIL_AND_PASSWORD = "User.byEmailAndPassword";
 
@@ -108,16 +112,5 @@ public class UserEntity extends BaseEntity {
             return;
         }
         age = Period.between(birthDate, LocalDate.now()).getYears();
-    }
-
-    @PrePersist
-    @PreUpdate
-    private void validate() {
-        if (Objects.isNull(firstName) || "".equals(firstName)) {
-            throw new IllegalArgumentException("Invalid first name!");
-        }
-        if (Objects.isNull(lastName) || "".equals(lastName)) {
-            throw new IllegalArgumentException("Invalid last name!");
-        }
     }
 }
