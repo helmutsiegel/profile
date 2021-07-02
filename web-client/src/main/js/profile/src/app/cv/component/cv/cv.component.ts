@@ -3,6 +3,7 @@ import {CvVO} from "../../model/cv-v-o";
 import {ActivatedRoute, Router} from "@angular/router";
 import {CvService} from "../../service/cv.service";
 import {AuthService} from "../../../service/auth.service";
+import {ExperienceVO} from "../../model/experience-v-o";
 
 @Component({
   selector: 'cv',
@@ -23,6 +24,9 @@ export class CvComponent implements OnInit {
 
     this.activatedRoute.data.forEach(data => {
       this.cvVO = data['cvVO'];
+      this.cvVO.experiences.sort((a, b) => {
+        return b.startDate.localeCompare(a.startDate);
+      })
     });
   };
 

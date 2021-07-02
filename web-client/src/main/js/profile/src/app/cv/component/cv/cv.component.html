@@ -21,8 +21,13 @@
         </div>
         <div class="card-body">
           <div *ngFor="let experienceVO of cvVO.experiences">
-            <p class="card-text">{{experienceVO?.company}} - {{experienceVO?.position}}
-                                                           ({{experienceVO.startDate}} - {{experienceVO.endDate}})</p>
+            <div class="row">
+              <div class="col"><b>{{experienceVO?.company}}</b></div>
+              <div class="col">{{experienceVO?.position}}</div>
+              <div class="col">{{experienceVO.startDate | date:'MMM YYYY'}}
+                - {{!experienceVO.endDate ? 'Present' : experienceVO.endDate |  date: 'MMM YYYY'}}</div>
+              <div class="col"></div>
+            </div>
           </div>
         </div>
       </div>
@@ -33,7 +38,7 @@
         </div>
         <div class="card-body">
           <div *ngFor="let languageVO of cvVO.languages">
-            <p class="card-text">{{languageVO?.language}} - {{languageVO?.level}}</p>
+            <p class="card-text"><b>{{languageVO?.language}}</b> - {{languageVO?.level}}</p>
           </div>
         </div>
       </div>
@@ -44,7 +49,7 @@
         </div>
         <div class="card-body">
           <div *ngFor="let certificationVO of cvVO.certifications">
-            <p class="card-text">{{certificationVO?.name}} - {{certificationVO?.issuedBy}}</p>
+            <p class="card-text"><b>{{certificationVO?.name}}</b> - {{certificationVO?.issuedBy}}</p>
           </div>
         </div>
       </div>

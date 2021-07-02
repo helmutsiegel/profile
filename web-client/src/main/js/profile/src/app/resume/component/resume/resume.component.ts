@@ -23,7 +23,10 @@ export class ResumeComponent implements OnInit {
 
   ngOnInit(): void {
     this.resumeService.getResumeByEmail(this.activatedRoute.snapshot.params['email'])
-      .subscribe(resumeTO => this.resumeVO = this.resumeMapperService.mapToVO(resumeTO));
+      .subscribe(resumeTO => {
+        this.resumeVO = this.resumeMapperService.mapToVO(resumeTO);
+        this.resumeVO.experiences.sort((a, b) => b.startDate.localeCompare(a.startDate));
+      });
   }
 
   public saveAbout(event: string) {
