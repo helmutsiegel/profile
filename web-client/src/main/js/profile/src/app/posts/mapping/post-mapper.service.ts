@@ -12,7 +12,7 @@ export class PostMapperService {
 
   public mapToVO(postTO: PostTO): PostVO {
     return new PostVO(postTO.id,
-      postTO.title, postTO.content, postTO.dateCreated);
+      postTO.title, postTO.content, postTO.dateCreated, postTO.tags.split(','));
   }
 
   public mapToTO(postVO: PostVO): PostTO {
@@ -20,7 +20,8 @@ export class PostMapperService {
       id: postVO.id,
       title: postVO.title,
       content: postVO.content,
-      dateCreated: postVO.dateCreated
+      dateCreated: postVO.dateCreated,
+      tags: postVO.tags.toString()
     }
   }
 }

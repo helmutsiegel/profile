@@ -11,6 +11,7 @@ export class PostCardComponent implements OnInit {
   @Input() content!: string;
   @Input() created!: string;
   @Input() settingAvailable: boolean = false;
+  @Input() tags: string[] = ['vdgcd', 'dcdc'];
 
   @Output() onDelete: EventEmitter<any> = new EventEmitter<any>();
   @Output() onSave: EventEmitter<string> = new EventEmitter<string>();

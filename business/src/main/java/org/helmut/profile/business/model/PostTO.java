@@ -6,6 +6,7 @@ public class PostTO {
     private Long id;
     private String title;
     private String content;
+    private String tags;
     private LocalDateTime dateCreated;
 
     public String getTitle() {
@@ -38,5 +39,13 @@ public class PostTO {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getTags() {
+        return tags;
+    }
+
+    public void setTags(String tags) {
+        this.tags = tags;
     }
 }

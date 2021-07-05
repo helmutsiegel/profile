@@ -17,6 +17,7 @@
                  [created]="post.dateCreated"
                  (onDelete)="deletePost(post.id)"
                  (onSave)="savePost($event, post, postCardComponent)"
+                 [tags]="post.tags"
                  [settingAvailable]="authService.loggedInUserIsOnTheyPage(activatedRoute)"></post-card>
     </div>
   </div>

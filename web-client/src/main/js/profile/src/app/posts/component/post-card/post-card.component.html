@@ -27,7 +27,18 @@
   </div>
   <div class="card-body">
     <div *ngIf="!editMode">
-      {{contentToEdit}}
+      <div>
+        {{contentToEdit}}
+      </div>
+      <hr>
+      <div class="container">
+        <div class="row">
+          <h5>Tags:</h5>
+          <h5 class="ml-1" *ngFor="let tag of tags">
+            <span class="badge badge-pill badge-primary">{{tag}}</span>
+          </h5>
+        </div>
+      </div>
     </div>
     <div *ngIf="editMode">
       <textarea class="form-control" id="text" name="text" rows="5" [(ngModel)]="contentToEdit"></textarea>

@@ -16,6 +16,9 @@ public class PostEntity extends BaseEntity {
     @Column(name = "date_created")
     private Timestamp dateCreated;
 
+    @Column
+    private String tags;
+
     @ManyToOne
     @JoinColumn
     private UserEntity userEntity;
@@ -50,5 +53,13 @@ public class PostEntity extends BaseEntity {
 
     public void setDateCreated(Timestamp dateCreated) {
         this.dateCreated = dateCreated;
+    }
+
+    public String getTags() {
+        return tags;
+    }
+
+    public void setTags(String tags) {
+        this.tags = tags;
     }
 }

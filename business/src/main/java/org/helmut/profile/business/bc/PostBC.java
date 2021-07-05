@@ -51,6 +51,7 @@ public class PostBC {
         PostEntity postEntity = postRepository.findById(postTO.getId());
         if (email.equals(postEntity.getUserEntity().getEmail())) {
             postEntity.setContent(postTO.getContent());
+            postEntity.setTags(postTO.getTags());
             postRepository.update(postEntity);
         } else {
             throw new IllegalArgumentException("You are not allowed to update this post!");
