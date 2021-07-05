@@ -15,7 +15,8 @@
       <post-card [title]="post.title"
                  [content]="post.content"
                  [created]="post.dateCreated"
-                 (onDelete)="deletePost(post.id)"></post-card>
+                 (onDelete)="deletePost(post.id)"
+                 [settingAvailable]="authService.loggedInUserIsOnTheyPage(activatedRoute)"></post-card>
     </div>
   </div>
 </div>

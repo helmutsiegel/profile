@@ -3,6 +3,7 @@ package org.helmut.profile.business.model;
 import java.time.LocalDateTime;
 
 public class PostTO {
+    private Long id;
     private String title;
     private String content;
     private LocalDateTime dateCreated;
@@ -29,5 +30,13 @@ public class PostTO {
 
     public void setDateCreated(LocalDateTime dateCreated) {
         this.dateCreated = dateCreated;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 }

@@ -10,6 +10,7 @@ export class PostCardComponent implements OnInit {
   @Input() title!: string;
   @Input() content!: string;
   @Input() created!: string;
+  @Input() settingAvailable: boolean = false;
 
   @Output() onDelete: EventEmitter<any> = new EventEmitter<any>();
 

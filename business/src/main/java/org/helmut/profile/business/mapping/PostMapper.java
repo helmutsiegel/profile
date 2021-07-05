@@ -12,6 +12,7 @@ public class PostMapper {
 
     public PostTO mapToTO(PostEntity entity) {
         PostTO postTO = new PostTO();
+        postTO.setId(entity.getId());
         postTO.setTitle(entity.getTitle());
         postTO.setContent(entity.getContent());
         postTO.setDateCreated(entity.getDateCreated().toLocalDateTime());
