@@ -29,6 +29,13 @@ export class BackendService {
         map(response => response.body as T));
   }
 
+  public delete<T>(url: string, notificationOnError?: boolean): Observable<T> {
+    return this.http.delete<T>(url, {observe: 'response'})
+      .pipe(
+        tap(response => this.handleTokenAndAppState(response, url), e => this.handleError(e, url, notificationOnError)),
+        map(response => response.body as T));
+  }
+
   public put<T>(url: string, body: any, notificationOnError?: boolean): Observable<T> {
     return this.http.put<T>(url, body, {observe: 'response'})
       .pipe(

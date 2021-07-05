@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'post-card',
@@ -11,10 +11,19 @@ export class PostCardComponent implements OnInit {
   @Input() content!: string;
   @Input() created!: string;
 
+  @Output() onDelete: EventEmitter<any> = new EventEmitter<any>();
+
   constructor() {
   }
 
   ngOnInit(): void {
   }
 
+  public editPost(): void {
+
+  }
+
+  public deletePost(): void {
+    this.onDelete.emit();
+  }
 }

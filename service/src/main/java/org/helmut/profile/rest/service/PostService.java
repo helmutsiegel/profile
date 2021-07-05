@@ -43,4 +43,19 @@ public class PostService {
                     .build();
         }
     }
+
+    @DELETE
+    @Path("{id}")
+    @JWTTokenNeeded
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response delete(@PathParam("id") Long id) {
+        try {
+            postBC.deletePost(id, httpHeaders.getHeaderString(CURRENT_USER_EMAIL));
+            return Response.ok().build();
+        } catch (Exception e) {
+            return Response.status(Response.Status.BAD_REQUEST)
+                    .entity(e)
+                    .build();
+        }
+    }
 }

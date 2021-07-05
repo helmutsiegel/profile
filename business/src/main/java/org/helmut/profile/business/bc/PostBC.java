@@ -37,4 +37,13 @@ public class PostBC {
         postEntity.setUserEntity(userEntity);
         postRepository.persist(postEntity);
     }
+
+    public void deletePost(Long id, String email) {
+        PostEntity postEntity = postRepository.findById(id);
+        if (email.equals(postEntity.getUserEntity().getEmail())) {
+            postRepository.delete(postEntity);
+        } else {
+            throw new IllegalArgumentException("You are not allowed to delete this post!");
+        }
+    }
 }

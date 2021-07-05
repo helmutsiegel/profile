@@ -5,9 +5,8 @@ import {Size} from "../../../shared/model/enum/size";
 import {PostService} from "../../service/post.service";
 import {ActivatedRoute} from "@angular/router";
 import {PostTO} from "../../../shared/model/to/post-t-o";
-import {UserTO} from "../../../shared/model/to/user-t-o";
 import {AuthService} from "../../../service/auth.service";
-import {Subscription} from "rxjs";
+import {ToastrService} from "../../../shared/service/toastr.service";
 
 @Component({
   selector: 'posts',
@@ -29,7 +28,8 @@ export class PostsComponent implements OnInit {
 
   constructor(private postService: PostService,
               public activatedRoute: ActivatedRoute,
-              public authService: AuthService) {
+              public authService: AuthService,
+              private toastr: ToastrService) {
   }
 
   ngOnInit(): void {
@@ -63,4 +63,13 @@ export class PostsComponent implements OnInit {
     return Size;
   }
 
+  public deletePost(id: number): void {
+    this.postService.deletePost(id).subscribe(_ => {
+        this.loadPosts();
+        this.toastr.success("Post deleted successfully!")
+      },
+      err => {
+        this.toastr.error(err.error)
+      });
+  }
 }

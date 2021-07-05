@@ -18,4 +18,8 @@ export class PostService {
   public getByEmail(email: string): Observable<PostTO[]> {
     return this.backend.get<PostTO[]>('post/' + email);
   }
+
+  public deletePost(id: number): Observable<any> {
+    return this.backend.delete('post/' + id);
+  }
 }

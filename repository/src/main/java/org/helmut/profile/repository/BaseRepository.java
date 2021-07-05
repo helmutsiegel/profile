@@ -37,6 +37,10 @@ public abstract class BaseRepository<T> {
         em.merge(t);
     }
 
+    public void delete(T t) {
+        em.remove(em.merge(t));
+    }
+
     public List<T> findByProperty(String property, Object value) {
         return em.createQuery("select t from " + type.getSimpleName() + " t where t." + property + " like :param", type)
                 .setParameter("param", value)
