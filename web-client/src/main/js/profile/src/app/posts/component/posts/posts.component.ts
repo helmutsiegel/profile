@@ -81,9 +81,8 @@ export class PostsComponent implements OnInit {
     }
   }
 
-  public savePost(editedContent: string, postVO: PostVO, postCardComponent: PostCardComponent): void {
+  public savePost(postVO: PostVO, postCardComponent: PostCardComponent): void {
     const postTO = this.postMapper.mapToTO(postVO);
-    postTO.content = editedContent;
     this.postService.updatePost(postTO)
       .subscribe(_ => {
           this.toastr.success("Post updated successfully!");

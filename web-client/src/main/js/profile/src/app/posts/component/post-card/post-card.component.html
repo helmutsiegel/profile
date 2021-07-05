@@ -2,13 +2,13 @@
   <div class="card-header">
     <div class="row">
       <div class="col">
-        <h5>{{title}}</h5>
+        <h5>{{postVO.title}}</h5>
       </div>
       <div class="col">
         <div class="float-right">
           <div class="row">
             <div class="mt-1">
-              {{created | date : 'medium'}}
+              {{postVO.dateCreated | date : 'medium'}}
             </div>
             <div *ngIf="settingAvailable">
               <button class="btn btn-light" type="button" id="dropdownMenuButton"
@@ -28,23 +28,34 @@
   <div class="card-body">
     <div *ngIf="!editMode">
       <div>
-        {{contentToEdit}}
+        {{postVOToEdit.content}}
       </div>
       <hr>
       <div class="container">
         <div class="row">
           <h5>Tags:</h5>
-          <h5 class="ml-1" *ngFor="let tag of tags">
+          <h5 class="ml-1" *ngFor="let tag of postVOToEdit.tags?.split(',')">
             <span class="badge badge-pill badge-primary">{{tag}}</span>
           </h5>
         </div>
       </div>
     </div>
     <div *ngIf="editMode">
-      <textarea class="form-control" id="text" name="text" rows="5" [(ngModel)]="contentToEdit"></textarea>
+      <textarea class="form-control" id="text" name="text" rows="5" [(ngModel)]="postVOToEdit.content"></textarea>
+      <div class="mt-1">
+        <div class="row">
+          <div class="col-1">
+            <h5>Tags:</h5>
+          </div>
+          <div class="col">
+            <input type="text" class="form-control" placeholder="Introduce the tags comma separated. For ex: Java,Angular"
+                   [(ngModel)]="postVOToEdit.tags"/>
+          </div>
+        </div>
+      </div>
       <div class="mt-1 float-right">
         <button class="btn btn-dark" type="button" (click)="save()">Save</button>
-        <button class="btn btn-outline-dark ml-1" type="button" (click)="cancel()">Cancel</button>
+        <button class="btn btn-outline-dark ml-1" type="button" (click)="reset()">Cancel</button>
       </div>
     </div>
   </div>

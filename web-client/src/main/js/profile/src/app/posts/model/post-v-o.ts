@@ -3,6 +3,6 @@ export class PostVO {
               public title: string,
               public content: string,
               public dateCreated: string,
-              public tags: string[]) {
+              public tags: string) {
   }
 }

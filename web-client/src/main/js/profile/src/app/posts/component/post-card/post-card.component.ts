@@ -1,4 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {PostVO} from "../../model/post-v-o";
 
 @Component({
   selector: 'post-card',
@@ -7,22 +8,19 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 })
 export class PostCardComponent implements OnInit {
 
-  @Input() title!: string;
-  @Input() content!: string;
-  @Input() created!: string;
+  @Input() postVO!: PostVO;
   @Input() settingAvailable: boolean = false;
-  @Input() tags: string[] = ['vdgcd', 'dcdc'];
 
   @Output() onDelete: EventEmitter<any> = new EventEmitter<any>();
-  @Output() onSave: EventEmitter<string> = new EventEmitter<string>();
+  @Output() onSave: EventEmitter<PostVO> = new EventEmitter<PostVO>();
   editMode: boolean = false;
-  contentToEdit!: string;
+  postVOToEdit!: PostVO;
 
   constructor() {
   }
 
   ngOnInit(): void {
-    this.contentToEdit = this.content;
+    this.postVOToEdit = {...this.postVO};
   }
 
   public editPost(): void {
@@ -33,17 +31,13 @@ export class PostCardComponent implements OnInit {
     this.onDelete.emit();
   }
 
-  public cancel(): void {
+  public reset(): void {
     this.editMode = false;
-    this.contentToEdit = this.content;
+    this.postVOToEdit = {...this.postVO};
   }
 
   public save(): void {
     this.editMode = false;
-    this.onSave.emit(this.contentToEdit);
-  }
-
-  public reset(): void {
-    this.contentToEdit = this.content;
+    this.onSave.emit(this.postVOToEdit);
   }
 }
