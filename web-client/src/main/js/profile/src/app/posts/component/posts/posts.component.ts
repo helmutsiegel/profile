@@ -7,6 +7,10 @@ import {ActivatedRoute} from "@angular/router";
 import {PostTO} from "../../../shared/model/to/post-t-o";
 import {AuthService} from "../../../service/auth.service";
 import {ToastrService} from "../../../shared/service/toastr.service";
+import {PostVO} from "../../model/post-v-o";
+import {PostMapperService} from "../../mapping/post-mapper.service";
+import {PostCardComponent} from "../post-card/post-card.component";
+
 
 @Component({
   selector: 'posts',
@@ -24,9 +28,10 @@ export class PostsComponent implements OnInit {
   private newPostTitle!: string;
   private newPostContent!: string;
 
-  posts!: PostTO[];
+  posts!: PostVO[];
 
   constructor(private postService: PostService,
+              private postMapper: PostMapperService,
               public activatedRoute: ActivatedRoute,
               public authService: AuthService,
               private toastr: ToastrService) {
@@ -45,7 +50,8 @@ export class PostsComponent implements OnInit {
   private loadPosts(): void {
     const emailFromUrl = this.activatedRoute.snapshot.params['email'];
     this.postService.getByEmail(emailFromUrl).subscribe(posts => {
-      this.posts = posts.sort((a, b) => b.dateCreated.localeCompare(a.dateCreated));
+      this.posts = posts.map(postTO => this.postMapper.mapToVO(postTO))
+        .sort((a, b) => b.dateCreated.localeCompare(a.dateCreated));
     });
   }
 
@@ -64,12 +70,27 @@ export class PostsComponent implements OnInit {
   }
 
   public deletePost(id: number): void {
-    this.postService.deletePost(id).subscribe(_ => {
-        this.loadPosts();
-        this.toastr.success("Post deleted successfully!")
-      },
-      err => {
-        this.toastr.error(err.error)
-      });
+    if (window.confirm("Are you sure want to delete the post?")) {
+      this.postService.deletePost(id).subscribe(_ => {
+          this.loadPosts();
+          this.toastr.success("Post deleted successfully!")
+        },
+        err => {
+          this.toastr.error(err.error)
+        });
+    }
+  }
+
+  public savePost(editedContent: string, postVO: PostVO, postCardComponent: PostCardComponent): void {
+    const postTO = this.postMapper.mapToTO(postVO);
+    postTO.content = editedContent;
+    this.postService.updatePost(postTO)
+      .subscribe(_ => {
+          this.toastr.success("Post updated successfully!");
+        },
+        error => {
+          postCardComponent.reset();
+          this.toastr.error("Post could not updated!");
+        });
   }
 }

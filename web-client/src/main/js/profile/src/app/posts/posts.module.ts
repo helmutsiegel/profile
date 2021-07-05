@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { PostsRoutingModule } from './posts-routing.module';
 import { PostsComponent } from './component/posts/posts.component';
 import {CommonsModule} from "../shared/commons.module";
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { PostCardComponent } from './component/post-card/post-card.component';
 
 
@@ -13,11 +13,12 @@ import { PostCardComponent } from './component/post-card/post-card.component';
     PostsComponent,
     PostCardComponent
   ],
-  imports: [
-    CommonModule,
-    PostsRoutingModule,
-    CommonsModule,
-    ReactiveFormsModule
-  ]
+    imports: [
+        CommonModule,
+        PostsRoutingModule,
+        CommonsModule,
+        ReactiveFormsModule,
+        FormsModule
+    ]
 })
 export class PostsModule { }

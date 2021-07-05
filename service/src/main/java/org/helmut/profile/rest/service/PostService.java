@@ -44,6 +44,21 @@ public class PostService {
         }
     }
 
+    @PUT
+    @JWTTokenNeeded
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response updatePost(PostTO postTO) {
+        try {
+            postBC.updatePost(postTO, httpHeaders.getHeaderString(CURRENT_USER_EMAIL));
+            return Response.ok().build();
+        } catch (Exception e) {
+            return Response.status(Response.Status.BAD_REQUEST)
+                    .entity(e)
+                    .build();
+        }
+    }
+
     @DELETE
     @Path("{id}")
     @JWTTokenNeeded

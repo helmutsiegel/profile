@@ -46,4 +46,14 @@ public class PostBC {
             throw new IllegalArgumentException("You are not allowed to delete this post!");
         }
     }
+
+    public void updatePost(PostTO postTO, String email) {
+        PostEntity postEntity = postRepository.findById(postTO.getId());
+        if (email.equals(postEntity.getUserEntity().getEmail())) {
+            postEntity.setContent(postTO.getContent());
+            postRepository.update(postEntity);
+        } else {
+            throw new IllegalArgumentException("You are not allowed to update this post!");
+        }
+    }
 }

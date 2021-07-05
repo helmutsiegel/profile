@@ -53,19 +53,16 @@ export class BackendService {
         localStorage.setItem('Authorization', authorization);
       }
     } else {
-      localStorage.clear();
       this.authService.logOut();
     }
   }
 
   private handleError(error: HttpErrorResponse, url: string, notificationOnError?: boolean): void {
-    if (notificationOnError) {
-      if (error.status === 401) {
+    if (error.status === 401) {
+      this.authService.logOut();
+      if (notificationOnError) {
         this.toastr.error('You are not authorized to perform this operation!');
       }
-    }
-    if (url === 'user/currentUser') {
-      this.authService.logOut();
     }
   }
 }

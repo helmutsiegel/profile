@@ -1,25 +1,25 @@
-import {Injectable} from '@angular/core';
+import {Injectable, OnDestroy} from '@angular/core';
 import {UserTO} from "../shared/model/to/user-t-o";
-import {Observable, ReplaySubject, Subject} from "rxjs";
-import {tap} from "rxjs/operators";
+import {Observable, ReplaySubject, Subject, Subscription} from "rxjs";
 import {ActivatedRoute} from "@angular/router";
 
 @Injectable({
   providedIn: 'root'
 })
-export class AuthService {
+export class AuthService implements OnDestroy {
   private currentUserSubject!: Subject<UserTO>;
   private currentUser!: UserTO
+  private subscription!: Subscription;
 
   constructor() {
     this.currentUserSubject = new ReplaySubject<UserTO>(1);
+    this.subscription = this.getCurrentUser().subscribe(userTO => {
+      this.currentUser = userTO;
+    });
   }
 
   public getCurrentUser(): Observable<UserTO> {
-    return this.currentUserSubject.asObservable()
-      .pipe(tap(userTO => {
-        this.currentUser = userTO;
-      }));
+    return this.currentUserSubject.asObservable();
   }
 
   public logOut() {
@@ -33,5 +33,9 @@ export class AuthService {
 
   public loggedInUserIsOnTheyPage(activatedRoute: ActivatedRoute): boolean {
     return !!this.currentUser && this.currentUser.email === activatedRoute.snapshot.params['email']
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 }

@@ -22,4 +22,8 @@ export class PostService {
   public deletePost(id: number): Observable<any> {
     return this.backend.delete('post/' + id);
   }
+
+  public updatePost(postTO: PostTO): Observable<any> {
+    return this.backend.put('post', postTO);
+  }
 }
