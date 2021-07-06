@@ -4,8 +4,13 @@ import org.helmut.profile.business.model.PostTO;
 import org.helmut.profile.repository.entity.PostEntity;
 
 import javax.enterprise.context.RequestScoped;
+import java.sql.Date;
 import java.sql.Timestamp;
+import java.time.Clock;
 import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
 
 @RequestScoped
 public class PostMapper {
@@ -15,7 +20,7 @@ public class PostMapper {
         postTO.setId(entity.getId());
         postTO.setTitle(entity.getTitle());
         postTO.setContent(entity.getContent());
-        postTO.setDateCreated(entity.getDateCreated().toLocalDateTime());
+        postTO.setDateCreated(entity.getDateCreated().format(DateTimeFormatter.ISO_INSTANT));
         postTO.setTags(entity.getTags());
         return postTO;
     }
@@ -25,7 +30,7 @@ public class PostMapper {
         postEntity.setTitle(postTO.getTitle());
         postEntity.setContent(postTO.getContent());
         postEntity.setTags(postTO.getTags());
-        postEntity.setDateCreated(Timestamp.valueOf(LocalDateTime.now()));
+        postEntity.setDateCreated(OffsetDateTime.now());
         return postEntity;
     }
 }

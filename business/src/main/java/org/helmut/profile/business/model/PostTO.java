@@ -1,13 +1,11 @@
 package org.helmut.profile.business.model;
 
-import java.time.LocalDateTime;
-
 public class PostTO {
     private Long id;
     private String title;
     private String content;
     private String tags;
-    private LocalDateTime dateCreated;
+    private String dateCreated;
 
     public String getTitle() {
         return title;
@@ -25,11 +23,11 @@ public class PostTO {
         this.content = content;
     }
 
-    public LocalDateTime getDateCreated() {
+    public String getDateCreated() {
         return dateCreated;
     }
 
-    public void setDateCreated(LocalDateTime dateCreated) {
+    public void setDateCreated(String dateCreated) {
         this.dateCreated = dateCreated;
     }
 

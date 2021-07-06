@@ -1,7 +1,7 @@
 package org.helmut.profile.repository.entity;
 
 import javax.persistence.*;
-import java.sql.Timestamp;
+import java.time.OffsetDateTime;
 
 @Entity
 @Table(name = "T_POST")
@@ -14,7 +14,7 @@ public class PostEntity extends BaseEntity {
     private String content;
 
     @Column(name = "date_created")
-    private Timestamp dateCreated;
+    private OffsetDateTime dateCreated;
 
     @Column
     private String tags;
@@ -47,19 +47,19 @@ public class PostEntity extends BaseEntity {
         this.userEntity = userEntity;
     }
 
-    public Timestamp getDateCreated() {
-        return dateCreated;
-    }
-
-    public void setDateCreated(Timestamp dateCreated) {
-        this.dateCreated = dateCreated;
-    }
-
     public String getTags() {
         return tags;
     }
 
     public void setTags(String tags) {
         this.tags = tags;
+    }
+
+    public OffsetDateTime getDateCreated() {
+        return dateCreated;
+    }
+
+    public void setDateCreated(OffsetDateTime dateCreated) {
+        this.dateCreated = dateCreated;
     }
 }

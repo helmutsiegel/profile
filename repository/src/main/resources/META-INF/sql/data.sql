@@ -1,3 +1,5 @@
+ALTER TABLE t_post ALTER COLUMN date_created TYPE timestamp with time zone;
+
 INSERT INTO t_user(id, first_name, last_name, title, email, birth_date, seniority, password) VALUES (10001, 'Max', 'Mustermann', 'Java Developer', 'maxmuster@dummy.mail', '10/12/1995',1, 'd8lT6FWVtqT9wWCXj9rCfKQbsGEm3UI24Ca9xqBMosE=');
 INSERT INTO t_user(id, first_name, last_name, title, email, birth_date, seniority, password) VALUES (10002, 'John', 'Doe', 'Technical lead', 'johndoe@dummy.mail', '02/06/1985',2,'wnE7YskDeRve/Fpqmd8E1DMN5JG7x6DKalAHM35KYCg=');
 INSERT INTO t_user(id, first_name, last_name, title, email, birth_date, seniority, password) VALUES (10003, 'Peter', 'Pan', '.Net Developer', 'peterpan@dummy.mail', '10/10/1995',0, '51Om08Dp0itGKyRmX8m17je1RFTiGZQ8c0F76RvAdGU=');
