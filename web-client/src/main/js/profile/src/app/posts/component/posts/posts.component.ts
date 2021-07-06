@@ -29,7 +29,9 @@ export class PostsComponent implements OnInit {
   private newPostContent!: string;
 
   posts!: PostVO[];
+  visiblePosts: PostVO[] = [];
   tags!: Set<string>;
+  selectedTags: string[] = [];
 
   constructor(private postService: PostService,
               private postMapper: PostMapperService,
@@ -53,9 +55,9 @@ export class PostsComponent implements OnInit {
     this.postService.getByEmail(emailFromUrl).subscribe(posts => {
       this.posts = posts.map(postTO => this.postMapper.mapToVO(postTO))
         .sort((a, b) => b.dateCreated.localeCompare(a.dateCreated));
-
       this.tags = new Set(this.posts.filter(postVO => !!postVO.tags).map(postVO => postVO.tags.split(','))
         .reduce((accumulator, value) => accumulator.concat(value), []));
+      this.filterPosts();
     });
   }
 
@@ -89,11 +91,31 @@ export class PostsComponent implements OnInit {
     const postTO = this.postMapper.mapToTO(postVO);
     this.postService.updatePost(postTO)
       .subscribe(_ => {
+          this.loadPosts();
           this.toastr.success("Post updated successfully!");
         },
         error => {
           postCardComponent.reset();
           this.toastr.error("Post could not updated!");
         });
+  }
+
+  public changeTagFilter(tag: string): void {
+    if (this.selectedTags.includes(tag)) {
+      this.selectedTags.splice(this.selectedTags.indexOf(tag), 1);
+    } else {
+      this.selectedTags.push(tag);
+    }
+    this.filterPosts();
+  }
+
+  public filterPosts(): void {
+    if (this.posts) {
+      if (this.selectedTags.length > 0) {
+        this.visiblePosts = this.posts.filter(postVO => this.selectedTags.some(selectedTag => postVO.tags.split(',').includes(selectedTag)))
+      } else {
+        this.visiblePosts = [...this.posts];
+      }
+    }
   }
 }
