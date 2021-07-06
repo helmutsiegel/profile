@@ -29,6 +29,7 @@ export class PostsComponent implements OnInit {
   private newPostContent!: string;
 
   posts!: PostVO[];
+  tags!: Set<string>;
 
   constructor(private postService: PostService,
               private postMapper: PostMapperService,
@@ -52,6 +53,9 @@ export class PostsComponent implements OnInit {
     this.postService.getByEmail(emailFromUrl).subscribe(posts => {
       this.posts = posts.map(postTO => this.postMapper.mapToVO(postTO))
         .sort((a, b) => b.dateCreated.localeCompare(a.dateCreated));
+
+      this.tags = new Set(this.posts.filter(postVO => !!postVO.tags).map(postVO => postVO.tags.split(','))
+        .reduce((accumulator, value) => accumulator.concat(value), []));
     });
   }
 

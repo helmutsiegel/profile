@@ -64,7 +64,8 @@ INSERT INTO t_language(id, language, level, cv_id) VALUES (20004, 'Hungarian', '
 INSERT INTO t_chapter(id, title, project_id) VALUES (20001, 'Project Overview', 20001);
 INSERT INTO t_section(id, description, title, chapter_id) VALUES (20001, 'Coming soon..', 'Purpose', 20001);
 
-INSERT INTO t_post(id, date_created, title, userentity_id, content, tags) VALUES (20001,  current_timestamp, 'JPA Callback Annotations', 20001, '@PrePersist, @PostPersist, @PreUpdate, @PostUpdate, @PreRemove, @PostRemove, @PostLoad. These annotations can be added to public, protected, private or package private methods, but cannot be added to static or final methods. These methods can throw just checked exceptions.','Java,JPA,Annotations');
-
-
+INSERT INTO t_post(id, date_created, title, userentity_id, content, tags) VALUES (20001,  current_timestamp, 'JPA Callback Annotations', 20001, '@PrePersist, @PostPersist, @PreUpdate, @PostUpdate, @PreRemove, @PostRemove, @PostLoad. These annotations can be added to public, protected, private or package-private methods, but cannot be added to static or final methods. These methods can throw just checked exceptions.','Java,JPA,Annotations');
+INSERT INTO t_post(id, date_created, title, userentity_id, tags, content) VALUES (20002,  current_timestamp, 'What is a container?', 20001, 'JavaEE,CDI','A container is a managed environment that manages components and provides them with certain services. These services can be lifecycle management, dependency injection, interception, concurrency, security and so on.');
+INSERT INTO t_post(id, date_created, title, userentity_id, tags, content) VALUES (20003,  current_timestamp, 'What is a Managed Bean?', 20001, 'JavaEE,CDI,Bean','A managed bean is just a bean, that is managed by a container.');
+INSERT INTO t_post(id, date_created, title, userentity_id, tags, content) VALUES (20004,  current_timestamp, 'Bean Archive', 20001, 'JavaEE,CDI,Bean','A Bean Archive is any archive that packages java classes annotated with CDi annotations.');
 -- End of Inserts for Helmut Siegel ----

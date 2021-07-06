@@ -24,7 +24,7 @@ public class PostMapper {
         PostEntity postEntity = new PostEntity();
         postEntity.setTitle(postTO.getTitle());
         postEntity.setContent(postTO.getContent());
-        postEntity.setTitle(postTO.getTags());
+        postEntity.setTags(postTO.getTags());
         postEntity.setDateCreated(Timestamp.valueOf(LocalDateTime.now()));
         return postEntity;
     }
