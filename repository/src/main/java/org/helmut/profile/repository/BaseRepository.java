@@ -7,7 +7,7 @@ import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.util.List;
 
-@Transactional()
+@Transactional
 public abstract class BaseRepository<T> {
 
     private final Class<T> type;

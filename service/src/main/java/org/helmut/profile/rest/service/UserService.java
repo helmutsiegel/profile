@@ -5,6 +5,7 @@ import org.helmut.profile.business.model.ChangePasswordTO;
 import org.helmut.profile.business.model.LoginUserTO;
 import org.helmut.profile.business.model.SignUpUserTO;
 import org.helmut.profile.business.model.UserTO;
+import org.helmut.profile.common.logging.Logger;
 import org.helmut.profile.rest.auth.filter.JWTTokenNeeded;
 import org.helmut.profile.rest.auth.util.TokenIssuer;
 
@@ -23,6 +24,9 @@ import static org.helmut.profile.rest.service.Constants.CURRENT_USER_EMAIL;
 
 @Path("user")
 public class UserService {
+
+    @Inject
+    private Logger logger;
 
     @Inject
     private UserBC userBC;
@@ -107,6 +111,7 @@ public class UserService {
             userBC.changePassword(changePasswordTO);
             return Response.ok().build();
         } catch (Exception e) {
+            logger.info("Password could not change", UserService.class);
             return Response.status(BAD_REQUEST).entity("Current password is incorrect!").build();
         }
     }

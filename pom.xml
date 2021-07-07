@@ -13,6 +13,7 @@
         <module>repository</module>
         <module>business</module>
         <module>service</module>
+        <module>common</module>
     </modules>
 
     <properties>

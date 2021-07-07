@@ -3,6 +3,8 @@ package org.helmut.profile.rest.auth.filter;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jws;
 import io.jsonwebtoken.Jwts;
+import org.helmut.profile.common.logging.Logger;
+import org.helmut.profile.common.qualifier.DatabaseLogger;
 import org.helmut.profile.rest.auth.util.KeyGenerator;
 
 import javax.annotation.Priority;
@@ -26,10 +28,15 @@ public class JWTTokenNeededFilter implements ContainerRequestFilter {
     @Inject
     private KeyGenerator keyGenerator;
 
+    @Inject
+    @DatabaseLogger
+    private Logger logger;
+
     @Override
     public void filter(ContainerRequestContext requestContext) {
         String authorizationHeader = requestContext.getHeaderString(HttpHeaders.AUTHORIZATION);
         if (authorizationHeader == null || !authorizationHeader.startsWith("Bearer ")) {
+            logger.info("Unauthorized!", JWTTokenNeededFilter.class);
             throw new NotAuthorizedException("Authorization header must be provided");
         }
         String token = authorizationHeader.substring("Bearer".length()).trim();
@@ -40,6 +47,7 @@ public class JWTTokenNeededFilter implements ContainerRequestFilter {
             String subject = claimsJws.getBody().getSubject();
             requestContext.getHeaders().add(CURRENT_USER_EMAIL, subject);
         } catch (Exception e) {
+            logger.info("Unauthorized!", JWTTokenNeededFilter.class);
             requestContext.abortWith(Response.status(Response.Status.UNAUTHORIZED).build());
         }
     }

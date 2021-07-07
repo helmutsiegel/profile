@@ -9,6 +9,7 @@
         <module name="javaee-learning" />
         <module name="profile-war" />
         <module name="business" />
+        <module name="common" />
         <module name="web-client" />
         <module name="service" />
         <module name="homeAutomation" />

@@ -37,7 +37,6 @@ public class UserEntity extends BaseEntity {
 
     @Column
     @Enumerated(EnumType.ORDINAL) // This stores seniority as number
-//  @Enumerated(EnumType.STRING)  // This stores as string
     private Seniority seniority;
 
     @Transient //Will not be mapped
