@@ -15,7 +15,7 @@ public class LogEntity {
 
     private String message;
 
-    @Enumerated(EnumType.STRING)  // This stores as string
+    @Enumerated(EnumType.STRING)
     @Column(name = "log_type")
     private LogType logType;
 
