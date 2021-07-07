@@ -7,6 +7,11 @@ import org.helmut.profile.common.qualifier.DatabaseLogger;
 
 import javax.inject.Inject;
 
+/**
+ * Implementation for {@link Logger}
+ * This logger logs in the database
+ * Here we use @DatabaseLogger qualifier to differentiate between the two implementations
+ */
 @DatabaseLogger
 public class DatabaseLoggerImpl implements Logger {
 

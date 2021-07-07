@@ -2,6 +2,9 @@ package org.helmut.profile.common.dataAccess;
 
 import javax.persistence.*;
 
+/**
+ * Entity class for table T_LOG
+ */
 @Entity
 @Table(name = "T_LOG")
 public class LogEntity {

@@ -24,9 +24,11 @@ export class PostsComponent implements OnInit {
   newPostForm!: FormGroup;
   private postTitleFC!: FormControl;
   private postContentFC!: FormControl;
+  private postTagsFC!: FormControl;
 
   private newPostTitle!: string;
   private newPostContent!: string;
+  private newPostTags!: string;
 
   posts!: PostVO[];
   visiblePosts: PostVO[] = [];
@@ -44,9 +46,11 @@ export class PostsComponent implements OnInit {
     this.loadPosts();
     this.postTitleFC = new FormControl(this.newPostTitle, Validators.required);
     this.postContentFC = new FormControl(this.newPostContent, Validators.required);
+    this.postTagsFC = new FormControl(this.newPostTags);
     this.newPostForm = new FormGroup({
       postTitle: this.postTitleFC,
-      postContent: this.postContentFC
+      postContent: this.postContentFC,
+      tags: this.postTagsFC
     })
   }
 
@@ -56,7 +60,7 @@ export class PostsComponent implements OnInit {
       this.posts = posts.map(postTO => this.postMapper.mapToVO(postTO))
         .sort((a, b) => b.dateCreated.localeCompare(a.dateCreated));
       this.tags = new Set(this.posts.filter(postVO => !!postVO.tags).map(postVO => postVO.tags.split(','))
-        .reduce((accumulator, value) => accumulator.concat(value), []));
+        .reduce((accumulator, value) => accumulator.concat(value), []).sort());
       this.filterPosts();
     });
   }
@@ -64,7 +68,8 @@ export class PostsComponent implements OnInit {
   public newPost(formValues: any): void {
     this.postService.createPost({
       title: formValues.postTitle,
-      content: formValues.postContent
+      content: formValues.postContent,
+      tags: formValues.tags
     } as PostTO).subscribe(_ => {
       this.loadPosts()
     });
@@ -112,7 +117,9 @@ export class PostsComponent implements OnInit {
   public filterPosts(): void {
     if (this.posts) {
       if (this.selectedTags.length > 0) {
-        this.visiblePosts = this.posts.filter(postVO => this.selectedTags.some(selectedTag => postVO.tags.split(',').includes(selectedTag)))
+        this.visiblePosts = this.posts
+          .filter(postVO => !!postVO.tags)
+          .filter(postVO => this.selectedTags.some(selectedTag => postVO.tags.split(',').includes(selectedTag)))
       } else {
         this.visiblePosts = [...this.posts];
       }
