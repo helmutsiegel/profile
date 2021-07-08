@@ -26,6 +26,16 @@ export class CvMapperService {
       this.mapCertifications(cvTO.certifications));
   }
 
+  public mapExperienceVOtoTO(experienceVO: ExperienceVO): ExperienceTO {
+    return {
+      id: experienceVO.id,
+      company: experienceVO.company,
+      position: experienceVO.position,
+      startDate: experienceVO.startDate,
+      endDate: experienceVO.endDate
+    };
+  }
+
   private mapPersonalInfo(userTO: UserTO): PersonalInfoVO {
     return new PersonalInfoVO(userTO.email, userTO.firstName + ' ' + userTO.lastName, userTO.birthDate, userTO.title);
   }
@@ -35,7 +45,8 @@ export class CvMapperService {
   }
 
   private mapExperience(experienceTO: ExperienceTO): ExperienceVO {
-    return new ExperienceVO(experienceTO.company, experienceTO.startDate, experienceTO.endDate, experienceTO.position);
+    return new ExperienceVO(experienceTO.company, experienceTO.startDate,
+      experienceTO.endDate, experienceTO.position, experienceTO.id);
   }
 
   private mapLanguages(languages: LanguageTO[]): LanguageVO[] {

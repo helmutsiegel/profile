@@ -14,45 +14,33 @@
                       [text]="cvVO.about"
                       (onSave)="saveAbout($event)"></simple-text-card>
 
-    <div class="mt-2">
-      <div class="card mt-2">
-        <div class="card-header">
-          Experiences
-        </div>
-        <div class="card-body">
-          <div *ngFor="let experienceVO of cvVO.experiences">
-            <div class="row">
-              <div class="col"><b>{{experienceVO?.company}}</b></div>
-              <div class="col">{{experienceVO?.position}}</div>
-              <div class="col">{{experienceVO.startDate | date:'MMM YYYY'}}
-                - {{!experienceVO.endDate ? 'Present' : experienceVO.endDate |  date: 'MMM YYYY'}}</div>
-              <div class="col"></div>
-            </div>
-          </div>
+    <div class=" mt-2">
+      <experiences [experiences]="cvVO.experiences"
+                   [editable]="authService.loggedInUserIsOnTheyPage(activatedRoute)"
+                   (onSave)="saveExperiences($event)"></experiences>
+    </div>
+
+    <div class="card mt-2">
+      <div class="card-header">
+        Languages
+      </div>
+      <div class="card-body">
+        <div *ngFor="let languageVO of cvVO.languages">
+          <p class="card-text"><b>{{languageVO?.language}}</b> - {{languageVO?.level}}</p>
         </div>
       </div>
+    </div>
 
-      <div class="card mt-2">
-        <div class="card-header">
-          Languages
-        </div>
-        <div class="card-body">
-          <div *ngFor="let languageVO of cvVO.languages">
-            <p class="card-text"><b>{{languageVO?.language}}</b> - {{languageVO?.level}}</p>
-          </div>
-        </div>
+    <div class="card mt-2">
+      <div class="card-header">
+        Certifications
       </div>
-
-      <div class="card mt-2">
-        <div class="card-header">
-          Certifications
-        </div>
-        <div class="card-body">
-          <div *ngFor="let certificationVO of cvVO.certifications">
-            <p class="card-text"><b>{{certificationVO?.name}}</b> - {{certificationVO?.issuedBy}}</p>
-          </div>
+      <div class="card-body">
+        <div *ngFor="let certificationVO of cvVO.certifications">
+          <p class="card-text"><b>{{certificationVO?.name}}</b> - {{certificationVO?.issuedBy}}</p>
         </div>
       </div>
     </div>
   </div>
 </div>
+

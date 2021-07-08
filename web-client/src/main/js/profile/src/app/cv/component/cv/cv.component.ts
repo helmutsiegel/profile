@@ -4,6 +4,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {CvService} from "../../service/cv.service";
 import {AuthService} from "../../../service/auth.service";
 import {ExperienceVO} from "../../model/experience-v-o";
+import {CvMapperService} from "../../mapping/cv-mapper.service";
 
 @Component({
   selector: 'cv',
@@ -17,7 +18,8 @@ export class CvComponent implements OnInit {
   constructor(public activatedRoute: ActivatedRoute,
               private router: Router,
               private cvService: CvService,
-              public authService: AuthService) {
+              public authService: AuthService,
+              private cvMapper: CvMapperService) {
   }
 
   ngOnInit(): void {
@@ -36,5 +38,11 @@ export class CvComponent implements OnInit {
         cvTO.about = event;
         this.cvService.update(cvTO);
       })
+  }
+
+  public saveExperiences(experienceVOS: ExperienceVO[]): void {
+    this.cvService.updateExperiences(experienceVOS.map(experienceVO => this.cvMapper.mapExperienceVOtoTO(experienceVO)))
+      .subscribe();
+    this.cvVO.experiences = experienceVOS;
   }
 }

@@ -34,7 +34,8 @@ import { EditPencilComponent } from './component/edit-pencil/edit-pencil.compone
         SmilingPipe,
         PersonalInfoComponent,
         SimpleModalComponent,
-        SimpleTextCardComponent
+        SimpleTextCardComponent,
+        EditPencilComponent
     ]
 })
 export class CommonsModule {

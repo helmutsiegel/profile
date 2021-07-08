@@ -4,10 +4,19 @@ import java.time.LocalDate;
 
 public class ExperienceTO {
 
+    private Long id;
     private String company;
     private LocalDate startDate;
     private LocalDate endDate;
     private String position;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getCompany() {
         return company;
