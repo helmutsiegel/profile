@@ -57,14 +57,15 @@ INSERT INTO t_cv(id, short_about, long_about, userentity_id) VALUES (20001, 'My 
 INSERT INTO t_experience(id, company, start_date, end_date, position, cv_id) VALUES (20001, 'msg systems Romania', '07/04/2016', '08/12/2016', 'Intern', 20001);
 INSERT INTO t_experience(id, company, start_date, end_date, position, cv_id) VALUES (20002, 'msg systems Romania', '09/19/2016', '11/14/2020', 'Full-stack developer', 20001);
 INSERT INTO t_experience(id, company, start_date, position, cv_id) VALUES (20003, 'Accesa', '11/16/2020', 'Full-stack developer', 20001);
-INSERT INTO t_project(id, name, userentity_id, description) VALUES (20001, 'PROFile', 20001, 'Short description of the project Profile');
+INSERT INTO t_project(id, name, userentity_id, description) VALUES (20001, 'PROFile', 20001, 'Is a web application, with JavaEE on backend and Angular on frontend.');
 INSERT INTO t_certification(id, date, expiration_date, issued_by, name, cv_id) VALUES (20001, '11/01/2019', null , 'Oracle', 'OCA', 20001);
 INSERT INTO t_language(id, language, level, cv_id) VALUES (20001, 'English', '3', 20001);
 INSERT INTO t_language(id, language, level, cv_id) VALUES (20002, 'German', '3', 20001);
 INSERT INTO t_language(id, language, level, cv_id) VALUES (20003, 'Romanian', '4', 20001);
 INSERT INTO t_language(id, language, level, cv_id) VALUES (20004, 'Hungarian', '5', 20001);
 INSERT INTO t_chapter(id, title, project_id) VALUES (20001, 'Project Overview', 20001);
-INSERT INTO t_section(id, description, title, chapter_id) VALUES (20001, 'Coming soon..', 'Purpose', 20001);
+INSERT INTO t_section(id, title, description, chapter_id) VALUES (20001, 'Purpose', 'The project is created with learning purpose, to explore and gain the knowledge of JavaEE, Angular and other related tools like: maven, database, cloud, jenkins etc.', 20001);
+INSERT INTO t_section(id, title, description, chapter_id) VALUES (20002, 'Used technologies', 'The backend is implemented with Java 8 and the frontend with angular 12. For database access JPA/Hibernate is used, for managed beans CDI 1.1 and for rest services Jersey', 20001);
 
 INSERT INTO t_post(id, date_created, title, userentity_id, content, tags) VALUES (20001,  current_timestamp, 'JPA Callback Annotations', 20001, '@PrePersist, @PostPersist, @PreUpdate, @PostUpdate, @PreRemove, @PostRemove, @PostLoad. These annotations can be added to public, protected, private or package-private methods, but cannot be added to static or final methods. These methods can throw just checked exceptions.','Java,JPA,Annotations');
 INSERT INTO t_post(id, date_created, title, userentity_id, tags, content) VALUES (20002,  current_timestamp, 'What is a container?', 20001, 'JavaEE,CDI','A container is a managed environment that manages components and provides them with certain services. These services can be lifecycle management, dependency injection, interception, concurrency, security and so on.');
