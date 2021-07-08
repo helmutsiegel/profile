@@ -4,6 +4,7 @@ import org.helmut.profile.business.model.PostTO;
 import org.helmut.profile.repository.entity.PostEntity;
 
 import javax.enterprise.context.RequestScoped;
+import javax.inject.Inject;
 import java.sql.Date;
 import java.sql.Timestamp;
 import java.time.Clock;
@@ -14,6 +15,9 @@ import java.time.format.DateTimeFormatter;
 
 @RequestScoped
 public class PostMapper {
+
+    @Inject
+    private OffsetDateTime currentDateTime;
 
     public PostTO mapToTO(PostEntity entity) {
         PostTO postTO = new PostTO();
@@ -30,7 +34,7 @@ public class PostMapper {
         postEntity.setTitle(postTO.getTitle());
         postEntity.setContent(postTO.getContent());
         postEntity.setTags(postTO.getTags());
-        postEntity.setDateCreated(OffsetDateTime.now());
+        postEntity.setDateCreated(currentDateTime);
         return postEntity;
     }
 }
