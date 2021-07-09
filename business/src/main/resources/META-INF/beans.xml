@@ -3,4 +3,12 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/beans_1_1.xsd"
        bean-discovery-mode="annotated">
+
+    <!--
+        The order of the interceptor invokes depend on the order declared here, and not on the order of the annotation on the class or method
+        An other possibility is to annotate the interceptors with @Priority
+    -->
+    <interceptors>
+        <class>org.helmut.profile.business.interceptor.LoggingInterceptor</class>
+    </interceptors>
 </beans>

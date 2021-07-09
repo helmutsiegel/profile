@@ -1,5 +1,6 @@
 package org.helmut.profile.business.bc;
 
+import org.helmut.profile.business.interceptor.Loggable;
 import org.helmut.profile.business.mapping.PostMapper;
 import org.helmut.profile.business.model.PostTO;
 import org.helmut.profile.repository.PostRepository;
@@ -31,6 +32,7 @@ public class PostBC {
                 .collect(Collectors.toList());
     }
 
+    @Loggable
     public void newPost(PostTO postTO, String email) {
         UserEntity userEntity = userRepository.getByEmail(email);
         PostEntity postEntity = postMapper.mapToEntity(postTO);

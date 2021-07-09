@@ -10,7 +10,7 @@ public class PostEntity extends BaseEntity {
     @Column
     private String title;
 
-    @Column(length = 2000)
+    @Column(length = 5000)
     private String content;
 
     @Column(name = "date_created")
