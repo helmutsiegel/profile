@@ -3,7 +3,7 @@ import {SimpleModalComponent} from "../../../shared/component/simple-modal/simpl
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {Size} from "../../../shared/model/enum/size";
 import {PostService} from "../../service/post.service";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {PostTO} from "../../../shared/model/to/post-t-o";
 import {AuthService} from "../../../service/auth.service";
 import {ToastrService} from "../../../shared/service/toastr.service";
@@ -38,6 +38,7 @@ export class PostsComponent implements OnInit {
   constructor(private postService: PostService,
               private postMapper: PostMapperService,
               public activatedRoute: ActivatedRoute,
+              private router: Router,
               public authService: AuthService,
               private toastr: ToastrService) {
   }
@@ -124,5 +125,9 @@ export class PostsComponent implements OnInit {
         this.visiblePosts = [...this.posts];
       }
     }
+  }
+
+  public openPostInNewPage(postVO: PostVO): void {
+    this.router.navigate([this.router.url, postVO.id]);
   }
 }

@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {PostVO} from "../../model/post-v-o";
+import {AuthService} from "../../../service/auth.service";
 
 @Component({
   selector: 'post-card',
@@ -13,13 +14,15 @@ export class PostCardComponent implements OnInit {
 
   @Output() onDelete: EventEmitter<any> = new EventEmitter<any>();
   @Output() onSave: EventEmitter<PostVO> = new EventEmitter<PostVO>();
+  @Output() onOpenInNewPage: EventEmitter<PostVO> = new EventEmitter<PostVO>();
   editMode: boolean = false;
   postVOToEdit!: PostVO;
 
-  constructor() {
+  constructor(public authService: AuthService) {
   }
 
   ngOnInit(): void {
+
     this.postVOToEdit = {...this.postVO};
   }
 

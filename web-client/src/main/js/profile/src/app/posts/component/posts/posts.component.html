@@ -26,6 +26,7 @@
                  (onDelete)="deletePost(postVO.id)"
                  (onSave)="savePost($event, postCardComponent)"
                  [postVO]="postVO"
+                 (onOpenInNewPage)="openPostInNewPage($event)"
                  [settingAvailable]="authService.loggedInUserIsOnTheyPage(activatedRoute)"></post-card>
     </div>
   </div>

@@ -23,10 +23,17 @@ public class PostService {
     private HttpHeaders httpHeaders;
 
     @GET
-    @Path("{email}")
+    @Path("byEmail/{email}")
     @Produces(MediaType.APPLICATION_JSON)
     public List<PostTO> getByEmail(@PathParam("email") String email) {
         return postBC.getPostsByEmail(email);
+    }
+
+    @GET
+    @Path("{id}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public PostTO getById(@PathParam("id") Long id) {
+        return postBC.getById(id);
     }
 
     @POST

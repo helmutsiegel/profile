@@ -27,17 +27,27 @@
   </div>
   <div class="card-body">
     <div *ngIf="!editMode">
-      <div>
+      <div #contentDiv style="max-height: 200px" class="overflow-hidden">
         <span style="white-space: pre-line" [innerHTML]="postVOToEdit.content">
         </span>
       </div>
       <hr>
       <div class="container">
         <div class="row">
-          <h5>Tags:</h5>
-          <h5 class="ml-1" *ngFor="let tag of postVOToEdit.tags?.split(',')">
-            <span class="badge badge-pill badge-primary">{{tag}}</span>
-          </h5>
+          <div class="col">
+            <div class="row">
+              <h5>Tags:</h5>
+              <h5 class="ml-1" *ngFor="let tag of postVOToEdit.tags?.split(',')">
+                <span class="badge badge-pill badge-primary">{{tag}}</span>
+              </h5>
+            </div>
+          </div>
+          <div class="col">
+            <button class="btn btn-sm btn-primary mt-1 float-right"
+               *ngIf="contentDiv.offsetHeight < contentDiv.scrollHeight"
+               (click)="onOpenInNewPage.emit(postVO)">See full post
+            </button>
+          </div>
         </div>
       </div>
     </div>

@@ -59,4 +59,8 @@ public class PostBC {
             throw new IllegalArgumentException("You are not allowed to update this post!");
         }
     }
+
+    public PostTO getById(Long id) {
+        return postMapper.mapToTO(postRepository.findById(id));
+    }
 }

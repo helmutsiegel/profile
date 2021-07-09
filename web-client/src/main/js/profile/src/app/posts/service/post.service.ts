@@ -16,7 +16,11 @@ export class PostService {
   }
 
   public getByEmail(email: string): Observable<PostTO[]> {
-    return this.backend.get<PostTO[]>('post/' + email);
+    return this.backend.get<PostTO[]>('post/byEmail/' + email);
+  }
+
+  public getById(id: number): Observable<PostTO> {
+    return this.backend.get<PostTO>('post/' + id);
   }
 
   public deletePost(id: number): Observable<any> {

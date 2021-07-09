@@ -6,12 +6,14 @@ import { PostsComponent } from './component/posts/posts.component';
 import {CommonsModule} from "../shared/commons.module";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { PostCardComponent } from './component/post-card/post-card.component';
+import { PostPageComponent } from './component/post-page/post-page.component';
 
 
 @NgModule({
   declarations: [
     PostsComponent,
-    PostCardComponent
+    PostCardComponent,
+    PostPageComponent
   ],
     imports: [
         CommonModule,
