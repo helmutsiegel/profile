@@ -10,5 +10,9 @@
     -->
     <interceptors>
         <class>org.helmut.profile.business.interceptor.LoggingInterceptor</class>
+        <class>org.helmut.profile.business.interceptor.LifeCheckInterceptor</class>
     </interceptors>
+    <decorators>
+        <class>org.helmut.profile.business.decorator.UserBCDecorator</class>
+    </decorators>
 </beans>

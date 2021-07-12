@@ -5,6 +5,8 @@ import org.helmut.profile.business.model.ResumeTO;
 import org.helmut.profile.repository.CvRepository;
 import org.helmut.profile.repository.entity.CVEntity;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 
@@ -25,5 +27,15 @@ public class ResumeBC {
         CVEntity cvEntity = cvRepository.findByProperty("userEntity.email", resumeTO.getUserTO().getEmail()).get(0);
         cvEntity.setLongAbout(resumeTO.getAbout());
         cvRepository.update(cvEntity);
+    }
+
+    @PostConstruct
+    private void postConstruct() {
+        System.out.println("ResumeBC PostConstruct");
+    }
+
+    @PreDestroy
+    private void preConstruct() {
+        System.out.println("ResumeBC PreDestroy");
     }
 }

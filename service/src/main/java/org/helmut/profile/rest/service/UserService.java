@@ -1,6 +1,7 @@
 package org.helmut.profile.rest.service;
 
 import org.helmut.profile.business.bc.UserBC;
+import org.helmut.profile.business.bci.UserBCI;
 import org.helmut.profile.business.model.ChangePasswordTO;
 import org.helmut.profile.business.model.LoginUserTO;
 import org.helmut.profile.business.model.SignUpUserTO;
@@ -29,7 +30,7 @@ public class UserService {
     private Logger logger;
 
     @Inject
-    private UserBC userBC;
+    private UserBCI userBC;
 
     @Inject
     private TokenIssuer tokenIssuer;

@@ -1,5 +1,7 @@
 package org.helmut.profile.business.bc;
 
+import org.helmut.profile.business.bci.UserBCI;
+import org.helmut.profile.business.interceptor.LifeCheck;
 import org.helmut.profile.business.mapping.UserMapper;
 import org.helmut.profile.business.model.ChangePasswordTO;
 import org.helmut.profile.business.model.SignUpUserTO;
@@ -15,14 +17,12 @@ import javax.inject.Inject;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@LifeCheck
 @RequestScoped
-public class UserBC {
+public class UserBC implements UserBCI {
 
     @Inject
     private UserRepository userRepository;
-
-    @Inject
-    private CvRepository cvRepository;
 
     @Inject
     private UserMapper userMapper;
@@ -36,15 +36,18 @@ public class UserBC {
                 .collect(Collectors.toList());
     }
 
+    @Override
     public UserTO getByEmail(String email) {
         return userMapper.mapToTO(userRepository.findByUniqueProperty("email", email));
     }
 
+    @Override
     public UserTO logIn(String email, String password) {
         UserEntity userEntity = userRepository.getByEmailAndPassword(email, passwordUtils.digestPassword(password));
         return userMapper.mapToTO(userEntity);
     }
 
+    @Override
     public void changePassword(ChangePasswordTO changePasswordTO) {
         UserEntity userEntity = userRepository.getByEmailAndPassword(changePasswordTO.getEmail(),
                 passwordUtils.digestPassword(changePasswordTO.getCurrentPassword()));
@@ -53,18 +56,18 @@ public class UserBC {
         userRepository.update(userEntity);
     }
 
+    @Override
     public boolean existsUser(String email) {
         return userRepository.countByProperty("email", email) == 1;
     }
 
+    @Override
     public void signUp(SignUpUserTO signUpUserTO) {
         UserEntity userEntity = userMapper.mapToEntity(signUpUserTO);
         userRepository.persist(userEntity);
-        CVEntity cvEntity = new CVEntity();
-        cvEntity.setUserEntity(userEntity);
-        cvRepository.persist(cvEntity);
     }
 
+    @Override
     public List<UserTO> searchUsers(String searchTerm) {
         return userRepository.searchUser(searchTerm)
                 .stream()
@@ -72,6 +75,7 @@ public class UserBC {
                 .collect(Collectors.toList());
     }
 
+    @Override
     public UserTO updateUser(UserTO userTO) {
         UserEntity userEntity = userRepository.findByUniqueProperty("email", userTO.getEmail());
         userMapper.updateUser(userEntity, userTO);
