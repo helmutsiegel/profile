@@ -21,11 +21,11 @@ export class NavigationElementComponent implements OnInit {
 
   getClassForNavigationElement(): string {
     let style = 'cursor-pointer'
-    if (this.mouseover) {
+    if (this.selected) {
       style += ' font-weight-bold'
     }
-    if (this.selected) {
-      style += ' bg-secondary'
+    if (this.mouseover) {
+      style += ' bg-light'
     }
     return style;
   }
