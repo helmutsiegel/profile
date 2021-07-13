@@ -84,7 +84,7 @@ public class ProjectService {
         try {
             projectBC.updateSection(sectionTO, currentUserEmail);
             return Response.ok().build();
-        } catch (Exception e) {
+        } catch (IllegalArgumentException e) {
             return Response.status(Response.Status.BAD_REQUEST)
                     .entity(e)
                     .build();
