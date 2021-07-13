@@ -1,6 +1,7 @@
 package org.helmut.profile.business.mapping;
 
 import org.helmut.profile.business.model.ChapterTO;
+import org.helmut.profile.business.model.CreateChapterTO;
 import org.helmut.profile.business.model.ProjectTO;
 import org.helmut.profile.business.model.SectionTO;
 import org.helmut.profile.repository.entity.ChapterEntity;
@@ -9,6 +10,7 @@ import org.helmut.profile.repository.entity.SectionEntity;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
+import java.util.ArrayList;
 import java.util.stream.Collectors;
 
 @RequestScoped
@@ -24,6 +26,18 @@ public class ProjectMapper {
         projectTO.setChapters(entity.getChapters().stream().map(this::mapChapterToTO).collect(Collectors.toList()));
         projectTO.setUserTO(userMapper.mapToTO(entity.getUserEntity()));
         return projectTO;
+    }
+
+    public ChapterEntity mapCreateChapterTO(CreateChapterTO createChapterTO) {
+        ChapterEntity chapterEntity = new ChapterEntity();
+        chapterEntity.setTitle(createChapterTO.getTitle());
+        ArrayList<SectionEntity> sections = new ArrayList<>();
+        SectionEntity sectionEntity = new SectionEntity();
+        sectionEntity.setTitle("Untitled");
+        sectionEntity.setDescription("No description");
+        sections.add(sectionEntity);
+        chapterEntity.setSections(sections);
+        return chapterEntity;
     }
 
     private ChapterTO mapChapterToTO(ChapterEntity entity) {

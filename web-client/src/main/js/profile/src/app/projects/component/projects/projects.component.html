@@ -34,10 +34,25 @@
         </div>
       </div>
       <div class="row mt-1">
+        <div class="col-3">
+          <label for="description">Short description:</label>
+        </div>
+        <div class="col-7">
+          <textarea formControlName="description"
+                    class="form-control" id="description" name="description"
+                    rows="5"
+                    placeholder="Short description..."></textarea>
+        </div>
+        <div class="col">
+          <em *ngIf="true">Required</em>
+        </div>
+      </div>
+      <div class="row mt-1">
         <div class="col-3"></div>
         <div class="col-7">
           <button class="btn btn-primary float-right" type="button"
-                  (click)="newProject(newProjectForm.value)">Create project</button>
+                  (click)="newProject(newProjectForm.value)">Create project
+          </button>
         </div>
         <div class="col"></div>
       </div>

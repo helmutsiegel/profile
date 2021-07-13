@@ -1,7 +1,9 @@
 package org.helmut.profile.repository.entity;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @Entity
 @Table(name = "T_PROJECT")
@@ -50,5 +52,12 @@ public class ProjectEntity extends BaseEntity {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public void addChapter(ChapterEntity chapterEntity) {
+        if (Objects.isNull(this.chapters)) {
+            this.chapters = new ArrayList<>();
+        }
+        this.chapters.add(chapterEntity);
     }
 }

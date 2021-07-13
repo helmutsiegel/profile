@@ -21,9 +21,11 @@ export class ProjectsComponent implements OnInit {
 
   newProjectForm!: FormGroup;
   private projectName!: FormControl;
+  private description!: FormControl;
 
   projectVOs!: ProjectVO[];
   private newProjectName!: string;
+  private newProjectDescription!: string;
 
   constructor(private projectService: ProjectService,
               public activatedRoute: ActivatedRoute,
@@ -33,20 +35,29 @@ export class ProjectsComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.loadProjects();
+    this.projectName = new FormControl(this.newProjectName, Validators.required);
+    this.description = new FormControl(this.newProjectDescription);
+    this.newProjectForm = new FormGroup({
+      projectName: this.projectName,
+      description: this.description
+    })
+  }
+
+  private loadProjects() {
     const emailFromUrl = this.activatedRoute.snapshot.params['email'];
     this.projectService.getProjectByEmail(emailFromUrl).subscribe(projects => {
       this.projectVOs = projects.map(projectTO => this.projectMapper.mapToVO(projectTO));
     });
-
-    this.projectName = new FormControl(this.newProjectName, Validators.required);
-    this.newProjectForm = new FormGroup({
-      projectName: this.projectName
-    })
   }
 
   public newProject(formValues: any): void {
-    this.projectService.createProject({name: formValues.projectName} as ProjectTO)
+    this.projectService.createProject({
+      name: formValues.projectName,
+      description: formValues.description
+    } as ProjectTO)
       .subscribe(_ => {
+          this.loadProjects();
           this.toastr.success('Project successfully created!');
           this.newProjectModal.close();
         },

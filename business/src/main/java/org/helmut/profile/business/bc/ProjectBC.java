@@ -1,9 +1,11 @@
 package org.helmut.profile.business.bc;
 
 import org.helmut.profile.business.mapping.ProjectMapper;
+import org.helmut.profile.business.model.CreateChapterTO;
 import org.helmut.profile.business.model.ProjectTO;
 import org.helmut.profile.repository.ProjectRepository;
 import org.helmut.profile.repository.UserRepository;
+import org.helmut.profile.repository.entity.ChapterEntity;
 import org.helmut.profile.repository.entity.ProjectEntity;
 
 import javax.enterprise.context.RequestScoped;
@@ -42,8 +44,18 @@ public class ProjectBC {
         projectTOEvent.fire(projectTO);
         ProjectEntity projectEntity = new ProjectEntity();
         projectEntity.setName(projectTO.getName());
+        projectEntity.setDescription(projectTO.getDescription());
         projectEntity.setUserEntity(userRepository.findByUniqueProperty("email", projectTO.getUserTO().getEmail()));
         projectRepository.persist(projectEntity);
+    }
+
+    public void createChapter(CreateChapterTO createChapterTO, String email) {
+        ProjectEntity projectEntity = projectRepository.findByUniqueProperty("name", createChapterTO.getProjectName());
+        if (!projectEntity.getUserEntity().getEmail().equals(email)) {
+            throw new IllegalArgumentException("You don't have the permission to create chapter for this project");
+        }
+        projectEntity.addChapter(projectMapper.mapCreateChapterTO(createChapterTO));
+        this.projectRepository.update(projectEntity);
     }
 
     private void observerProjectTO(@Observes ProjectTO projectTO) {

@@ -4,6 +4,9 @@ import {ProjectVO} from "../../model/project-v-o";
 import {SectionVO} from "../../model/section-v-o";
 import {AuthService} from "../../../service/auth.service";
 import {SimpleTextCardComponent} from "../../../shared/component/simple-text-card/simple-text-card.component";
+import {CreateChapterTO} from "../../../shared/model/to/create-chapter-t-o";
+import {ProjectService} from "../../service/project.service";
+import {ProjectMapperService} from "../../mapping/project-mapper.service";
 
 @Component({
   selector: 'project-page',
@@ -12,6 +15,7 @@ import {SimpleTextCardComponent} from "../../../shared/component/simple-text-car
 })
 export class ProjectPageComponent implements OnInit {
 
+  createChapterTO!: CreateChapterTO;
   projectVO!: ProjectVO;
   currentSection!: SectionVO;
   seeDescription: string = 'See description +';
@@ -21,14 +25,30 @@ export class ProjectPageComponent implements OnInit {
   @ViewChild('textCard') simpleTextCard!: SimpleTextCardComponent;
 
   constructor(public activatedRoute: ActivatedRoute,
-              public authService: AuthService) {
+              public authService: AuthService,
+              private projectService: ProjectService,
+              private projectMapper: ProjectMapperService) {
   }
 
   ngOnInit(): void {
     this.activatedRoute.data.forEach(data => {
       this.projectVO = data['projectVO'];
-      this.currentSection = this.projectVO.chapters[0].sections[0];
+      if (this.projectVO.chapters[0] && this.projectVO.chapters[0].sections[0]) {
+        this.currentSection = this.projectVO.chapters[0].sections[0];
+      }
+      this.createChapterTO = {projectName: this.projectVO.name, title: ''}
     });
+  }
+
+  public reload(): void {
+    this.projectService.getByName(this.projectVO.name)
+      .subscribe(projectTO => {
+        const receivedProjectVO = this.projectMapper.mapToVO(projectTO);
+        if (receivedProjectVO.chapters[0] && receivedProjectVO.chapters[0].sections[0]) {
+          this.currentSection = receivedProjectVO.chapters[0].sections[0];
+        }
+        this.projectVO = receivedProjectVO;
+      });
   }
 
   public clickDescription(): void {
@@ -43,5 +63,12 @@ export class ProjectPageComponent implements OnInit {
     }
     this.simpleTextCard.editMode = false;
     this.currentSection = sectionVO;
+  }
+
+  public createChapter(): void {
+    this.projectService.createChapter(this.createChapterTO)
+      .subscribe(_ => {
+        this.reload();
+      });
   }
 }

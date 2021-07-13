@@ -8,7 +8,7 @@ import {ProjectCardComponent} from "./component/project-card/project-card.compon
 import { ProjectPageComponent } from './component/project-page/project-page.component';
 import { ProjectNavigatorComponent } from './component/project-navigator/project-navigator.component';
 import { NavigationElementComponent } from './component/navigation-element/navigation-element.component';
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -22,7 +22,8 @@ import {ReactiveFormsModule} from "@angular/forms";
         CommonModule,
         ProjectsRoutingModule,
         CommonsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        FormsModule
     ]
 })
 export class ProjectsModule {
