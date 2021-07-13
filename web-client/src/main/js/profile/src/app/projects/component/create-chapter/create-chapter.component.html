@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="col font-italic text-secondary">
+    <h4>You don't have any documentation for this project.<br> Create your first chapter</h4>
+  </div>
+</div>
+<div class="form-group m-1">
+  <div class="row">
+    <div class="col-2">
+      <label style="font-size: 1.1em" class="font-weight-bold" for="chapterName">Chapter name:</label>
+    </div>
+    <div class="col-4">
+      <input class="form-control" name="chapterName" id="chapterName" type="text"
+             [(ngModel)]="createChapterTO.title"/>
+    </div>
+  </div>
+  <div class="row mt-1">
+    <div class="col-2"></div>
+    <div class="col-4">
+      <button [disabled]="createChapterTO.title === ''" type="button" class="btn btn-primary float-right"
+              (click)="createChapter()">Create chapter
+      </button>
+    </div>
+  </div>
+</div>

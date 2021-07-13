@@ -1,4 +1,4 @@
 export interface CreateChapterTO {
-  projectName: string,
+  projectName?: string,
   title: string
 }

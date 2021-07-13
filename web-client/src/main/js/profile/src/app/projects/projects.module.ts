@@ -9,6 +9,7 @@ import { ProjectPageComponent } from './component/project-page/project-page.comp
 import { ProjectNavigatorComponent } from './component/project-navigator/project-navigator.component';
 import { NavigationElementComponent } from './component/navigation-element/navigation-element.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { CreateChapterComponent } from './component/create-chapter/create-chapter.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     ProjectCardComponent,
     ProjectPageComponent,
     ProjectNavigatorComponent,
-    NavigationElementComponent
+    NavigationElementComponent,
+    CreateChapterComponent
   ],
     imports: [
         CommonModule,

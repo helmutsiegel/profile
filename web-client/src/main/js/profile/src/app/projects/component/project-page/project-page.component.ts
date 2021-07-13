@@ -15,7 +15,7 @@ import {ProjectMapperService} from "../../mapping/project-mapper.service";
 })
 export class ProjectPageComponent implements OnInit {
 
-  createChapterTO!: CreateChapterTO;
+
   projectVO!: ProjectVO;
   currentSection!: SectionVO;
   seeDescription: string = 'See description +';
@@ -36,7 +36,6 @@ export class ProjectPageComponent implements OnInit {
       if (this.projectVO.chapters[0] && this.projectVO.chapters[0].sections[0]) {
         this.currentSection = this.projectVO.chapters[0].sections[0];
       }
-      this.createChapterTO = {projectName: this.projectVO.name, title: ''}
     });
   }
 
@@ -65,8 +64,9 @@ export class ProjectPageComponent implements OnInit {
     this.currentSection = sectionVO;
   }
 
-  public createChapter(): void {
-    this.projectService.createChapter(this.createChapterTO)
+  public createChapter(createChapterTO: CreateChapterTO): void {
+    createChapterTO.projectName = this.projectVO.name;
+    this.projectService.createChapter(createChapterTO)
       .subscribe(_ => {
         this.reload();
       });
