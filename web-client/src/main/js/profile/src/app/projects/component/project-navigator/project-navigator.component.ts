@@ -10,7 +10,9 @@ import {SectionVO} from "../../model/section-v-o";
 export class ProjectNavigatorComponent implements OnInit {
 
   @Input() chapters!: ChapterVO[];
+  @Input() currentSection!: SectionVO;
   @Output() onClick: EventEmitter<SectionVO> = new EventEmitter<SectionVO>()
+
 
   constructor() { }
 

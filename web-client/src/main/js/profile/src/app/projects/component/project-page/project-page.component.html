@@ -12,7 +12,10 @@
 </simple-text-card>
 <div class="row mt-1" *ngIf="projectVO.chapters.length > 0">
   <div class="col-3">
-    <project-navigator [chapters]="projectVO.chapters" (onClick)="navigateToSection($event)"></project-navigator>
+    <project-navigator [chapters]="projectVO.chapters"
+                       (onClick)="navigateToSection($event)"
+                       [currentSection]="currentSection">
+    </project-navigator>
   </div>
   <div class="col">
     <simple-text-card #textCard [title]="currentSection.title"

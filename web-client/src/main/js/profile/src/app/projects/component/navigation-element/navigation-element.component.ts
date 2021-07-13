@@ -8,6 +8,7 @@ import {SectionVO} from "../../model/section-v-o";
 })
 export class NavigationElementComponent implements OnInit {
 
+  @Input() selected!: boolean;
   @Input() sectionVO!: SectionVO;
   @Output() onClick: EventEmitter<SectionVO> = new EventEmitter<SectionVO>()
   mouseover: boolean = false;
@@ -19,7 +20,14 @@ export class NavigationElementComponent implements OnInit {
   }
 
   getClassForNavigationElement(): string {
-    return this.mouseover ? 'cursor-pointer bg-secondary' : 'cursor-pointer';
+    let style = 'cursor-pointer'
+    if (this.mouseover) {
+      style += ' font-weight-bold'
+    }
+    if (this.selected) {
+      style += ' bg-secondary'
+    }
+    return style;
   }
 
   public elementClicked(sectionVO: SectionVO): void {

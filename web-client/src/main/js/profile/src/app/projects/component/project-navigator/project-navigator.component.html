@@ -3,8 +3,11 @@
   <div class="card-body">
     <div class="mt-1" *ngFor="let chapter of chapters">
       <collapsible-card [collapsed]="false" [title]="chapter.title">
-        <navigation-element *ngFor="let section of chapter.sections" [sectionVO]="section"
-                            (onClick)="this.onClick.emit($event)"></navigation-element>
+        <navigation-element *ngFor="let section of chapter.sections"
+                            [sectionVO]="section"
+                            [selected]="section === currentSection"
+                            (onClick)="this.onClick.emit($event)">
+        </navigation-element>
       </collapsible-card>
     </div>
   </div>
