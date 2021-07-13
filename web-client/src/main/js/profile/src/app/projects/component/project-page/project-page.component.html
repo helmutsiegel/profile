@@ -21,15 +21,21 @@
   <div class="col">
     <simple-text-card #textCard [title]="currentSection.title"
                       [text]="currentSection.description"
-                      [editable]="authService.loggedInUserIsOnTheyPage(activatedRoute)">
+                      [editable]="authService.loggedInUserIsOnTheyPage(activatedRoute)"
+                      (onSave)="saveSection($event)">
     </simple-text-card>
   </div>
 </div>
 
 <div class="mt-3" *ngIf="projectVO.chapters.length === 0">
+  <div class="row">
+    <div class="col font-italic text-secondary">
+      <h4>You don't have any documentation for this project.<br> Create your first chapter</h4>
+    </div>
+  </div>
   <create-chapter (onCreate)="createChapter($event)"></create-chapter>
 </div>
-<simple-modal [title]="'Create chapter'" [modalId]="'createChapterModal'">
+<simple-modal #createChapterModal [title]="'Create chapter'" [modalId]="'createChapterModal'">
   <create-chapter (onCreate)="createChapter($event)"></create-chapter>
 </simple-modal>
 

@@ -7,6 +7,7 @@ import {SimpleTextCardComponent} from "../../../shared/component/simple-text-car
 import {CreateChapterTO} from "../../../shared/model/to/create-chapter-t-o";
 import {ProjectService} from "../../service/project.service";
 import {ProjectMapperService} from "../../mapping/project-mapper.service";
+import {SimpleModalComponent} from "../../../shared/component/simple-modal/simple-modal.component";
 
 @Component({
   selector: 'project-page',
@@ -23,6 +24,7 @@ export class ProjectPageComponent implements OnInit {
   descriptionButtonLabel: string = this.seeDescription;
 
   @ViewChild('textCard') simpleTextCard!: SimpleTextCardComponent;
+  @ViewChild('createChapterModal') createChapterModal!: SimpleModalComponent;
 
   constructor(public activatedRoute: ActivatedRoute,
               public authService: AuthService,
@@ -68,7 +70,12 @@ export class ProjectPageComponent implements OnInit {
     createChapterTO.projectName = this.projectVO.name;
     this.projectService.createChapter(createChapterTO)
       .subscribe(_ => {
+        this.createChapterModal.close();
         this.reload();
       });
+  }
+
+  public saveSection(editedDescription: string): void {
+    this.currentSection.description = editedDescription;
   }
 }
