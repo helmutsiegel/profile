@@ -12,6 +12,9 @@ public class SectionEntity extends BaseEntity {
     @Column
     private String description;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    private ChapterEntity chapter;
+
     public String getTitle() {
         return title;
     }
@@ -26,5 +29,13 @@ public class SectionEntity extends BaseEntity {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public ChapterEntity getChapter() {
+        return chapter;
+    }
+
+    public void setChapter(ChapterEntity chapter) {
+        this.chapter = chapter;
     }
 }

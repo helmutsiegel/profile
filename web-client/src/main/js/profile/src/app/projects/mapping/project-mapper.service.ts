@@ -33,6 +33,6 @@ export class ProjectMapperService {
   }
 
   private mapSectionToVO(sectionTO: SectionTO): SectionVO {
-    return new SectionVO(sectionTO.title, sectionTO.description);
+    return new SectionVO(sectionTO.id, sectionTO.title, sectionTO.description);
   }
 }

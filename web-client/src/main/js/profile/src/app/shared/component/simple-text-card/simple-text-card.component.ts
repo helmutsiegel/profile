@@ -38,8 +38,7 @@ export class SimpleTextCardComponent implements OnInit {
   }
 
   public save(): void {
-    this.text = this.textToEdit;
-    this.onSave.emit(this.text);
+    this.onSave.emit(this.textToEdit);
     this.editMode = !this.editMode;
   }
 

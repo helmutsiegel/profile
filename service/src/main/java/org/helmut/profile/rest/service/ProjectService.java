@@ -3,6 +3,7 @@ package org.helmut.profile.rest.service;
 import org.helmut.profile.business.bc.ProjectBC;
 import org.helmut.profile.business.model.CreateChapterTO;
 import org.helmut.profile.business.model.ProjectTO;
+import org.helmut.profile.business.model.SectionTO;
 import org.helmut.profile.business.model.UserTO;
 import org.helmut.profile.rest.auth.filter.JWTTokenNeeded;
 
@@ -66,6 +67,22 @@ public class ProjectService {
         String currentUserEmail = httpHeaders.getHeaderString(CURRENT_USER_EMAIL);
         try {
             projectBC.createChapter(createChapterTO, currentUserEmail);
+            return Response.ok().build();
+        } catch (Exception e) {
+            return Response.status(Response.Status.BAD_REQUEST)
+                    .entity(e)
+                    .build();
+        }
+    }
+
+    @PUT
+    @JWTTokenNeeded
+    @Path("section")
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response createUpdate(SectionTO sectionTO) {
+        String currentUserEmail = httpHeaders.getHeaderString(CURRENT_USER_EMAIL);
+        try {
+            projectBC.updateSection(sectionTO, currentUserEmail);
             return Response.ok().build();
         } catch (Exception e) {
             return Response.status(Response.Status.BAD_REQUEST)

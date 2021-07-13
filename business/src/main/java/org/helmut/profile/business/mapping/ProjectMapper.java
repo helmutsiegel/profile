@@ -49,9 +49,9 @@ public class ProjectMapper {
 
     private SectionTO mapSectionToTO(SectionEntity entity) {
         SectionTO sectionTO = new SectionTO();
+        sectionTO.setId(entity.getId());
         sectionTO.setTitle(entity.getTitle());
         sectionTO.setDescription(entity.getDescription());
         return sectionTO;
     }
-
 }

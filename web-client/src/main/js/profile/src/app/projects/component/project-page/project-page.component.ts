@@ -8,6 +8,7 @@ import {CreateChapterTO} from "../../../shared/model/to/create-chapter-t-o";
 import {ProjectService} from "../../service/project.service";
 import {ProjectMapperService} from "../../mapping/project-mapper.service";
 import {SimpleModalComponent} from "../../../shared/component/simple-modal/simple-modal.component";
+import {ToastrService} from "../../../shared/service/toastr.service";
 
 @Component({
   selector: 'project-page',
@@ -29,7 +30,8 @@ export class ProjectPageComponent implements OnInit {
   constructor(public activatedRoute: ActivatedRoute,
               public authService: AuthService,
               private projectService: ProjectService,
-              private projectMapper: ProjectMapperService) {
+              private projectMapper: ProjectMapperService,
+              private toastr: ToastrService) {
   }
 
   ngOnInit(): void {
@@ -76,6 +78,18 @@ export class ProjectPageComponent implements OnInit {
   }
 
   public saveSection(editedDescription: string): void {
+    const currentDescription = this.currentSection.description;
     this.currentSection.description = editedDescription;
+    this.projectService.updateSection({
+      id: this.currentSection.id,
+      title: this.currentSection.title,
+      description: editedDescription
+    }).subscribe(_ => {
+        this.toastr.success('Section updated successfully!');
+      },
+      _ => {
+        this.currentSection.description = currentDescription;
+        this.toastr.error('Section could not save');
+      })
   }
 }

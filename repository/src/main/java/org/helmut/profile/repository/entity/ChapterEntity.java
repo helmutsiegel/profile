@@ -14,6 +14,9 @@ public class ChapterEntity extends BaseEntity {
     @JoinColumn(name = "chapter_id")
     private List<SectionEntity> sections;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    private ProjectEntity project;
+
     public String getTitle() {
         return title;
     }
@@ -28,5 +31,13 @@ public class ChapterEntity extends BaseEntity {
 
     public void setSections(List<SectionEntity> sections) {
         this.sections = sections;
+    }
+
+    public ProjectEntity getProject() {
+        return project;
+    }
+
+    public void setProject(ProjectEntity project) {
+        this.project = project;
     }
 }
