@@ -7,6 +7,8 @@ import org.helmut.profile.repository.UserRepository;
 import org.helmut.profile.repository.entity.ProjectEntity;
 
 import javax.enterprise.context.RequestScoped;
+import javax.enterprise.event.Event;
+import javax.enterprise.event.Observes;
 import javax.inject.Inject;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -23,6 +25,10 @@ public class ProjectBC {
     @Inject
     private ProjectMapper projectMapper;
 
+    //We can also use qualifiers for events to
+    @Inject
+    private Event<ProjectTO> projectTOEvent;
+
     public List<ProjectTO> getByEmail(String email) {
         return projectRepository.findByProperty("userEntity.email", email)
                 .stream().map(projectMapper::mapToProjectTO).collect(Collectors.toList());
@@ -33,9 +39,14 @@ public class ProjectBC {
     }
 
     public void createProject(ProjectTO projectTO) {
+        projectTOEvent.fire(projectTO);
         ProjectEntity projectEntity = new ProjectEntity();
         projectEntity.setName(projectTO.getName());
         projectEntity.setUserEntity(userRepository.findByUniqueProperty("email", projectTO.getUserTO().getEmail()));
         projectRepository.persist(projectEntity);
+    }
+
+    private void observerProjectTO(@Observes ProjectTO projectTO) {
+        System.out.println("Event caught: " + projectTO);
     }
 }
