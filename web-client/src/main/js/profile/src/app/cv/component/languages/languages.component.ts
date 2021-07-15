@@ -20,10 +20,12 @@ export class LanguagesComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.languages.forEach(val => this.languagesToEdit.push(Object.assign({}, val)));
+
   }
 
   public editLanguages(): void {
+    this.languagesToEdit = [];
+    this.languages.forEach(val => this.languagesToEdit.push(Object.assign({}, val)));
     this.editMode = !this.editMode;
   }
 

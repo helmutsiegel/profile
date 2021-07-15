@@ -19,10 +19,12 @@ export class ExperiencesComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.experiences.forEach(val => this.experiencesToEdit.push(Object.assign({}, val)));
+
   }
 
   public editExperiences(): void {
+    this.experiencesToEdit = [];
+    this.experiences.forEach(val => this.experiencesToEdit.push(Object.assign({}, val)));
     this.editMode = !this.editMode;
   }
 
