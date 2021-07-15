@@ -36,20 +36,27 @@ export class CvMapperService {
     };
   }
 
+  public mapLanguageVOtoTO(languageVO: LanguageVO): LanguageTO {
+    return {
+      language: languageVO.language,
+      level: languageVO.level
+    };
+  }
+
   private mapPersonalInfo(userTO: UserTO): PersonalInfoVO {
     return new PersonalInfoVO(userTO.email, userTO.firstName + ' ' + userTO.lastName, userTO.birthDate, userTO.title);
   }
 
-  private mapExperiences(experiences: ExperienceTO[]): ExperienceVO[] {
+  public mapExperiences(experiences: ExperienceTO[]): ExperienceVO[] {
     return experiences.map(this.mapExperience);
   }
 
   private mapExperience(experienceTO: ExperienceTO): ExperienceVO {
-    return new ExperienceVO(experienceTO.company, experienceTO.startDate,
-      experienceTO.endDate, experienceTO.position, experienceTO.id);
+    return new ExperienceVO(experienceTO.company, experienceTO.position,
+      experienceTO.startDate, experienceTO.endDate, experienceTO.id);
   }
 
-  private mapLanguages(languages: LanguageTO[]): LanguageVO[] {
+  public mapLanguages(languages: LanguageTO[]): LanguageVO[] {
     return languages.map(this.mapLanguage);
   }
 

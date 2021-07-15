@@ -21,14 +21,9 @@
     </div>
 
     <div class="card mt-2">
-      <div class="card-header">
-        Languages
-      </div>
-      <div class="card-body">
-        <div *ngFor="let languageVO of cvVO.languages">
-          <p class="card-text"><b>{{languageVO?.language}}</b> - {{languageVO?.level}}</p>
-        </div>
-      </div>
+      <languages [languages]="cvVO.languages"
+                 [editable]="authService.loggedInUserIsOnTheyPage(activatedRoute)"
+                 (onSave)="saveLanguages($event)"></languages>
     </div>
 
     <div class="card mt-2">

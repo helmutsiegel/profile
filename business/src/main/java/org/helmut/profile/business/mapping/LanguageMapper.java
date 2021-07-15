@@ -13,4 +13,11 @@ public class LanguageMapper {
         languageTO.setLevel(entity.getLevel());
         return languageTO;
     }
+
+    public LanguageEntity mapToEntity(LanguageTO languageTO) {
+        LanguageEntity languageEntity = new LanguageEntity();
+        languageEntity.setLanguage(languageTO.getLanguage());
+        languageEntity.setLevel(languageTO.getLevel());
+        return languageEntity;
+    }
 }

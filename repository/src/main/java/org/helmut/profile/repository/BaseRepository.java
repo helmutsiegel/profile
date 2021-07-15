@@ -33,8 +33,8 @@ public abstract class BaseRepository<T> {
         em.persist(t);
     }
 
-    public void update(T t) {
-        em.merge(t);
+    public T update(T t) {
+        return em.merge(t);
     }
 
     public void delete(T t) {

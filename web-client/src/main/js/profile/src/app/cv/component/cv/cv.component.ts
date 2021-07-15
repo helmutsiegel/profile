@@ -5,6 +5,7 @@ import {CvService} from "../../service/cv.service";
 import {AuthService} from "../../../service/auth.service";
 import {ExperienceVO} from "../../model/experience-v-o";
 import {CvMapperService} from "../../mapping/cv-mapper.service";
+import {LanguageVO} from "../../model/language-v-o";
 
 @Component({
   selector: 'cv',
@@ -42,7 +43,15 @@ export class CvComponent implements OnInit {
 
   public saveExperiences(experienceVOS: ExperienceVO[]): void {
     this.cvService.updateExperiences(experienceVOS.map(experienceVO => this.cvMapper.mapExperienceVOtoTO(experienceVO)))
-      .subscribe();
-    this.cvVO.experiences = experienceVOS;
+      .subscribe(experienceTOs => {
+        this.cvVO.experiences = this.cvMapper.mapExperiences(experienceTOs);
+      });
+  }
+
+  public saveLanguages(languageVOS: LanguageVO[]): void {
+    this.cvService.updateLanguages(languageVOS.map(languageVO => this.cvMapper.mapLanguageVOtoTO(languageVO)))
+      .subscribe(languageTOs => {
+        this.cvVO.languages = this.cvMapper.mapLanguages(languageTOs);
+      });
   }
 }

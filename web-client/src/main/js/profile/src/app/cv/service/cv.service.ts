@@ -3,6 +3,7 @@ import {CvTO} from "../../shared/model/to/cv-t-o";
 import {Observable} from "rxjs";
 import {BackendService} from "../../shared/service/backend.service";
 import {ExperienceTO} from "../../shared/model/to/experience-t-o";
+import {LanguageTO} from "../../shared/model/to/language-t-o";
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +21,11 @@ export class CvService {
     this.backend.put('cv', cvTO).subscribe();
   }
 
-  public updateExperiences(experiences: ExperienceTO[]):  Observable<any>  {
+  public updateExperiences(experiences: ExperienceTO[]): Observable<ExperienceTO[]> {
     return this.backend.put('cv/experiences', experiences);
+  }
+
+  public updateLanguages(languageTOS: LanguageTO[]): Observable<LanguageTO[]> {
+    return this.backend.put('cv/languages', languageTOS);
   }
 }

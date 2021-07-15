@@ -11,7 +11,7 @@ export class ExperiencesComponent implements OnInit {
   @Input() experiences!: ExperienceVO[];
   @Input() editable!: boolean;
   editMode: boolean = false;
-  experiencesToEdit!: ExperienceVO[];
+  experiencesToEdit: ExperienceVO[] = [];
 
   @Output() onSave: EventEmitter<ExperienceVO[]> = new EventEmitter<ExperienceVO[]>();
 
@@ -19,7 +19,7 @@ export class ExperiencesComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.experiencesToEdit = [...this.experiences];
+    this.experiences.forEach(val => this.experiencesToEdit.push(Object.assign({}, val)));
   }
 
   public editExperiences(): void {
@@ -37,6 +37,6 @@ export class ExperiencesComponent implements OnInit {
   }
 
   public addExperience(): void {
-    this.experiencesToEdit.push(new ExperienceVO("", "", "", ""));
+    this.experiencesToEdit.push(new ExperienceVO('', '', ''));
   }
 }

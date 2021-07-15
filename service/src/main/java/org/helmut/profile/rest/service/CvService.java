@@ -3,6 +3,7 @@ package org.helmut.profile.rest.service;
 import org.helmut.profile.business.bc.CvBC;
 import org.helmut.profile.business.model.CvTO;
 import org.helmut.profile.business.model.ExperienceTO;
+import org.helmut.profile.business.model.LanguageTO;
 import org.helmut.profile.rest.auth.filter.JWTTokenNeeded;
 
 import javax.inject.Inject;
@@ -35,8 +36,8 @@ public class CvService {
     @JWTTokenNeeded
     @Consumes(MediaType.APPLICATION_JSON)
     public Response updateCV(CvTO cvTO) {
-       cvBC.update(cvTO);
-       return Response.ok().build();
+        cvBC.update(cvTO);
+        return Response.ok().build();
     }
 
     @PUT
@@ -44,7 +45,14 @@ public class CvService {
     @JWTTokenNeeded
     @Consumes(MediaType.APPLICATION_JSON)
     public Response updateExperiences(List<ExperienceTO> experiences) {
-        cvBC.updateExperiences(experiences, httpHeaders.getHeaderString(CURRENT_USER_EMAIL));
-        return Response.ok().build();
+        return Response.ok(cvBC.updateExperiences(experiences, httpHeaders.getHeaderString(CURRENT_USER_EMAIL))).build();
+    }
+
+    @PUT
+    @Path("languages")
+    @JWTTokenNeeded
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response updateLanguages(List<LanguageTO> language) {
+        return Response.ok(cvBC.updateLanguages(language, httpHeaders.getHeaderString(CURRENT_USER_EMAIL))).build();
     }
 }
