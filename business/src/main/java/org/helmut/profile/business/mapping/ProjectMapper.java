@@ -35,6 +35,7 @@ public class ProjectMapper {
         SectionEntity sectionEntity = new SectionEntity();
         sectionEntity.setTitle("Untitled");
         sectionEntity.setDescription("No description");
+        sectionEntity.setChapter(chapterEntity);
         sections.add(sectionEntity);
         chapterEntity.setSections(sections);
         return chapterEntity;

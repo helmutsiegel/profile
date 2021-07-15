@@ -4,9 +4,11 @@ import org.helmut.profile.business.mapping.ProjectMapper;
 import org.helmut.profile.business.model.CreateChapterTO;
 import org.helmut.profile.business.model.ProjectTO;
 import org.helmut.profile.business.model.SectionTO;
+import org.helmut.profile.repository.ChapterRepository;
 import org.helmut.profile.repository.ProjectRepository;
 import org.helmut.profile.repository.SectionRepository;
 import org.helmut.profile.repository.UserRepository;
+import org.helmut.profile.repository.entity.ChapterEntity;
 import org.helmut.profile.repository.entity.ProjectEntity;
 import org.helmut.profile.repository.entity.SectionEntity;
 
@@ -59,7 +61,9 @@ public class ProjectBC {
         if (!projectEntity.getUserEntity().getEmail().equals(email)) {
             throw new IllegalArgumentException("You don't have the permission to create chapter for this project");
         }
-        projectEntity.addChapter(projectMapper.mapCreateChapterTO(createChapterTO));
+        ChapterEntity chapterEntity = projectMapper.mapCreateChapterTO(createChapterTO);
+        chapterEntity.setProject(projectEntity);
+        projectEntity.addChapter(chapterEntity);
         this.projectRepository.update(projectEntity);
     }
 
