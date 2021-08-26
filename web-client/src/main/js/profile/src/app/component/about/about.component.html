@@ -4,8 +4,10 @@
   My name is Helmut Siegel, I am a software developer with 5 years of experience. I am passionate about learning and
   gaining my professional knowledge.
   That is why I started to develop this project. My daily routine starts with an hour of learning, and
-  in this one hour, mostly I learn things related to my profession as a Full-Stack software developer. My main focus is on Java and Angular.
-  I watch professional courses in this area, and then I figure out possibilities in this project, to implement the learned things.
+  in this one hour, mostly I learn things related to my profession as a Full-Stack software developer. My main focus is
+  on Java and Angular.
+  I watch professional courses in this area, and then I figure out possibilities in this project, to implement the
+  learned things.
 </p>
 <h5>Courses:</h5>
 <table class="table">
@@ -20,77 +22,14 @@
   </tr>
   </thead>
   <tbody>
-  <tr>
-    <th scope="row">0</th>
-    <td>AWS Developer: Getting Started</td>
-    <td>Ryan Lewis</td>
-    <td>Pluralsight</td>
-    <td><a target="_blank" href="https://app.pluralsight.com/library/courses/aws-developer-getting-started/table-of-contents">Click here</a></td>
-    <td class="bg-success">Finished</td>
-  </tr>
-  <tr>
-    <th scope="row">1</th>
-    <td>Angular Fundamentals</td>
-    <td>Jim Cooper, Joe Eames</td>
-    <td>Pluralsight</td>
-    <td><a target="_blank" href="https://app.pluralsight.com/library/courses/angular-fundamentals/table-of-contents">Click here</a></td>
-    <td class="bg-success">Finished</td>
-  </tr>
-  <tr>
-    <th scope="row">2</th>
-    <td>Java Persistence API 2.2</td>
-    <td>Antonio Goncalves</td>
-    <td>Pluralsight</td>
-    <td><a target="_blank" href="https://app.pluralsight.com/library/courses/java-persistence-api-21/table-of-contents">Click here</a></td>
-    <td class="bg-success">Finished</td>
-  </tr>
-  <tr>
-    <th scope="row">3</th>
-    <td>Context and Dependency Injection (CDI 1.1)</td>
-    <td>Antonio Goncalves</td>
-    <td>Pluralsight</td>
-    <td><a target="_blank" href="https://app.pluralsight.com/library/courses/context-dependency-injection-1-1/table-of-contents">Click here</a></td>
-    <td class="bg-warning">In progress</td>
-  </tr>
-  <tr>
-    <th scope="row">4</th>
-    <td>RESTFul Services in Java using Jersey</td>
-    <td>Bryan Hansen</td>
-    <td>Pluralsight</td>
-    <td><a target="_blank" href="https://app.pluralsight.com/library/courses/restful-services-java-using-jersey/table-of-contents">Click here</a></td>
-    <td class="bg-secondary">Planned</td>
-  </tr>
-  <tr>
-    <th scope="row">5</th>
-    <td>Maven Fundamentals</td>
-    <td>Bryan Hansen</td>
-    <td>Pluralsight</td>
-    <td><a target="_blank" href="https://app.pluralsight.com/library/courses/maven-fundamentals/table-of-contents">Click here</a></td>
-    <td class="bg-secondary">Planned</td>
-  </tr>
-  <tr>
-    <th scope="row">5</th>
-    <td>SOLID Software Design Principles in Java</td>
-    <td>Dan Geabunea</td>
-    <td>Pluralsight</td>
-    <td><a target="_blank" href="https://app.pluralsight.com/library/courses/solid-software-design-principles-java/table-of-contents">Click here</a></td>
-    <td class="bg-secondary">Planned</td>
-  </tr>
-  <tr>
-    <th scope="row">6</th>
-    <td>Java Unit Testing</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td class="bg-secondary">Planned</td>
-  </tr>
-  <tr>
-    <th scope="row">7</th>
-    <td>Jenkins</td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td class="bg-secondary">Planned</td>
+  <tr *ngFor="let course of courses; let indexElement=index">
+    <th scope="row">{{indexElement}}</th>
+    <td>{{course.title}}</td>
+    <td>{{course.author}}</td>
+    <td>{{course.platform}}</td>
+    <td><a target="_blank" href="{{course.link}}">Click here</a></td>
+    <td [ngClass]="getClassForStatus(course)">
+      {{course.status}}</td>
   </tr>
   </tbody>
 </table>
