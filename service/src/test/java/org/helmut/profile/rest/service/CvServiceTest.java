@@ -1,8 +1,8 @@
 package org.helmut.profile.rest.service;
 
-import org.checkerframework.checker.units.qual.C;
 import org.helmut.profile.business.bc.CvBC;
 import org.helmut.profile.business.model.CvTO;
+import org.helmut.profile.business.model.ExperienceTO;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -10,8 +10,12 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.Response;
+import java.util.Collections;
+import java.util.List;
 
+import static org.helmut.profile.rest.service.Constants.CURRENT_USER_EMAIL;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.mockito.Mockito.*;
@@ -21,6 +25,9 @@ class CvServiceTest {
 
     @Mock
     private CvBC cvBC;
+
+    @Mock
+    private HttpHeaders httpHeaders;
 
     @InjectMocks
     private CvService cvService;
@@ -45,4 +52,19 @@ class CvServiceTest {
         assertEquals(response.getStatus(), Response.Status.OK.getStatusCode());
     }
 
+    @Test
+    void updateExperiences() {
+        //setup
+        String email = "email@mail.com";
+        List<ExperienceTO> experiencesToUpdate = Collections.singletonList(new ExperienceTO());
+        List<ExperienceTO> updatedExperiences = Collections.singletonList(new ExperienceTO());
+        doReturn(email).when(httpHeaders).getHeaderString(CURRENT_USER_EMAIL);
+        doReturn(updatedExperiences).when(cvBC).updateExperiences(experiencesToUpdate, email);
+        //Test call
+        Response response = cvService.updateExperiences(experiencesToUpdate);
+        //asserts
+        verify(cvBC, times(1)).updateExperiences(experiencesToUpdate, email);
+        assertEquals(response.getStatus(), Response.Status.OK.getStatusCode());
+        assertSame(response.getEntity(), updatedExperiences);
+    }
 }
