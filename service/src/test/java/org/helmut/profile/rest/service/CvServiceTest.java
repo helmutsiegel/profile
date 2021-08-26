@@ -45,6 +45,7 @@ class CvServiceTest {
     }
 
     @Test
+    @DisplayName("Update cv")
     public void updateCV() {
         CvTO cvTO = new CvTO();
         Response response = cvService.updateCV(cvTO);
@@ -53,6 +54,7 @@ class CvServiceTest {
     }
 
     @Test
+    @DisplayName("Update experiences")
     void updateExperiences() {
         //setup
         String email = "email@mail.com";
