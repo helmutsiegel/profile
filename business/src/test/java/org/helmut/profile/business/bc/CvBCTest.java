@@ -1,5 +1,6 @@
 package org.helmut.profile.business.bc;
 
+import org.helmut.profile.business.bc.CvBC;
 import org.helmut.profile.business.mapping.CertificationMapper;
 import org.helmut.profile.business.model.CertificationTO;
 import org.helmut.profile.repository.CvRepository;
@@ -15,8 +16,6 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import java.time.LocalDate;
 import java.time.Month;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.ArgumentMatchers.any;
@@ -72,6 +71,7 @@ public class CvBCTest {
         CVEntity cvEntity = new CVEntity();
         ArrayList<CertificationEntity> certifications = new ArrayList<>();
         CertificationEntity certificationEntity = new CertificationEntity();
+        certificationEntity.setId(1L);
         certificationEntity.setName("Cert1");
         certificationEntity.setExpirationDate(LocalDate.now());
         certifications.add(certificationEntity);
@@ -82,6 +82,7 @@ public class CvBCTest {
     private ArrayList<CertificationTO> createCertificationTOSForUpdate() {
         ArrayList<CertificationTO> certificationTOS = new ArrayList<>();
         CertificationTO certificationTO1 = new CertificationTO();
+        certificationTO1.setId(1L);
         certificationTO1.setName("Cert1");
         certificationTO1.setDate(LocalDate.of(2021, Month.JANUARY, 1));
         certificationTO1.setExpirationDate(null);

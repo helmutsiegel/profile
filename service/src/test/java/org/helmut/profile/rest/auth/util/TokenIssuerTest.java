@@ -8,6 +8,8 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import javax.ws.rs.core.UriInfo;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 @ExtendWith(MockitoExtension.class)
 class TokenIssuerTest {
 
