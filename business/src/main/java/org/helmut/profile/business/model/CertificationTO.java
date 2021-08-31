@@ -3,6 +3,7 @@ package org.helmut.profile.business.model;
 import java.time.LocalDate;
 
 public class CertificationTO {
+    private Long id;
     private String name;
     private String issuedBy;
     private LocalDate date;
@@ -38,5 +39,13 @@ public class CertificationTO {
 
     public void setExpirationDate(LocalDate expirationDate) {
         this.expirationDate = expirationDate;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 }

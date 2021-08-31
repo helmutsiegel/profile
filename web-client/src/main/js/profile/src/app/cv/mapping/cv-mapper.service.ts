@@ -43,6 +43,16 @@ export class CvMapperService {
     };
   }
 
+  public mapCertificationVOtoTO(certificationVO: CertificationVO): CertificationTO {
+    return {
+      id: certificationVO.id,
+      name: certificationVO.name,
+      issuedBy: certificationVO.issuedBy,
+      date: certificationVO.date,
+      expirationDate: certificationVO.expirationDate
+    };
+  }
+
   private mapPersonalInfo(userTO: UserTO): PersonalInfoVO {
     return new PersonalInfoVO(userTO.email, userTO.firstName + ' ' + userTO.lastName, userTO.birthDate, userTO.title);
   }
@@ -64,11 +74,15 @@ export class CvMapperService {
     return new LanguageVO(languageTO.language, languageTO.level);
   }
 
-  private mapCertifications(certifications: CertificationTO[]): CertificationVO[] {
+  public mapCertifications(certifications: CertificationTO[]): CertificationVO[] {
     return certifications.map(this.mapCertification);
   }
 
   private mapCertification(certificationTO: CertificationTO): CertificationVO {
-    return new CertificationVO(certificationTO.name, certificationTO.issuedBy);
+    return new CertificationVO(certificationTO.id,
+      certificationTO.name,
+      certificationTO.issuedBy,
+      certificationTO.date,
+      certificationTO.expirationDate);
   }
 }

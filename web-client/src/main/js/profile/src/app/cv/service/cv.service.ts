@@ -4,6 +4,7 @@ import {Observable} from "rxjs";
 import {BackendService} from "../../shared/service/backend.service";
 import {ExperienceTO} from "../../shared/model/to/experience-t-o";
 import {LanguageTO} from "../../shared/model/to/language-t-o";
+import {CertificationTO} from "../../shared/model/to/certification-t-o";
 
 @Injectable({
   providedIn: 'root'
@@ -27,5 +28,9 @@ export class CvService {
 
   public updateLanguages(languageTOS: LanguageTO[]): Observable<LanguageTO[]> {
     return this.backend.put('cv/languages', languageTOS);
+  }
+
+  updateCertifications(certificationTOS: CertificationTO[]): Observable<CertificationTO[]> {
+    return this.backend.put('cv/certifications', certificationTOS);
   }
 }

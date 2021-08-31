@@ -11,18 +11,21 @@ import {CertificationsComponent} from "./component/certifications/certifications
 
 
 @NgModule({
-  declarations: [
-    ResumeComponent,
-    ExperiencesComponent,
-    LanguagesComponent,
-    CertificationsComponent
-  ],
-  imports: [
-    CommonModule,
-    ResumeRoutingModule,
-    CommonsModule,
-    CvModule
-  ]
+    declarations: [
+        ResumeComponent,
+        ExperiencesComponent,
+        LanguagesComponent,
+        CertificationsComponent
+    ],
+    exports: [
+        CertificationsComponent
+    ],
+    imports: [
+        CommonModule,
+        ResumeRoutingModule,
+        CommonsModule,
+        CvModule
+    ]
 })
 export class ResumeModule {
 }

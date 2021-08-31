@@ -27,14 +27,9 @@
     </div>
 
     <div class="card mt-2">
-      <div class="card-header">
-        Certifications
-      </div>
-      <div class="card-body">
-        <div *ngFor="let certificationVO of cvVO.certifications">
-          <p class="card-text"><b>{{certificationVO?.name}}</b> - {{certificationVO?.issuedBy}}</p>
-        </div>
-      </div>
+      <certifications #certifications [certifications]="cvVO.certifications"
+                      [editable]="authService.loggedInUserIsOnTheyPage(activatedRoute)"
+                      (onSave)="saveCertifications($event)"></certifications>
     </div>
   </div>
 </div>

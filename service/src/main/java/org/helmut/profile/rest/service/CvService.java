@@ -1,6 +1,7 @@
 package org.helmut.profile.rest.service;
 
 import org.helmut.profile.business.bc.CvBC;
+import org.helmut.profile.business.model.CertificationTO;
 import org.helmut.profile.business.model.CvTO;
 import org.helmut.profile.business.model.ExperienceTO;
 import org.helmut.profile.business.model.LanguageTO;
@@ -52,7 +53,15 @@ public class CvService {
     @Path("languages")
     @JWTTokenNeeded
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response updateLanguages(List<LanguageTO> language) {
-        return Response.ok(cvBC.updateLanguages(language, httpHeaders.getHeaderString(CURRENT_USER_EMAIL))).build();
+    public Response updateLanguages(List<LanguageTO> languages) {
+        return Response.ok(cvBC.updateLanguages(languages, httpHeaders.getHeaderString(CURRENT_USER_EMAIL))).build();
+    }
+
+    @PUT
+    @Path("certifications")
+    @JWTTokenNeeded
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response updateCertifications(List<CertificationTO> certifications) {
+        return Response.ok(cvBC.updateCertifications(certifications, httpHeaders.getHeaderString(CURRENT_USER_EMAIL))).build();
     }
 }

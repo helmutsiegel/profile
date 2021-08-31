@@ -1,13 +1,16 @@
 package org.helmut.profile.business.bc;
 
+import org.helmut.profile.business.mapping.CertificationMapper;
 import org.helmut.profile.business.mapping.CvMapper;
 import org.helmut.profile.business.mapping.ExperienceMapper;
 import org.helmut.profile.business.mapping.LanguageMapper;
+import org.helmut.profile.business.model.CertificationTO;
 import org.helmut.profile.business.model.CvTO;
 import org.helmut.profile.business.model.ExperienceTO;
 import org.helmut.profile.business.model.LanguageTO;
 import org.helmut.profile.repository.CvRepository;
 import org.helmut.profile.repository.entity.CVEntity;
+import org.helmut.profile.repository.entity.CertificationEntity;
 import org.helmut.profile.repository.entity.ExperienceEntity;
 import org.helmut.profile.repository.entity.LanguageEntity;
 
@@ -34,6 +37,9 @@ public class CvBC {
     @Inject
     private LanguageMapper languageMapper;
 
+    @Inject
+    private CertificationMapper certificationMapper;
+
     public CvTO getByEmail(String email) {
         return cvMapper.mapCvTO(cvRepository.findByProperty("userEntity.email", email).get(0));
     }
@@ -45,7 +51,7 @@ public class CvBC {
     }
 
     public List<ExperienceTO> updateExperiences(List<ExperienceTO> experienceTOs, String email) {
-        CVEntity cvEntity = cvRepository.findByUniqueProperty("userEntity.email", email);
+        CVEntity cvEntity = cvRepository.findByEmail(email);
         List<ExperienceEntity> experienceEntities = cvEntity.getExperiences();
         experienceTOs.forEach(experienceTO -> {
             if (Objects.isNull(experienceTO.getId())) {
@@ -84,6 +90,28 @@ public class CvBC {
         return cvRepository.update(cvEntity).getLanguages()
                 .stream()
                 .map(this.languageMapper::mapToTO)
+                .collect(Collectors.toList());
+    }
+
+    public List<CertificationTO> updateCertifications(List<CertificationTO> certificationTOS, String email) {
+        CVEntity cvEntity = cvRepository.findByEmail(email);
+        List<CertificationEntity> certificationEntities = cvEntity.getCertifications();
+        List<CertificationEntity> newCertifications = new ArrayList<>();
+        certificationTOS.forEach(certificationTO -> {
+            Optional<CertificationEntity> foundCertificationEntity = certificationEntities
+                    .stream()
+                    .filter(certificationEntity -> certificationEntity.getId().equals(certificationTO.getId()))
+                    .findFirst();
+            if (foundCertificationEntity.isPresent()) {
+                certificationMapper.mapUpdates(foundCertificationEntity.get(), certificationTO);
+            } else {
+                newCertifications.add(certificationMapper.mapToEntity(certificationTO));
+            }
+        });
+        certificationEntities.addAll(newCertifications);
+        return cvRepository.update(cvEntity).getCertifications()
+                .stream()
+                .map(this.certificationMapper::mapToTO)
                 .collect(Collectors.toList());
     }
 }

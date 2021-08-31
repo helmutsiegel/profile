@@ -1,6 +1,7 @@
 package org.helmut.profile.rest.service;
 
 import org.helmut.profile.business.bc.CvBC;
+import org.helmut.profile.business.model.CertificationTO;
 import org.helmut.profile.business.model.CvTO;
 import org.helmut.profile.business.model.ExperienceTO;
 import org.junit.jupiter.api.DisplayName;
@@ -68,5 +69,22 @@ class CvServiceTest {
         verify(cvBC, times(1)).updateExperiences(experiencesToUpdate, email);
         assertEquals(response.getStatus(), Response.Status.OK.getStatusCode());
         assertSame(response.getEntity(), updatedExperiences);
+    }
+
+    @Test
+    @DisplayName("Update certifications")
+    void updateCertifications() {
+        //setup
+        String email = "email@mail.com";
+        List<CertificationTO> certificationsToUpdate = Collections.singletonList(new CertificationTO());
+        List<CertificationTO> updatedCertifications = Collections.singletonList(new CertificationTO());
+        doReturn(email).when(httpHeaders).getHeaderString(CURRENT_USER_EMAIL);
+        doReturn(updatedCertifications).when(cvBC).updateCertifications(certificationsToUpdate, email);
+        //Test call
+        Response response = cvService.updateCertifications(certificationsToUpdate);
+        //asserts
+        verify(cvBC, times(1)).updateCertifications(certificationsToUpdate, email);
+        assertEquals(response.getStatus(), Response.Status.OK.getStatusCode());
+        assertSame(response.getEntity(), updatedCertifications);
     }
 }
