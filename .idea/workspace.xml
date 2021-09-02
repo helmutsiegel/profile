@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="12054cd0-f72f-4c45-9241-d79069bd8fa5" name="Changes" comment="" />
+    <list default="true" id="12054cd0-f72f-4c45-9241-d79069bd8fa5" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/profile.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/profile.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -62,7 +70,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/web-client/src/main/js/profile/package.json" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="SDKs" />
@@ -84,7 +92,7 @@
       <recent name="org.helmut.profile.business.mapping" />
     </key>
   </component>
-  <component name="RunManager" selected="GlassFish Server.payara">
+  <component name="RunManager" selected="npm.Angular CLI Server (profile)">
     <configuration name="payara" type="GlassfishConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="GlassFish 5.2021.3" ALTERNATIVE_JRE_ENABLED="false">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
@@ -243,6 +251,16 @@
       <envs />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="GlassFish Server.payara" />
+      <item itemvalue="JavaScript Debug.Angular Application (profile)" />
+      <item itemvalue="JUnit.CvBCTest.getByEmail" />
+      <item itemvalue="JUnit.CvBCTest.update" />
+      <item itemvalue="JUnit.CvBCTest.updateCertifications (1)" />
+      <item itemvalue="JUnit.CvRepositoryTest" />
+      <item itemvalue="JUnit.CvRepositoryTest.findByEmail" />
+      <item itemvalue="npm.Angular CLI Server (profile)" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.CvBCTest.getByEmail" />
@@ -256,7 +274,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="3f8a645f-11e4-4a5f-8829-9f5976cb2e0e" name="Changes" comment="" />
+      <changelist id="12054cd0-f72f-4c45-9241-d79069bd8fa5" name="Changes" comment="" />
       <created>1630380806070</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -268,6 +286,9 @@
       <workItem from="1630382986884" duration="247000" />
       <workItem from="1630383249629" duration="22319000" />
       <workItem from="1630559036768" duration="319000" />
+      <workItem from="1630559677142" duration="369000" />
+      <workItem from="1630560087526" duration="251000" />
+      <workItem from="1630560454201" duration="101000" />
     </task>
     <servers />
   </component>
