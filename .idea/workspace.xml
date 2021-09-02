@@ -5,12 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="12054cd0-f72f-4c45-9241-d79069bd8fa5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/profile.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/profile.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -93,7 +87,7 @@
     </key>
   </component>
   <component name="RunManager" selected="npm.Angular CLI Server (profile)">
-    <configuration name="payara" type="GlassfishConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="GlassFish 5.2021.3" ALTERNATIVE_JRE_ENABLED="false">
+    <configuration name="payara" type="GlassfishConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="GlassFish 5.2021.3" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="corretto-1.8">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="profile-war:war exploded">
@@ -289,6 +283,8 @@
       <workItem from="1630559677142" duration="369000" />
       <workItem from="1630560087526" duration="251000" />
       <workItem from="1630560454201" duration="101000" />
+      <workItem from="1630560573050" duration="571000" />
+      <workItem from="1630561179861" duration="235000" />
     </task>
     <servers />
   </component>
