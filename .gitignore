@@ -29,3 +29,10 @@ hs_err_pid*
 /common/target/
 /service/target/
 /coverage/target/
+/web-client/web-client.iml
+/repository/repository.iml
+/business/business.iml
+/profile-war/profile-war.iml
+/coverage/coverage.iml
+/common/common.iml
+/service/service.iml

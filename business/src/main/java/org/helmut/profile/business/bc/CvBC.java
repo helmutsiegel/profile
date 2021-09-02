@@ -41,11 +41,11 @@ public class CvBC {
     private CertificationMapper certificationMapper;
 
     public CvTO getByEmail(String email) {
-        return cvMapper.mapCvTO(cvRepository.findByProperty("userEntity.email", email).get(0));
+        return cvMapper.mapCvTO(cvRepository.findByEmail(email));
     }
 
     public void update(CvTO cvTO) {
-        CVEntity cvEntity = cvRepository.findByProperty("userEntity.email", cvTO.getUserTO().getEmail()).get(0);
+        CVEntity cvEntity = cvRepository.findByEmail(cvTO.getUserTO().getEmail());
         cvEntity.setShortAbout(cvTO.getAbout());
         cvRepository.update(cvEntity);
     }

@@ -2,7 +2,10 @@ package org.helmut.profile.business.bc;
 
 import org.helmut.profile.business.bc.CvBC;
 import org.helmut.profile.business.mapping.CertificationMapper;
+import org.helmut.profile.business.mapping.CvMapper;
 import org.helmut.profile.business.model.CertificationTO;
+import org.helmut.profile.business.model.CvTO;
+import org.helmut.profile.business.model.UserTO;
 import org.helmut.profile.repository.CvRepository;
 import org.helmut.profile.repository.entity.CVEntity;
 import org.helmut.profile.repository.entity.CertificationEntity;
@@ -33,12 +36,38 @@ public class CvBCTest {
     @Mock
     private CvRepository cvRepository;
 
+    @Mock
+    private CvMapper cvMapper;
+
     @Test
     void getByEmail() {
+        CVEntity cvEntity = new CVEntity();
+        String email = "email";
+        doReturn(cvEntity).when(cvRepository).findByEmail(email);
+        CvTO cvTO = new CvTO();
+        doReturn(cvTO).when(cvMapper).mapCvTO(cvEntity);
+
+        assertEquals(cvBC.getByEmail(email), cvTO);
+        verify(cvRepository, times(1)).findByEmail(email);
+        verify(cvMapper,times(1)).mapCvTO(cvEntity);
     }
 
     @Test
+    @DisplayName("Update cv")
     void update() {
+        CvTO cvTO = new CvTO();
+        UserTO userTO = new UserTO();
+        userTO.setEmail("email");
+        cvTO.setUserTO(userTO);
+        cvTO.setAbout("Short about");
+        CVEntity cvEntity = new CVEntity();
+        doReturn(cvEntity).when(cvRepository).findByEmail(cvTO.getUserTO().getEmail());
+
+        cvBC.update(cvTO);
+
+        assertEquals(cvEntity.getShortAbout(), cvTO.getAbout());
+        verify(cvRepository, times(1)).findByEmail(cvTO.getUserTO().getEmail());
+        verify(cvRepository, times(1)).update(cvEntity);
     }
 
     @Test

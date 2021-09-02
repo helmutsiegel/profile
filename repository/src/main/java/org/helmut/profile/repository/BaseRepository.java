@@ -16,9 +16,13 @@ public abstract class BaseRepository<T> {
     protected EntityManager em;
 
     public BaseRepository() {
-        Type t = ((Class) getClass().getGenericSuperclass()).getGenericSuperclass();
-        ParameterizedType pt = (ParameterizedType) t;
-        type = (Class<T>) pt.getActualTypeArguments()[0];
+        Type t;
+        if (getClass().getGenericSuperclass() instanceof Class) {
+            t = ((Class) getClass().getGenericSuperclass()).getGenericSuperclass();
+        } else {
+            t = getClass().getGenericSuperclass();
+        }
+        type = (Class<T>) ((ParameterizedType) t).getActualTypeArguments()[0];
     }
 
     public T findById(Long id) {
