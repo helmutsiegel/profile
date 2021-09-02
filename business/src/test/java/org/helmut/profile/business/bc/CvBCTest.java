@@ -1,14 +1,16 @@
 package org.helmut.profile.business.bc;
 
-import org.helmut.profile.business.bc.CvBC;
 import org.helmut.profile.business.mapping.CertificationMapper;
 import org.helmut.profile.business.mapping.CvMapper;
-import org.helmut.profile.business.model.CertificationTO;
-import org.helmut.profile.business.model.CvTO;
-import org.helmut.profile.business.model.UserTO;
+import org.helmut.profile.business.mapping.ExperienceMapper;
+import org.helmut.profile.business.mapping.LanguageMapper;
+import org.helmut.profile.business.model.*;
 import org.helmut.profile.repository.CvRepository;
 import org.helmut.profile.repository.entity.CVEntity;
 import org.helmut.profile.repository.entity.CertificationEntity;
+import org.helmut.profile.repository.entity.ExperienceEntity;
+import org.helmut.profile.repository.entity.LanguageEntity;
+import org.helmut.profile.repository.enums.LanguageLevel;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -16,8 +18,6 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import java.time.LocalDate;
-import java.time.Month;
 import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -34,10 +34,16 @@ public class CvBCTest {
     private CertificationMapper certificationMapper;
 
     @Mock
+    private ExperienceMapper experienceMapper;
+
+    @Mock
     private CvRepository cvRepository;
 
     @Mock
     private CvMapper cvMapper;
+
+    @Mock
+    private LanguageMapper languageMapper;
 
     @Test
     void getByEmail() {
@@ -49,7 +55,7 @@ public class CvBCTest {
 
         assertEquals(cvBC.getByEmail(email), cvTO);
         verify(cvRepository, times(1)).findByEmail(email);
-        verify(cvMapper,times(1)).mapCvTO(cvEntity);
+        verify(cvMapper, times(1)).mapCvTO(cvEntity);
     }
 
     @Test
@@ -71,18 +77,49 @@ public class CvBCTest {
     }
 
     @Test
+    @DisplayName("Update experiences")
     void updateExperiences() {
+        ArrayList<ExperienceTO> experienceTOS = createExperienceTOsForUpdate();
+        CVEntity cvEntity = createCVEntityForUpdateExperiences();
+        String email = "email@mail.com";
+        doReturn(cvEntity).when(cvRepository).findByEmail(email);
+        doReturn(cvEntity).when(cvRepository).update(cvEntity);
+
+        cvBC.updateExperiences(experienceTOS, email);
+
+        verify(cvRepository, times(1)).findByEmail(email);
+        verify(experienceMapper, times(1)).mapToEntity(any());
+        verify(experienceMapper, times(2)).mapToTO(any());
+        verify(experienceMapper, times(1)).mapUpdates(any(), any());
+        assertEquals(cvEntity.getExperiences().size(), 2);
     }
 
     @Test
+    @DisplayName("Update languages")
     void updateLanguages() {
+        CVEntity cvEntity = createCVEntityForUpdateLanguages();
+        String email = "email@mail.com";
+
+        doReturn(cvEntity).when(cvRepository).findByEmail(email);
+        doReturn(cvEntity).when(cvRepository).update(cvEntity);
+
+        ArrayList<LanguageTO> languageTOS = new ArrayList<>();
+        languageTOS.add(new LanguageTO("German", LanguageLevel.ADVANCED));
+        languageTOS.add(new LanguageTO("English", LanguageLevel.BEGINNER));
+
+        cvBC.updateLanguages(languageTOS, email);
+
+        verify(cvRepository, times(1)).findByEmail(email);
+        verify(languageMapper, times(1)).mapToEntity(any());
+        verify(languageMapper, times(2)).mapToTO(any());
+
     }
 
     @Test
     @DisplayName("Update certifications")
     void updateCertifications() {
         ArrayList<CertificationTO> certificationTOS = createCertificationTOSForUpdate();
-        CVEntity cvEntity = createCVEntityForUpdate();
+        CVEntity cvEntity = createCVEntityForUpdateCertifications();
         String email = "email@mail.com";
         doReturn(cvEntity).when(cvRepository).findByEmail(email);
         doReturn(cvEntity).when(cvRepository).update(cvEntity);
@@ -95,14 +132,42 @@ public class CvBCTest {
         verify(certificationMapper, times(1)).mapUpdates(any(), any());
         assertEquals(cvEntity.getCertifications().size(), 2);
     }
+    
+    private CVEntity createCVEntityForUpdateLanguages() {
+        CVEntity cvEntity = new CVEntity();
+        ArrayList<LanguageEntity> languages = new ArrayList<>();
+        LanguageEntity languageEntity = new LanguageEntity();
+        languageEntity.setLanguage("German");
+        languageEntity.setLevel(LanguageLevel.INTERMEDIATE);
+        languages.add(languageEntity);
+        cvEntity.setLanguages(languages);
+        return cvEntity;
+    }
 
-    private CVEntity createCVEntityForUpdate() {
+    private CVEntity createCVEntityForUpdateExperiences() {
+        CVEntity cvEntity = new CVEntity();
+        ArrayList<ExperienceEntity> certifications = new ArrayList<>();
+        ExperienceEntity experienceEntity = new ExperienceEntity();
+        experienceEntity.setId(1L);
+        certifications.add(experienceEntity);
+        cvEntity.setExperiences(certifications);
+        return cvEntity;
+    }
+
+    private ArrayList<ExperienceTO> createExperienceTOsForUpdate() {
+        ArrayList<ExperienceTO> experienceTOS = new ArrayList<>();
+        ExperienceTO experienceTO1 = new ExperienceTO();
+        experienceTO1.setId(1L);
+        experienceTOS.add(experienceTO1);
+        experienceTOS.add(new ExperienceTO());
+        return experienceTOS;
+    }
+
+    private CVEntity createCVEntityForUpdateCertifications() {
         CVEntity cvEntity = new CVEntity();
         ArrayList<CertificationEntity> certifications = new ArrayList<>();
         CertificationEntity certificationEntity = new CertificationEntity();
         certificationEntity.setId(1L);
-        certificationEntity.setName("Cert1");
-        certificationEntity.setExpirationDate(LocalDate.now());
         certifications.add(certificationEntity);
         cvEntity.setCertifications(certifications);
         return cvEntity;
@@ -112,19 +177,8 @@ public class CvBCTest {
         ArrayList<CertificationTO> certificationTOS = new ArrayList<>();
         CertificationTO certificationTO1 = new CertificationTO();
         certificationTO1.setId(1L);
-        certificationTO1.setName("Cert1");
-        certificationTO1.setDate(LocalDate.of(2021, Month.JANUARY, 1));
-        certificationTO1.setExpirationDate(null);
-        certificationTO1.setIssuedBy("Cert1Issuer");
-
-        CertificationTO certificationTO2 = new CertificationTO();
-        certificationTO2.setName("Cert2");
-        certificationTO2.setDate(LocalDate.of(2021, Month.JANUARY, 1));
-        certificationTO2.setExpirationDate(LocalDate.of(2022, Month.FEBRUARY, 28));
-        certificationTO2.setIssuedBy("Cert2Issuer");
-
         certificationTOS.add(certificationTO1);
-        certificationTOS.add(certificationTO2);
+        certificationTOS.add(new CertificationTO());
         return certificationTOS;
     }
 }

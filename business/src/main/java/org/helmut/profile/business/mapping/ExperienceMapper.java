@@ -27,7 +27,7 @@ public class ExperienceMapper {
         return experienceEntity;
     }
 
-    public void updateExperience(ExperienceEntity experienceEntity, ExperienceTO experienceTO) {
+    public void mapUpdates(ExperienceEntity experienceEntity, ExperienceTO experienceTO) {
         experienceEntity.setCompany(experienceTO.getCompany());
         experienceEntity.setStartDate(experienceTO.getStartDate());
         experienceEntity.setEndDate(experienceTO.getEndDate());

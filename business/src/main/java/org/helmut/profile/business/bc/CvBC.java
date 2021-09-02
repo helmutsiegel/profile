@@ -61,7 +61,7 @@ public class CvBC {
                         .filter(experienceEntity -> experienceEntity.getId().equals(experienceTO.getId()))
                         .findAny()
                         .ifPresent(experienceEntity -> {
-                            this.experienceMapper.updateExperience(experienceEntity, experienceTO);
+                            this.experienceMapper.mapUpdates(experienceEntity, experienceTO);
                         });
             }
         });
@@ -72,7 +72,7 @@ public class CvBC {
     }
 
     public List<LanguageTO> updateLanguages(List<LanguageTO> languageTOS, String email) {
-        CVEntity cvEntity = cvRepository.findByUniqueProperty("userEntity.email", email);
+        CVEntity cvEntity = cvRepository.findByEmail(email);
         List<LanguageEntity> languageEntities = cvEntity.getLanguages();
         List<LanguageEntity> newLanguages = new ArrayList<>();
         languageTOS.forEach(languageTO -> {
@@ -81,7 +81,7 @@ public class CvBC {
                     .filter(languageEntity -> languageEntity.getLanguage().equals(languageTO.getLanguage()))
                     .findFirst();
             if (foundLanguage.isPresent()) {
-                foundLanguage.get().setLevel(languageTO.getLevel());
+                languageMapper.mapUpdates(foundLanguage.get(), languageTO);
             } else {
                 newLanguages.add(languageMapper.mapToEntity(languageTO));
             }
