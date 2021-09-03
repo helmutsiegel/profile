@@ -46,6 +46,7 @@ public class CvBCTest {
     private LanguageMapper languageMapper;
 
     @Test
+    @DisplayName("Cv repository should be called and the received result should be mapped and passed back")
     void getByEmail() {
         CVEntity cvEntity = new CVEntity();
         String email = "email";
@@ -132,7 +133,7 @@ public class CvBCTest {
         verify(certificationMapper, times(1)).mapUpdates(any(), any());
         assertEquals(cvEntity.getCertifications().size(), 2);
     }
-    
+
     private CVEntity createCVEntityForUpdateLanguages() {
         CVEntity cvEntity = new CVEntity();
         ArrayList<LanguageEntity> languages = new ArrayList<>();
