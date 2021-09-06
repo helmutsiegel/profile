@@ -36,3 +36,4 @@ hs_err_pid*
 /coverage/coverage.iml
 /common/common.iml
 /service/service.iml
+/.idea/workspace.xml
