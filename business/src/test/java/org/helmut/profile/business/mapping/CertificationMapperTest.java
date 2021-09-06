@@ -1,6 +1,5 @@
 package org.helmut.profile.business.mapping;
 
-import org.helmut.profile.business.mapping.CertificationMapper;
 import org.helmut.profile.business.model.CertificationTO;
 import org.helmut.profile.repository.entity.CertificationEntity;
 import org.junit.jupiter.api.Test;
@@ -22,10 +21,18 @@ class CertificationMapperTest {
 
     @Test
     public void mapToTO() {
-    }
+        CertificationEntity certificationEntity = new CertificationEntity();
+        certificationEntity.setId(1L);
+        certificationEntity.setDate(LocalDate.now());
+        certificationEntity.setIssuedBy("Issued by");
+        certificationEntity.setExpirationDate(LocalDate.MIN);
 
-    @Test
-    public void mapToSimpleTO() {
+        CertificationTO certificationTO = certificationMapper.mapToTO(certificationEntity);
+
+        assertEquals(certificationTO.getId(), certificationEntity.getId());
+        assertEquals(certificationTO.getName(), certificationEntity.getName());
+        assertEquals(certificationTO.getIssuedBy(), certificationEntity.getIssuedBy());
+        assertEquals(certificationTO.getExpirationDate(), certificationEntity.getExpirationDate());
     }
 
     @Test
