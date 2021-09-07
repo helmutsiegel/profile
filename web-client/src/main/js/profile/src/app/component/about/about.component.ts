@@ -44,13 +44,13 @@ export class AboutComponent implements OnInit {
       author: 'Catalin Tudose',
       platform: 'Pluralsight',
       link: 'https://app.pluralsight.com/library/courses/tdd-junit5/table-of-contents',
-      status: 'In progress'
+      status: 'Finished'
     }, {
       title: 'RESTFul Services in Java using Jersey',
       author: 'Bryan Hansen',
       platform: 'Pluralsight',
       link: 'https://app.pluralsight.com/library/courses/restful-services-java-using-jersey/table-of-contents',
-      status: 'Planned'
+      status: 'In progress'
     }, {
       title: 'Maven Fundamentals',
       author: 'Bryan Hansen',
