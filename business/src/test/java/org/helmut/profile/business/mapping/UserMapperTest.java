@@ -1,22 +1,29 @@
 package org.helmut.profile.business.mapping;
 
+import org.helmut.profile.business.model.SignUpUserTO;
 import org.helmut.profile.business.model.UserTO;
+import org.helmut.profile.business.util.PasswordUtils;
 import org.helmut.profile.repository.entity.UserEntity;
 import org.helmut.profile.repository.enums.Seniority;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
+import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.time.LocalDate;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.doReturn;
 
 @ExtendWith(MockitoExtension.class)
 class UserMapperTest {
 
     @InjectMocks
     private UserMapper userMapper;
+
+    @Mock
+    private PasswordUtils passwordUtils;
 
     @Test
     void mapToTO() {
@@ -45,6 +52,20 @@ class UserMapperTest {
 
     @Test
     void mapToEntity() {
+        SignUpUserTO signUpUserTO = new SignUpUserTO();
+        signUpUserTO.setFirstName("First Name");
+        signUpUserTO.setLastName("Last Name");
+        signUpUserTO.setPassword1("Password");
+        signUpUserTO.setEmail("Email");
+
+        doReturn("digested password").when(passwordUtils).digestPassword(signUpUserTO.getPassword1());
+
+        UserEntity userEntity = userMapper.mapToEntity(signUpUserTO);
+
+        assertEquals(userEntity.getFirstName(), signUpUserTO.getFirstName());
+        assertEquals(userEntity.getLastName(), signUpUserTO.getLastName());
+        assertEquals(userEntity.getEmail(), signUpUserTO.getEmail());
+        assertEquals(userEntity.getPassword(), "digested password");
     }
 
     @Test
