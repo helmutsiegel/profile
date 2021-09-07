@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="12054cd0-f72f-4c45-9241-d79069bd8fa5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/business/src/test/java/org/helmut/profile/business/mapping/LanguageMapperTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/business/src/test/java/org/helmut/profile/business/mapping/UserMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/business/src/test/java/org/helmut/profile/business/mapping/UserMapperTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-client/src/main/js/profile/src/app/component/sign-up/sign-up.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/web-client/src/main/js/profile/src/app/component/sign-up/sign-up.component.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +51,7 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="MavenImportPreferences">
-    <option name="disabledProfiles">
+    <option name="enabledProfiles">
       <list>
         <option value="build-for-prod" />
       </list>
@@ -295,7 +294,7 @@
       <workItem from="1630560454201" duration="101000" />
       <workItem from="1630560573050" duration="571000" />
       <workItem from="1630561179861" duration="5542000" />
-      <workItem from="1630929248228" duration="7917000" />
+      <workItem from="1630929248228" duration="8488000" />
     </task>
     <servers />
   </component>
