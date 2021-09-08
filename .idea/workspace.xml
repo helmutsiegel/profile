@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="12054cd0-f72f-4c45-9241-d79069bd8fa5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/business/src/test/java/org/helmut/profile/business/bc/UserBCTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/business/src/test/java/org/helmut/profile/business/bc/ProjectBCTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/business/src/main/java/org/helmut/profile/business/bc/UserBC.java" beforeDir="false" afterPath="$PROJECT_DIR$/business/src/main/java/org/helmut/profile/business/bc/UserBC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/business/src/main/java/org/helmut/profile/business/bc/ProjectBC.java" beforeDir="false" afterPath="$PROJECT_DIR$/business/src/main/java/org/helmut/profile/business/bc/ProjectBC.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +90,7 @@
       <recent name="org.helmut.profile.repository" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.UserBCTest.updateUser">
+  <component name="RunManager" selected="JUnit.ProjectBCTest">
     <configuration name="payara" type="GlassfishConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="GlassFish 5.2021.3" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="corretto-1.8">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
@@ -157,7 +157,7 @@
       </ConfigurationWrapper>
       <method v="2" />
     </configuration>
-    <configuration name="UserBCTest$ExistsUserTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ProjectBCTest$CreateChapterTest.createChapterFailed" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="business" />
       <extension name="coverage">
         <pattern>
@@ -165,73 +165,73 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.helmut.profile.business.bc.UserBCTest" />
-      <option name="MAIN_CLASS_NAME" value="org.helmut.profile.business.bc.UserBCTest$ExistsUserTest" />
+      <option name="PACKAGE_NAME" value="org.helmut.profile.business.bc.ProjectBCTest" />
+      <option name="MAIN_CLASS_NAME" value="org.helmut.profile.business.bc.ProjectBCTest$CreateChapterTest" />
+      <option name="METHOD_NAME" value="createChapterFailed" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProjectBCTest$CreateChapterTest.createChapterSuccessful" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="business" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.helmut.profile.business.bc.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.helmut.profile.business.bc.ProjectBCTest" />
+      <option name="MAIN_CLASS_NAME" value="org.helmut.profile.business.bc.ProjectBCTest$CreateChapterTest" />
+      <option name="METHOD_NAME" value="createChapterSuccessful" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProjectBCTest$UpdateSectionClass.updateSectionFailed" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="business" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.helmut.profile.business.bc.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.helmut.profile.business.bc.ProjectBCTest" />
+      <option name="MAIN_CLASS_NAME" value="org.helmut.profile.business.bc.ProjectBCTest$UpdateSectionClass" />
+      <option name="METHOD_NAME" value="updateSectionFailed" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProjectBCTest$UpdateSectionClass.updateSectionSuccessful" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="business" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.helmut.profile.business.bc.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.helmut.profile.business.bc.ProjectBCTest" />
+      <option name="MAIN_CLASS_NAME" value="org.helmut.profile.business.bc.ProjectBCTest$UpdateSectionClass" />
+      <option name="METHOD_NAME" value="updateSectionSuccessful" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProjectBCTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="business" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.helmut.profile.business.bc.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.helmut.profile.business.bc" />
+      <option name="MAIN_CLASS_NAME" value="org.helmut.profile.business.bc.ProjectBCTest" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserBCTest.changePassword" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="business" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.helmut.profile.business.bc.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.helmut.profile.business.bc" />
-      <option name="MAIN_CLASS_NAME" value="org.helmut.profile.business.bc.UserBCTest" />
-      <option name="METHOD_NAME" value="changePassword" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserBCTest.searchUsers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="business" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.helmut.profile.business.bc.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.helmut.profile.business.bc" />
-      <option name="MAIN_CLASS_NAME" value="org.helmut.profile.business.bc.UserBCTest" />
-      <option name="METHOD_NAME" value="searchUsers" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserBCTest.signUp" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="business" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.helmut.profile.business.bc.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.helmut.profile.business.bc" />
-      <option name="MAIN_CLASS_NAME" value="org.helmut.profile.business.bc.UserBCTest" />
-      <option name="METHOD_NAME" value="signUp" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserBCTest.updateUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="business" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.helmut.profile.business.bc.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.helmut.profile.business.bc" />
-      <option name="MAIN_CLASS_NAME" value="org.helmut.profile.business.bc.UserBCTest" />
-      <option name="METHOD_NAME" value="updateUser" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -253,19 +253,19 @@
       <item itemvalue="GlassFish Server.payara" />
       <item itemvalue="JavaScript Debug.Angular Application (profile)" />
       <item itemvalue="npm.Angular CLI Server (profile)" />
-      <item itemvalue="JUnit.UserBCTest.changePassword" />
-      <item itemvalue="JUnit.UserBCTest$ExistsUserTest" />
-      <item itemvalue="JUnit.UserBCTest.signUp" />
-      <item itemvalue="JUnit.UserBCTest.searchUsers" />
-      <item itemvalue="JUnit.UserBCTest.updateUser" />
+      <item itemvalue="JUnit.ProjectBCTest$CreateChapterTest.createChapterSuccessful" />
+      <item itemvalue="JUnit.ProjectBCTest$CreateChapterTest.createChapterFailed" />
+      <item itemvalue="JUnit.ProjectBCTest$UpdateSectionClass.updateSectionSuccessful" />
+      <item itemvalue="JUnit.ProjectBCTest$UpdateSectionClass.updateSectionFailed" />
+      <item itemvalue="JUnit.ProjectBCTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.UserBCTest.updateUser" />
-        <item itemvalue="JUnit.UserBCTest.searchUsers" />
-        <item itemvalue="JUnit.UserBCTest.signUp" />
-        <item itemvalue="JUnit.UserBCTest$ExistsUserTest" />
-        <item itemvalue="JUnit.UserBCTest.changePassword" />
+        <item itemvalue="JUnit.ProjectBCTest" />
+        <item itemvalue="JUnit.ProjectBCTest$UpdateSectionClass.updateSectionFailed" />
+        <item itemvalue="JUnit.ProjectBCTest$UpdateSectionClass.updateSectionSuccessful" />
+        <item itemvalue="JUnit.ProjectBCTest$CreateChapterTest.createChapterFailed" />
+        <item itemvalue="JUnit.ProjectBCTest$CreateChapterTest.createChapterSuccessful" />
       </list>
     </recent_temporary>
   </component>
@@ -289,7 +289,7 @@
       <workItem from="1630560454201" duration="101000" />
       <workItem from="1630560573050" duration="571000" />
       <workItem from="1630561179861" duration="5542000" />
-      <workItem from="1630929248228" duration="22235000" />
+      <workItem from="1630929248228" duration="25450000" />
     </task>
     <servers />
   </component>

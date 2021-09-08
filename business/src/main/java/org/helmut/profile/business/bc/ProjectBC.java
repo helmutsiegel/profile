@@ -52,7 +52,7 @@ public class ProjectBC {
         ProjectEntity projectEntity = new ProjectEntity();
         projectEntity.setName(projectTO.getName());
         projectEntity.setDescription(projectTO.getDescription());
-        projectEntity.setUserEntity(userRepository.findByUniqueProperty("email", projectTO.getUserTO().getEmail()));
+        projectEntity.setUserEntity(userRepository.getByEmail(projectTO.getUserTO().getEmail()));
         projectRepository.persist(projectEntity);
     }
 
@@ -64,7 +64,7 @@ public class ProjectBC {
         ChapterEntity chapterEntity = projectMapper.mapCreateChapterTO(createChapterTO);
         chapterEntity.setProject(projectEntity);
         projectEntity.addChapter(chapterEntity);
-        this.projectRepository.update(projectEntity);
+        projectRepository.update(projectEntity);
     }
 
     private void observerProjectTO(@Observes ProjectTO projectTO) {
