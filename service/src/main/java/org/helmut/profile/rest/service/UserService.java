@@ -1,7 +1,7 @@
 package org.helmut.profile.rest.service;
 
-import org.helmut.profile.business.bc.UserBC;
 import org.helmut.profile.business.bci.UserBCI;
+import org.helmut.profile.business.client.UserClient;
 import org.helmut.profile.business.model.ChangePasswordTO;
 import org.helmut.profile.business.model.LoginUserTO;
 import org.helmut.profile.business.model.SignUpUserTO;
@@ -25,6 +25,9 @@ import static org.helmut.profile.rest.service.Constants.CURRENT_USER_EMAIL;
 
 @Path("user")
 public class UserService {
+
+    @Inject
+    private UserClient userClient;
 
     @Inject
     private Logger logger;
@@ -52,10 +55,22 @@ public class UserService {
         return userBC.getByEmail(httpHeaders.getHeaderString(CURRENT_USER_EMAIL));
     }
 
+    /**
+     * The methods getByEmail and getUserByEmail are same.
+     * They are created to show how jersey client works
+     * {@link UserClient}
+     */
     @GET
     @Path("{email}")
     @Produces(MediaType.APPLICATION_JSON)
     public UserTO getByEmail(@PathParam("email") String email) {
+        return userClient.getUserByEmail(email);
+    }
+
+    @GET
+    @Path("userByEmail/{email}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public UserTO getUserByEmail(@PathParam("email") String email) {
         return userBC.getByEmail(email);
     }
 

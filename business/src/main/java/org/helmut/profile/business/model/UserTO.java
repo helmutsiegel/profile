@@ -2,14 +2,16 @@ package org.helmut.profile.business.model;
 
 import org.helmut.profile.repository.enums.Seniority;
 
+import javax.xml.bind.annotation.XmlRootElement;
 import java.time.LocalDate;
 
+@XmlRootElement
 public class UserTO {
     private String email;
     private String firstName;
     private String lastName;
     private String title;
-    private LocalDate birthDate;
+    private String birthDate;
     private Seniority seniority;
 
     public String getEmail() {
@@ -44,11 +46,11 @@ public class UserTO {
         this.title = title;
     }
 
-    public LocalDate getBirthDate() {
+    public String getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(LocalDate birthDate) {
+    public void setBirthDate(String birthDate) {
         this.birthDate = birthDate;
     }
 

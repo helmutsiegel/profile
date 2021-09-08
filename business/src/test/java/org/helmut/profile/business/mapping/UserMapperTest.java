@@ -36,7 +36,7 @@ class UserMapperTest {
         assertEquals(userTO.getEmail(), userEntity.getEmail());
         assertEquals(userTO.getTitle(), userEntity.getTitle());
         assertEquals(userTO.getSeniority(), userEntity.getSeniority());
-        assertEquals(userTO.getBirthDate(), userEntity.getBirthDate());
+        assertEquals(userTO.getBirthDate(), userEntity.getBirthDate().toString());
     }
 
     private UserEntity createUserEntity() {

@@ -7,6 +7,7 @@ import org.helmut.profile.repository.entity.UserEntity;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
+import java.time.format.DateTimeFormatter;
 
 @RequestScoped
 public class UserMapper {
@@ -19,7 +20,7 @@ public class UserMapper {
         userTO.setEmail(userEntity.getEmail());
         userTO.setFirstName(userEntity.getFirstName());
         userTO.setLastName(userEntity.getLastName());
-        userTO.setBirthDate(userEntity.getBirthDate());
+        userTO.setBirthDate(userEntity.getBirthDate().toString());
         userTO.setTitle(userEntity.getTitle());
         userTO.setSeniority(userEntity.getSeniority());
         return userTO;

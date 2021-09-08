@@ -5,8 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="12054cd0-f72f-4c45-9241-d79069bd8fa5" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_5_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_5_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_jaxrs_jackson_jaxrs_base_2_5_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_jaxrs_jackson_jaxrs_json_provider_2_5_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_module_jackson_module_jaxb_annotations_2_5_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jersey_ext_jersey_entity_filtering_2_22_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jersey_media_jersey_media_json_jackson_2_22_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/business/src/main/java/org/helmut/profile/business/client/UserClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/profile_war_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/profile_war_war_exploded.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/web_client_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/web_client_war_exploded.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_8_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_5_4.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/profile.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/profile.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-client/src/main/js/profile/src/app/component/sign-up/sign-up.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/web-client/src/main/js/profile/src/app/component/sign-up/sign-up.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/business/src/main/java/org/helmut/profile/business/mapping/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/business/src/main/java/org/helmut/profile/business/mapping/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/business/src/main/java/org/helmut/profile/business/model/UserTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/business/src/main/java/org/helmut/profile/business/model/UserTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/business/src/test/java/org/helmut/profile/business/mapping/UserMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/business/src/test/java/org/helmut/profile/business/mapping/UserMapperTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/main/java/org/helmut/profile/rest/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/org/helmut/profile/rest/service/UserService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +33,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Class" />
         <option value="JUnit5 Test Class" />
       </list>
     </option>
@@ -53,7 +71,7 @@
   <component name="MavenImportPreferences">
     <option name="enabledProfiles">
       <list>
-        <option value="build-for-prod" />
+        <option value="buildUI" />
       </list>
     </option>
   </component>
@@ -89,12 +107,13 @@
       <recent name="org.helmut.profile" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="org.helmut.profile.business.client" />
       <recent name="org.helmut.profile.business.mapping" />
       <recent name="org.helmut.profile.repository" />
       <recent name="org.helmut.profile.business.bc" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.LanguageMapperTest.mapUpdates">
+  <component name="RunManager" selected="GlassFish Server.payara">
     <configuration name="payara" type="GlassfishConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="GlassFish 5.2021.3" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="corretto-1.8">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
@@ -177,22 +196,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LanguageMapperTest.mapToTO" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="business" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.helmut.profile.business.mapping.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.helmut.profile.business.mapping" />
-      <option name="MAIN_CLASS_NAME" value="org.helmut.profile.business.mapping.LanguageMapperTest" />
-      <option name="METHOD_NAME" value="mapToTO" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="LanguageMapperTest.mapUpdates" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="business" />
       <extension name="coverage">
@@ -209,23 +212,39 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserMapperTest.mapToEntity" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserClientTest.getUsers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="business" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.helmut.profile.business.mapping.*" />
+          <option name="PATTERN" value="org.helmut.profile.business.client.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.helmut.profile.business.mapping" />
-      <option name="MAIN_CLASS_NAME" value="org.helmut.profile.business.mapping.UserMapperTest" />
-      <option name="METHOD_NAME" value="mapToEntity" />
+      <option name="PACKAGE_NAME" value="org.helmut.profile.business.client" />
+      <option name="MAIN_CLASS_NAME" value="org.helmut.profile.business.client.UserClientTest" />
+      <option name="METHOD_NAME" value="getUsers" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserMapperTest.updateUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserClientTest.searchUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="business" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.helmut.profile.business.client.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.helmut.profile.business.client" />
+      <option name="MAIN_CLASS_NAME" value="org.helmut.profile.business.client.UserClientTest" />
+      <option name="METHOD_NAME" value="searchUser" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserMapperTest.mapToTO" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="business" />
       <extension name="coverage">
         <pattern>
@@ -235,7 +254,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.helmut.profile.business.mapping" />
       <option name="MAIN_CLASS_NAME" value="org.helmut.profile.business.mapping.UserMapperTest" />
-      <option name="METHOD_NAME" value="updateUser" />
+      <option name="METHOD_NAME" value="mapToTO" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -258,19 +277,19 @@
       <item itemvalue="GlassFish Server.payara" />
       <item itemvalue="JavaScript Debug.Angular Application (profile)" />
       <item itemvalue="npm.Angular CLI Server (profile)" />
-      <item itemvalue="JUnit.UserMapperTest.updateUser" />
-      <item itemvalue="JUnit.UserMapperTest.mapToEntity" />
-      <item itemvalue="JUnit.LanguageMapperTest.mapToTO" />
       <item itemvalue="JUnit.LanguageMapperTest.mapToEntity" />
       <item itemvalue="JUnit.LanguageMapperTest.mapUpdates" />
+      <item itemvalue="JUnit.UserClientTest.getUsers" />
+      <item itemvalue="JUnit.UserMapperTest.mapToTO" />
+      <item itemvalue="JUnit.UserClientTest.searchUser" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.UserClientTest.searchUser" />
+        <item itemvalue="JUnit.UserClientTest.getUsers" />
+        <item itemvalue="JUnit.UserMapperTest.mapToTO" />
         <item itemvalue="JUnit.LanguageMapperTest.mapUpdates" />
         <item itemvalue="JUnit.LanguageMapperTest.mapToEntity" />
-        <item itemvalue="JUnit.LanguageMapperTest.mapToTO" />
-        <item itemvalue="JUnit.UserMapperTest.mapToEntity" />
-        <item itemvalue="JUnit.UserMapperTest.updateUser" />
       </list>
     </recent_temporary>
   </component>
@@ -294,7 +313,7 @@
       <workItem from="1630560454201" duration="101000" />
       <workItem from="1630560573050" duration="571000" />
       <workItem from="1630561179861" duration="5542000" />
-      <workItem from="1630929248228" duration="8488000" />
+      <workItem from="1630929248228" duration="16302000" />
     </task>
     <servers />
   </component>
@@ -367,6 +386,17 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/business/src/main/java/org/helmut/profile/business/client/UserClient.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
