@@ -7,9 +7,7 @@ import org.helmut.profile.business.model.ChangePasswordTO;
 import org.helmut.profile.business.model.SignUpUserTO;
 import org.helmut.profile.business.model.UserTO;
 import org.helmut.profile.business.util.PasswordUtils;
-import org.helmut.profile.repository.CvRepository;
 import org.helmut.profile.repository.UserRepository;
-import org.helmut.profile.repository.entity.CVEntity;
 import org.helmut.profile.repository.entity.UserEntity;
 
 import javax.enterprise.context.RequestScoped;
@@ -38,7 +36,7 @@ public class UserBC implements UserBCI {
 
     @Override
     public UserTO getByEmail(String email) {
-        return userMapper.mapToTO(userRepository.findByUniqueProperty("email", email));
+        return userMapper.mapToTO(userRepository.getByEmail(email));
     }
 
     @Override
@@ -77,7 +75,7 @@ public class UserBC implements UserBCI {
 
     @Override
     public UserTO updateUser(UserTO userTO) {
-        UserEntity userEntity = userRepository.findByUniqueProperty("email", userTO.getEmail());
+        UserEntity userEntity = userRepository.getByEmail(userTO.getEmail());
         userMapper.updateUser(userEntity, userTO);
         userRepository.update(userEntity);
         return getByEmail(userTO.getEmail());

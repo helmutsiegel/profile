@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="12054cd0-f72f-4c45-9241-d79069bd8fa5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/business/src/test/java/org/helmut/profile/business/mapping/CvMapperTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/business/src/test/java/org/helmut/profile/business/bc/UserBCTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/business/src/main/java/org/helmut/profile/business/bc/UserBC.java" beforeDir="false" afterPath="$PROJECT_DIR$/business/src/main/java/org/helmut/profile/business/bc/UserBC.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,13 +84,13 @@
       <recent name="org.helmut.profile" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="org.helmut.profile.business.bc" />
       <recent name="org.helmut.profile.business.mapping" />
       <recent name="org.helmut.profile.business.client" />
       <recent name="org.helmut.profile.repository" />
-      <recent name="org.helmut.profile.business.bc" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CvMapperTest.mapCvTO">
+  <component name="RunManager" selected="JUnit.UserBCTest.updateUser">
     <configuration name="payara" type="GlassfishConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="GlassFish 5.2021.3" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="corretto-1.8">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
@@ -156,80 +157,80 @@
       </ConfigurationWrapper>
       <method v="2" />
     </configuration>
-    <configuration name="CvMapperTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserBCTest$ExistsUserTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="business" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.helmut.profile.business.mapping.*" />
+          <option name="PATTERN" value="org.helmut.profile.business.bc.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.helmut.profile.business.mapping" />
-      <option name="MAIN_CLASS_NAME" value="org.helmut.profile.business.mapping.CvMapperTest" />
+      <option name="PACKAGE_NAME" value="org.helmut.profile.business.bc.UserBCTest" />
+      <option name="MAIN_CLASS_NAME" value="org.helmut.profile.business.bc.UserBCTest$ExistsUserTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CvMapperTest.mapCvTO" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserBCTest.changePassword" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="business" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.helmut.profile.business.mapping.*" />
+          <option name="PATTERN" value="org.helmut.profile.business.bc.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.helmut.profile.business.mapping" />
-      <option name="MAIN_CLASS_NAME" value="org.helmut.profile.business.mapping.CvMapperTest" />
-      <option name="METHOD_NAME" value="mapCvTO" />
+      <option name="PACKAGE_NAME" value="org.helmut.profile.business.bc" />
+      <option name="MAIN_CLASS_NAME" value="org.helmut.profile.business.bc.UserBCTest" />
+      <option name="METHOD_NAME" value="changePassword" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ExperienceMapperTest.mapToEntity" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserBCTest.searchUsers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="business" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.helmut.profile.business.mapping.*" />
+          <option name="PATTERN" value="org.helmut.profile.business.bc.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.helmut.profile.business.mapping" />
-      <option name="MAIN_CLASS_NAME" value="org.helmut.profile.business.mapping.ExperienceMapperTest" />
-      <option name="METHOD_NAME" value="mapToEntity" />
+      <option name="PACKAGE_NAME" value="org.helmut.profile.business.bc" />
+      <option name="MAIN_CLASS_NAME" value="org.helmut.profile.business.bc.UserBCTest" />
+      <option name="METHOD_NAME" value="searchUsers" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ExperienceMapperTest.mapUpdates" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserBCTest.signUp" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="business" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.helmut.profile.business.mapping.*" />
+          <option name="PATTERN" value="org.helmut.profile.business.bc.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.helmut.profile.business.mapping" />
-      <option name="MAIN_CLASS_NAME" value="org.helmut.profile.business.mapping.ExperienceMapperTest" />
-      <option name="METHOD_NAME" value="mapUpdates" />
+      <option name="PACKAGE_NAME" value="org.helmut.profile.business.bc" />
+      <option name="MAIN_CLASS_NAME" value="org.helmut.profile.business.bc.UserBCTest" />
+      <option name="METHOD_NAME" value="signUp" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ResumeMapperTest.mapToTO" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserBCTest.updateUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="business" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.helmut.profile.business.mapping.*" />
+          <option name="PATTERN" value="org.helmut.profile.business.bc.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.helmut.profile.business.mapping" />
-      <option name="MAIN_CLASS_NAME" value="org.helmut.profile.business.mapping.ResumeMapperTest" />
-      <option name="METHOD_NAME" value="mapToTO" />
+      <option name="PACKAGE_NAME" value="org.helmut.profile.business.bc" />
+      <option name="MAIN_CLASS_NAME" value="org.helmut.profile.business.bc.UserBCTest" />
+      <option name="METHOD_NAME" value="updateUser" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -252,19 +253,19 @@
       <item itemvalue="GlassFish Server.payara" />
       <item itemvalue="JavaScript Debug.Angular Application (profile)" />
       <item itemvalue="npm.Angular CLI Server (profile)" />
-      <item itemvalue="JUnit.ExperienceMapperTest.mapToEntity" />
-      <item itemvalue="JUnit.ExperienceMapperTest.mapUpdates" />
-      <item itemvalue="JUnit.ResumeMapperTest.mapToTO" />
-      <item itemvalue="JUnit.CvMapperTest.mapCvTO" />
-      <item itemvalue="JUnit.CvMapperTest" />
+      <item itemvalue="JUnit.UserBCTest.changePassword" />
+      <item itemvalue="JUnit.UserBCTest$ExistsUserTest" />
+      <item itemvalue="JUnit.UserBCTest.signUp" />
+      <item itemvalue="JUnit.UserBCTest.searchUsers" />
+      <item itemvalue="JUnit.UserBCTest.updateUser" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.CvMapperTest.mapCvTO" />
-        <item itemvalue="JUnit.CvMapperTest" />
-        <item itemvalue="JUnit.ResumeMapperTest.mapToTO" />
-        <item itemvalue="JUnit.ExperienceMapperTest.mapUpdates" />
-        <item itemvalue="JUnit.ExperienceMapperTest.mapToEntity" />
+        <item itemvalue="JUnit.UserBCTest.updateUser" />
+        <item itemvalue="JUnit.UserBCTest.searchUsers" />
+        <item itemvalue="JUnit.UserBCTest.signUp" />
+        <item itemvalue="JUnit.UserBCTest$ExistsUserTest" />
+        <item itemvalue="JUnit.UserBCTest.changePassword" />
       </list>
     </recent_temporary>
   </component>
@@ -288,7 +289,7 @@
       <workItem from="1630560454201" duration="101000" />
       <workItem from="1630560573050" duration="571000" />
       <workItem from="1630561179861" duration="5542000" />
-      <workItem from="1630929248228" duration="19359000" />
+      <workItem from="1630929248228" duration="22235000" />
     </task>
     <servers />
   </component>
