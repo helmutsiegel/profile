@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="12054cd0-f72f-4c45-9241-d79069bd8fa5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/business/src/test/java/org/helmut/profile/business/bc/ProjectBCTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/business/src/test/java/org/helmut/profile/business/bc/PostBCTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/business/src/main/java/org/helmut/profile/business/bc/ProjectBC.java" beforeDir="false" afterPath="$PROJECT_DIR$/business/src/main/java/org/helmut/profile/business/bc/ProjectBC.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +89,7 @@
       <recent name="org.helmut.profile.repository" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ProjectBCTest">
+  <component name="RunManager" selected="JUnit.PostBCTest.getById">
     <configuration name="payara" type="GlassfishConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="GlassFish 5.2021.3" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="corretto-1.8">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
@@ -157,7 +156,7 @@
       </ConfigurationWrapper>
       <method v="2" />
     </configuration>
-    <configuration name="ProjectBCTest$CreateChapterTest.createChapterFailed" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PostBCTest$DeletePostTest.deletePostFailed" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="business" />
       <extension name="coverage">
         <pattern>
@@ -165,15 +164,15 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.helmut.profile.business.bc.ProjectBCTest" />
-      <option name="MAIN_CLASS_NAME" value="org.helmut.profile.business.bc.ProjectBCTest$CreateChapterTest" />
-      <option name="METHOD_NAME" value="createChapterFailed" />
+      <option name="PACKAGE_NAME" value="org.helmut.profile.business.bc.PostBCTest" />
+      <option name="MAIN_CLASS_NAME" value="org.helmut.profile.business.bc.PostBCTest$DeletePostTest" />
+      <option name="METHOD_NAME" value="deletePostFailed" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProjectBCTest$CreateChapterTest.createChapterSuccessful" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PostBCTest$UpdatePostTest.updatePostFailed" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="business" />
       <extension name="coverage">
         <pattern>
@@ -181,47 +180,15 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.helmut.profile.business.bc.ProjectBCTest" />
-      <option name="MAIN_CLASS_NAME" value="org.helmut.profile.business.bc.ProjectBCTest$CreateChapterTest" />
-      <option name="METHOD_NAME" value="createChapterSuccessful" />
+      <option name="PACKAGE_NAME" value="org.helmut.profile.business.bc.PostBCTest" />
+      <option name="MAIN_CLASS_NAME" value="org.helmut.profile.business.bc.PostBCTest$UpdatePostTest" />
+      <option name="METHOD_NAME" value="updatePostFailed" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProjectBCTest$UpdateSectionClass.updateSectionFailed" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="business" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.helmut.profile.business.bc.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.helmut.profile.business.bc.ProjectBCTest" />
-      <option name="MAIN_CLASS_NAME" value="org.helmut.profile.business.bc.ProjectBCTest$UpdateSectionClass" />
-      <option name="METHOD_NAME" value="updateSectionFailed" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ProjectBCTest$UpdateSectionClass.updateSectionSuccessful" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="business" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.helmut.profile.business.bc.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.helmut.profile.business.bc.ProjectBCTest" />
-      <option name="MAIN_CLASS_NAME" value="org.helmut.profile.business.bc.ProjectBCTest$UpdateSectionClass" />
-      <option name="METHOD_NAME" value="updateSectionSuccessful" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ProjectBCTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PostBCTest.deletePost" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="business" />
       <extension name="coverage">
         <pattern>
@@ -230,8 +197,41 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.helmut.profile.business.bc" />
-      <option name="MAIN_CLASS_NAME" value="org.helmut.profile.business.bc.ProjectBCTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="org.helmut.profile.business.bc.PostBCTest" />
+      <option name="METHOD_NAME" value="deletePost" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PostBCTest.getById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="business" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.helmut.profile.business.bc.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.helmut.profile.business.bc" />
+      <option name="MAIN_CLASS_NAME" value="org.helmut.profile.business.bc.PostBCTest" />
+      <option name="METHOD_NAME" value="getById" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PostBCTest.updatePost" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="business" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.helmut.profile.business.bc.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.helmut.profile.business.bc" />
+      <option name="MAIN_CLASS_NAME" value="org.helmut.profile.business.bc.PostBCTest" />
+      <option name="METHOD_NAME" value="updatePost" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -253,19 +253,19 @@
       <item itemvalue="GlassFish Server.payara" />
       <item itemvalue="JavaScript Debug.Angular Application (profile)" />
       <item itemvalue="npm.Angular CLI Server (profile)" />
-      <item itemvalue="JUnit.ProjectBCTest$CreateChapterTest.createChapterSuccessful" />
-      <item itemvalue="JUnit.ProjectBCTest$CreateChapterTest.createChapterFailed" />
-      <item itemvalue="JUnit.ProjectBCTest$UpdateSectionClass.updateSectionSuccessful" />
-      <item itemvalue="JUnit.ProjectBCTest$UpdateSectionClass.updateSectionFailed" />
-      <item itemvalue="JUnit.ProjectBCTest" />
+      <item itemvalue="JUnit.PostBCTest.deletePost" />
+      <item itemvalue="JUnit.PostBCTest$DeletePostTest.deletePostFailed" />
+      <item itemvalue="JUnit.PostBCTest.updatePost" />
+      <item itemvalue="JUnit.PostBCTest$UpdatePostTest.updatePostFailed" />
+      <item itemvalue="JUnit.PostBCTest.getById" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ProjectBCTest" />
-        <item itemvalue="JUnit.ProjectBCTest$UpdateSectionClass.updateSectionFailed" />
-        <item itemvalue="JUnit.ProjectBCTest$UpdateSectionClass.updateSectionSuccessful" />
-        <item itemvalue="JUnit.ProjectBCTest$CreateChapterTest.createChapterFailed" />
-        <item itemvalue="JUnit.ProjectBCTest$CreateChapterTest.createChapterSuccessful" />
+        <item itemvalue="JUnit.PostBCTest.getById" />
+        <item itemvalue="JUnit.PostBCTest$UpdatePostTest.updatePostFailed" />
+        <item itemvalue="JUnit.PostBCTest.updatePost" />
+        <item itemvalue="JUnit.PostBCTest$DeletePostTest.deletePostFailed" />
+        <item itemvalue="JUnit.PostBCTest.deletePost" />
       </list>
     </recent_temporary>
   </component>
@@ -289,7 +289,7 @@
       <workItem from="1630560454201" duration="101000" />
       <workItem from="1630560573050" duration="571000" />
       <workItem from="1630561179861" duration="5542000" />
-      <workItem from="1630929248228" duration="25450000" />
+      <workItem from="1630929248228" duration="27600000" />
     </task>
     <servers />
   </component>
