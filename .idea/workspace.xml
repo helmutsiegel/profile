@@ -5,10 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="12054cd0-f72f-4c45-9241-d79069bd8fa5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/service/src/main/java/org/helmut/profile/rest/auth/JwsWrapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/main/java/org/helmut/profile/rest/auth/filter/JWTTokenNeededFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/org/helmut/profile/rest/auth/filter/JWTTokenNeededFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/main/java/org/helmut/profile/rest/auth/filter/ResponseFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/org/helmut/profile/rest/auth/filter/ResponseFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service/src/test/java/org/helmut/profile/rest/auth/filter/ResponseFilterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/test/java/org/helmut/profile/rest/auth/filter/ResponseFilterTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -102,7 +99,7 @@
       <recent name="org.helmut.profile.business.bc" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ResponseFilterTest.filter">
+  <component name="RunManager" selected="JUnit.ResponseFilterTest.filterTokenIssueFailed">
     <configuration name="payara" type="GlassfishConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="GlassFish 5.2021.3" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="corretto-1.8">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
@@ -200,6 +197,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ResponseFilterTest.filterTokenIssueFailed" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.helmut.profile.rest.auth.filter.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.helmut.profile.rest.auth.filter" />
+      <option name="MAIN_CLASS_NAME" value="org.helmut.profile.rest.auth.filter.ResponseFilterTest" />
+      <option name="METHOD_NAME" value="filterTokenIssueFailed" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="UserRepositoryTest.getByEmail" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="repository" />
       <extension name="coverage">
@@ -232,22 +245,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserRepositoryTest.searchUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="repository" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.helmut.profile.repository.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.helmut.profile.repository" />
-      <option name="MAIN_CLASS_NAME" value="org.helmut.profile.repository.UserRepositoryTest" />
-      <option name="METHOD_NAME" value="searchUser" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Angular Application (profile)" type="JavascriptDebugType" uri="http://localhost:4200">
       <method v="2" />
     </configuration>
@@ -265,19 +262,19 @@
       <item itemvalue="GlassFish Server.payara" />
       <item itemvalue="JavaScript Debug.Angular Application (profile)" />
       <item itemvalue="npm.Angular CLI Server (profile)" />
-      <item itemvalue="JUnit.UserRepositoryTest.searchUser" />
       <item itemvalue="JUnit.UserRepositoryTest.getByEmailAndPassword" />
       <item itemvalue="JUnit.UserRepositoryTest.getByEmail" />
       <item itemvalue="JUnit.ResponseFilterTest.filter" />
       <item itemvalue="JUnit.ResponseFilterTest" />
+      <item itemvalue="JUnit.ResponseFilterTest.filterTokenIssueFailed" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ResponseFilterTest.filterTokenIssueFailed" />
         <item itemvalue="JUnit.ResponseFilterTest.filter" />
         <item itemvalue="JUnit.ResponseFilterTest" />
         <item itemvalue="JUnit.UserRepositoryTest.getByEmail" />
         <item itemvalue="JUnit.UserRepositoryTest.getByEmailAndPassword" />
-        <item itemvalue="JUnit.UserRepositoryTest.searchUser" />
       </list>
     </recent_temporary>
   </component>
@@ -301,7 +298,7 @@
       <workItem from="1630560454201" duration="101000" />
       <workItem from="1630560573050" duration="571000" />
       <workItem from="1630561179861" duration="5542000" />
-      <workItem from="1630929248228" duration="50207000" />
+      <workItem from="1630929248228" duration="50666000" />
     </task>
     <servers />
   </component>

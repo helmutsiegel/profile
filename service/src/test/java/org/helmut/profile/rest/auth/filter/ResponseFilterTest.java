@@ -5,6 +5,7 @@ import io.jsonwebtoken.Jws;
 import org.helmut.profile.rest.auth.JwsWrapper;
 import org.helmut.profile.rest.auth.util.KeyGenerator;
 import org.helmut.profile.rest.auth.util.TokenIssuer;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -36,7 +37,8 @@ class ResponseFilterTest {
     private TokenIssuer tokenIssuer;
 
     @Test
-    void filter() {
+    @DisplayName("Token issued successful")
+    void filterSuccessful() {
         String authorizationHeader = "Bearer token";
         ContainerRequestContext requestContext = mock(ContainerRequestContext.class);
         ContainerResponseContext responseContext = mock(ContainerResponseContext.class);
@@ -58,5 +60,23 @@ class ResponseFilterTest {
         verify(responseContext, times(1)).getHeaders();
         verify(jwsWrapper, times(1)).getClaimsJws(any(), any());
         verify(tokenIssuer, times(1)).issueToken("subject");
+    }
+
+    @Test
+    @DisplayName("Token issue failed")
+    void filterTokenIssueFailed() {
+        String authorizationHeader = "Bearer token";
+        ContainerRequestContext requestContext = mock(ContainerRequestContext.class);
+        ContainerResponseContext responseContext = mock(ContainerResponseContext.class);
+        doReturn(authorizationHeader).when(requestContext).getHeaderString(HttpHeaders.AUTHORIZATION);
+        doReturn(new MultivaluedHashMap<String, Object>()).when(responseContext).getHeaders();
+
+        responseFilter.filter(requestContext, responseContext);
+
+        verify(keyGenerator, times(1)).generateKey();
+        verify(requestContext, times(1)).getHeaderString(HttpHeaders.AUTHORIZATION);
+        verify(responseContext, times(1)).getHeaders();
+        verify(jwsWrapper, times(1)).getClaimsJws(any(), any());
+        verify(tokenIssuer, never()).issueToken(any());
     }
 }
