@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="12054cd0-f72f-4c45-9241-d79069bd8fa5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/service/src/test/java/org/helmut/profile/rest/service/UserServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/repository/src/test/java/org/helmut/profile/repository/BaseRepositoryTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/repository/src/test/java/org/helmut/profile/repository/UserRepositoryTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/main/java/org/helmut/profile/rest/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/org/helmut/profile/rest/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/test/java/org/helmut/profile/rest/service/ProjectServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/test/java/org/helmut/profile/rest/service/ProjectServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,8 +17,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -37,12 +36,14 @@
   <component name="JpbToolWindowState">
     <option name="myId2FirstActivated">
       <map>
+        <entry key="JPA Inspector" value="true" />
         <entry key="JPA Palette" value="true" />
         <entry key="JPA Structure" value="true" />
       </map>
     </option>
     <option name="myId2Visible">
       <map>
+        <entry key="JPA Inspector" value="true" />
         <entry key="JPA Palette" value="false" />
         <entry key="JPA Structure" value="false" />
       </map>
@@ -92,14 +93,14 @@
       <recent name="org.helmut.profile" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="org.helmut.profile.repository" />
       <recent name="org.helmut.profile.rest.service" />
       <recent name="org.helmut.profile.business.decorator" />
       <recent name="org.helmut.profile.business.bc" />
       <recent name="org.helmut.profile.business.mapping" />
-      <recent name="org.helmut.profile.business.client" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.UserServiceTest$UpdateUserTest.updateUserFailed">
+  <component name="RunManager" selected="JUnit.BaseRepositoryTest.countByProperty">
     <configuration name="payara" type="GlassfishConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="GlassFish 5.2021.3" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="corretto-1.8">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
@@ -166,80 +167,81 @@
       </ConfigurationWrapper>
       <method v="2" />
     </configuration>
-    <configuration name="UserServiceTest$ChangePasswordTest$EqualPasswordsTest.changePasswordFailed" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="service" />
+    <configuration name="BaseRepositoryTest.countByProperty" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="repository" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.helmut.profile.rest.service.*" />
+          <option name="PATTERN" value="org.helmut.profile.repository.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.helmut.profile.rest.service.UserServiceTest.ChangePasswordTest" />
-      <option name="MAIN_CLASS_NAME" value="org.helmut.profile.rest.service.UserServiceTest$ChangePasswordTest$EqualPasswordsTest" />
-      <option name="METHOD_NAME" value="changePasswordFailed" />
+      <option name="PACKAGE_NAME" value="org.helmut.profile.repository" />
+      <option name="MAIN_CLASS_NAME" value="org.helmut.profile.repository.BaseRepositoryTest" />
+      <option name="METHOD_NAME" value="countByProperty" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserServiceTest$ChangePasswordTest$EqualPasswordsTest.changePasswordSuccessful" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="service" />
+    <configuration name="BaseRepositoryTest.delete" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="repository" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.helmut.profile.rest.service.*" />
+          <option name="PATTERN" value="org.helmut.profile.repository.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.helmut.profile.rest.service.UserServiceTest.ChangePasswordTest" />
-      <option name="MAIN_CLASS_NAME" value="org.helmut.profile.rest.service.UserServiceTest$ChangePasswordTest$EqualPasswordsTest" />
-      <option name="METHOD_NAME" value="changePasswordSuccessful" />
+      <option name="PACKAGE_NAME" value="org.helmut.profile.repository" />
+      <option name="MAIN_CLASS_NAME" value="org.helmut.profile.repository.BaseRepositoryTest" />
+      <option name="METHOD_NAME" value="delete" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserServiceTest$ChangePasswordTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="service" />
+    <configuration name="BaseRepositoryTest.findByProperty" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="repository" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.helmut.profile.rest.service.*" />
+          <option name="PATTERN" value="org.helmut.profile.repository.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.helmut.profile.rest.service.UserServiceTest" />
-      <option name="MAIN_CLASS_NAME" value="org.helmut.profile.rest.service.UserServiceTest$ChangePasswordTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserServiceTest$UpdateUserTest.updateUserFailed" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="service" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.helmut.profile.rest.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.helmut.profile.rest.service.UserServiceTest" />
-      <option name="MAIN_CLASS_NAME" value="org.helmut.profile.rest.service.UserServiceTest$UpdateUserTest" />
-      <option name="METHOD_NAME" value="updateUserFailed" />
+      <option name="PACKAGE_NAME" value="org.helmut.profile.repository" />
+      <option name="MAIN_CLASS_NAME" value="org.helmut.profile.repository.BaseRepositoryTest" />
+      <option name="METHOD_NAME" value="findByProperty" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserServiceTest$UpdateUserTest.updateUserSuccessful" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="service" />
+    <configuration name="BaseRepositoryTest.findByUniqueProperty" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="repository" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.helmut.profile.rest.service.*" />
+          <option name="PATTERN" value="org.helmut.profile.repository.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.helmut.profile.rest.service.UserServiceTest" />
-      <option name="MAIN_CLASS_NAME" value="org.helmut.profile.rest.service.UserServiceTest$UpdateUserTest" />
-      <option name="METHOD_NAME" value="updateUserSuccessful" />
+      <option name="PACKAGE_NAME" value="org.helmut.profile.repository" />
+      <option name="MAIN_CLASS_NAME" value="org.helmut.profile.repository.BaseRepositoryTest" />
+      <option name="METHOD_NAME" value="findByUniqueProperty" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BaseRepositoryTest.persist" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="repository" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.helmut.profile.repository.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.helmut.profile.repository" />
+      <option name="MAIN_CLASS_NAME" value="org.helmut.profile.repository.BaseRepositoryTest" />
+      <option name="METHOD_NAME" value="persist" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -262,19 +264,19 @@
       <item itemvalue="GlassFish Server.payara" />
       <item itemvalue="JavaScript Debug.Angular Application (profile)" />
       <item itemvalue="npm.Angular CLI Server (profile)" />
-      <item itemvalue="JUnit.UserServiceTest$ChangePasswordTest" />
-      <item itemvalue="JUnit.UserServiceTest$ChangePasswordTest$EqualPasswordsTest.changePasswordSuccessful" />
-      <item itemvalue="JUnit.UserServiceTest$ChangePasswordTest$EqualPasswordsTest.changePasswordFailed" />
-      <item itemvalue="JUnit.UserServiceTest$UpdateUserTest.updateUserSuccessful" />
-      <item itemvalue="JUnit.UserServiceTest$UpdateUserTest.updateUserFailed" />
+      <item itemvalue="JUnit.BaseRepositoryTest.persist" />
+      <item itemvalue="JUnit.BaseRepositoryTest.delete" />
+      <item itemvalue="JUnit.BaseRepositoryTest.findByProperty" />
+      <item itemvalue="JUnit.BaseRepositoryTest.findByUniqueProperty" />
+      <item itemvalue="JUnit.BaseRepositoryTest.countByProperty" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.UserServiceTest$UpdateUserTest.updateUserFailed" />
-        <item itemvalue="JUnit.UserServiceTest$UpdateUserTest.updateUserSuccessful" />
-        <item itemvalue="JUnit.UserServiceTest$ChangePasswordTest" />
-        <item itemvalue="JUnit.UserServiceTest$ChangePasswordTest$EqualPasswordsTest.changePasswordFailed" />
-        <item itemvalue="JUnit.UserServiceTest$ChangePasswordTest$EqualPasswordsTest.changePasswordSuccessful" />
+        <item itemvalue="JUnit.BaseRepositoryTest.countByProperty" />
+        <item itemvalue="JUnit.BaseRepositoryTest.findByUniqueProperty" />
+        <item itemvalue="JUnit.BaseRepositoryTest.findByProperty" />
+        <item itemvalue="JUnit.BaseRepositoryTest.delete" />
+        <item itemvalue="JUnit.BaseRepositoryTest.persist" />
       </list>
     </recent_temporary>
   </component>
@@ -298,7 +300,7 @@
       <workItem from="1630560454201" duration="101000" />
       <workItem from="1630560573050" duration="571000" />
       <workItem from="1630561179861" duration="5542000" />
-      <workItem from="1630929248228" duration="39590000" />
+      <workItem from="1630929248228" duration="42614000" />
     </task>
     <servers />
   </component>
