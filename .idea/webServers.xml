@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="0be84e0c-d496-48b3-a638-b1ba072549aa" name="Payara server" url="http://localhost">
+        <fileTransfer mountedRoot="C:\dev\profile\tools\payara-5.2021.3\payara5" accessType="MOUNT" port="0" />
+      </webServer>
+    </option>
+  </component>
+</project>

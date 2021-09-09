@@ -52,7 +52,7 @@ INSERT INTO t_post(id, date_created, title, userentity_id, content) VALUES (1000
 INSERT INTO t_post(id, date_created, title, userentity_id, content) VALUES (10010,  current_timestamp, 'Test title10', 10001, 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.');
 
 -- Inserts for Helmut Siegel ----
-INSERT INTO t_user(id, first_name, last_name, title, email, birth_date, seniority, password) VALUES (20001, 'Helmut', 'Siegel', 'Full-Stack Developer', 'helmutsiegel17@gmail.com', '07/30/1995',2, 'd8lT6FWVtqT9wWCXj9rCfKQbsGEm3UI24Ca9xqBMosE=');
+INSERT INTO t_user(id, first_name, last_name, title, email, birth_date, seniority, password) VALUES (20001, 'Helmut', 'Siegel', 'Full-Stack Developer', 'helmut.siegel.dev@gmail.com', '07/30/1995',2, 'd8lT6FWVtqT9wWCXj9rCfKQbsGEm3UI24Ca9xqBMosE=');
 INSERT INTO t_cv(id, short_about, long_about, userentity_id) VALUES (20001, 'My short about', 'My long about', 20001);
 INSERT INTO t_experience(id, company, start_date, end_date, position, cv_id) VALUES (20001, 'msg systems Romania', '07/04/2016', '08/12/2016', 'Intern', 20001);
 INSERT INTO t_experience(id, company, start_date, end_date, position, cv_id) VALUES (20002, 'msg systems Romania', '09/19/2016', '11/14/2020', 'Full-stack developer', 20001);
