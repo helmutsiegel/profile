@@ -50,6 +50,12 @@ export class AboutComponent implements OnInit {
       author: 'Bryan Hansen',
       platform: 'Pluralsight',
       link: 'https://app.pluralsight.com/library/courses/restful-services-java-using-jersey/table-of-contents',
+      status: 'Finished'
+    }, {
+      title: 'Bean Validation 1.1',
+      author: 'Antonio Goncalves',
+      platform: 'Pluralsight',
+      link: 'https://app.pluralsight.com/library/courses/bean-validation/table-of-contents',
       status: 'In progress'
     }, {
       title: 'Maven Fundamentals',
