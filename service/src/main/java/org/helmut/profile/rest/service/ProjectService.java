@@ -79,7 +79,7 @@ public class ProjectService {
     @JWTTokenNeeded
     @Path("section")
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response createUpdate(SectionTO sectionTO) {
+    public Response updateSection(SectionTO sectionTO) {
         String currentUserEmail = httpHeaders.getHeaderString(CURRENT_USER_EMAIL);
         try {
             projectBC.updateSection(sectionTO, currentUserEmail);

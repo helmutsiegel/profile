@@ -5,11 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="12054cd0-f72f-4c45-9241-d79069bd8fa5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/src/test/java/org/helmut/profile/rest/service/PostServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/src/test/java/org/helmut/profile/rest/service/ProjectServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/repository/src/main/resources/META-INF/sql/data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/repository/src/main/resources/META-INF/sql/data.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/main/java/org/helmut/profile/rest/service/ProjectService.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/org/helmut/profile/rest/service/ProjectService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +98,7 @@
       <recent name="org.helmut.profile.business.client" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.PostServiceTest$DeletePostTest">
+  <component name="RunManager" selected="JUnit.ProjectServiceTest$UpdateSectionTest.updateSectionFailed">
     <configuration name="payara" type="GlassfishConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="GlassFish 5.2021.3" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="corretto-1.8">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
@@ -167,7 +165,7 @@
       </ConfigurationWrapper>
       <method v="2" />
     </configuration>
-    <configuration name="PostServiceTest$DeletePostTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ProjectServiceTest$CreateChapterTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="service" />
       <extension name="coverage">
         <pattern>
@@ -175,14 +173,14 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.helmut.profile.rest.service.PostServiceTest" />
-      <option name="MAIN_CLASS_NAME" value="org.helmut.profile.rest.service.PostServiceTest$DeletePostTest" />
+      <option name="PACKAGE_NAME" value="org.helmut.profile.rest.service.ProjectServiceTest" />
+      <option name="MAIN_CLASS_NAME" value="org.helmut.profile.rest.service.ProjectServiceTest$CreateChapterTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PostServiceTest$NewPostTest.newPostFailed" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ProjectServiceTest$CreateProjectTest.createProjectFailed" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="service" />
       <extension name="coverage">
         <pattern>
@@ -190,15 +188,15 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.helmut.profile.rest.service.PostServiceTest" />
-      <option name="MAIN_CLASS_NAME" value="org.helmut.profile.rest.service.PostServiceTest$NewPostTest" />
-      <option name="METHOD_NAME" value="newPostFailed" />
+      <option name="PACKAGE_NAME" value="org.helmut.profile.rest.service.ProjectServiceTest" />
+      <option name="MAIN_CLASS_NAME" value="org.helmut.profile.rest.service.ProjectServiceTest$CreateProjectTest" />
+      <option name="METHOD_NAME" value="createProjectFailed" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PostServiceTest$NewPostTest.newPostSuccessful" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ProjectServiceTest$CreateProjectTest.createProjectSuccessful" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="service" />
       <extension name="coverage">
         <pattern>
@@ -206,15 +204,15 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.helmut.profile.rest.service.PostServiceTest" />
-      <option name="MAIN_CLASS_NAME" value="org.helmut.profile.rest.service.PostServiceTest$NewPostTest" />
-      <option name="METHOD_NAME" value="newPostSuccessful" />
+      <option name="PACKAGE_NAME" value="org.helmut.profile.rest.service.ProjectServiceTest" />
+      <option name="MAIN_CLASS_NAME" value="org.helmut.profile.rest.service.ProjectServiceTest$CreateProjectTest" />
+      <option name="METHOD_NAME" value="createProjectSuccessful" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PostServiceTest$UpdatePostTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ProjectServiceTest$UpdateSectionTest.updateSectionFailed" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="service" />
       <extension name="coverage">
         <pattern>
@@ -222,14 +220,15 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.helmut.profile.rest.service.PostServiceTest" />
-      <option name="MAIN_CLASS_NAME" value="org.helmut.profile.rest.service.PostServiceTest$UpdatePostTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="org.helmut.profile.rest.service.ProjectServiceTest" />
+      <option name="MAIN_CLASS_NAME" value="org.helmut.profile.rest.service.ProjectServiceTest$UpdateSectionTest" />
+      <option name="METHOD_NAME" value="updateSectionFailed" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PostServiceTest.getByEmail" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ProjectServiceTest$UpdateSectionTest.updateSectionSuccessful" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="service" />
       <extension name="coverage">
         <pattern>
@@ -237,9 +236,9 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.helmut.profile.rest.service" />
-      <option name="MAIN_CLASS_NAME" value="org.helmut.profile.rest.service.PostServiceTest" />
-      <option name="METHOD_NAME" value="getByEmail" />
+      <option name="PACKAGE_NAME" value="org.helmut.profile.rest.service.ProjectServiceTest" />
+      <option name="MAIN_CLASS_NAME" value="org.helmut.profile.rest.service.ProjectServiceTest$UpdateSectionTest" />
+      <option name="METHOD_NAME" value="updateSectionSuccessful" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -262,19 +261,19 @@
       <item itemvalue="GlassFish Server.payara" />
       <item itemvalue="JavaScript Debug.Angular Application (profile)" />
       <item itemvalue="npm.Angular CLI Server (profile)" />
-      <item itemvalue="JUnit.PostServiceTest.getByEmail" />
-      <item itemvalue="JUnit.PostServiceTest$NewPostTest.newPostSuccessful" />
-      <item itemvalue="JUnit.PostServiceTest$NewPostTest.newPostFailed" />
-      <item itemvalue="JUnit.PostServiceTest$UpdatePostTest" />
-      <item itemvalue="JUnit.PostServiceTest$DeletePostTest" />
+      <item itemvalue="JUnit.ProjectServiceTest$CreateProjectTest.createProjectSuccessful" />
+      <item itemvalue="JUnit.ProjectServiceTest$CreateProjectTest.createProjectFailed" />
+      <item itemvalue="JUnit.ProjectServiceTest$CreateChapterTest" />
+      <item itemvalue="JUnit.ProjectServiceTest$UpdateSectionTest.updateSectionSuccessful" />
+      <item itemvalue="JUnit.ProjectServiceTest$UpdateSectionTest.updateSectionFailed" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.PostServiceTest$DeletePostTest" />
-        <item itemvalue="JUnit.PostServiceTest$UpdatePostTest" />
-        <item itemvalue="JUnit.PostServiceTest$NewPostTest.newPostFailed" />
-        <item itemvalue="JUnit.PostServiceTest$NewPostTest.newPostSuccessful" />
-        <item itemvalue="JUnit.PostServiceTest.getByEmail" />
+        <item itemvalue="JUnit.ProjectServiceTest$UpdateSectionTest.updateSectionFailed" />
+        <item itemvalue="JUnit.ProjectServiceTest$UpdateSectionTest.updateSectionSuccessful" />
+        <item itemvalue="JUnit.ProjectServiceTest$CreateChapterTest" />
+        <item itemvalue="JUnit.ProjectServiceTest$CreateProjectTest.createProjectFailed" />
+        <item itemvalue="JUnit.ProjectServiceTest$CreateProjectTest.createProjectSuccessful" />
       </list>
     </recent_temporary>
   </component>
@@ -298,7 +297,7 @@
       <workItem from="1630560454201" duration="101000" />
       <workItem from="1630560573050" duration="571000" />
       <workItem from="1630561179861" duration="5542000" />
-      <workItem from="1630929248228" duration="34481000" />
+      <workItem from="1630929248228" duration="36249000" />
     </task>
     <servers />
   </component>
