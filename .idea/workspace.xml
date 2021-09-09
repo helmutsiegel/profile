@@ -5,9 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="12054cd0-f72f-4c45-9241-d79069bd8fa5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/repository/src/test/java/org/helmut/profile/repository/BaseRepositoryTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/repository/src/test/java/org/helmut/profile/repository/UserRepositoryTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_12.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_powermock_powermock_core_2_0_9.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_powermock_powermock_module_junit4_2_0_9.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_powermock_powermock_module_junit4_common_2_0_9.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_powermock_powermock_reflect_2_0_9.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/profile_war_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/profile_war_war_exploded.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/web_client_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/web_client_war_exploded.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_5_4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_8_0.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_5_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_5_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_jaxrs_jackson_jaxrs_base_2_5_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_jaxrs_jackson_jaxrs_json_provider_2_5_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_module_jackson_module_jaxb_annotations_2_5_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jersey_ext_jersey_entity_filtering_2_22_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_glassfish_jersey_media_jersey_media_json_jackson_2_22_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/profile.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/profile.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/repository/src/test/java/org/helmut/profile/repository/UserRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/repository/src/test/java/org/helmut/profile/repository/UserRepositoryTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +116,7 @@
       <recent name="org.helmut.profile.business.mapping" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.BaseRepositoryTest.countByProperty">
+  <component name="RunManager" selected="JUnit.UserRepositoryTest.getByEmail">
     <configuration name="payara" type="GlassfishConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="GlassFish 5.2021.3" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="corretto-1.8">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
@@ -183,38 +199,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BaseRepositoryTest.delete" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="repository" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.helmut.profile.repository.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.helmut.profile.repository" />
-      <option name="MAIN_CLASS_NAME" value="org.helmut.profile.repository.BaseRepositoryTest" />
-      <option name="METHOD_NAME" value="delete" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BaseRepositoryTest.findByProperty" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="repository" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.helmut.profile.repository.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.helmut.profile.repository" />
-      <option name="MAIN_CLASS_NAME" value="org.helmut.profile.repository.BaseRepositoryTest" />
-      <option name="METHOD_NAME" value="findByProperty" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="BaseRepositoryTest.findByUniqueProperty" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="repository" />
       <extension name="coverage">
@@ -231,7 +215,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BaseRepositoryTest.persist" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserRepositoryTest.getByEmail" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="repository" />
       <extension name="coverage">
         <pattern>
@@ -240,8 +224,40 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.helmut.profile.repository" />
-      <option name="MAIN_CLASS_NAME" value="org.helmut.profile.repository.BaseRepositoryTest" />
-      <option name="METHOD_NAME" value="persist" />
+      <option name="MAIN_CLASS_NAME" value="org.helmut.profile.repository.UserRepositoryTest" />
+      <option name="METHOD_NAME" value="getByEmail" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserRepositoryTest.getByEmailAndPassword" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="repository" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.helmut.profile.repository.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.helmut.profile.repository" />
+      <option name="MAIN_CLASS_NAME" value="org.helmut.profile.repository.UserRepositoryTest" />
+      <option name="METHOD_NAME" value="getByEmailAndPassword" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserRepositoryTest.searchUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="repository" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.helmut.profile.repository.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.helmut.profile.repository" />
+      <option name="MAIN_CLASS_NAME" value="org.helmut.profile.repository.UserRepositoryTest" />
+      <option name="METHOD_NAME" value="searchUser" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -264,19 +280,19 @@
       <item itemvalue="GlassFish Server.payara" />
       <item itemvalue="JavaScript Debug.Angular Application (profile)" />
       <item itemvalue="npm.Angular CLI Server (profile)" />
-      <item itemvalue="JUnit.BaseRepositoryTest.persist" />
-      <item itemvalue="JUnit.BaseRepositoryTest.delete" />
-      <item itemvalue="JUnit.BaseRepositoryTest.findByProperty" />
       <item itemvalue="JUnit.BaseRepositoryTest.findByUniqueProperty" />
       <item itemvalue="JUnit.BaseRepositoryTest.countByProperty" />
+      <item itemvalue="JUnit.UserRepositoryTest.searchUser" />
+      <item itemvalue="JUnit.UserRepositoryTest.getByEmailAndPassword" />
+      <item itemvalue="JUnit.UserRepositoryTest.getByEmail" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.UserRepositoryTest.getByEmail" />
+        <item itemvalue="JUnit.UserRepositoryTest.getByEmailAndPassword" />
+        <item itemvalue="JUnit.UserRepositoryTest.searchUser" />
         <item itemvalue="JUnit.BaseRepositoryTest.countByProperty" />
         <item itemvalue="JUnit.BaseRepositoryTest.findByUniqueProperty" />
-        <item itemvalue="JUnit.BaseRepositoryTest.findByProperty" />
-        <item itemvalue="JUnit.BaseRepositoryTest.delete" />
-        <item itemvalue="JUnit.BaseRepositoryTest.persist" />
       </list>
     </recent_temporary>
   </component>
@@ -300,7 +316,7 @@
       <workItem from="1630560454201" duration="101000" />
       <workItem from="1630560573050" duration="571000" />
       <workItem from="1630561179861" duration="5542000" />
-      <workItem from="1630929248228" duration="42614000" />
+      <workItem from="1630929248228" duration="44737000" />
     </task>
     <servers />
   </component>
