@@ -4,6 +4,7 @@ import org.helmut.profile.business.bc.CvBC;
 import org.helmut.profile.business.model.CertificationTO;
 import org.helmut.profile.business.model.CvTO;
 import org.helmut.profile.business.model.ExperienceTO;
+import org.helmut.profile.business.model.LanguageTO;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -86,5 +87,21 @@ class CvServiceTest {
         verify(cvBC, times(1)).updateCertifications(certificationsToUpdate, email);
         assertEquals(response.getStatus(), Response.Status.OK.getStatusCode());
         assertSame(response.getEntity(), updatedCertifications);
+    }
+
+    @Test
+    void updateLanguages() {
+        //setup
+        String email = "email@mail.com";
+        List<LanguageTO> languagesToUpdate = Collections.singletonList(new LanguageTO());
+        List<LanguageTO> updatedLanguages = Collections.singletonList(new LanguageTO());
+        doReturn(email).when(httpHeaders).getHeaderString(CURRENT_USER_EMAIL);
+        doReturn(updatedLanguages).when(cvBC).updateLanguages(languagesToUpdate, email);
+        //Test call
+        Response response = cvService.updateLanguages(languagesToUpdate);
+        //asserts
+        verify(cvBC, times(1)).updateLanguages(languagesToUpdate, email);
+        assertEquals(response.getStatus(), Response.Status.OK.getStatusCode());
+        assertSame(response.getEntity(), updatedLanguages);
     }
 }
