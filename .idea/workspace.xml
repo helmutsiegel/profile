@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="12054cd0-f72f-4c45-9241-d79069bd8fa5" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/service/src/test/java/org/helmut/profile/rest/auth/filter/ResponseFilterTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-client/src/main/js/profile/src/app/component/about/about.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web-client/src/main/js/profile/src/app/component/about/about.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,8 +16,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JUnit5 Test Class" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -92,14 +92,14 @@
       <recent name="org.helmut.profile" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="org.helmut.profile.rest.auth.filter" />
       <recent name="org.helmut.profile.repository" />
       <recent name="org.helmut.profile.rest.service" />
       <recent name="org.helmut.profile.business.decorator" />
       <recent name="org.helmut.profile.business.bc" />
-      <recent name="org.helmut.profile.business.mapping" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.UserRepositoryTest.getByEmail">
+  <component name="RunManager" selected="JUnit.ResponseFilterTest.filter">
     <configuration name="payara" type="GlassfishConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="GlassFish 5.2021.3" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="corretto-1.8">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
@@ -166,33 +166,32 @@
       </ConfigurationWrapper>
       <method v="2" />
     </configuration>
-    <configuration name="BaseRepositoryTest.countByProperty" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="repository" />
+    <configuration name="ResponseFilterTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="service" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.helmut.profile.repository.*" />
+          <option name="PATTERN" value="org.helmut.profile.rest.auth.filter.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.helmut.profile.repository" />
-      <option name="MAIN_CLASS_NAME" value="org.helmut.profile.repository.BaseRepositoryTest" />
-      <option name="METHOD_NAME" value="countByProperty" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="org.helmut.profile.rest.auth.filter" />
+      <option name="MAIN_CLASS_NAME" value="org.helmut.profile.rest.auth.filter.ResponseFilterTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BaseRepositoryTest.findByUniqueProperty" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="repository" />
+    <configuration name="ResponseFilterTest.filter" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="service" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.helmut.profile.repository.*" />
+          <option name="PATTERN" value="org.helmut.profile.rest.auth.filter.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.helmut.profile.repository" />
-      <option name="MAIN_CLASS_NAME" value="org.helmut.profile.repository.BaseRepositoryTest" />
-      <option name="METHOD_NAME" value="findByUniqueProperty" />
+      <option name="PACKAGE_NAME" value="org.helmut.profile.rest.auth.filter" />
+      <option name="MAIN_CLASS_NAME" value="org.helmut.profile.rest.auth.filter.ResponseFilterTest" />
+      <option name="METHOD_NAME" value="filter" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -263,19 +262,19 @@
       <item itemvalue="GlassFish Server.payara" />
       <item itemvalue="JavaScript Debug.Angular Application (profile)" />
       <item itemvalue="npm.Angular CLI Server (profile)" />
-      <item itemvalue="JUnit.BaseRepositoryTest.findByUniqueProperty" />
-      <item itemvalue="JUnit.BaseRepositoryTest.countByProperty" />
       <item itemvalue="JUnit.UserRepositoryTest.searchUser" />
       <item itemvalue="JUnit.UserRepositoryTest.getByEmailAndPassword" />
       <item itemvalue="JUnit.UserRepositoryTest.getByEmail" />
+      <item itemvalue="JUnit.ResponseFilterTest.filter" />
+      <item itemvalue="JUnit.ResponseFilterTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ResponseFilterTest.filter" />
+        <item itemvalue="JUnit.ResponseFilterTest" />
         <item itemvalue="JUnit.UserRepositoryTest.getByEmail" />
         <item itemvalue="JUnit.UserRepositoryTest.getByEmailAndPassword" />
         <item itemvalue="JUnit.UserRepositoryTest.searchUser" />
-        <item itemvalue="JUnit.BaseRepositoryTest.countByProperty" />
-        <item itemvalue="JUnit.BaseRepositoryTest.findByUniqueProperty" />
       </list>
     </recent_temporary>
   </component>
@@ -299,7 +298,7 @@
       <workItem from="1630560454201" duration="101000" />
       <workItem from="1630560573050" duration="571000" />
       <workItem from="1630561179861" duration="5542000" />
-      <workItem from="1630929248228" duration="46102000" />
+      <workItem from="1630929248228" duration="48238000" />
     </task>
     <servers />
   </component>
