@@ -1,9 +1,13 @@
 package org.helmut.profile.rest.service;
 
 import org.helmut.profile.business.bc.ProjectBC;
+import org.helmut.profile.business.bci.UserBCI;
+import org.helmut.profile.business.client.UserClient;
 import org.helmut.profile.business.model.CreateChapterTO;
 import org.helmut.profile.business.model.ProjectTO;
 import org.helmut.profile.business.model.SectionTO;
+import org.helmut.profile.common.logging.Logger;
+import org.helmut.profile.rest.auth.util.TokenIssuer;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
@@ -12,6 +16,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import javax.inject.Inject;
 import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.Response;
 import java.util.Collections;

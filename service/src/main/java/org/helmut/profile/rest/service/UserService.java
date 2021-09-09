@@ -137,7 +137,7 @@ public class UserService {
     public Response updateUser(UserTO userTO) {
         String currentUserEmail = httpHeaders.getHeaderString(CURRENT_USER_EMAIL);
         if (!userTO.getEmail().equals(currentUserEmail)) {
-            Response.status(UNAUTHORIZED).build();
+            return Response.status(UNAUTHORIZED).build();
         }
         return Response.ok(userBC.updateUser(userTO)).build();
     }

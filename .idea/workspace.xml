@@ -5,9 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="12054cd0-f72f-4c45-9241-d79069bd8fa5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/service/src/test/java/org/helmut/profile/rest/service/ProjectServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/src/test/java/org/helmut/profile/rest/service/UserServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/main/java/org/helmut/profile/rest/service/ProjectService.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/org/helmut/profile/rest/service/ProjectService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/main/java/org/helmut/profile/rest/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/org/helmut/profile/rest/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/test/java/org/helmut/profile/rest/service/ProjectServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/test/java/org/helmut/profile/rest/service/ProjectServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +99,7 @@
       <recent name="org.helmut.profile.business.client" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ProjectServiceTest$UpdateSectionTest.updateSectionFailed">
+  <component name="RunManager" selected="JUnit.UserServiceTest$UpdateUserTest.updateUserFailed">
     <configuration name="payara" type="GlassfishConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="GlassFish 5.2021.3" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="corretto-1.8">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
@@ -165,7 +166,7 @@
       </ConfigurationWrapper>
       <method v="2" />
     </configuration>
-    <configuration name="ProjectServiceTest$CreateChapterTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserServiceTest$ChangePasswordTest$EqualPasswordsTest.changePasswordFailed" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="service" />
       <extension name="coverage">
         <pattern>
@@ -173,14 +174,46 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.helmut.profile.rest.service.ProjectServiceTest" />
-      <option name="MAIN_CLASS_NAME" value="org.helmut.profile.rest.service.ProjectServiceTest$CreateChapterTest" />
+      <option name="PACKAGE_NAME" value="org.helmut.profile.rest.service.UserServiceTest.ChangePasswordTest" />
+      <option name="MAIN_CLASS_NAME" value="org.helmut.profile.rest.service.UserServiceTest$ChangePasswordTest$EqualPasswordsTest" />
+      <option name="METHOD_NAME" value="changePasswordFailed" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceTest$ChangePasswordTest$EqualPasswordsTest.changePasswordSuccessful" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.helmut.profile.rest.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.helmut.profile.rest.service.UserServiceTest.ChangePasswordTest" />
+      <option name="MAIN_CLASS_NAME" value="org.helmut.profile.rest.service.UserServiceTest$ChangePasswordTest$EqualPasswordsTest" />
+      <option name="METHOD_NAME" value="changePasswordSuccessful" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceTest$ChangePasswordTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.helmut.profile.rest.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.helmut.profile.rest.service.UserServiceTest" />
+      <option name="MAIN_CLASS_NAME" value="org.helmut.profile.rest.service.UserServiceTest$ChangePasswordTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProjectServiceTest$CreateProjectTest.createProjectFailed" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserServiceTest$UpdateUserTest.updateUserFailed" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="service" />
       <extension name="coverage">
         <pattern>
@@ -188,15 +221,15 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.helmut.profile.rest.service.ProjectServiceTest" />
-      <option name="MAIN_CLASS_NAME" value="org.helmut.profile.rest.service.ProjectServiceTest$CreateProjectTest" />
-      <option name="METHOD_NAME" value="createProjectFailed" />
+      <option name="PACKAGE_NAME" value="org.helmut.profile.rest.service.UserServiceTest" />
+      <option name="MAIN_CLASS_NAME" value="org.helmut.profile.rest.service.UserServiceTest$UpdateUserTest" />
+      <option name="METHOD_NAME" value="updateUserFailed" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProjectServiceTest$CreateProjectTest.createProjectSuccessful" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserServiceTest$UpdateUserTest.updateUserSuccessful" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="service" />
       <extension name="coverage">
         <pattern>
@@ -204,41 +237,9 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.helmut.profile.rest.service.ProjectServiceTest" />
-      <option name="MAIN_CLASS_NAME" value="org.helmut.profile.rest.service.ProjectServiceTest$CreateProjectTest" />
-      <option name="METHOD_NAME" value="createProjectSuccessful" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ProjectServiceTest$UpdateSectionTest.updateSectionFailed" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="service" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.helmut.profile.rest.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.helmut.profile.rest.service.ProjectServiceTest" />
-      <option name="MAIN_CLASS_NAME" value="org.helmut.profile.rest.service.ProjectServiceTest$UpdateSectionTest" />
-      <option name="METHOD_NAME" value="updateSectionFailed" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ProjectServiceTest$UpdateSectionTest.updateSectionSuccessful" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="service" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.helmut.profile.rest.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.helmut.profile.rest.service.ProjectServiceTest" />
-      <option name="MAIN_CLASS_NAME" value="org.helmut.profile.rest.service.ProjectServiceTest$UpdateSectionTest" />
-      <option name="METHOD_NAME" value="updateSectionSuccessful" />
+      <option name="PACKAGE_NAME" value="org.helmut.profile.rest.service.UserServiceTest" />
+      <option name="MAIN_CLASS_NAME" value="org.helmut.profile.rest.service.UserServiceTest$UpdateUserTest" />
+      <option name="METHOD_NAME" value="updateUserSuccessful" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -261,19 +262,19 @@
       <item itemvalue="GlassFish Server.payara" />
       <item itemvalue="JavaScript Debug.Angular Application (profile)" />
       <item itemvalue="npm.Angular CLI Server (profile)" />
-      <item itemvalue="JUnit.ProjectServiceTest$CreateProjectTest.createProjectSuccessful" />
-      <item itemvalue="JUnit.ProjectServiceTest$CreateProjectTest.createProjectFailed" />
-      <item itemvalue="JUnit.ProjectServiceTest$CreateChapterTest" />
-      <item itemvalue="JUnit.ProjectServiceTest$UpdateSectionTest.updateSectionSuccessful" />
-      <item itemvalue="JUnit.ProjectServiceTest$UpdateSectionTest.updateSectionFailed" />
+      <item itemvalue="JUnit.UserServiceTest$ChangePasswordTest" />
+      <item itemvalue="JUnit.UserServiceTest$ChangePasswordTest$EqualPasswordsTest.changePasswordSuccessful" />
+      <item itemvalue="JUnit.UserServiceTest$ChangePasswordTest$EqualPasswordsTest.changePasswordFailed" />
+      <item itemvalue="JUnit.UserServiceTest$UpdateUserTest.updateUserSuccessful" />
+      <item itemvalue="JUnit.UserServiceTest$UpdateUserTest.updateUserFailed" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ProjectServiceTest$UpdateSectionTest.updateSectionFailed" />
-        <item itemvalue="JUnit.ProjectServiceTest$UpdateSectionTest.updateSectionSuccessful" />
-        <item itemvalue="JUnit.ProjectServiceTest$CreateChapterTest" />
-        <item itemvalue="JUnit.ProjectServiceTest$CreateProjectTest.createProjectFailed" />
-        <item itemvalue="JUnit.ProjectServiceTest$CreateProjectTest.createProjectSuccessful" />
+        <item itemvalue="JUnit.UserServiceTest$UpdateUserTest.updateUserFailed" />
+        <item itemvalue="JUnit.UserServiceTest$UpdateUserTest.updateUserSuccessful" />
+        <item itemvalue="JUnit.UserServiceTest$ChangePasswordTest" />
+        <item itemvalue="JUnit.UserServiceTest$ChangePasswordTest$EqualPasswordsTest.changePasswordFailed" />
+        <item itemvalue="JUnit.UserServiceTest$ChangePasswordTest$EqualPasswordsTest.changePasswordSuccessful" />
       </list>
     </recent_temporary>
   </component>
@@ -297,7 +298,7 @@
       <workItem from="1630560454201" duration="101000" />
       <workItem from="1630560573050" duration="571000" />
       <workItem from="1630561179861" duration="5542000" />
-      <workItem from="1630929248228" duration="36249000" />
+      <workItem from="1630929248228" duration="39590000" />
     </task>
     <servers />
   </component>
