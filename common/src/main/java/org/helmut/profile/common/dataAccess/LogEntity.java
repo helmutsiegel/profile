@@ -1,6 +1,7 @@
 package org.helmut.profile.common.dataAccess;
 
 import javax.persistence.*;
+import java.util.Objects;
 
 /**
  * Entity class for table T_LOG
@@ -63,5 +64,18 @@ public class LogEntity {
 
     public void setAdditionalInfo(String additionalInfo) {
         this.additionalInfo = additionalInfo;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        LogEntity logEntity = (LogEntity) o;
+        return Objects.equals(id, logEntity.id) && Objects.equals(className, logEntity.className) && Objects.equals(message, logEntity.message) && logType == logEntity.logType && Objects.equals(additionalInfo, logEntity.additionalInfo);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, className, message, logType, additionalInfo);
     }
 }

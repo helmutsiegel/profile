@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="12054cd0-f72f-4c45-9241-d79069bd8fa5" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/service/src/test/java/org/helmut/profile/common/logging/DatabaseLoggerImplTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/test/java/org/helmut/profile/rest/auth/filter/ResponseFilterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/test/java/org/helmut/profile/rest/auth/filter/ResponseFilterTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/org/helmut/profile/common/dataAccess/LogEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/org/helmut/profile/common/dataAccess/LogEntity.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,8 +17,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JUnit5 Test Class" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -92,14 +93,14 @@
       <recent name="org.helmut.profile" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="org.helmut.profile.common.logging" />
       <recent name="org.helmut.profile.rest.auth.filter" />
       <recent name="org.helmut.profile.repository" />
       <recent name="org.helmut.profile.rest.service" />
       <recent name="org.helmut.profile.business.decorator" />
-      <recent name="org.helmut.profile.business.bc" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ResponseFilterTest.filterTokenIssueFailed">
+  <component name="RunManager" selected="JUnit.DatabaseLoggerImplTest.info">
     <configuration name="payara" type="GlassfishConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="GlassFish 5.2021.3" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="corretto-1.8">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
@@ -166,6 +167,22 @@
       </ConfigurationWrapper>
       <method v="2" />
     </configuration>
+    <configuration name="DatabaseLoggerImplTest.info" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.helmut.profile.common.logging.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.helmut.profile.common.logging" />
+      <option name="MAIN_CLASS_NAME" value="org.helmut.profile.common.logging.DatabaseLoggerImplTest" />
+      <option name="METHOD_NAME" value="info" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ResponseFilterTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="service" />
       <extension name="coverage">
@@ -229,22 +246,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserRepositoryTest.getByEmailAndPassword" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="repository" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.helmut.profile.repository.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.helmut.profile.repository" />
-      <option name="MAIN_CLASS_NAME" value="org.helmut.profile.repository.UserRepositoryTest" />
-      <option name="METHOD_NAME" value="getByEmailAndPassword" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Angular Application (profile)" type="JavascriptDebugType" uri="http://localhost:4200">
       <method v="2" />
     </configuration>
@@ -262,19 +263,19 @@
       <item itemvalue="GlassFish Server.payara" />
       <item itemvalue="JavaScript Debug.Angular Application (profile)" />
       <item itemvalue="npm.Angular CLI Server (profile)" />
-      <item itemvalue="JUnit.UserRepositoryTest.getByEmailAndPassword" />
       <item itemvalue="JUnit.UserRepositoryTest.getByEmail" />
       <item itemvalue="JUnit.ResponseFilterTest.filter" />
       <item itemvalue="JUnit.ResponseFilterTest" />
       <item itemvalue="JUnit.ResponseFilterTest.filterTokenIssueFailed" />
+      <item itemvalue="JUnit.DatabaseLoggerImplTest.info" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DatabaseLoggerImplTest.info" />
         <item itemvalue="JUnit.ResponseFilterTest.filterTokenIssueFailed" />
         <item itemvalue="JUnit.ResponseFilterTest.filter" />
         <item itemvalue="JUnit.ResponseFilterTest" />
         <item itemvalue="JUnit.UserRepositoryTest.getByEmail" />
-        <item itemvalue="JUnit.UserRepositoryTest.getByEmailAndPassword" />
       </list>
     </recent_temporary>
   </component>
@@ -298,7 +299,7 @@
       <workItem from="1630560454201" duration="101000" />
       <workItem from="1630560573050" duration="571000" />
       <workItem from="1630561179861" duration="5542000" />
-      <workItem from="1630929248228" duration="50666000" />
+      <workItem from="1630929248228" duration="52743000" />
     </task>
     <servers />
   </component>
