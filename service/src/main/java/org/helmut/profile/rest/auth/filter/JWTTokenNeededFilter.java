@@ -5,6 +5,7 @@ import io.jsonwebtoken.Jws;
 import io.jsonwebtoken.Jwts;
 import org.helmut.profile.common.logging.Logger;
 import org.helmut.profile.common.qualifier.DatabaseLogger;
+import org.helmut.profile.rest.auth.JwsWrapper;
 import org.helmut.profile.rest.auth.util.KeyGenerator;
 
 import javax.annotation.Priority;
@@ -32,6 +33,9 @@ public class JWTTokenNeededFilter implements ContainerRequestFilter {
     @DatabaseLogger
     private Logger logger;
 
+    @Inject
+    private JwsWrapper jwsWrapper;
+
     @Override
     public void filter(ContainerRequestContext requestContext) {
         String authorizationHeader = requestContext.getHeaderString(HttpHeaders.AUTHORIZATION);
@@ -42,8 +46,7 @@ public class JWTTokenNeededFilter implements ContainerRequestFilter {
         String token = authorizationHeader.substring("Bearer".length()).trim();
 
         try {
-            Key key = keyGenerator.generateKey();
-            Jws<Claims> claimsJws = Jwts.parser().setSigningKey(key).parseClaimsJws(token);
+            Jws<Claims> claimsJws = jwsWrapper.getClaimsJws(keyGenerator.generateKey(), token);
             String subject = claimsJws.getBody().getSubject();
             requestContext.getHeaders().add(CURRENT_USER_EMAIL, subject);
         } catch (Exception e) {

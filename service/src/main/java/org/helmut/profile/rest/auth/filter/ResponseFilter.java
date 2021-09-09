@@ -3,6 +3,7 @@ package org.helmut.profile.rest.auth.filter;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jws;
 import io.jsonwebtoken.Jwts;
+import org.helmut.profile.rest.auth.JwsWrapper;
 import org.helmut.profile.rest.auth.util.KeyGenerator;
 import org.helmut.profile.rest.auth.util.TokenIssuer;
 
@@ -27,6 +28,9 @@ public class ResponseFilter implements ContainerResponseFilter {
     @Inject
     private TokenIssuer tokenIssuer;
 
+    @Inject
+    private JwsWrapper jwsWrapper;
+
     @Override
     public void filter(ContainerRequestContext requestContext, ContainerResponseContext responseContext) {
         String authorizationHeader = requestContext.getHeaderString(HttpHeaders.AUTHORIZATION);
@@ -34,8 +38,7 @@ public class ResponseFilter implements ContainerResponseFilter {
             String token = authorizationHeader.substring("Bearer".length()).trim();
 
             try {
-                Key key = keyGenerator.generateKey();
-                Jws<Claims> claimsJws = Jwts.parser().setSigningKey(key).parseClaimsJws(token);
+                Jws<Claims> claimsJws = jwsWrapper.getClaimsJws(keyGenerator.generateKey(), token);
 
                 if (minutesUntilExpiration(claimsJws.getBody().getExpiration()) < VALIDITY_LENGTH / 2) {
                     requestContext.getHeaders().remove(HttpHeaders.AUTHORIZATION);

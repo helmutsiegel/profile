@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="12054cd0-f72f-4c45-9241-d79069bd8fa5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/service/src/test/java/org/helmut/profile/rest/auth/filter/ResponseFilterTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/src/main/java/org/helmut/profile/rest/auth/JwsWrapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/main/java/org/helmut/profile/rest/auth/filter/JWTTokenNeededFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/org/helmut/profile/rest/auth/filter/JWTTokenNeededFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/main/java/org/helmut/profile/rest/auth/filter/ResponseFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/org/helmut/profile/rest/auth/filter/ResponseFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/test/java/org/helmut/profile/rest/auth/filter/ResponseFilterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/test/java/org/helmut/profile/rest/auth/filter/ResponseFilterTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,8 +19,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -298,7 +301,7 @@
       <workItem from="1630560454201" duration="101000" />
       <workItem from="1630560573050" duration="571000" />
       <workItem from="1630561179861" duration="5542000" />
-      <workItem from="1630929248228" duration="48238000" />
+      <workItem from="1630929248228" duration="50207000" />
     </task>
     <servers />
   </component>

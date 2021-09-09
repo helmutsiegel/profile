@@ -1,8 +1,10 @@
 package org.helmut.profile.rest.auth.filter;
 
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.Jws;
+import org.helmut.profile.rest.auth.JwsWrapper;
 import org.helmut.profile.rest.auth.util.KeyGenerator;
 import org.helmut.profile.rest.auth.util.TokenIssuer;
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -14,7 +16,7 @@ import javax.ws.rs.container.ContainerRequestContext;
 import javax.ws.rs.container.ContainerResponseContext;
 import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.MultivaluedHashMap;
-import javax.ws.rs.core.UriInfo;
+import java.util.Date;
 
 import static org.mockito.Mockito.*;
 
@@ -27,22 +29,34 @@ class ResponseFilterTest {
     @Spy
     private KeyGenerator keyGenerator;
 
-    @Spy
+    @Mock
+    private JwsWrapper jwsWrapper;
+
+    @Mock
     private TokenIssuer tokenIssuer;
 
     @Test
     void filter() {
+        String authorizationHeader = "Bearer token";
         ContainerRequestContext requestContext = mock(ContainerRequestContext.class);
         ContainerResponseContext responseContext = mock(ContainerResponseContext.class);
-
-        String authorizationHeader = "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJoZWxtdXQuc2llZ2VsLmRldkBnbWFpbC5jb20iLCJpc3MiOiJodHRwOi8vdGhlLXByb2ZpbGUubmV0L3JzL3VzZXIvbG9naW4iLCJpYXQiOjE2MzExOTAwMTUsImV4cCI6MTYzMTE5MzYxNX0.XHBOGbhObIGtjAcDLNFKkMTTwpVGF_FgRap9J2ge82DT4vhdIQBFv9skNs2BaE2R4SLMnYWnR5n1b6oIQdEd4w";
         doReturn(authorizationHeader).when(requestContext).getHeaderString(HttpHeaders.AUTHORIZATION);
+        Jws<Claims> jws = mock(Jws.class);
+        Claims claims = mock(Claims.class);
+        doReturn(new Date()).when(claims).getExpiration();
+        doReturn("subject").when(claims).getSubject();
+        doReturn(claims).when(jws).getBody();
+        doReturn(jws).when(jwsWrapper).getClaimsJws(any(), eq("token"));
         doReturn(new MultivaluedHashMap<String, Object>()).when(responseContext).getHeaders();
+        doReturn(new MultivaluedHashMap<String, Object>()).when(requestContext).getHeaders();
+        doReturn("new token").when(tokenIssuer).issueToken("subject");
 
         responseFilter.filter(requestContext, responseContext);
 
         verify(keyGenerator, times(1)).generateKey();
         verify(requestContext, times(2)).getHeaderString(HttpHeaders.AUTHORIZATION);
         verify(responseContext, times(1)).getHeaders();
+        verify(jwsWrapper, times(1)).getClaimsJws(any(), any());
+        verify(tokenIssuer, times(1)).issueToken("subject");
     }
 }
