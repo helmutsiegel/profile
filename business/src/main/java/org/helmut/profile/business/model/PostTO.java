@@ -8,11 +8,15 @@ public class PostTO {
     @NotNull
     private Long id;
 
+    @NotNull
     @Size(min = 5, max = 255)
     private String title;
 
+    @NotNull
     @Size(min = 50, max = 5000)
     private String content;
+
+    @NotNull
     private String tags;
     private String dateCreated;
 
