@@ -10,6 +10,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import javax.validation.Validator;
 import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.Response;
 import java.util.Collections;
@@ -31,6 +32,9 @@ class PostServiceTest {
 
     @Mock
     private HttpHeaders httpHeaders;
+
+    @Mock
+    private Validator validator;
 
     @Test
     void getByEmail() {

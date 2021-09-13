@@ -5,11 +5,11 @@ import org.helmut.profile.common.dataAccess.LogRepository;
 import org.helmut.profile.common.dataAccess.LogType;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.ArgumentMatchers;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import static org.mockito.ArgumentMatchers.argThat;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
@@ -31,7 +31,7 @@ class DatabaseLoggerImplTest {
 
         logger.info("message", TestEntity.class);
 
-        verify(logRepository, times(1)).persist(ArgumentMatchers.argThat(logEntity::equals));
+        verify(logRepository, times(1)).persist(argThat(logEntity::equals));
     }
 }
 

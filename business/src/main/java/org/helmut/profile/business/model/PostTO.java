@@ -1,8 +1,17 @@
 package org.helmut.profile.business.model;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 public class PostTO {
+
+    @NotNull
     private Long id;
+
+    @Size(min = 5, max = 255)
     private String title;
+
+    @Size(min = 50, max = 5000)
     private String content;
     private String tags;
     private String dateCreated;

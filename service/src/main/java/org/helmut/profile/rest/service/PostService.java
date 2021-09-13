@@ -2,22 +2,33 @@ package org.helmut.profile.rest.service;
 
 import org.helmut.profile.business.bc.PostBC;
 import org.helmut.profile.business.model.PostTO;
+import org.helmut.profile.common.ValidationUtils;
 import org.helmut.profile.rest.auth.filter.JWTTokenNeeded;
 
 import javax.inject.Inject;
+import javax.validation.ConstraintViolation;
+import javax.validation.Validator;
 import javax.ws.rs.*;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.List;
+import java.util.Set;
 
 import static org.helmut.profile.rest.service.Constants.CURRENT_USER_EMAIL;
 
 @Path("post")
 public class PostService {
+
+    @Inject
+    private Validator validator;
+
     @Inject
     private PostBC postBC;
+
+    @Inject
+    private ValidationUtils<PostTO> validationUtils;
 
     @Context
     private HttpHeaders httpHeaders;
@@ -42,6 +53,11 @@ public class PostService {
     @Produces(MediaType.APPLICATION_JSON)
     public Response newPost(PostTO postTO) {
         try {
+            Set<ConstraintViolation<PostTO>> constraintViolations = validator.validate(postTO);
+            if (constraintViolations.size() > 0) {
+                throw new IllegalArgumentException(validationUtils.violationsToSting(constraintViolations));
+            }
+
             postBC.newPost(postTO, httpHeaders.getHeaderString(CURRENT_USER_EMAIL));
             return Response.ok().build();
         } catch (Exception e) {

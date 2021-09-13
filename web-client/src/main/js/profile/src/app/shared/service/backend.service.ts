@@ -57,11 +57,24 @@ export class BackendService {
     }
   }
 
-  private handleError(error: HttpErrorResponse, url: string, notificationOnError?: boolean): void {
-    if (error.status === 401) {
+  private handleError(err: HttpErrorResponse, url: string, notificationOnError?: boolean): void {
+    if (err.status === 401) {
       this.authService.logOut();
-      if (notificationOnError) {
-        this.toastr.error('You are not authorized to perform this operation!');
+    }
+
+    if (notificationOnError) {
+      switch (err.status) {
+        case 401:
+          this.toastr.error('You are not authorized to perform this operation!');
+          break;
+        case 400:
+          for (let errMes of err.error.message.split('\n')) {
+            this.toastr.error(errMes);
+          }
+          break;
+        default:
+          this.toastr.error("An unexpected err occurred");
+          break;
       }
     }
   }
