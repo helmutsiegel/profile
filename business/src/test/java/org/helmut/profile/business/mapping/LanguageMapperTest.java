@@ -1,8 +1,8 @@
 package org.helmut.profile.business.mapping;
 
-import org.helmut.profile.business.model.LanguageTO;
+import org.helmut.profile.common.model.LanguageTO;
 import org.helmut.profile.repository.entity.LanguageEntity;
-import org.helmut.profile.repository.enums.LanguageLevel;
+import org.helmut.profile.common.enums.LanguageLevel;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;

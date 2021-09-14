@@ -1,9 +1,9 @@
 package org.helmut.profile.business.mapping;
 
-import org.helmut.profile.business.model.ChapterTO;
-import org.helmut.profile.business.model.CreateChapterTO;
-import org.helmut.profile.business.model.ProjectTO;
-import org.helmut.profile.business.model.SectionTO;
+import org.helmut.profile.common.model.ChapterTO;
+import org.helmut.profile.common.model.CreateChapterTO;
+import org.helmut.profile.common.model.ProjectTO;
+import org.helmut.profile.common.model.SectionTO;
 import org.helmut.profile.repository.entity.ChapterEntity;
 import org.helmut.profile.repository.entity.ProjectEntity;
 import org.helmut.profile.repository.entity.SectionEntity;

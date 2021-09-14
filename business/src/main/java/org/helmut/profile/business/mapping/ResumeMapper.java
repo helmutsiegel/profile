@@ -1,6 +1,6 @@
 package org.helmut.profile.business.mapping;
 
-import org.helmut.profile.business.model.ResumeTO;
+import org.helmut.profile.common.model.ResumeTO;
 import org.helmut.profile.repository.entity.CVEntity;
 
 import javax.enterprise.context.RequestScoped;

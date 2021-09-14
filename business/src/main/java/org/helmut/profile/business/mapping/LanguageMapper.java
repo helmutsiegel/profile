@@ -1,6 +1,6 @@
 package org.helmut.profile.business.mapping;
 
-import org.helmut.profile.business.model.LanguageTO;
+import org.helmut.profile.common.model.LanguageTO;
 import org.helmut.profile.repository.entity.LanguageEntity;
 
 import javax.enterprise.context.RequestScoped;

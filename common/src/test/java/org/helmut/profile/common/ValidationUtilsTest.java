@@ -1,5 +1,6 @@
 package org.helmut.profile.common;
 
+import org.helmut.profile.common.validation.util.ValidationUtils;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;

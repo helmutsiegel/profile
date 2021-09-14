@@ -1,11 +1,10 @@
 package org.helmut.profile.business.mapping;
 
-import org.helmut.profile.business.model.PostTO;
+import org.helmut.profile.common.model.PostTO;
 import org.helmut.profile.repository.entity.PostEntity;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
-import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.time.OffsetDateTime;

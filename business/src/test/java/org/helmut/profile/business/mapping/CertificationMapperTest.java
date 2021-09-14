@@ -1,6 +1,6 @@
 package org.helmut.profile.business.mapping;
 
-import org.helmut.profile.business.model.CertificationTO;
+import org.helmut.profile.common.model.CertificationTO;
 import org.helmut.profile.repository.entity.CertificationEntity;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

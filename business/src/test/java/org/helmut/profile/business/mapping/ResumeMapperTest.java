@@ -1,6 +1,6 @@
 package org.helmut.profile.business.mapping;
 
-import org.helmut.profile.business.model.*;
+import org.helmut.profile.common.model.*;
 import org.helmut.profile.repository.entity.*;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

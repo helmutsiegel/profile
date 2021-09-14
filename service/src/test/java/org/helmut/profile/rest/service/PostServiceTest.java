@@ -1,7 +1,7 @@
 package org.helmut.profile.rest.service;
 
 import org.helmut.profile.business.bc.PostBC;
-import org.helmut.profile.business.model.PostTO;
+import org.helmut.profile.common.model.PostTO;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;

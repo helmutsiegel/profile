@@ -1,6 +1,7 @@
 package org.helmut.profile.repository.entity;
 
-import org.helmut.profile.repository.enums.Seniority;
+
+import org.helmut.profile.common.enums.Seniority;
 import org.helmut.profile.repository.listener.UserValidationListener;
 
 import javax.persistence.*;

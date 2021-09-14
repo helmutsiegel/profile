@@ -1,4 +1,4 @@
-package org.helmut.profile.common;
+package org.helmut.profile.common.validation.util;
 
 import javax.validation.ConstraintViolation;
 import java.util.Set;

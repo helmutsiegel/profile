@@ -1,8 +1,8 @@
 package org.helmut.profile.rest.service;
 
 import org.helmut.profile.business.bc.PostBC;
-import org.helmut.profile.business.model.PostTO;
-import org.helmut.profile.common.ValidationUtils;
+import org.helmut.profile.common.model.PostTO;
+import org.helmut.profile.common.validation.util.ValidationUtils;
 import org.helmut.profile.rest.auth.filter.JWTTokenNeeded;
 
 import javax.inject.Inject;

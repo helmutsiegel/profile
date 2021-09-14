@@ -1,7 +1,6 @@
 package org.helmut.profile.business.mapping;
 
-import org.checkerframework.checker.units.qual.C;
-import org.helmut.profile.business.model.*;
+import org.helmut.profile.common.model.*;
 import org.helmut.profile.repository.entity.ChapterEntity;
 import org.helmut.profile.repository.entity.ProjectEntity;
 import org.helmut.profile.repository.entity.SectionEntity;

@@ -1,8 +1,8 @@
 package org.helmut.profile.business.bci;
 
-import org.helmut.profile.business.model.ChangePasswordTO;
-import org.helmut.profile.business.model.SignUpUserTO;
-import org.helmut.profile.business.model.UserTO;
+import org.helmut.profile.common.model.ChangePasswordTO;
+import org.helmut.profile.common.model.SignUpUserTO;
+import org.helmut.profile.common.model.UserTO;
 
 import java.util.List;
 

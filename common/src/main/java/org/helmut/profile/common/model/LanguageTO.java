@@ -1,6 +1,7 @@
-package org.helmut.profile.business.model;
+package org.helmut.profile.common.model;
 
-import org.helmut.profile.repository.enums.LanguageLevel;
+
+import org.helmut.profile.common.enums.LanguageLevel;
 
 public class LanguageTO {
     private String language;

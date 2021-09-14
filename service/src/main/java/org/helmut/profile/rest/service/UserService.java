@@ -2,10 +2,10 @@ package org.helmut.profile.rest.service;
 
 import org.helmut.profile.business.bci.UserBCI;
 import org.helmut.profile.business.client.UserClient;
-import org.helmut.profile.business.model.ChangePasswordTO;
-import org.helmut.profile.business.model.LoginUserTO;
-import org.helmut.profile.business.model.SignUpUserTO;
-import org.helmut.profile.business.model.UserTO;
+import org.helmut.profile.common.model.ChangePasswordTO;
+import org.helmut.profile.common.model.LoginUserTO;
+import org.helmut.profile.common.model.SignUpUserTO;
+import org.helmut.profile.common.model.UserTO;
 import org.helmut.profile.common.logging.Logger;
 import org.helmut.profile.rest.auth.filter.JWTTokenNeeded;
 import org.helmut.profile.rest.auth.util.TokenIssuer;

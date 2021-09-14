@@ -1,4 +1,4 @@
-package org.helmut.profile.repository.enums;
+package org.helmut.profile.common.enums;
 
 public enum Seniority {
     JUNIOR(0), MID(1), SENIOR(2);

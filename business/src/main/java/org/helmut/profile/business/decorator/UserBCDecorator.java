@@ -1,7 +1,7 @@
 package org.helmut.profile.business.decorator;
 
 import org.helmut.profile.business.bci.UserBCI;
-import org.helmut.profile.business.model.SignUpUserTO;
+import org.helmut.profile.common.model.SignUpUserTO;
 import org.helmut.profile.repository.CvRepository;
 import org.helmut.profile.repository.UserRepository;
 import org.helmut.profile.repository.entity.CVEntity;

@@ -1,10 +1,10 @@
 package org.helmut.profile.business.mapping;
 
-import org.helmut.profile.business.model.SignUpUserTO;
-import org.helmut.profile.business.model.UserTO;
+import org.helmut.profile.common.model.SignUpUserTO;
+import org.helmut.profile.common.model.UserTO;
 import org.helmut.profile.business.util.PasswordUtils;
 import org.helmut.profile.repository.entity.UserEntity;
-import org.helmut.profile.repository.enums.Seniority;
+import org.helmut.profile.common.enums.Seniority;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;

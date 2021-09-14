@@ -1,7 +1,7 @@
 package org.helmut.profile.business.bc;
 
 import org.helmut.profile.business.mapping.PostMapper;
-import org.helmut.profile.business.model.PostTO;
+import org.helmut.profile.common.model.PostTO;
 import org.helmut.profile.repository.PostRepository;
 import org.helmut.profile.repository.UserRepository;
 import org.helmut.profile.repository.entity.PostEntity;

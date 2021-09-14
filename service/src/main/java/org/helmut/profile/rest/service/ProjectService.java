@@ -1,13 +1,16 @@
 package org.helmut.profile.rest.service;
 
 import org.helmut.profile.business.bc.ProjectBC;
-import org.helmut.profile.business.model.CreateChapterTO;
-import org.helmut.profile.business.model.ProjectTO;
-import org.helmut.profile.business.model.SectionTO;
-import org.helmut.profile.business.model.UserTO;
+import org.helmut.profile.common.model.CreateChapterTO;
+import org.helmut.profile.common.model.ProjectTO;
+import org.helmut.profile.common.model.SectionTO;
+import org.helmut.profile.common.model.UserTO;
+import org.helmut.profile.common.validation.CRUD;
+import org.helmut.profile.common.validation.constraints.Section;
 import org.helmut.profile.rest.auth.filter.JWTTokenNeeded;
 
 import javax.inject.Inject;
+import javax.validation.Valid;
 import javax.ws.rs.*;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.HttpHeaders;
@@ -63,7 +66,7 @@ public class ProjectService {
     @JWTTokenNeeded
     @Path("chapter")
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response createChapter(CreateChapterTO createChapterTO) {
+    public Response createChapter(@Valid CreateChapterTO createChapterTO) {
         String currentUserEmail = httpHeaders.getHeaderString(CURRENT_USER_EMAIL);
         try {
             projectBC.createChapter(createChapterTO, currentUserEmail);
@@ -79,10 +82,26 @@ public class ProjectService {
     @JWTTokenNeeded
     @Path("section")
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response updateSection(SectionTO sectionTO) {
+    public Response updateSection(@Section(method = CRUD.UPDATE) SectionTO sectionTO) {
         String currentUserEmail = httpHeaders.getHeaderString(CURRENT_USER_EMAIL);
         try {
             projectBC.updateSection(sectionTO, currentUserEmail);
+            return Response.ok().build();
+        } catch (IllegalArgumentException e) {
+            return Response.status(Response.Status.BAD_REQUEST)
+                    .entity(e)
+                    .build();
+        }
+    }
+
+    @POST
+    @JWTTokenNeeded
+    @Path("section")
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response createSection(@Section(method = CRUD.CREATE) SectionTO sectionTO) {
+        String currentUserEmail = httpHeaders.getHeaderString(CURRENT_USER_EMAIL);
+        try {
+            projectBC.createSection(sectionTO, currentUserEmail);
             return Response.ok().build();
         } catch (IllegalArgumentException e) {
             return Response.status(Response.Status.BAD_REQUEST)

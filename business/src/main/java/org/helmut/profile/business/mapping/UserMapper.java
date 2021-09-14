@@ -1,13 +1,12 @@
 package org.helmut.profile.business.mapping;
 
-import org.helmut.profile.business.model.SignUpUserTO;
-import org.helmut.profile.business.model.UserTO;
+import org.helmut.profile.common.model.SignUpUserTO;
+import org.helmut.profile.common.model.UserTO;
 import org.helmut.profile.business.util.PasswordUtils;
 import org.helmut.profile.repository.entity.UserEntity;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
-import java.time.format.DateTimeFormatter;
 
 @RequestScoped
 public class UserMapper {

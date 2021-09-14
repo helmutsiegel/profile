@@ -1,6 +1,6 @@
 package org.helmut.profile.repository.entity;
 
-import org.helmut.profile.repository.enums.LanguageLevel;
+import org.helmut.profile.common.enums.LanguageLevel;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

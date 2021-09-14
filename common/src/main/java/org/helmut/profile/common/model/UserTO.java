@@ -1,11 +1,12 @@
-package org.helmut.profile.business.model;
+package org.helmut.profile.common.model;
 
-import org.helmut.profile.repository.enums.Seniority;
+
+import org.helmut.profile.common.enums.Seniority;
 
 import javax.xml.bind.annotation.XmlRootElement;
-import java.time.LocalDate;
 
 @XmlRootElement
+
 public class UserTO {
     private String email;
     private String firstName;

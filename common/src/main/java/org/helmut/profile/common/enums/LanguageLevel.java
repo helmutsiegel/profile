@@ -1,4 +1,4 @@
-package org.helmut.profile.repository.enums;
+package org.helmut.profile.common.enums;
 
 public enum LanguageLevel {
     BEGINNER(0), ELEMENTARY(1), INTERMEDIATE(2), ADVANCED(3), PROFICIENT(4), NATIVE(5);

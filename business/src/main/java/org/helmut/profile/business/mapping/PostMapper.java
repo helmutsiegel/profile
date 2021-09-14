@@ -1,16 +1,11 @@
 package org.helmut.profile.business.mapping;
 
-import org.helmut.profile.business.model.PostTO;
+import org.helmut.profile.common.model.PostTO;
 import org.helmut.profile.repository.entity.PostEntity;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
-import java.sql.Date;
-import java.sql.Timestamp;
-import java.time.Clock;
-import java.time.LocalDateTime;
 import java.time.OffsetDateTime;
-import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 
 @RequestScoped

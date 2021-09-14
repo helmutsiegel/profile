@@ -1,6 +1,6 @@
 package org.helmut.profile.business.client;
 
-import org.helmut.profile.business.model.UserTO;
+import org.helmut.profile.common.model.UserTO;
 
 import javax.enterprise.context.RequestScoped;
 import javax.ws.rs.client.Client;

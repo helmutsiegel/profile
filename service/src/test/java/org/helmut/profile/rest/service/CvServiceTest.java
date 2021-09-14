@@ -1,10 +1,10 @@
 package org.helmut.profile.rest.service;
 
 import org.helmut.profile.business.bc.CvBC;
-import org.helmut.profile.business.model.CertificationTO;
-import org.helmut.profile.business.model.CvTO;
-import org.helmut.profile.business.model.ExperienceTO;
-import org.helmut.profile.business.model.LanguageTO;
+import org.helmut.profile.common.model.CertificationTO;
+import org.helmut.profile.common.model.CvTO;
+import org.helmut.profile.common.model.ExperienceTO;
+import org.helmut.profile.common.model.LanguageTO;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

@@ -1,7 +1,7 @@
 package org.helmut.profile.rest.service;
 
 import org.helmut.profile.business.bc.ResumeBC;
-import org.helmut.profile.business.model.ResumeTO;
+import org.helmut.profile.common.model.ResumeTO;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;

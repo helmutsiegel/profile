@@ -1,22 +1,25 @@
-package org.helmut.profile.business.model;
+package org.helmut.profile.common.model;
+
+import org.helmut.profile.common.validation.groups.Existing;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import javax.validation.groups.Default;
 
 public class PostTO {
 
-    @NotNull
+    @NotNull(groups = Existing.class)
     private Long id;
 
-    @NotNull
-    @Size(min = 5, max = 255)
+    @NotNull(groups = {Default.class, Existing.class})
+    @Size(min = 5, max = 255, groups = {Default.class, Existing.class})
     private String title;
 
-    @NotNull
-    @Size(min = 50, max = 5000)
+    @NotNull(groups = {Default.class, Existing.class})
+    @Size(min = 50, max = 5000, groups = {Default.class, Existing.class})
     private String content;
 
-    @NotNull
+    @NotNull(groups = {Default.class, Existing.class})
     private String tags;
     private String dateCreated;
 

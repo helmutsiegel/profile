@@ -1,4 +1,4 @@
-package org.helmut.profile.business.model;
+package org.helmut.profile.common.model;
 
 import java.util.List;
 

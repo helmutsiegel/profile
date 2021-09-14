@@ -1,10 +1,9 @@
 package org.helmut.profile.business.bc;
 
 import org.helmut.profile.business.mapping.ProjectMapper;
-import org.helmut.profile.business.model.CreateChapterTO;
-import org.helmut.profile.business.model.ProjectTO;
-import org.helmut.profile.business.model.SectionTO;
-import org.helmut.profile.repository.ChapterRepository;
+import org.helmut.profile.common.model.CreateChapterTO;
+import org.helmut.profile.common.model.ProjectTO;
+import org.helmut.profile.common.model.SectionTO;
 import org.helmut.profile.repository.ProjectRepository;
 import org.helmut.profile.repository.SectionRepository;
 import org.helmut.profile.repository.UserRepository;
@@ -79,5 +78,9 @@ public class ProjectBC {
         sectionEntity.setDescription(sectionTO.getDescription());
         sectionEntity.setTitle(sectionTO.getTitle());
         sectionRepository.update(sectionEntity);
+    }
+
+    public void createSection(SectionTO sectionTO, String currentUserEmail) {
+
     }
 }

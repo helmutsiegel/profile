@@ -1,9 +1,9 @@
 package org.helmut.profile.business.bc;
 
 import org.helmut.profile.business.mapping.UserMapper;
-import org.helmut.profile.business.model.ChangePasswordTO;
-import org.helmut.profile.business.model.SignUpUserTO;
-import org.helmut.profile.business.model.UserTO;
+import org.helmut.profile.common.model.ChangePasswordTO;
+import org.helmut.profile.common.model.SignUpUserTO;
+import org.helmut.profile.common.model.UserTO;
 import org.helmut.profile.business.util.PasswordUtils;
 import org.helmut.profile.repository.UserRepository;
 import org.helmut.profile.repository.entity.UserEntity;
