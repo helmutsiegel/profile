@@ -54,6 +54,12 @@ export class AboutComponent implements OnInit {
     author: 'Antonio Goncalves',
     platform: 'Pluralsight',
     link: 'https://app.pluralsight.com/library/courses/bean-validation/table-of-contents',
+    status: 'Finished'
+  }, {
+    title: 'Unit Testing Legacy Code in Java',
+    author: 'Jim Weaver',
+    platform: 'Pluralsight',
+    link: 'https://app.pluralsight.com/library/courses/java-unit-testing-legacy-code/table-of-contents',
     status: 'In progress'
   }, {
     title: 'Maven Fundamentals',
