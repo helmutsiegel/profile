@@ -12,20 +12,14 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import javax.validation.ConstraintViolation;
-import javax.validation.Validation;
-import javax.validation.Validator;
-import javax.validation.ValidatorFactory;
 import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.Response;
-import java.lang.reflect.Method;
 import java.util.Collections;
 import java.util.List;
-import java.util.Set;
 
 import static org.helmut.profile.rest.service.Constants.CURRENT_USER_EMAIL;
-import static org.junit.jupiter.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
@@ -132,9 +126,6 @@ class ProjectServiceTest {
     @DisplayName("Create project test")
     class UpdateSectionTest {
 
-        @Mock
-        private Validator validator;
-
         @Test
         @DisplayName("Successful")
         void updateSectionSuccessful() {
@@ -160,6 +151,39 @@ class ProjectServiceTest {
 
             assertEquals(response.getStatus(), Response.Status.BAD_REQUEST.getStatusCode());
             verify(projectBC, times(1)).updateSection(sectionTO, email);
+            assertSame(exception, response.getEntity());
+        }
+    }
+
+    @Nested
+    @DisplayName("Create project test")
+    class CreateSectionTest {
+
+        @Test
+        @DisplayName("Successful")
+        public void createSectionSuccessful() {
+            SectionTO sectionTO = new SectionTO();
+            doReturn("email").when(httpHeaders).getHeaderString(CURRENT_USER_EMAIL);
+
+            Response response = projectService.createSection(sectionTO);
+
+            assertEquals(response.getStatus(), Response.Status.OK.getStatusCode());
+            verify(projectBC, times(1)).createSection(sectionTO, "email");
+        }
+
+        @Test
+        @DisplayName("Failed")
+        void createSectionFailed() {
+            SectionTO sectionTO = new SectionTO();
+            Exception exception = new IllegalArgumentException();
+            String email = "email";
+            doReturn(email).when(httpHeaders).getHeaderString(CURRENT_USER_EMAIL);
+            doThrow(exception).when(projectBC).createSection(sectionTO, email);
+
+            Response response = projectService.createSection(sectionTO);
+
+            assertEquals(response.getStatus(), Response.Status.BAD_REQUEST.getStatusCode());
+            verify(projectBC, times(1)).createSection(sectionTO, email);
             assertSame(exception, response.getEntity());
         }
     }
