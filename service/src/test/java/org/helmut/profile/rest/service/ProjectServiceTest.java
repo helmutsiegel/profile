@@ -12,14 +12,20 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import javax.validation.ConstraintViolation;
+import javax.validation.Validation;
+import javax.validation.Validator;
+import javax.validation.ValidatorFactory;
 import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.Response;
+import java.lang.reflect.Method;
 import java.util.Collections;
 import java.util.List;
+import java.util.Set;
 
 import static org.helmut.profile.rest.service.Constants.CURRENT_USER_EMAIL;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertSame;
+import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
@@ -125,6 +131,9 @@ class ProjectServiceTest {
     @Nested
     @DisplayName("Create project test")
     class UpdateSectionTest {
+
+        @Mock
+        private Validator validator;
 
         @Test
         @DisplayName("Successful")

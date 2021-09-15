@@ -4,19 +4,18 @@ import org.helmut.profile.common.validation.groups.Existing;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import javax.validation.groups.Default;
 
 public class SectionTO {
 
     @NotNull(groups = Existing.class)
     private Long id;
 
-    @NotNull(groups = {Default.class, Existing.class})
-    @Size(min = 5, groups = {Default.class, Existing.class})
+    @NotNull
+    @Size(min = 5)
     private String title;
 
-    @NotNull(groups = {Default.class, Existing.class})
-    @Size(min = 50, groups = {Default.class, Existing.class})
+    @NotNull
+    @Size(min = 50)
     private String description;
 
     public String getTitle() {

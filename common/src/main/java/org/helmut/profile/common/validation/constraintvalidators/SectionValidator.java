@@ -9,6 +9,7 @@ import javax.inject.Inject;
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 import javax.validation.Validator;
+import javax.validation.groups.Default;
 
 public class SectionValidator implements ConstraintValidator<Section, SectionTO> {
 
@@ -25,7 +26,7 @@ public class SectionValidator implements ConstraintValidator<Section, SectionTO>
     @Override
     public boolean isValid(SectionTO sectionTO, ConstraintValidatorContext constraintValidatorContext) {
         if (method == CRUD.UPDATE || method == CRUD.DELETE) {
-            return validator.validate(sectionTO, Existing.class).size() == 0;
+            return validator.validate(sectionTO, Existing.class, Default.class).size() == 0;
         } else {
             return validator.validate(sectionTO).size() == 0;
         }

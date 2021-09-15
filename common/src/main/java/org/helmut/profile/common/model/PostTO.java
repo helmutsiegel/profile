@@ -11,15 +11,15 @@ public class PostTO {
     @NotNull(groups = Existing.class)
     private Long id;
 
-    @NotNull(groups = {Default.class, Existing.class})
-    @Size(min = 5, max = 255, groups = {Default.class, Existing.class})
+    @NotNull
+    @Size(min = 5, max = 255)
     private String title;
 
-    @NotNull(groups = {Default.class, Existing.class})
-    @Size(min = 50, max = 5000, groups = {Default.class, Existing.class})
+    @NotNull
+    @Size(min = 50, max = 5000)
     private String content;
 
-    @NotNull(groups = {Default.class, Existing.class})
+    @NotNull
     private String tags;
     private String dateCreated;
 

@@ -2,12 +2,14 @@ package org.helmut.profile.rest.service;
 
 import org.helmut.profile.business.bc.PostBC;
 import org.helmut.profile.common.model.PostTO;
+import org.helmut.profile.common.validation.groups.Existing;
 import org.helmut.profile.common.validation.util.ValidationUtils;
 import org.helmut.profile.rest.auth.filter.JWTTokenNeeded;
 
 import javax.inject.Inject;
 import javax.validation.ConstraintViolation;
 import javax.validation.Validator;
+import javax.validation.groups.Default;
 import javax.ws.rs.*;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.HttpHeaders;

@@ -7,6 +7,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import javax.validation.ConstraintViolation;
+import javax.validation.groups.Default;
 import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -24,7 +25,7 @@ class PostTOTest extends ValidityTester {
     @DisplayName("Validate empty object existing state")
     public void testValidation2() {
         Set<ConstraintViolation<PostTO>> violations = validator.validate(new PostTO(), Existing.class);
-        assertEquals(violations.size(), 4);
+        assertEquals(violations.size(), 1);
     }
 
     @Test
@@ -46,5 +47,12 @@ class PostTOTest extends ValidityTester {
         postTO.setTags("tags");
         Set<ConstraintViolation<PostTO>> violations = validator.validate(postTO);
         assertEquals(violations.size(), 0);
+    }
+
+    @Test
+    @DisplayName("Validate empty object existing and deafault state")
+    public void testValidation6() {
+        Set<ConstraintViolation<PostTO>> violations = validator.validate(new PostTO(), Existing.class, Default.class);
+        assertEquals(violations.size(), 4);
     }
 }
