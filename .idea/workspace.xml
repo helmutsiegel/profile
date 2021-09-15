@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="12054cd0-f72f-4c45-9241-d79069bd8fa5" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/repository/src/test/java/org/helmut/profile/repository/listener/LifecycleListenerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/repository/src/test/java/org/helmut/profile/repository/listener/UserValidationListenerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/test/java/org/helmut/profile/rest/auth/util/TokenIssuerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/test/java/org/helmut/profile/rest/auth/util/TokenIssuerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/repository/src/main/java/org/helmut/profile/repository/listener/UserValidationListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/repository/src/main/java/org/helmut/profile/repository/listener/UserValidationListener.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,18 +99,18 @@
       <recent name="org.helmut.profile" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="org.helmut.profile.repository.listener" />
       <recent name="org.helmut.profile.common.validation.constraintvalidators" />
       <recent name="org.helmut.profile.common.model" />
       <recent name="org.helmut.profile.business.model" />
       <recent name="org.helmut.profile.common" />
-      <recent name="org.helmut.profile.common.logging" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="org.helmut.profile.business" />
       <recent name="org.helmut.profile.common" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TokenIssuerTest">
+  <component name="RunManager" selected="JUnit.UserValidationListenerTest">
     <configuration name="payara" type="GlassfishConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="GlassFish 5.2021.3" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="corretto-1.8">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
@@ -175,48 +177,33 @@
       </ConfigurationWrapper>
       <method v="2" />
     </configuration>
-    <configuration name="ProjectServiceTest$CreateSectionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="service" />
+    <configuration name="LifecycleListenerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="repository" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.helmut.profile.rest.service.*" />
+          <option name="PATTERN" value="org.helmut.profile.repository.listener.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.helmut.profile.rest.service.ProjectServiceTest" />
-      <option name="MAIN_CLASS_NAME" value="org.helmut.profile.rest.service.ProjectServiceTest$CreateSectionTest" />
+      <option name="PACKAGE_NAME" value="org.helmut.profile.repository.listener" />
+      <option name="MAIN_CLASS_NAME" value="org.helmut.profile.repository.listener.LifecycleListenerTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ProjectServiceTest$CreateSectionTest.createSectionSuccessful" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="service" />
+    <configuration name="LifecycleListenerTest.prePersist" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="repository" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.helmut.profile.rest.service.*" />
+          <option name="PATTERN" value="org.helmut.profile.repository.listener.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.helmut.profile.rest.service.ProjectServiceTest" />
-      <option name="MAIN_CLASS_NAME" value="org.helmut.profile.rest.service.ProjectServiceTest$CreateSectionTest" />
-      <option name="METHOD_NAME" value="createSectionSuccessful" />
+      <option name="PACKAGE_NAME" value="org.helmut.profile.repository.listener" />
+      <option name="MAIN_CLASS_NAME" value="org.helmut.profile.repository.listener.LifecycleListenerTest" />
+      <option name="METHOD_NAME" value="prePersist" />
       <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SectionValidatorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="common" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.helmut.profile.common.validation.constraintvalidators.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.helmut.profile.common.validation.constraintvalidators" />
-      <option name="MAIN_CLASS_NAME" value="org.helmut.profile.common.validation.constraintvalidators.SectionValidatorTest" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -252,6 +239,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="UserValidationListenerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="repository" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.helmut.profile.repository.listener.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.helmut.profile.repository.listener" />
+      <option name="MAIN_CLASS_NAME" value="org.helmut.profile.repository.listener.UserValidationListenerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Angular Application (profile)" type="JavascriptDebugType" uri="http://localhost:4200">
       <method v="2" />
     </configuration>
@@ -269,19 +271,19 @@
       <item itemvalue="GlassFish Server.payara" />
       <item itemvalue="JavaScript Debug.Angular Application (profile)" />
       <item itemvalue="npm.Angular CLI Server (profile)" />
-      <item itemvalue="JUnit.SectionValidatorTest" />
-      <item itemvalue="JUnit.ProjectServiceTest$CreateSectionTest.createSectionSuccessful" />
-      <item itemvalue="JUnit.ProjectServiceTest$CreateSectionTest" />
       <item itemvalue="JUnit.TokenIssuerTest.testIssueToken" />
       <item itemvalue="JUnit.TokenIssuerTest" />
+      <item itemvalue="JUnit.LifecycleListenerTest.prePersist" />
+      <item itemvalue="JUnit.LifecycleListenerTest" />
+      <item itemvalue="JUnit.UserValidationListenerTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.UserValidationListenerTest" />
+        <item itemvalue="JUnit.LifecycleListenerTest" />
+        <item itemvalue="JUnit.LifecycleListenerTest.prePersist" />
         <item itemvalue="JUnit.TokenIssuerTest" />
         <item itemvalue="JUnit.TokenIssuerTest.testIssueToken" />
-        <item itemvalue="JUnit.ProjectServiceTest$CreateSectionTest" />
-        <item itemvalue="JUnit.ProjectServiceTest$CreateSectionTest.createSectionSuccessful" />
-        <item itemvalue="JUnit.SectionValidatorTest" />
       </list>
     </recent_temporary>
   </component>
@@ -306,7 +308,7 @@
       <workItem from="1630560573050" duration="571000" />
       <workItem from="1630561179861" duration="5542000" />
       <workItem from="1630929248228" duration="52800000" />
-      <workItem from="1631527934630" duration="34389000" />
+      <workItem from="1631527934630" duration="36110000" />
     </task>
     <servers />
   </component>

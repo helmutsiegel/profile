@@ -13,17 +13,21 @@ import java.util.regex.Pattern;
  */
 public class UserValidationListener {
 
+    final static String INVALID_EMAIL = "Invalid email";
+    final static String INVALID_FIRST_NAME = "Invalid first name!";
+    final static String INVALID_LAST_NAME = "Invalid last name!";
+
     @PrePersist
     @PreUpdate
-    private void validate(UserEntity userEntity) {
+    void validate(UserEntity userEntity) {
         if (Objects.isNull(userEntity.getEmail()) || !Pattern.compile("^(.+)@(.+)$").matcher(userEntity.getEmail()).matches()) {
-            throw new IllegalArgumentException("Invalid email");
+            throw new IllegalArgumentException(INVALID_EMAIL);
         }
         if (Objects.isNull(userEntity.getFirstName()) || "".equals(userEntity.getFirstName())) {
-            throw new IllegalArgumentException("Invalid first name!");
+            throw new IllegalArgumentException(INVALID_FIRST_NAME);
         }
         if (Objects.isNull(userEntity.getLastName()) || "".equals(userEntity.getLastName())) {
-            throw new IllegalArgumentException("Invalid last name!");
+            throw new IllegalArgumentException(INVALID_LAST_NAME);
         }
     }
 }
