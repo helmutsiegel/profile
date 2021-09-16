@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="12054cd0-f72f-4c45-9241-d79069bd8fa5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-client/src/main/js/profile/src/app/component/helmut-business-card/helmut-business-card.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/web-client/src/main/js/profile/src/app/component/helmut-business-card/helmut-business-card.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-client/src/main/js/profile/src/app/component/about/about.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web-client/src/main/js/profile/src/app/component/about/about.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -317,7 +317,7 @@
       <workItem from="1630561179861" duration="5542000" />
       <workItem from="1630929248228" duration="52800000" />
       <workItem from="1631527934630" duration="40829000" />
-      <workItem from="1631766676426" duration="7823000" />
+      <workItem from="1631766676426" duration="8922000" />
     </task>
     <servers />
   </component>
