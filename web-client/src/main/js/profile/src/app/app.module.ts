@@ -12,6 +12,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {SignUpComponent} from './component/sign-up/sign-up.component';
 import {CommonsModule} from "./shared/commons.module";
 import { AboutComponent } from './component/about/about.component';
+import { HelmutBusinessCardComponent } from './component/helmut-business-card/helmut-business-card.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { AboutComponent } from './component/about/about.component';
     WelcomeComponent,
     LoginComponent,
     SignUpComponent,
-    AboutComponent
+    AboutComponent,
+    HelmutBusinessCardComponent
   ],
   imports: [
     BrowserModule,

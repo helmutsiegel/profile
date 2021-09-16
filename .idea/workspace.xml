@@ -5,8 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="12054cd0-f72f-4c45-9241-d79069bd8fa5" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/web-client/src/main/js/profile/src/assets/helmut_siegel.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-client/src/main/js/profile/src/app/component/about/about.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web-client/src/main/js/profile/src/app/component/about/about.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-client/src/main/js/profile/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web-client/src/main/js/profile/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-client/src/main/js/profile/src/app/component/about/about.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/web-client/src/main/js/profile/src/app/component/about/about.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-client/src/main/js/profile/src/app/component/welcome/welcome.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/web-client/src/main/js/profile/src/app/component/welcome/welcome.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-client/src/main/js/profile/src/app/component/welcome/welcome.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/web-client/src/main/js/profile/src/app/component/welcome/welcome.component.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,6 +94,9 @@
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\dev\profile\profile\web-client\src\main\js\profile\src\assets" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="org.helmut.profile.common" />
@@ -268,12 +275,12 @@
     <list>
       <item itemvalue="GlassFish Server.payara" />
       <item itemvalue="JavaScript Debug.Angular Application (profile)" />
-      <item itemvalue="npm.Angular CLI Server (profile)" />
       <item itemvalue="JUnit.TokenIssuerTest.testIssueToken" />
       <item itemvalue="JUnit.TokenIssuerTest" />
       <item itemvalue="JUnit.LifecycleListenerTest.prePersist" />
       <item itemvalue="JUnit.LifecycleListenerTest" />
       <item itemvalue="JUnit.UserValidationListenerTest" />
+      <item itemvalue="npm.Angular CLI Server (profile)" />
     </list>
     <recent_temporary>
       <list>
@@ -306,7 +313,8 @@
       <workItem from="1630560573050" duration="571000" />
       <workItem from="1630561179861" duration="5542000" />
       <workItem from="1630929248228" duration="52800000" />
-      <workItem from="1631527934630" duration="38453000" />
+      <workItem from="1631527934630" duration="40829000" />
+      <workItem from="1631766676426" duration="4632000" />
     </task>
     <servers />
   </component>

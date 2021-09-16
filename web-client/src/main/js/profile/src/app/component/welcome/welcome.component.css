@@ -1,9 +1,10 @@
-.middle {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
+.welcome {
   font-family: "Courier New", Courier, monospace;
   font-size: 20px;
+}
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
 }
