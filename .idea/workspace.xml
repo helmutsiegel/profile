@@ -7,6 +7,8 @@
     <list default="true" id="12054cd0-f72f-4c45-9241-d79069bd8fa5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web-client/src/main/js/profile/src/app/component/about/about.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web-client/src/main/js/profile/src/app/component/about/about.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-client/src/main/js/profile/src/app/cv/component/cv/cv.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web-client/src/main/js/profile/src/app/cv/component/cv/cv.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web-client/src/main/js/profile/src/app/cv/service/cv.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web-client/src/main/js/profile/src/app/cv/service/cv.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,13 +60,6 @@
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="enabledProfiles">
-      <list>
-        <option value="build-for-prod" />
-      </list>
-    </option>
-  </component>
   <component name="ProjectId" id="1xTYyxIJImgfXsXzxSwfbQEJwVd" />
   <component name="ProjectViewState">
     <option name="autoscrollFromSource" value="true" />
@@ -85,7 +80,7 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/web-client/src/main/js/profile/package.json" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../helmutsiegeldev/helmut-siegel-dev" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
@@ -118,7 +113,7 @@
       <recent name="org.helmut.profile.common" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.Angular CLI Server (profile)">
+  <component name="RunManager" selected="GlassFish Server.payara">
     <configuration name="payara" type="GlassfishConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="GlassFish 5.2021.3" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="corretto-1.8">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
@@ -317,7 +312,10 @@
       <workItem from="1630561179861" duration="5542000" />
       <workItem from="1630929248228" duration="52800000" />
       <workItem from="1631527934630" duration="40829000" />
-      <workItem from="1631766676426" duration="8922000" />
+      <workItem from="1631766676426" duration="10337000" />
+      <workItem from="1631785535563" duration="6308000" />
+      <workItem from="1631812919256" duration="2449000" />
+      <workItem from="1631876613663" duration="4352000" />
     </task>
     <servers />
   </component>

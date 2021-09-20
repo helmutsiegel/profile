@@ -79,7 +79,7 @@ export class AboutComponent implements OnInit {
     platform: 'Pluralsight',
     link: 'https://app.pluralsight.com/library/courses/java-writing-readable-maintainable-code/table-of-contents',
     status: 'Planned'
-  },{
+  }, {
     title: 'Defensive Coding in Java',
     author: 'Andrejs Doronins',
     platform: 'Pluralsight',
@@ -91,10 +91,10 @@ export class AboutComponent implements OnInit {
     platform: 'Pluralsight',
     link: 'https://app.pluralsight.com/library/courses/java-testing-introduction/table-of-contents',
     status: 'Planned'
-  },{
+  }, {
     title: 'Getting Started with Jenkins',
     author: 'Wes Higbee',
-    platform: 'https://app.pluralsight.com/library/courses/getting-started-jenkins/table-of-contents',
+    platform: 'Pluralsight',
     link: 'https://app.pluralsight.com/library/courses/getting-started-jenkins/table-of-contents',
     status: 'Planned'
   }];

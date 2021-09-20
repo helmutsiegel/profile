@@ -40,7 +40,10 @@ export class CvComponent implements OnInit {
     this.cvService.getByEmail(this.cvVO.personalInfoVO.email)
       .subscribe(cvTO => {
         cvTO.about = event;
-        this.cvService.update(cvTO);
+        this.cvService.update(cvTO)
+          .subscribe(_ => {
+            this.cvVO.about = event;
+          });
       })
   }
 

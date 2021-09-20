@@ -18,8 +18,8 @@ export class CvService {
     return this.backend.get<CvTO>('cv/' + email);
   }
 
-  public update(cvTO: CvTO): void {
-    this.backend.put('cv', cvTO).subscribe();
+  public update(cvTO: CvTO): Observable<any> {
+    return this.backend.put('cv', cvTO);
   }
 
   public updateExperiences(experiences: ExperienceTO[]): Observable<ExperienceTO[]> {
