@@ -7,8 +7,6 @@
     <list default="true" id="12054cd0-f72f-4c45-9241-d79069bd8fa5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web-client/src/main/js/profile/src/app/component/about/about.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web-client/src/main/js/profile/src/app/component/about/about.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-client/src/main/js/profile/src/app/cv/component/cv/cv.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web-client/src/main/js/profile/src/app/cv/component/cv/cv.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web-client/src/main/js/profile/src/app/cv/service/cv.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web-client/src/main/js/profile/src/app/cv/service/cv.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,6 +57,13 @@
     <option name="FILTER_INFO" value="true" />
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="enabledProfiles">
+      <list>
+        <option value="build-for-prod" />
+      </list>
+    </option>
   </component>
   <component name="ProjectId" id="1xTYyxIJImgfXsXzxSwfbQEJwVd" />
   <component name="ProjectViewState">
@@ -396,6 +401,11 @@
           <url>file://$PROJECT_DIR$/business/src/main/java/org/helmut/profile/business/client/UserClient.java</url>
           <line>22</line>
           <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/web-client/src/main/js/profile/src/app/cv/component/cv/cv.component.ts</url>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="25" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

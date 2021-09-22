@@ -60,7 +60,7 @@ export class AboutComponent implements OnInit {
     author: 'Jim Weaver',
     platform: 'Pluralsight',
     link: 'https://app.pluralsight.com/library/courses/java-unit-testing-legacy-code/table-of-contents',
-    status: 'In progress'
+    status: 'Finished'
   }, {
     title: 'Maven Fundamentals',
     author: 'Bryan Hansen',
@@ -78,13 +78,13 @@ export class AboutComponent implements OnInit {
     author: 'Andrejs Doronins',
     platform: 'Pluralsight',
     link: 'https://app.pluralsight.com/library/courses/java-writing-readable-maintainable-code/table-of-contents',
-    status: 'Planned'
+    status: 'In progress'
   }, {
     title: 'Defensive Coding in Java',
     author: 'Andrejs Doronins',
     platform: 'Pluralsight',
     link: 'https://app.pluralsight.com/library/courses/defensive-programming-java/table-of-contents',
-    status: 'Planned'
+    status: 'Finished'
   }, {
     title: 'Introduction to Testing in Java',
     author: 'Richard Warburton',
