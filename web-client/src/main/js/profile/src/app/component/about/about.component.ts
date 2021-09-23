@@ -78,7 +78,7 @@ export class AboutComponent implements OnInit {
     author: 'Andrejs Doronins',
     platform: 'Pluralsight',
     link: 'https://app.pluralsight.com/library/courses/java-writing-readable-maintainable-code/table-of-contents',
-    status: 'In progress'
+    status: 'Finished'
   }, {
     title: 'Defensive Coding in Java',
     author: 'Andrejs Doronins',
@@ -96,6 +96,24 @@ export class AboutComponent implements OnInit {
     author: 'Wes Higbee',
     platform: 'Pluralsight',
     link: 'https://app.pluralsight.com/library/courses/getting-started-jenkins/table-of-contents',
+    status: 'Planned'
+  }, {
+    title: 'Handling Exceptions in Java',
+    author: 'Jim Wilson',
+    platform: 'Pluralsight',
+    link: 'https://app.pluralsight.com/library/courses/handling-exceptions-java/table-of-contents',
+    status: 'Planned'
+  }, {
+    title: 'Java Core Libraries: Java Log System',
+    author: 'Maaike van Putter',
+    platform: 'Pluralsight',
+    link: 'https://app.pluralsight.com/library/courses/java-core-libraries-log-system/table-of-contents',
+    status: 'In progress'
+  }, {
+    title: 'Java Refactoring: Best Practices',
+    author: 'Andrejs Doronins',
+    platform: 'Pluralsight',
+    link: 'https://app.pluralsight.com/library/courses/java-refactoring-best-practices/table-of-contents',
     status: 'Planned'
   }];
 
