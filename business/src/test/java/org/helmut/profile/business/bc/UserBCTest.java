@@ -1,10 +1,10 @@
 package org.helmut.profile.business.bc;
 
 import org.helmut.profile.business.mapping.UserMapper;
+import org.helmut.profile.business.util.PasswordUtils;
 import org.helmut.profile.common.model.ChangePasswordTO;
 import org.helmut.profile.common.model.SignUpUserTO;
 import org.helmut.profile.common.model.UserTO;
-import org.helmut.profile.business.util.PasswordUtils;
 import org.helmut.profile.repository.UserRepository;
 import org.helmut.profile.repository.entity.UserEntity;
 import org.junit.jupiter.api.DisplayName;
@@ -40,7 +40,7 @@ class UserBCTest {
     @Test
     void getAll() {
         UserEntity userEntity = new UserEntity();
-        UserTO userTO = new UserTO();
+        UserTO userTO = new UserTO.Builder().build();
         doReturn(Collections.singletonList(userEntity)).when(userRepository).findAll();
         doReturn(userTO).when(userMapper).mapToTO(userEntity);
 
@@ -56,7 +56,7 @@ class UserBCTest {
     void getByEmail() {
         String email = "email@mail.com";
         UserEntity userEntity = new UserEntity();
-        UserTO userTO = new UserTO();
+        UserTO userTO = new UserTO.Builder().build();
         doReturn(userEntity).when(userRepository).getByEmail(email);
         doReturn(userTO).when(userMapper).mapToTO(userEntity);
 
@@ -73,7 +73,7 @@ class UserBCTest {
         String password = "password";
         String digestedPassword = "digestedPassword";
         UserEntity userEntity = new UserEntity();
-        UserTO userTO = new UserTO();
+        UserTO userTO = new UserTO.Builder().build();
         doReturn(userEntity).when(userRepository).getByEmailAndPassword(email, digestedPassword);
         doReturn(userTO).when(userMapper).mapToTO(userEntity);
         doReturn(digestedPassword).when(passwordUtils).digestPassword(password);
@@ -156,8 +156,8 @@ class UserBCTest {
         UserEntity userEntity1 = new UserEntity();
         UserEntity userEntity2 = new UserEntity();
         doReturn(Arrays.asList(userEntity1, userEntity2)).when(userRepository).searchUser(searchTerm);
-        UserTO userTO1 = new UserTO();
-        UserTO userTO2 = new UserTO();
+        UserTO userTO1 = new UserTO.Builder().build();
+        UserTO userTO2 = new UserTO.Builder().build();
         doReturn(userTO1).when(userMapper).mapToTO(userEntity1);
         doReturn(userTO2).when(userMapper).mapToTO(userEntity2);
 
@@ -173,7 +173,7 @@ class UserBCTest {
 
     @Test
     void updateUser() {
-        UserTO userTO = new UserTO();
+        UserTO userTO = new UserTO.Builder().build();
         userTO.setEmail("email@mail.com");
         UserEntity userEntity = new UserEntity();
         doReturn(userEntity).when(userRepository).getByEmail(userTO.getEmail());

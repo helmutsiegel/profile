@@ -82,7 +82,7 @@ class ProjectBCTest {
     @Test
     void createProject() {
         ProjectTO projectTO = new ProjectTO();
-        UserTO userTO = new UserTO();
+        UserTO userTO = new UserTO.Builder().build();
         userTO.setEmail("email@mail.com");
         projectTO.setUserTO(userTO);
 

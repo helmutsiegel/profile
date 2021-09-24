@@ -49,7 +49,7 @@ public class ProjectService {
     @Produces(MediaType.APPLICATION_JSON)
     public Response createProject(ProjectTO projectTO) {
         String currentUserEmail = httpHeaders.getHeaderString(CURRENT_USER_EMAIL);
-        UserTO userTO = new UserTO();
+        UserTO userTO = new UserTO.Builder().build();
         userTO.setEmail(currentUserEmail);
         projectTO.setUserTO(userTO);
         try {

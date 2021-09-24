@@ -63,7 +63,7 @@ public class CvBCTest {
     @DisplayName("Update cv")
     void update() {
         CvTO cvTO = new CvTO();
-        UserTO userTO = new UserTO();
+        UserTO userTO = new UserTO.Builder().build();
         userTO.setEmail("email");
         cvTO.setUserTO(userTO);
         cvTO.setAbout("Short about");

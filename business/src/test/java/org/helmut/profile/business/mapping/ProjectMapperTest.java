@@ -32,7 +32,7 @@ class ProjectMapperTest {
         ProjectEntity projectEntity = createProjectEntity();
         UserEntity userEntity = new UserEntity();
         projectEntity.setUserEntity(userEntity);
-        UserTO userTO = new UserTO();
+        UserTO userTO = new UserTO.Builder().build();
         doReturn(userTO).when(userMapper).mapToTO(userEntity);
 
         ProjectTO projectTO = projectMapper.mapToProjectTO(projectEntity);

@@ -47,7 +47,7 @@ class ResumeBCTest {
     @Test
     void update() {
         ResumeTO resumeTO = new ResumeTO();
-        UserTO userTO = new UserTO();
+        UserTO userTO = new UserTO.Builder().build();
         userTO.setEmail("mail@mail.com");
         resumeTO.setUserTO(userTO);
         resumeTO.setAbout("Long about");

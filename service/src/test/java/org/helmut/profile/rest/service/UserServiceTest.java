@@ -49,7 +49,7 @@ class UserServiceTest {
 
     @Test
     void getAll() {
-        List<UserTO> usersFromBC = Collections.singletonList(new UserTO());
+        List<UserTO> usersFromBC = Collections.singletonList(new UserTO.Builder().build());
         doReturn(usersFromBC).when(userBC).getAll();
 
         List<UserTO> userTOS = userService.getAll();
@@ -60,7 +60,7 @@ class UserServiceTest {
 
     @Test
     void getByCurrentUser() {
-        UserTO userFromBC = new UserTO();
+        UserTO userFromBC = new UserTO.Builder().build();
         String email = "email";
         doReturn(userFromBC).when(userBC).getByEmail(email);
         doReturn(email).when(httpHeaders).getHeaderString(CURRENT_USER_EMAIL);
@@ -75,7 +75,7 @@ class UserServiceTest {
     @Test
     void getByEmail() {
         String email = "email";
-        UserTO userTOFromClient = new UserTO();
+        UserTO userTOFromClient = new UserTO.Builder().build();
         doReturn(userTOFromClient).when(userClient).getUserByEmail(email);
 
         UserTO userTO = userService.getByEmail(email);
@@ -87,7 +87,7 @@ class UserServiceTest {
     @Test
     void getUserByEmail() {
         String email = "email";
-        UserTO userTOFromBC = new UserTO();
+        UserTO userTOFromBC = new UserTO.Builder().build();
         doReturn(userTOFromBC).when(userBC).getByEmail(email);
 
         UserTO userTO = userService.getUserByEmail(email);
@@ -128,7 +128,7 @@ class UserServiceTest {
     @Test
     void searchUsers() {
         String searchTerm = "searchTerm";
-        List<UserTO> usersFromBC = Collections.singletonList(new UserTO());
+        List<UserTO> usersFromBC = Collections.singletonList(new UserTO.Builder().build());
         doReturn(usersFromBC).when(userBC).searchUsers(searchTerm);
 
         List<UserTO> userTOS = userService.searchUsers(searchTerm);
@@ -178,7 +178,7 @@ class UserServiceTest {
             LoginUserTO loginUserTO = new LoginUserTO();
             loginUserTO.setEmail("mail");
             loginUserTO.setPassword("password");
-            UserTO userTO = new UserTO();
+            UserTO userTO = new UserTO.Builder().build();
             doReturn(userTO).when(userBC).logIn(loginUserTO.getEmail(), loginUserTO.getPassword());
             String token = "token";
             doReturn(token).when(tokenIssuer).issueToken(loginUserTO.getEmail());
@@ -277,11 +277,11 @@ class UserServiceTest {
         @Test
         @DisplayName("Successful")
         void updateUserSuccessful() {
-            UserTO userToUpdate = new UserTO();
+            UserTO userToUpdate = new UserTO.Builder().build();
             String email = "email";
             userToUpdate.setEmail(email);
             doReturn(email).when(httpHeaders).getHeaderString(CURRENT_USER_EMAIL);
-            UserTO updatedUserTO = new UserTO();
+            UserTO updatedUserTO = new UserTO.Builder().build();
             doReturn(updatedUserTO).when(userBC).updateUser(userToUpdate);
 
             Response response = userService.updateUser(userToUpdate);
@@ -295,7 +295,7 @@ class UserServiceTest {
         @Test
         @DisplayName("Failed")
         void updateUserFailed() {
-            UserTO userToUpdate = new UserTO();
+            UserTO userToUpdate = new UserTO.Builder().build();
             userToUpdate.setEmail("email");
             doReturn("different email").when(httpHeaders).getHeaderString(CURRENT_USER_EMAIL);
 

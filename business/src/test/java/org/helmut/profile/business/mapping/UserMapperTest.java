@@ -71,7 +71,7 @@ class UserMapperTest {
     @Test
     void updateUser() {
         UserEntity userEntity = createUserEntity();
-        UserTO userTO = new UserTO();
+        UserTO userTO = new UserTO.Builder().build();
 
         userMapper.updateUser(userEntity, userTO);
 

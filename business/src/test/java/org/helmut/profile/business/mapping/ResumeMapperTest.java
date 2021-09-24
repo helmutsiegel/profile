@@ -45,7 +45,7 @@ class ResumeMapperTest {
         LanguageEntity languageEntity = new LanguageEntity();
         cvEntity.setLanguages(Collections.singletonList(languageEntity));
 
-        UserTO returnedUserTO = new UserTO();
+        UserTO returnedUserTO = new UserTO.Builder().build();
         doReturn(returnedUserTO).when(userMapper).mapToTO(userEntity);
         ExperienceTO returnedExperienceTO = new ExperienceTO();
         doReturn(returnedExperienceTO).when(experienceMapper).mapToTO(experienceEntity);

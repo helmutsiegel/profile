@@ -5,7 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="12054cd0-f72f-4c45-9241-d79069bd8fa5" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/web-client/src/main/js/profile/src/app/component/about/about.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/web-client/src/main/js/profile/src/app/component/about/about.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/business/src/main/java/org/helmut/profile/business/startup/StartUp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/business/src/main/java/org/helmut/profile/business/decorator/UserBCDecorator.java" beforeDir="false" afterPath="$PROJECT_DIR$/business/src/main/java/org/helmut/profile/business/decorator/UserBCDecorator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/business/src/main/java/org/helmut/profile/business/mapping/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/business/src/main/java/org/helmut/profile/business/mapping/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/business/src/test/java/org/helmut/profile/business/bc/CvBCTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/business/src/test/java/org/helmut/profile/business/bc/CvBCTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/business/src/test/java/org/helmut/profile/business/bc/ProjectBCTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/business/src/test/java/org/helmut/profile/business/bc/ProjectBCTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/business/src/test/java/org/helmut/profile/business/bc/ResumeBCTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/business/src/test/java/org/helmut/profile/business/bc/ResumeBCTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/business/src/test/java/org/helmut/profile/business/bc/UserBCTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/business/src/test/java/org/helmut/profile/business/bc/UserBCTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/business/src/test/java/org/helmut/profile/business/mapping/CvMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/business/src/test/java/org/helmut/profile/business/mapping/CvMapperTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/business/src/test/java/org/helmut/profile/business/mapping/ProjectMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/business/src/test/java/org/helmut/profile/business/mapping/ProjectMapperTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/business/src/test/java/org/helmut/profile/business/mapping/ResumeMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/business/src/test/java/org/helmut/profile/business/mapping/ResumeMapperTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/business/src/test/java/org/helmut/profile/business/mapping/UserMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/business/src/test/java/org/helmut/profile/business/mapping/UserMapperTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/org/helmut/profile/common/model/UserTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/org/helmut/profile/common/model/UserTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/main/java/org/helmut/profile/rest/service/ProjectService.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/org/helmut/profile/rest/service/ProjectService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/test/java/org/helmut/profile/rest/service/UserServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/test/java/org/helmut/profile/rest/service/UserServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,9 +31,9 @@
       <list>
         <option value="Interface" />
         <option value="AnnotationType" />
-        <option value="Class" />
         <option value="Enum" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -53,12 +67,12 @@
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
     <option name="FILTER_WARNINGS" value="false" />
-    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_INFO" value="false" />
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="MavenImportPreferences">
-    <option name="enabledProfiles">
+    <option name="disabledProfiles">
       <list>
         <option value="build-for-prod" />
       </list>
@@ -400,6 +414,20 @@
           <url>file://$PROJECT_DIR$/business/src/main/java/org/helmut/profile/business/client/UserClient.java</url>
           <line>22</line>
           <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/common/src/main/java/org/helmut/profile/common/logging/DefaultLoggerImpl.java</url>
+          <line>9</line>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/javax/javaee-api/7.0/javaee-api-7.0.jar!/javax/inject/Singleton.class</url>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/business/src/main/java/org/helmut/profile/business/startup/StartUp.java</url>
+          <line>14</line>
+          <option name="timeStamp" value="29" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/web-client/src/main/js/profile/src/app/cv/component/cv/cv.component.ts</url>
