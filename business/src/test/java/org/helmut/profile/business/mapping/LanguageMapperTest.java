@@ -21,19 +21,14 @@ class LanguageMapperTest {
 
     @Test
     void mapToTO() {
-//        LanguageEntity languageEntity = new LanguageEntity();
-//        languageEntity.setLanguage("English");
-//        languageEntity.setLevel(LanguageLevel.ADVANCED);
-//
-//        LanguageTO languageTO = languageMapper.mapToTO(languageEntity);
-//
-//        assertEquals(languageTO.getLanguage(), languageEntity.getLanguage());
-//        assertEquals(languageTO.getLevel(), languageEntity.getLevel());
+        LanguageEntity languageEntity = new LanguageEntity();
+        languageEntity.setLanguage("English");
+        languageEntity.setLevel(LanguageLevel.ADVANCED);
 
+        LanguageTO languageTO = languageMapper.mapToTO(languageEntity);
 
-        String host = "/";
-
-        System.out.println(host.split("/")[0]);
+        assertEquals(languageTO.getLanguage(), languageEntity.getLanguage());
+        assertEquals(languageTO.getLevel(), languageEntity.getLevel());
     }
 
     @Test
