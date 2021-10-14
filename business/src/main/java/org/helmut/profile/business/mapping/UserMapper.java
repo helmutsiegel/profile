@@ -19,7 +19,7 @@ public class UserMapper {
                 .email(userEntity.getEmail())
                 .firstName(userEntity.getFirstName())
                 .lastName(userEntity.getLastName())
-                .birthDate(userEntity.getBirthDate().toString())
+                .birthDate(String.valueOf(userEntity.getBirthDate()))
                 .title(userEntity.getTitle())
                 .seniority(userEntity.getSeniority())
                 .build();

@@ -62,6 +62,7 @@
     </dependencies>
 
     <build>
+        <!-- <finalName> is needed when you want a different name for the built artifact than the name of the project-->
         <finalName>profile</finalName>
         <plugins>
             <plugin>

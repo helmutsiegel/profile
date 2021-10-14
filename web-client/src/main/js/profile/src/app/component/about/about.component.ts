@@ -66,13 +66,13 @@ export class AboutComponent implements OnInit {
     author: 'Bryan Hansen',
     platform: 'Pluralsight',
     link: 'https://app.pluralsight.com/library/courses/maven-fundamentals/table-of-contents',
-    status: 'Planned'
+    status: 'Finished'
   }, {
     title: 'SOLID Software Design Principles in Java',
     author: 'Dan Geabunea',
     platform: 'Pluralsight',
     link: 'https://app.pluralsight.com/library/courses/solid-software-design-principles-java/table-of-contents',
-    status: 'Planned'
+    status: 'Finished'
   }, {
     title: 'Java: Writing Readable and Maintainable Code',
     author: 'Andrejs Doronins',

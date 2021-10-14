@@ -15,9 +15,6 @@ public class UserTO {
     private String birthDate;
     private Seniority seniority;
 
-    private UserTO() {
-    }
-
     public String getEmail() {
         return email;
     }
@@ -115,6 +112,5 @@ public class UserTO {
             userTO.setSeniority(seniority);
             return userTO;
         }
-
     }
 }

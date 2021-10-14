@@ -7,6 +7,9 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.postgresql.core.Tuple;
+
+import javax.persistence.TupleElement;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -18,14 +21,19 @@ class LanguageMapperTest {
 
     @Test
     void mapToTO() {
-        LanguageEntity languageEntity = new LanguageEntity();
-        languageEntity.setLanguage("English");
-        languageEntity.setLevel(LanguageLevel.ADVANCED);
+//        LanguageEntity languageEntity = new LanguageEntity();
+//        languageEntity.setLanguage("English");
+//        languageEntity.setLevel(LanguageLevel.ADVANCED);
+//
+//        LanguageTO languageTO = languageMapper.mapToTO(languageEntity);
+//
+//        assertEquals(languageTO.getLanguage(), languageEntity.getLanguage());
+//        assertEquals(languageTO.getLevel(), languageEntity.getLevel());
 
-        LanguageTO languageTO = languageMapper.mapToTO(languageEntity);
 
-        assertEquals(languageTO.getLanguage(), languageEntity.getLanguage());
-        assertEquals(languageTO.getLevel(), languageEntity.getLevel());
+        String host = "/";
+
+        System.out.println(host.split("/")[0]);
     }
 
     @Test
@@ -53,5 +61,26 @@ class LanguageMapperTest {
 
         assertEquals(languageEntity.getLevel(), LanguageLevel.NATIVE);
         assertEquals(languageEntity.getLanguage(), "German");
+    }
+}
+
+class Parameter {
+    private String key;
+    private String value;
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
+
+    public String getValue() {
+        return value;
+    }
+
+    public void setValue(String value) {
+        this.value = value;
     }
 }
