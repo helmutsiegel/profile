@@ -37,3 +37,4 @@ hs_err_pid*
 /common/common.iml
 /service/service.iml
 /.idea/workspace.xml
+/.idea/sonarlint/

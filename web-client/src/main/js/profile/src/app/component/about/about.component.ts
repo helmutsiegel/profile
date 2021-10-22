@@ -108,13 +108,19 @@ export class AboutComponent implements OnInit {
     author: 'Maaike van Putter',
     platform: 'Pluralsight',
     link: 'https://app.pluralsight.com/library/courses/java-core-libraries-log-system/table-of-contents',
-    status: 'In progress'
+    status: 'Finished'
   }, {
     title: 'Java Refactoring: Best Practices',
     author: 'Andrejs Doronins',
     platform: 'Pluralsight',
     link: 'https://app.pluralsight.com/library/courses/java-refactoring-best-practices/table-of-contents',
     status: 'Planned'
+  }, {
+    title: 'Design Patterns in Java: Creational',
+    author: 'Bryan Hansen',
+    platform: 'Pluralsight',
+    link: 'https://app.pluralsight.com/library/courses/design-patterns-java-creational/table-of-contents',
+    status: 'In progress'
   }];
 
   constructor() {
